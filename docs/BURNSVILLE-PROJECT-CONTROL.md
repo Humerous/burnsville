@@ -2,11 +2,11 @@
 
 ## STATUS
 
-Repository modernisation foundation is working. Final visual UI and final product catalogue are not yet locked.
+Repository modernisation foundation is working and consolidated on the active V2 branch. Final visual UI and final product catalogue are not yet locked.
 
 Primary working branch: `modernise/burnsville-v2`.
 
-Current project mode: REFERENCE INTAKE + CONTROL CONSOLIDATION.
+Current project mode: REFERENCE INTAKE + FINAL DESIGN/PRODUCT AUTHORITY PENDING.
 
 ## CURRENT VERIFIED FOUNDATION
 
@@ -19,16 +19,17 @@ Current project mode: REFERENCE INTAKE + CONTROL CONSOLIDATION.
 - Reviews exist.
 - Admin product image upload exists and is protected.
 - Uploaded images are stored in MongoDB GridFS.
-- Automated API/security/production-serving QA exists and has passed on the prior V2 baseline.
-- A Vercel preview deployment exists for the working V2 branch.
+- Automated API/security/production-serving QA is established and passing on the consolidated V2 baseline.
+- A Vercel preview deployment pipeline exists for the working V2 branch.
+- Codex/agent repository controls are present at the repository root and under `docs/`.
 
 ## CURRENT VISUAL STATUS
 
 UNLOCKED / PROVISIONAL.
 
-The current UI may be used as functional and structural reference only. Final visual authority will be created after the user's remaining reference uploads are reviewed and classified.
+The current UI is functional and structural reference only. Final visual authority will be created after the user's remaining reference uploads are reviewed and classified.
 
-Do not make further visual-system assumptions until that intake is complete.
+Do not make final visual-system assumptions until that intake is complete.
 
 ## ACTIVE REPOSITORY LINES
 
@@ -39,11 +40,13 @@ Historical/preserved base. Not the active development source.
 PRIMARY WORKING SOURCE OF TRUTH.
 
 ### `modernise/burnsville-v2-integration-spec`
-Historical/preparatory product-integration branch. Contains useful safety, migration and validation material, but also stale product assumptions. Do not merge wholesale.
+Historical/superseded preparation branch. PR #2 is closed without merge. Useful safety, migration and validation concepts were selectively consolidated into V2; stale product and visual assumptions remain historical only.
 
 ## CONSOLIDATION STATUS
 
-The following safe control concepts have now been moved into the primary V2 branch in updated form:
+COMPLETE for the non-visual control layer.
+
+The primary V2 branch now contains:
 
 - root `AGENTS.md` agent rules
 - project control
@@ -55,38 +58,41 @@ The following safe control concepts have now been moved into the primary V2 bran
 - safe catalogue migration plan
 - final product-integration QA checklist
 - final catalogue intake placeholder
-- corrected catalogue replacement map that contains no stale product-name authority
-- interim README safety notice removing stale/destructive instructions
+- corrected catalogue replacement controls
+- interim README safety notice
 
-Still NOT consolidated as authority:
+Removed from active authority:
 
-- historical product names/facts from the integration-spec branch
-- rejected asset-map assumptions
-- integration-spec heat artwork changes
-- any visual/UI decisions from that branch
+- obsolete locked product catalogue
+- obsolete locked asset map
+- invalid product asset-map JSON
+- stale Burnsville product catalogue JSON that contained superseded product identities
 
-PR #2 remains open/draft until its remaining non-authoritative visual differences are reviewed against the incoming reference set.
+Not imported as authority:
+
+- stale product names/facts from the superseded integration branch
+- rejected asset assumptions
+- integration-branch visual/heat changes
 
 ## OPEN WORKSTREAMS
 
 1. Final reference intake and visual authority.
-2. Finish selective integration-spec consolidation after reference review.
-3. Final product data architecture.
-4. Final Burnsville catalogue and asset handoff.
-5. New visual implementation over the existing functional engine.
-6. Browser/E2E, responsive and accessibility QA.
-7. SEO/public metadata cleanup.
-8. Final public README/repository presentation.
-9. Controlled release to `main` and production.
+2. Final product data/image architecture.
+3. Final Burnsville catalogue and asset handoff.
+4. New visual implementation over the existing functional engine.
+5. Browser/E2E, responsive and accessibility QA.
+6. Final release SEO/public metadata.
+7. Final public README/repository presentation.
+8. Controlled release to `main` and production.
 
 ## RELEASE BLOCKERS
 
 - Final UI not locked.
 - Final product catalogue not integrated.
-- Legacy third-party runtime catalogue remains present.
-- Product image architecture may need expansion beyond one image.
-- Final browser/responsive/accessibility QA not complete.
-- Public SEO metadata not final.
+- Legacy third-party runtime catalogue remains present until approved replacement data passes QA.
+- Final product image architecture depends on incoming references.
+- Final browser/responsive/accessibility QA must run after the UI rebuild.
+- Final release URL/canonical/social metadata is not yet locked.
 
 ## CHANGE CONTROL
 
@@ -108,7 +114,7 @@ Burnsville is finished only when:
 - automated QA passes
 - responsive and accessibility QA passes
 - no legacy third-party catalogue content is public
-- SEO/public metadata is correct
-- README accurately describes the modern project
-- release branch/PR is current and reviewable
+- final SEO/public metadata is correct
+- README accurately describes the released project
+- release PR is current and reviewable
 - production deployment passes live QA
