@@ -8,18 +8,33 @@ The final visual UI is not locked. Do not begin a broad visual rewrite until rem
 
 ## PACK 0 — CODEX READINESS + CONTROL
 
+Status: IMPLEMENTED / FINAL QA RUN PENDING ON LATEST CONTROL COMMITS.
+
 Goal: make the repository safe for longer Codex execution blocks.
 
-Actions:
+Implemented:
 
-- add `AGENTS.md`
-- add project control/architecture/decision/known-issue documents
-- document active branch authority
-- preserve working technical baseline
-- classify integration-spec branch material
-- do not alter visual UI or runtime product data
+- root `AGENTS.md`
+- project control baseline
+- architecture baseline
+- decision register
+- known-issues register
+- product integration contract
+- catalogue migration safety plan
+- final integration QA checklist
+- final catalogue intake placeholder
+- stale catalogue replacement map replaced with a neutral control gate
+- interim README safety notice
+- active branch authority documented
+- current UI explicitly marked provisional
 
-Pass condition: a future agent can identify the source of truth, protected areas, open work and release gates without reconstructing chat history.
+Still intentionally excluded from authority:
+
+- stale historical product names/facts
+- rejected asset maps
+- integration-branch visual/heat artwork decisions
+
+Pass condition: future agents can identify source of truth, protected areas, open work and release gates without reconstructing chat history.
 
 ## PACK 1 — REFERENCE INTAKE + FINAL DESIGN AUTHORITY
 
@@ -45,7 +60,7 @@ Actions:
 - define any gallery/card/bottle/supporting image fields required
 - confirm product identity/code fields
 - confirm final shop browsing strategy
-- confirm heat/filter behaviour
+- confirm final heat scale/filter behaviour
 - confirm homepage merchandising strategy
 - update admin data requirements
 - update final-catalogue validator
@@ -131,7 +146,7 @@ Goal: turn the completed app into a production and portfolio-quality release.
 Actions:
 
 - remove obsolete legacy product assets/data after rollback evidence exists
-- rewrite README
+- write final public README
 - final SEO/meta/OpenGraph/canonical/sitemap/robots
 - final favicon/social imagery
 - reconcile and update PR descriptions
