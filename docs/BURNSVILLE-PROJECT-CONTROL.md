@@ -19,7 +19,7 @@ Current project mode: REFERENCE INTAKE + CONTROL CONSOLIDATION.
 - Reviews exist.
 - Admin product image upload exists and is protected.
 - Uploaded images are stored in MongoDB GridFS.
-- Automated API/security/production-serving QA exists and has passed on the current V2 baseline.
+- Automated API/security/production-serving QA exists and has passed on the prior V2 baseline.
 - A Vercel preview deployment exists for the working V2 branch.
 
 ## CURRENT VISUAL STATUS
@@ -41,16 +41,42 @@ PRIMARY WORKING SOURCE OF TRUTH.
 ### `modernise/burnsville-v2-integration-spec`
 Historical/preparatory product-integration branch. Contains useful safety, migration and validation material, but also stale product assumptions. Do not merge wholesale.
 
+## CONSOLIDATION STATUS
+
+The following safe control concepts have now been moved into the primary V2 branch in updated form:
+
+- root `AGENTS.md` agent rules
+- project control
+- architecture baseline
+- decision register
+- roadmap
+- known-issues register
+- controlled product-integration contract
+- safe catalogue migration plan
+- final product-integration QA checklist
+- final catalogue intake placeholder
+- corrected catalogue replacement map that contains no stale product-name authority
+- interim README safety notice removing stale/destructive instructions
+
+Still NOT consolidated as authority:
+
+- historical product names/facts from the integration-spec branch
+- rejected asset-map assumptions
+- integration-spec heat artwork changes
+- any visual/UI decisions from that branch
+
+PR #2 remains open/draft until its remaining non-authoritative visual differences are reviewed against the incoming reference set.
+
 ## OPEN WORKSTREAMS
 
 1. Final reference intake and visual authority.
-2. Selective integration-spec consolidation.
+2. Finish selective integration-spec consolidation after reference review.
 3. Final product data architecture.
 4. Final Burnsville catalogue and asset handoff.
 5. New visual implementation over the existing functional engine.
 6. Browser/E2E, responsive and accessibility QA.
 7. SEO/public metadata cleanup.
-8. README/public repository presentation.
+8. Final public README/repository presentation.
 9. Controlled release to `main` and production.
 
 ## RELEASE BLOCKERS
@@ -59,9 +85,8 @@ Historical/preparatory product-integration branch. Contains useful safety, migra
 - Final product catalogue not integrated.
 - Legacy third-party runtime catalogue remains present.
 - Product image architecture may need expansion beyond one image.
-- Integration-spec branch has not been selectively reconciled.
 - Final browser/responsive/accessibility QA not complete.
-- Public README and SEO metadata not final.
+- Public SEO metadata not final.
 
 ## CHANGE CONTROL
 
