@@ -13,19 +13,24 @@ import {
 import ShopDrawer from './header/ShopDrawer';
 import { logout } from '../actions/userActions';
 import './header/header.css';
+import './header/header-reference.css';
 
-// Keep public navigation limited to destinations that actually exist.
-// Future Packs / About / Journal / Contact routes stay out of the live nav
-// until those screens are implemented rather than shipping dead `#` links.
 const NAV_ITEMS = [
-  { label: 'All Sauces', href: '/shop' },
-  { label: 'Shop by Heat', href: '/#shop-by-heat' },
-  { label: 'Cart', href: '/cart' },
+  { label: 'Shop', href: '/shop' },
+  { label: 'Sauces', href: '/shop' },
+  { label: 'Packs', href: '/shop' },
+  { label: 'Heat Guide', href: '/#shop-by-heat' },
+  { label: 'Journal', href: '/#journal' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 const DESKTOP_NAV_ITEMS = [
-  { label: 'Shop', href: '/shop' },
+  { label: 'Shop', href: '/shop', shopMenu: true },
+  { label: 'Sauces', href: '/shop' },
+  { label: 'Packs', href: '/shop' },
   { label: 'Heat Guide', href: '/#shop-by-heat' },
+  { label: 'Journal', href: '/#journal' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 const Header = () => {
@@ -184,7 +189,7 @@ const Header = () => {
 
         <nav aria-label='Primary navigation' className='burnsville-header__nav'>
           {DESKTOP_NAV_ITEMS.map((item) =>
-            item.label === 'Shop' ? (
+            item.shopMenu ? (
               <div
                 className='burnsville-header__shop-menu'
                 key={item.label}
@@ -218,10 +223,14 @@ const Header = () => {
                   </Link>
                 </div>
               </div>
-            ) : (
+            ) : item.href.startsWith('/#') ? (
               <a href={item.href} key={item.label}>
                 {item.label}
               </a>
+            ) : (
+              <Link key={item.label} to={item.href}>
+                {item.label}
+              </Link>
             )
           )}
         </nav>
