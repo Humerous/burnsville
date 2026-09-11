@@ -293,8 +293,8 @@ const ProductEditScreen = ({ match, history }) => {
                       id='admin-product-heat'
                       type='number'
                       min='1'
-                      max='11'
-                      placeholder='1–11'
+                      max='10'
+                      placeholder='1–10'
                       value={heatLevel}
                       onChange={(e) => setHeatLevel(e.target.value)}
                     />
