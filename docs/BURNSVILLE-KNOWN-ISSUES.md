@@ -10,16 +10,13 @@ Track verified remaining work. Do not use this file to invent new scope.
 The current visual UI is provisional. Remaining visual references must be reviewed before final design implementation.
 
 ### KI-002 — FINAL BURNSVILLE CATALOGUE NOT IN RUNTIME
-The current runtime still uses legacy third-party sample products and images.
+The current runtime still uses legacy third-party sample products and images. Replacement is blocked until the complete approved Burnsville catalogue and assets are available and validated.
 
-### KI-003 — INTEGRATION-SPEC BRANCH PARTIALLY CONSOLIDATED
-Safe control, migration and QA concepts have been moved into `modernise/burnsville-v2`. The integration-spec branch still contains visual/heat asset differences and stale historical product assumptions, so it must not be merged wholesale. Final branch retirement waits for reference review.
-
-### KI-004 — PRODUCT IMAGE MODEL MAY BE TOO LIMITED
-Current Product schema supports one required primary image only. Final requirements may need separate product-card, bottle, gallery or pairing imagery.
+### KI-004 — FINAL PRODUCT IMAGE MODEL NOT CONFIRMED
+The current Product schema supports one required primary image. Final references must determine whether separate product-card, bottle, gallery or pairing imagery is structurally required.
 
 ### KI-005 — FINAL PRODUCT DATA INCOMPLETE
-Final approved values for the complete runtime catalogue must be supplied/confirmed before migration.
+Final approved values for the complete runtime catalogue must be supplied/confirmed before migration. Missing values must not be invented.
 
 ### KI-006 — FINAL BROWSER/RESPONSIVE/ACCESSIBILITY QA PENDING
 Existing automated API/production QA does not replace final browser-level verification after the UI rebuild.
@@ -33,25 +30,36 @@ Final catalogue browsing behaviour must be decided once the final range/UI is kn
 Current homepage implementation displays a limited subset rather than an explicitly approved merchandising strategy.
 
 ### KI-009 — SHOP-BY-HEAT IS NOT A FILTER
-Current heat presentation is guidance only.
+Current heat presentation is guidance only. Final interaction depends on the approved UI/UX direction.
 
 ### KI-010 — PRODUCT ROUTES USE MONGODB IDS
-This is functional but may later be reconsidered for public-facing product URLs. Not a current technical blocker.
+This is functional but may later be reconsidered for public-facing product URLs. It is not a current technical blocker.
 
 ### KI-011 — README IS INTERIM
-Known-stale destructive/historical instructions were removed from the active branch and replaced with a modernisation notice. A complete public README still waits for final release.
+Known-stale destructive/historical instructions were removed and replaced with a modernisation notice. The complete public/portfolio README waits for the final released system.
 
-### KI-012 — PUBLIC SEO/METADATA IS NOT FINAL
-Titles, descriptions, social metadata, canonical/public URL handling and final indexing assets require a release audit.
+### KI-012 — RELEASE SEO/METADATA IS INCOMPLETE
+Legacy generic metadata has been removed and replaced with neutral Burnsville defaults. Final OpenGraph, canonical URL, sitemap/indexing and public launch metadata still require the final release identity/URL.
 
-### KI-013 — PR #1 DESCRIPTION IS STALE
-The long-running V2 PR still describes several already-completed technical items as unfinished and should be reconciled before release.
+## CLOSED / FIXED
 
-### KI-014 — PR #2 IS A DRAFT PREPARATION BRANCH
-It has been partially harvested but still contains non-authoritative visual/stale reference changes. Do not merge as-is.
+### KI-003 — INTEGRATION-SPEC BRANCH CONSOLIDATION
+FIXED. Safe integration, validation and migration controls were consolidated into `modernise/burnsville-v2`. PR #2 was closed as superseded without merging stale product or visual assumptions.
 
-### KI-015 — ADMIN HEAT RANGE DOES NOT MATCH PRODUCT SCHEMA
-The admin Product Edit input currently permits heat values from 1–11, while the MongoDB Product schema accepts only 1–10. Resolve this only after the final Burnsville heat-scale decision is confirmed; until then, values above 10 will fail schema validation.
+### KI-013 — PR #1 DESCRIPTION STALE
+FIXED. PR #1 now documents the current modernisation foundation, remaining blockers and draft merge status.
+
+### KI-014 — PR #2 DRAFT PREPARATION BRANCH
+FIXED. PR #2 is closed as superseded; branch history remains available for reference.
+
+### KI-015 — ADMIN HEAT RANGE MISMATCH
+FIXED. The admin Product Edit input now matches the current MongoDB schema at 1–10.
+
+### KI-016 — STALE LOCKED PRODUCT/ASSET AUTHORITY
+FIXED. Superseded locked catalogue/asset-map files were removed from the active V2 branch so Codex cannot mistake them for current authority.
+
+### KI-017 — LEGACY DEFAULT METADATA CLAIMS
+FIXED. Generic/unsupported metadata claims were replaced with neutral Burnsville defaults pending final release metadata.
 
 ## GREEN — VERIFIED WORKING FOUNDATION
 
