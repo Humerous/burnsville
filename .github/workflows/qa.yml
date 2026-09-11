@@ -19,10 +19,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Use Node 24
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '24'
           cache: npm
@@ -151,16 +151,43 @@ jobs:
 
       - name: Audit production dependencies
         run: |
-          set +e
-          npm audit --omit=dev --audit-level=high
-          backend_status=$?
-          npm audit --prefix frontend --omit=dev --audit-level=high
-          frontend_status=$?
-          set -e
+          audit_with_retry() {
+            label="$1"
+            shift
+            attempt=1
 
-          if [ "$backend_status" -ne 0 ] || [ "$frontend_status" -ne 0 ]; then
-            exit 1
-          fi
+            while [ "$attempt" -le 3 ]; do
+              set +e
+              output=$("$@" 2>&1)
+              status=$?
+              set -e
+
+              printf '%s\n' "$output"
+
+              if [ "$status" -eq 0 ]; then
+                return 0
+              fi
+
+              if printf '%s\n' "$output" | grep -Eqi \
+                'audit endpoint returned an error|ECONNRESET|ETIMEDOUT|EAI_AGAIN|ENETUNREACH|socket hang up|503 Service Unavailable'; then
+                if [ "$attempt" -lt 3 ]; then
+                  echo "$label audit registry request failed; retrying ($attempt/3)..."
+                  sleep $((attempt * 3))
+                  attempt=$((attempt + 1))
+                  continue
+                fi
+
+                echo "$label audit could not reach the registry after 3 attempts."
+                return 2
+              fi
+
+              echo "$label production dependency audit failed."
+              return "$status"
+            done
+          }
+
+          audit_with_retry backend npm audit --omit=dev --audit-level=high
+          audit_with_retry frontend npm audit --prefix frontend --omit=dev --audit-level=high
 
       - name: Repository diff check
         run: git diff --check
