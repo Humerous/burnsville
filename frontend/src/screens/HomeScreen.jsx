@@ -1,12 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col } from 'react-bootstrap';
-import Product from '../components/Product';
-import Message from '../components/Message';
-import Loader from '../components/Loader';
-import Paginate from '../components/Paginate';
-import ProductCarousel from '../components/ProductCarousel';
 import HomeHero from '../components/home/HomeHero';
 import ShopByHeat from '../components/home/ShopByHeat';
 import HomeProductShowcase from '../components/home/HomeProductShowcase';
@@ -16,81 +9,32 @@ import Meta from '../components/Meta';
 import { listProducts } from '../actions/productActions';
 import './home-screen.css';
 
-// <---- HOME SCREEN FUNCTION - location, history, dispatch, setEmail, setPassword ---->
-const HomeScreen = ({ match }) => {
-  // <---- HOME - keyword by params---->
-  const keyword = match.params.keyword;
-
-  // <---- HOME - pageNumber by params---->
-  const pageNumber = match.params.pageNumber || 1;
-
-  // The approved Hero belongs only to the exact homepage route.
-  const isHomepage = match.path === '/' && !keyword;
-
-  // <---- HOME - dispatch state ---->
+const HomeScreen = () => {
   const dispatch = useDispatch();
 
-  // <---- HOME - productList state ---->
   const productList = useSelector((state) => state.productList);
-  const { loading, error, products, page, pages } = productList;
+  const { loading, error, products = [] } = productList;
 
-  // <---- HOME EFFECT FOR USER INFO - keyword, pageNumber   ---->
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber));
-  }, [dispatch, keyword, pageNumber]);
+    dispatch(listProducts('', 1));
+  }, [dispatch]);
 
   return (
     <>
       <Meta />
-      {isHomepage ? (
-        <>
-          <div className='burnsville-home-framework'>
-            <HomeHero />
-            <ShopByHeat />
-            <HomeProductShowcase
-              loading={loading}
-              error={error}
-              products={products}
-            />
-          </div>
-          <BrandProofStrip />
-          <NewsletterSignup />
-        </>
-      ) : (
-        <>
-          {!keyword ? (
-            <ProductCarousel />
-          ) : (
-            <Link to='/' className='btn btn-warning'>
-              Go Back
-            </Link>
-          )}
-          <h1>Latest Products</h1>
-          {loading ? (
-            <Loader />
-          ) : error ? (
-            <Message variant='danger'>{error}</Message>
-          ) : (
-            <>
-              <Row>
-                {products.map((product) => (
-                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                    <Product product={product} />
-                  </Col>
-                ))}
-              </Row>
-              <Paginate
-                pages={pages}
-                page={page}
-                keyword={keyword ? keyword : ''}
-              />
-            </>
-          )}
-        </>
-      )}
+      <div className='burnsville-home-framework'>
+        <HomeHero />
+        <ShopByHeat />
+        <HomeProductShowcase
+          loading={loading}
+          error={error}
+          products={products}
+        />
+      </div>
+      <BrandProofStrip />
+      <NewsletterSignup />
     </>
   );
 };
 
-// <---- EXPORT ---->
 export default HomeScreen;
