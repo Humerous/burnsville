@@ -25,15 +25,28 @@ import {
 } from '../constants/productConstants';
 
 // <---- DISPATCH _ LIST OF PRODUCTS ---->
-export const listProducts = (keyword = '', pageNumber = '') => async (
+export const listProducts = (keyword = '', pageNumber = '', heat = '') => async (
   dispatch
 ) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
 
-    const { data } = await axios.get(
-      `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
-    );
+    const params = new URLSearchParams();
+
+    if (keyword) {
+      params.set('keyword', keyword);
+    }
+
+    if (pageNumber) {
+      params.set('pageNumber', pageNumber);
+    }
+
+    if (heat) {
+      params.set('heat', heat);
+    }
+
+    const query = params.toString();
+    const { data } = await axios.get(`/api/products${query ? `?${query}` : ''}`);
 
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
@@ -201,9 +214,7 @@ export const createProductReview = (productId, review) => async (
   getState
 ) => {
   try {
-    dispatch({
-      type: PRODUCT_CREATE_REVIEW_REQUEST,
-    });
+    dispatch({ type: PRODUCT_CREATE_REVIEW_REQUEST });
 
     const {
       userLogin: { userInfo },
