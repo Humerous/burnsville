@@ -42,6 +42,12 @@ Do not use `npm audit fix --force`. Dependency updates must be controlled and ve
 ### D-012 — VISUAL AUTHORITY PENDING
 A final design-system document will be created only after remaining references have been uploaded, reviewed and classified.
 
+### D-013 — INTERIM README POLICY
+The active branch must not retain stale destructive/seeding instructions. Until final release documentation is written, README may contain a clearly marked modernisation-status notice and point to repository control files.
+
+### D-014 — HEAT SCALE MISMATCH
+The admin UI currently allows 1–11 while the Product schema accepts 1–10. Do not choose a final scale implicitly. Resolve this when the final Burnsville heat system is approved.
+
 ## PENDING DECISIONS
 
 The following must remain open until the reference/product handoff is complete:
@@ -50,7 +56,7 @@ The following must remain open until the reference/product handoff is complete:
 - final product image/gallery model
 - final product catalogue facts and commercial values
 - final shop browsing/pagination/filtering model
-- whether heat levels become real filters
+- final heat scale and whether heat levels become real filters
 - whether human-readable product slugs are introduced
 - final homepage featured-product strategy
 - final admin presentation
