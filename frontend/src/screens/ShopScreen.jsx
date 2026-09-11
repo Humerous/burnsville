@@ -8,9 +8,20 @@ import Product from '../components/Product';
 import { listProducts } from '../actions/productActions';
 import './shop-screen.css';
 
-const ShopScreen = ({ match }) => {
+const HEAT_FILTERS = {
+  mild: { label: 'Mild', range: '1–3/10' },
+  medium: { label: 'Medium', range: '4–6/10' },
+  hot: { label: 'Hot', range: '7–8/10' },
+  'very-hot': { label: 'Very Hot', range: '9/10' },
+  extreme: { label: 'Extreme', range: '10/10' },
+};
+
+const ShopScreen = ({ match, location }) => {
   const keyword = match.params.keyword || '';
   const pageNumber = match.params.pageNumber || 1;
+  const requestedHeat = new URLSearchParams(location.search).get('heat') || '';
+  const heat = HEAT_FILTERS[requestedHeat] ? requestedHeat : '';
+  const activeHeat = heat ? HEAT_FILTERS[heat] : null;
   const dispatch = useDispatch();
 
   const productList = useSelector((state) => state.productList);
@@ -23,20 +34,50 @@ const ShopScreen = ({ match }) => {
   } = productList;
 
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber));
-  }, [dispatch, keyword, pageNumber]);
+    dispatch(listProducts(keyword, pageNumber, heat));
+  }, [dispatch, keyword, pageNumber, heat]);
 
   const retryProducts = () => {
-    dispatch(listProducts(keyword, pageNumber));
+    dispatch(listProducts(keyword, pageNumber, heat));
   };
 
   const hasSearch = Boolean(keyword);
-  const pageTitle = hasSearch
-    ? `Search results for ${keyword} | Burnsville`
-    : 'All Sauces | Burnsville';
-  const pageDescription = hasSearch
-    ? `Browse Burnsville catalogue results for ${keyword}.`
-    : 'Browse the current Burnsville hot sauce catalogue.';
+  const hasHeat = Boolean(activeHeat);
+  const hasFilters = hasSearch || hasHeat;
+
+  let pageTitle = 'All Sauces | Burnsville';
+  let pageDescription = 'Browse the current Burnsville hot sauce catalogue.';
+
+  if (hasSearch && hasHeat) {
+    pageTitle = `Search results for ${keyword} · ${activeHeat.label} | Burnsville`;
+    pageDescription = `Browse Burnsville catalogue results for ${keyword} in the ${activeHeat.label.toLowerCase()} heat range (${activeHeat.range}).`;
+  } else if (hasSearch) {
+    pageTitle = `Search results for ${keyword} | Burnsville`;
+    pageDescription = `Browse Burnsville catalogue results for ${keyword}.`;
+  } else if (hasHeat) {
+    pageTitle = `${activeHeat.label} Sauces | Burnsville`;
+    pageDescription = `Browse Burnsville sauces in the ${activeHeat.label.toLowerCase()} heat range (${activeHeat.range}).`;
+  }
+
+  const breadcrumbLabel = hasSearch
+    ? 'Search'
+    : hasHeat
+      ? activeHeat.label
+      : 'Shop';
+
+  const heading = hasSearch
+    ? 'Search results'
+    : hasHeat
+      ? `${activeHeat.label} sauces`
+      : 'All sauces';
+
+  const summary = hasSearch && hasHeat
+    ? `Showing catalogue matches for “${keyword}” in the ${activeHeat.label.toLowerCase()} range (${activeHeat.range}).`
+    : hasSearch
+      ? `Showing catalogue matches for “${keyword}”.`
+      : hasHeat
+        ? `Showing sauces rated ${activeHeat.range} on the Burnsville heat scale.`
+        : 'Explore the current range by name, rating and price.';
 
   return (
     <>
@@ -52,18 +93,12 @@ const ShopScreen = ({ match }) => {
             <nav className='burnsville-shop__breadcrumb' aria-label='Breadcrumb'>
               <Link to='/'>Home</Link>
               <span aria-hidden='true'>/</span>
-              <span aria-current='page'>{hasSearch ? 'Search' : 'Shop'}</span>
+              <span aria-current='page'>{breadcrumbLabel}</span>
             </nav>
 
             <p className='burnsville-shop__eyebrow'>Burnsville collection</p>
-            <h1 id='burnsville-shop-title'>
-              {hasSearch ? 'Search results' : 'All sauces'}
-            </h1>
-            <p className='burnsville-shop__summary'>
-              {hasSearch
-                ? `Showing catalogue matches for “${keyword}”.`
-                : 'Explore the current range by name, rating and price.'}
-            </p>
+            <h1 id='burnsville-shop-title'>{heading}</h1>
+            <p className='burnsville-shop__summary'>{summary}</p>
           </div>
         </div>
 
@@ -80,9 +115,9 @@ const ShopScreen = ({ match }) => {
               Page {page || 1}
               {pages > 0 ? ` of ${pages}` : ''}
             </p>
-            {hasSearch && (
+            {hasFilters && (
               <Link className='burnsville-shop__clear-link' to='/shop'>
-                Clear search <span aria-hidden='true'>→</span>
+                Clear filters <span aria-hidden='true'>→</span>
               </Link>
             )}
           </div>
@@ -110,14 +145,18 @@ const ShopScreen = ({ match }) => {
               <div className='burnsville-shop__state'>
                 <p className='burnsville-shop__state-label'>Nothing to show</p>
                 <h2>
-                  {hasSearch ? 'No sauces found' : 'The collection is currently empty'}
+                  {hasHeat
+                    ? `No ${activeHeat.label.toLowerCase()} sauces found`
+                    : hasSearch
+                      ? 'No sauces found'
+                      : 'The collection is currently empty'}
                 </h2>
                 <p className='burnsville-shop__state-message'>
-                  {hasSearch
-                    ? 'Try another search or return to the complete catalogue.'
+                  {hasFilters
+                    ? 'Try another heat level or return to the complete catalogue.'
                     : 'Please check the catalogue again later.'}
                 </p>
-                {hasSearch && (
+                {hasFilters && (
                   <Link className='burnsville-shop__state-link' to='/shop'>
                     View all sauces
                   </Link>
@@ -140,6 +179,7 @@ const ShopScreen = ({ match }) => {
                       pages={pages}
                       page={page}
                       keyword={keyword}
+                      heat={heat}
                     />
                   </nav>
                 )}
@@ -158,6 +198,9 @@ ShopScreen.propTypes = {
       keyword: PropTypes.string,
       pageNumber: PropTypes.string,
     }).isRequired,
+  }).isRequired,
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired,
   }).isRequired,
 };
 
