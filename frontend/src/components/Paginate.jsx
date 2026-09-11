@@ -3,7 +3,9 @@ import { Pagination } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 // <---- PRODUCT CAROUSEL FUNCTION - pages, page, isAdmin, false keyword ---->
-const Paginate = ({ pages, page, isAdmin = false, keyword = '' }) => {
+const Paginate = ({ pages, page, isAdmin = false, keyword = '', heat = '' }) => {
+  const heatQuery = heat ? `?heat=${encodeURIComponent(heat)}` : '';
+
   return (
     pages > 1 && (
       <Pagination>
@@ -13,8 +15,8 @@ const Paginate = ({ pages, page, isAdmin = false, keyword = '' }) => {
             to={
               !isAdmin
                 ? keyword
-                  ? `/search/${keyword}/page/${x + 1}`
-                  : `/page/${x + 1}`
+                  ? `/search/${keyword}/page/${x + 1}${heatQuery}`
+                  : `/page/${x + 1}${heatQuery}`
                 : `/admin/productlist/${x + 1}`
             }
           >
