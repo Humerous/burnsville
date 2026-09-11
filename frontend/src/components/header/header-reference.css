@@ -1,0 +1,226 @@
+.burnsville-header {
+  background: #080808;
+  border-bottom: 0;
+  color: #f4eee5;
+}
+
+.burnsville-header__bar {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  max-width: 1060px;
+  min-height: 64px;
+  padding: 6px 0;
+}
+
+.burnsville-logo {
+  min-height: 42px;
+  min-width: 152px;
+}
+
+.burnsville-logo__wordmark {
+  font-size: 1.78rem;
+  letter-spacing: 0.018em;
+  line-height: 0.88;
+}
+
+.burnsville-logo__descriptor {
+  font-size: 0.48rem;
+  gap: 5px;
+  letter-spacing: 0.22em;
+  margin-top: 4px;
+}
+
+.burnsville-logo__rule {
+  height: 2px;
+  max-width: 28px;
+  min-width: 22px;
+}
+
+.burnsville-header__nav {
+  align-items: center;
+  gap: 0;
+  height: 64px;
+  padding-left: 23px;
+}
+
+.burnsville-header__nav a,
+.burnsville-header__nav-button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: #f4eee5;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
+  font-size: 0.69rem;
+  font-weight: 700;
+  gap: 4px;
+  height: 64px;
+  letter-spacing: 0.075em;
+  line-height: 1;
+  padding: 0 8px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.burnsville-header__nav-button svg {
+  height: 10px;
+  width: 10px;
+}
+
+.burnsville-header__nav a::after,
+.burnsville-header__nav-button::after {
+  background: #d2282b;
+  bottom: 11px;
+  content: '';
+  height: 2px;
+  left: 8px;
+  position: absolute;
+  right: 8px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 150ms cubic-bezier(0.25, 0.7, 0.2, 1);
+}
+
+.burnsville-header__nav a:hover::after,
+.burnsville-header__nav a:focus-visible::after,
+.burnsville-header__nav-button:hover::after,
+.burnsville-header__nav-button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.burnsville-header__shop-menu {
+  align-items: stretch;
+  display: flex;
+  height: 64px;
+  position: relative;
+}
+
+.burnsville-header__shop-dropdown {
+  background: #f3ede4;
+  border-top: 3px solid #d2282b;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  min-width: 175px;
+  opacity: 0;
+  padding: 7px;
+  pointer-events: none;
+  position: absolute;
+  top: 58px;
+  transform: translateY(-5px);
+  transition: opacity 150ms ease, transform 150ms ease, visibility 150ms;
+  visibility: hidden;
+  z-index: 20;
+}
+
+.burnsville-header__shop-dropdown--open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.burnsville-header__shop-dropdown a {
+  color: #111111;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  height: auto;
+  letter-spacing: 0.03em;
+  min-height: 42px;
+  padding: 11px 10px;
+  text-transform: uppercase;
+}
+
+.burnsville-header__shop-dropdown a::after {
+  display: none;
+}
+
+.burnsville-header__shop-dropdown a:hover,
+.burnsville-header__shop-dropdown a:focus-visible {
+  background: rgba(210, 40, 43, 0.09);
+  color: #b8231b;
+}
+
+.burnsville-header__utilities {
+  gap: 0;
+}
+
+.burnsville-header__icon-button {
+  min-height: 38px;
+  min-width: 38px;
+  padding: 9px;
+}
+
+.burnsville-header__icon-button svg {
+  height: 18px;
+  width: 18px;
+}
+
+.burnsville-header__icon-button:hover {
+  background: rgba(243, 237, 228, 0.08);
+}
+
+@media (max-width: 1120px) {
+  .burnsville-header__bar {
+    max-width: none;
+    padding-inline: 24px;
+  }
+
+  .burnsville-header__nav {
+    padding-left: 16px;
+  }
+
+  .burnsville-header__nav a,
+  .burnsville-header__nav-button {
+    padding-inline: 7px;
+  }
+}
+
+@media (max-width: 900px) {
+  .burnsville-header__bar {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    min-height: 64px;
+    padding-inline: 18px;
+  }
+
+  .burnsville-header__menu-button {
+    display: inline-flex;
+  }
+
+  .burnsville-logo {
+    justify-self: start;
+    min-width: 145px;
+  }
+
+  .burnsville-header__nav {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .burnsville-header__bar {
+    padding-inline: 12px;
+  }
+
+  .burnsville-logo {
+    min-width: 128px;
+  }
+
+  .burnsville-logo__wordmark {
+    font-size: 1.5rem;
+  }
+
+  .burnsville-logo__descriptor {
+    font-size: 0.42rem;
+  }
+
+  .burnsville-header__icon-button {
+    min-height: 36px;
+    min-width: 36px;
+    padding: 8px;
+  }
+}
