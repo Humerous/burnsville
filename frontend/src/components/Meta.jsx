@@ -1,24 +1,20 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-// <---- META FUNCTION - title, description, keywords ---->
 const Meta = ({ title, description, keywords }) => {
   return (
     <Helmet>
       <title>{title}</title>
       <meta name='description' content={description} />
-      <meta name='keyword' content={keywords} />
+      <meta name='keywords' content={keywords} />
     </Helmet>
   );
 };
 
-// <---- META FUNCTION - tdefaultProps ---->
 Meta.defaultProps = {
-  title: 'Welcome To Burnsville',
-  description:
-    'We have the biggest selection of craft hot sauces in the southern hemisphere',
-  keywords: 'Food products and more...',
+  title: 'Burnsville Hot Sauce',
+  description: 'Burnsville hot sauce shop and product catalogue.',
+  keywords: 'Burnsville, hot sauce',
 };
 
-// <---- EXPORT ---->
 export default Meta;
