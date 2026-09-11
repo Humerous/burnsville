@@ -104,6 +104,13 @@ jobs:
           BASE_URL: http://127.0.0.1:5001
         run: node qa/integrated-api.mjs
 
+      - name: Run heat-filter API QA
+        env:
+          BASE_URL: http://127.0.0.1:5001
+          MONGO_URI: mongodb://127.0.0.1:27017/burnsville_qa?replicaSet=rs0
+          BURNSVILLE_QA_HEAT_FILTER: '1'
+        run: node qa/heat-filter-api.mjs
+
       - name: Run Block 11B review consistency QA
         env:
           BASE_URL: http://127.0.0.1:5001
