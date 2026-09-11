@@ -36,7 +36,15 @@ jobs:
           npm --version
 
       - name: Install backend dependencies
-        run: npm ci
+        run: npm install
+
+      - name: Capture refreshed backend lockfile
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-lockfile
+          path: package-lock.json
+          if-no-files-found: error
+          retention-days: 1
 
       - name: Install frontend dependencies
         run: npm ci --prefix frontend --include=dev
