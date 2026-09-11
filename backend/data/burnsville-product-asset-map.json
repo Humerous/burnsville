@@ -1,0 +1,29 @@
+{
+  "status": "CURRENT APPROVED 16-CARD ASSET MAP - FILE INSTALLATION PENDING",
+  "asset_directory": "/images/burnsville/cards/",
+  "master_dimensions": [1122, 1402],
+  "assets": [
+    {"series":"core","id":"01","name":"GREEN SPARK","filename":"BURNSVILLE-01-GREEN-SPARK.png","path":"/images/burnsville/cards/BURNSVILLE-01-GREEN-SPARK.png","size":[1122,1402]},
+    {"series":"core","id":"02","name":"SUN GOLD","filename":"BURNSVILLE-02-SUN-GOLD.png","path":"/images/burnsville/cards/BURNSVILLE-02-SUN-GOLD.png","size":[1122,1402]},
+    {"series":"core","id":"03","name":"CITRUS FLARE","filename":"BURNSVILLE-03-CITRUS-FLARE.png","path":"/images/burnsville/cards/BURNSVILLE-03-CITRUS-FLARE.png","size":[1122,1402]},
+    {"series":"core","id":"04","name":"RED EMBER","filename":"BURNSVILLE-04-RED-EMBER.png","path":"/images/burnsville/cards/BURNSVILLE-04-RED-EMBER.png","size":[1122,1402]},
+    {"series":"core","id":"05","name":"DARK HARVEST","filename":"BURNSVILLE-05-DARK-HARVEST.png","path":"/images/burnsville/cards/BURNSVILLE-05-DARK-HARVEST.png","size":[1122,1402]},
+    {"series":"core","id":"06","name":"SALINE CURRENT","filename":"BURNSVILLE-06-SALINE-CURRENT.png","path":"/images/burnsville/cards/BURNSVILLE-06-SALINE-CURRENT.png","size":[1122,1402]},
+    {"series":"core","id":"07","name":"CALABRIAN GLOW","filename":"BURNSVILLE-07-CALABRIAN-GLOW.png","path":"/images/burnsville/cards/BURNSVILLE-07-CALABRIAN-GLOW.png","size":[1122,1402]},
+    {"series":"core","id":"08","name":"BIRD'S FIRE","filename":"BURNSVILLE-08-BIRDS-FIRE.png","path":"/images/burnsville/cards/BURNSVILLE-08-BIRDS-FIRE.png","size":[1122,1402]},
+    {"series":"core","id":"09","name":"VIOLET'S FUSE","filename":"BURNSVILLE-09-VIOLETS-FUSE.png","path":"/images/burnsville/cards/BURNSVILLE-09-VIOLETS-FUSE.png","size":[1122,1402]},
+    {"series":"core","id":"10","name":"GHOST BLACK","filename":"BURNSVILLE-10-GHOST-BLACK.png","path":"/images/burnsville/cards/BURNSVILLE-10-GHOST-BLACK.png","size":[1122,1402]},
+    {"series":"limited-vintage","id":"P-X","name":"FERMENT BLOOM","filename":"BURNSVILLE-P-X-FERMENT-BLOOM.png","path":"/images/burnsville/cards/BURNSVILLE-P-X-FERMENT-BLOOM.png","size":[1122,1402]},
+    {"series":"limited-vintage","id":"R-13","name":"CASK 13","filename":"BURNSVILLE-R-13-CASK-13.png","path":"/images/burnsville/cards/BURNSVILLE-R-13-CASK-13.png","size":[1122,1402]},
+    {"series":"limited-vintage","id":"POT-7","name":"VELVET SCORCH","filename":"BURNSVILLE-POT-7-VELVET-SCORCH.png","path":"/images/burnsville/cards/BURNSVILLE-POT-7-VELVET-SCORCH.png","size":[1122,1402]},
+    {"series":"limited-vintage","id":"TMR-200","name":"TMR-200","filename":"BURNSVILLE-TMR-200.png","path":"/images/burnsville/cards/BURNSVILLE-TMR-200.png","size":[1122,1402]},
+    {"series":"limited-vintage","id":"B-42","name":"NIGHT ORCHARD","filename":"BURNSVILLE-B-42-NIGHT-ORCHARD.png","path":"/images/burnsville/cards/BURNSVILLE-B-42-NIGHT-ORCHARD.png","size":[1122,1402]},
+    {"series":"limited-vintage","id":"X-666","name":"FINAL BURN","filename":"BURNSVILLE-X-666-FINAL-BURN.png","path":"/images/burnsville/cards/BURNSVILLE-X-666-FINAL-BURN.png","size":[1122,1402]}
+  ],
+  "rules": [
+    "This map records the approved 16-card master filenames and intended website paths.",
+    "Do not substitute historical Burnsville asset names or third-party product images.",
+    "Do not treat path presence in this map as proof that the binary asset is already installed.",
+    "Do not delete legacy runtime assets until the approved replacement catalogue passes isolated visual and functional QA."
+  ]
+}
