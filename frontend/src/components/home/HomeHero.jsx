@@ -26,13 +26,13 @@ const HomeHero = () => (
         <div className='burnsville-home-hero__actions'>
           <Link
             className='burnsville-home-hero__cta burnsville-home-hero__cta--primary'
-            to='/'
+            to='/shop'
           >
             Shop all sauces
           </Link>
           <a
             className='burnsville-home-hero__cta burnsville-home-hero__cta--secondary'
-            href='#'
+            href='#shop-by-heat'
           >
             Explore heat guide
             <span aria-hidden='true'>→</span>
