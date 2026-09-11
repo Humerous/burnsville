@@ -50,6 +50,9 @@ The long-running V2 PR still describes several already-completed technical items
 ### KI-014 — PR #2 IS A DRAFT PREPARATION BRANCH
 It must be selectively harvested/superseded rather than merged as-is.
 
+### KI-015 — ADMIN HEAT RANGE DOES NOT MATCH PRODUCT SCHEMA
+The admin Product Edit input currently permits heat values from 1–11, while the MongoDB Product schema accepts only 1–10. Resolve this only after the final Burnsville heat-scale decision is confirmed; until then, values above 10 will fail schema validation.
+
 ## GREEN — VERIFIED WORKING FOUNDATION
 
 - Vite production build
