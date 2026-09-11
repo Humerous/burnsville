@@ -12,8 +12,8 @@ The current visual UI is provisional. Remaining visual references must be review
 ### KI-002 — FINAL BURNSVILLE CATALOGUE NOT IN RUNTIME
 The current runtime still uses legacy third-party sample products and images.
 
-### KI-003 — INTEGRATION-SPEC BRANCH NOT CONSOLIDATED
-Useful integration safety/validation work exists on `modernise/burnsville-v2-integration-spec`, but stale product assumptions prevent a blind merge.
+### KI-003 — INTEGRATION-SPEC BRANCH PARTIALLY CONSOLIDATED
+Safe control, migration and QA concepts have been moved into `modernise/burnsville-v2`. The integration-spec branch still contains visual/heat asset differences and stale historical product assumptions, so it must not be merged wholesale. Final branch retirement waits for reference review.
 
 ### KI-004 — PRODUCT IMAGE MODEL MAY BE TOO LIMITED
 Current Product schema supports one required primary image only. Final requirements may need separate product-card, bottle, gallery or pairing imagery.
@@ -38,17 +38,17 @@ Current heat presentation is guidance only.
 ### KI-010 — PRODUCT ROUTES USE MONGODB IDS
 This is functional but may later be reconsidered for public-facing product URLs. Not a current technical blocker.
 
-### KI-011 — README IS HISTORICAL
-README contains legacy setup/catalogue/seeding references and must be rewritten after the final runtime is settled.
+### KI-011 — README IS INTERIM
+Known-stale destructive/historical instructions were removed from the active branch and replaced with a modernisation notice. A complete public README still waits for final release.
 
 ### KI-012 — PUBLIC SEO/METADATA IS NOT FINAL
 Titles, descriptions, social metadata, canonical/public URL handling and final indexing assets require a release audit.
 
 ### KI-013 — PR #1 DESCRIPTION IS STALE
-The long-running V2 PR still describes several already-completed technical items as unfinished.
+The long-running V2 PR still describes several already-completed technical items as unfinished and should be reconciled before release.
 
 ### KI-014 — PR #2 IS A DRAFT PREPARATION BRANCH
-It must be selectively harvested/superseded rather than merged as-is.
+It has been partially harvested but still contains non-authoritative visual/stale reference changes. Do not merge as-is.
 
 ### KI-015 — ADMIN HEAT RANGE DOES NOT MATCH PRODUCT SCHEMA
 The admin Product Edit input currently permits heat values from 1–11, while the MongoDB Product schema accepts only 1–10. Resolve this only after the final Burnsville heat-scale decision is confirmed; until then, values above 10 will fail schema validation.
@@ -68,7 +68,8 @@ The admin Product Edit input currently permits heat values from 1–11, while th
 - upload security checks
 - integrated API QA
 - production serving QA
-- current Vercel preview deployment
+- Vercel preview deployment pipeline
+- Codex/agent repository control layer present on active V2 branch
 
 ## UPDATE RULE
 
