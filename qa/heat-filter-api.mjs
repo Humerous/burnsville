@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict';
+import mongoose from 'mongoose';
+import Product from '../backend/models/productModel.js';
 
 if (process.env.BURNSVILLE_QA_HEAT_FILTER !== '1') {
   throw new Error(
@@ -6,33 +8,14 @@ if (process.env.BURNSVILLE_QA_HEAT_FILTER !== '1') {
   );
 }
 
-const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:5001';
-const adminEmail = process.env.QA_ADMIN_EMAIL;
-const adminPassword = process.env.QA_ADMIN_PASSWORD;
-
-if (!adminEmail || !adminPassword) {
-  throw new Error('QA admin credentials must be supplied through environment variables');
+if (!process.env.MONGO_URI) {
+  throw new Error('MONGO_URI is required for isolated heat-filter QA');
 }
 
-const request = async (path, options = {}) => {
-  const headers = new Headers(options.headers || {});
+const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:5001';
 
-  if (options.token) {
-    headers.set('Authorization', `Bearer ${options.token}`);
-  }
-
-  let body = options.body;
-  if (body && typeof body !== 'string') {
-    headers.set('Content-Type', 'application/json');
-    body = JSON.stringify(body);
-  }
-
-  const response = await fetch(`${baseUrl}${path}`, {
-    method: options.method || 'GET',
-    headers,
-    body,
-  });
-
+const request = async (path) => {
+  const response = await fetch(`${baseUrl}${path}`);
   const text = await response.text();
   let data = text;
 
@@ -55,43 +38,18 @@ const expectStatus = (result, expected, label) => {
   );
 };
 
-const adminLogin = await request('/api/users/login', {
-  method: 'POST',
-  body: { email: adminEmail, password: adminPassword },
-});
-expectStatus(adminLogin, 200, 'Admin login');
-assert.ok(adminLogin.data.token, 'Admin token missing');
-const adminToken = adminLogin.data.token;
+await mongoose.connect(process.env.MONGO_URI);
 
-const catalogue = await request('/api/products');
-expectStatus(catalogue, 200, 'Catalogue');
-assert.ok(Array.isArray(catalogue.data.products), 'Catalogue products missing');
-assert.ok(catalogue.data.products.length > 0, 'No product available for heat QA');
-
-const product = catalogue.data.products[0];
+const product = await Product.findOne({});
+assert.ok(product, 'No product available for heat-filter QA');
 const originalHeatLevel = product.heatLevel ?? null;
 
-const productPayload = (heatLevel) => ({
-  name: product.name,
-  price: product.price,
-  description: product.description,
-  image: product.image,
-  brand: product.brand,
-  category: product.category,
-  countInStock: product.countInStock,
-  heatLevel,
-  flavourProfile: product.flavourProfile || '',
-  pairings: Array.isArray(product.pairings) ? product.pairings : [],
-  ingredients: product.ingredients || '',
-});
-
 const updateHeatLevel = async (heatLevel) => {
-  const result = await request(`/api/products/${product._id}`, {
-    method: 'PUT',
-    token: adminToken,
-    body: productPayload(heatLevel),
-  });
-  expectStatus(result, 200, `Set heat level ${heatLevel}`);
+  await Product.updateOne(
+    { _id: product._id },
+    { $set: { heatLevel } },
+    { runValidators: true }
+  );
 };
 
 const assertFilterIncludesProduct = async (filter, heatLevel) => {
@@ -100,7 +58,7 @@ const assertFilterIncludesProduct = async (filter, heatLevel) => {
   const filtered = await request(`/api/products?heat=${filter}`);
   expectStatus(filtered, 200, `${filter} heat filter`);
   assert.ok(
-    filtered.data.products.some((item) => item._id === product._id),
+    filtered.data.products.some((item) => item._id === String(product._id)),
     `${filter} filter did not include heat level ${heatLevel}`
   );
 };
@@ -125,7 +83,7 @@ try {
   const mildAtExtreme = await request('/api/products?heat=mild');
   expectStatus(mildAtExtreme, 200, 'Cross-band exclusion');
   assert.ok(
-    !mildAtExtreme.data.products.some((item) => item._id === product._id),
+    !mildAtExtreme.data.products.some((item) => item._id === String(product._id)),
     'Mild filter incorrectly included an Extreme product'
   );
 
@@ -133,6 +91,7 @@ try {
   expectStatus(invalid, 400, 'Invalid heat filter rejection');
 } finally {
   await updateHeatLevel(originalHeatLevel);
+  await mongoose.disconnect();
 }
 
 console.log('PASS: Burnsville heat filter API QA');
