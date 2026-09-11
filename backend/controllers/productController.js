@@ -1,6 +1,14 @@
 import asyncHandler from 'express-async-handler';
 import Product from '../models/productModel.js';
 
+const HEAT_FILTER_RANGES = {
+  mild: [1, 3],
+  medium: [4, 6],
+  hot: [7, 8],
+  'very-hot': [9, 9],
+  extreme: [10, 10],
+};
+
 const withAuthoritativeReviewSummary = (product) => {
   const productObject = product.toObject ? product.toObject() : product;
   const reviews = Array.isArray(productObject.reviews)
@@ -35,9 +43,32 @@ const getProducts = asyncHandler(async (req, res) => {
         },
       }
     : {};
+
+  const requestedHeat = req.query.heat
+    ? String(req.query.heat).trim().toLowerCase()
+    : '';
+  const heatRange = requestedHeat
+    ? HEAT_FILTER_RANGES[requestedHeat]
+    : null;
+
+  if (requestedHeat && !heatRange) {
+    res.status(400);
+    throw new Error('Invalid heat filter');
+  }
+
+  const heatFilter = heatRange
+    ? {
+        heatLevel: {
+          $gte: heatRange[0],
+          $lte: heatRange[1],
+        },
+      }
+    : {};
+  const filters = { ...keyword, ...heatFilter };
+
   // <---- GET ROUTES - count all products ---->
-  const count = await Product.countDocuments({ ...keyword });
-  const productDocuments = await Product.find({ ...keyword })
+  const count = await Product.countDocuments(filters);
+  const productDocuments = await Product.find(filters)
     .limit(pageSize)
     .skip(pageSize * (page - 1));
   const products = productDocuments.map(withAuthoritativeReviewSummary);
