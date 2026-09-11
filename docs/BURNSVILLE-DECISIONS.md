@@ -18,8 +18,8 @@ The current visual UI is provisional and will change after final reference intak
 ### D-004 — WORKING ENGINE MUST BE PRESERVED
 Authentication, authorization, product CRUD, cart, stock, checkout/order flow, reviews, admin functionality, upload security and automated QA must be preserved through the UI rebuild unless a verified defect requires change.
 
-### D-005 — INTEGRATION BRANCH POLICY
-`modernise/burnsville-v2-integration-spec` must not be merged wholesale. Its useful validation, migration and QA material should be selectively ported after review.
+### D-005 — INTEGRATION BRANCH CONSOLIDATED
+`modernise/burnsville-v2-integration-spec` is superseded. Its safe validation, migration and QA concepts were selectively consolidated into the primary V2 branch. PR #2 is closed without merge. Stale product identities and visual assumptions from that branch are historical only.
 
 ### D-006 — NO INVENTED PRODUCT DATA
 Missing product facts, names, descriptions, ingredients, pairings, heat values, prices, stock, filenames or paths must remain unresolved until explicitly supplied or approved.
@@ -45,8 +45,14 @@ A final design-system document will be created only after remaining references h
 ### D-013 — INTERIM README POLICY
 The active branch must not retain stale destructive/seeding instructions. Until final release documentation is written, README may contain a clearly marked modernisation-status notice and point to repository control files.
 
-### D-014 — HEAT SCALE MISMATCH
-The admin UI currently allows 1–11 while the Product schema accepts 1–10. Do not choose a final scale implicitly. Resolve this when the final Burnsville heat system is approved.
+### D-014 — CURRENT TECHNICAL HEAT RANGE
+The current Product schema defines heat as 1–10 and the admin editor now matches that range. If the final approved Burnsville system later requires another scale, schema, validation, UI and QA must be changed together as an explicit product decision.
+
+### D-015 — STALE CATALOGUE/ASSET AUTHORITY REMOVED
+Superseded locked catalogue and asset-map files were removed from the active V2 branch. They must not be recreated as authority from Git history.
+
+### D-016 — NEUTRAL METADATA UNTIL RELEASE
+Unsupported legacy marketing claims were removed. Neutral Burnsville metadata is acceptable during development; final canonical/social/launch metadata waits for the released public identity and URL.
 
 ## PENDING DECISIONS
 
@@ -56,7 +62,8 @@ The following must remain open until the reference/product handoff is complete:
 - final product image/gallery model
 - final product catalogue facts and commercial values
 - final shop browsing/pagination/filtering model
-- final heat scale and whether heat levels become real filters
+- whether heat levels become real filters
+- whether the final approved product system changes the current 1–10 heat scale
 - whether human-readable product slugs are introduced
 - final homepage featured-product strategy
 - final admin presentation
