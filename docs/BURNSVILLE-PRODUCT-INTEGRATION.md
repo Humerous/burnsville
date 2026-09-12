@@ -2,24 +2,31 @@
 
 ## STATUS
 
-PREPARED / FINAL PRODUCT AND VISUAL HANDOFF PENDING.
+IDENTITIES LOCKED / FINAL PRODUCT FACTS, ASSET ROLES AND IMAGE ARCHITECTURE PENDING.
 
 This document defines how approved Burnsville products will enter the existing application without inventing facts, bypassing QA or creating a parallel product system.
 
 ## AUTHORITY
 
-Final product identity, facts, artwork and intended visual use must come from the user's current approved handoff/reference set.
+`BURNSVILLE-MASTER-AUTHORITY.md` is the sole current authority for product identities unless the owner explicitly approves a newer change.
 
-Historical catalogue/asset-map files are not final authority.
+Historical catalogue/asset-map files are supporting evidence only. Historical descriptive labels and filenames cannot rename products or approve product facts.
 
-## REQUIRED HANDOFF PER PRODUCT
+## LOCKED IDENTITY HANDOFF
+
+Already complete:
+
+- 16 products total
+- 10 Core identities numbered 01–10
+- 6 Limited / Vintage identities: `P-X`, `CASK-13`, `POT-7`, `TMR-200`, `X-666`, `B-42`
+
+Do not request re-approval of these identities unless the owner explicitly reopens them.
+
+## REQUIRED REMAINING HANDOFF PER PRODUCT
 
 Supply only explicitly approved values:
 
-- final name
-- final identifier/code/number where applicable
-- collection/series where applicable
-- approved primary visual asset
+- approved primary/runtime visual asset
 - approved asset role
 - description if supplied
 - heat value if supplied
@@ -28,6 +35,7 @@ Supply only explicitly approved values:
 - pairings if supplied
 - price if supplied
 - stock/availability if supplied
+- any descriptive display name for Limited / Vintage only if explicitly approved
 
 Any value not supplied remains unresolved.
 
@@ -41,7 +49,7 @@ Before implementation, each visual must be classified where relevant as one of:
 - PAIRING / SUPPORTING ART
 - PAGE DESIGN REFERENCE ONLY
 
-Do not infer an asset role from appearance alone.
+Do not infer an asset role from appearance or filename alone.
 
 ## CURRENT APPLICATION FLOW
 
@@ -70,7 +78,7 @@ The current runtime supports:
 - `price`
 - `countInStock`
 
-The current single `image` field is a known constraint. Final reference intake must decide whether separate card/bottle/gallery/supporting image fields are required.
+The current single `image` field is a known constraint. The final asset handoff must decide whether separate card/bottle/gallery/supporting image fields are required.
 
 ## SAFE GENERAL DEFAULTS FOR NEW BURNSVILLE PRODUCTS
 
@@ -94,25 +102,31 @@ Do not run bootstrap against a non-empty product collection as a replacement mec
 
 ## FINAL INTEGRATION SEQUENCE
 
-1. Complete reference intake.
-2. Lock final design/product authority.
-3. Confirm final product count and identities.
+Completed control gates:
+
+1. Product count and identities locked in `BURNSVILLE-MASTER-AUTHORITY.md`.
+2. Authority drift protected by `qa/product-authority.mjs` in CI.
+3. Approved UI and working commerce engine preserved.
+
+Next gates:
+
 4. Confirm required product/image schema.
-5. Validate final source assets.
-6. Approve runtime filenames/paths.
-7. Build replacement JSON from approved values only.
-8. Run the read-only catalogue validator.
-9. Test against an isolated database/runtime.
-10. Verify Home, Shop, Product, Cart, Checkout/Order and Admin.
-11. Verify responsive and accessibility behaviour.
-12. Review migration and rollback procedure.
-13. Migrate a shared environment only with explicit approval.
-14. Remove legacy third-party catalogue data/assets only after replacement QA passes.
+5. Validate and classify final source assets.
+6. Resolve card geometry and approve runtime filenames/paths.
+7. Complete approved product facts/commercial values.
+8. Build replacement JSON from approved values only.
+9. Run product-authority QA and the read-only catalogue validator.
+10. Test against an isolated database/runtime.
+11. Verify Home, Shop, Product, Cart, Checkout/Order and Admin.
+12. Verify responsive and accessibility behaviour.
+13. Review migration and rollback procedure.
+14. Migrate a shared environment only with explicit approval.
+15. Remove legacy third-party catalogue data/assets only after replacement QA passes.
 
 ## PASS CONDITION
 
 The final approved product set must travel through:
 
-ASSET → DATA → VALIDATOR → API → HOME/SHOP → PRODUCT → CART → CHECKOUT/ORDER → ADMIN
+AUTHORITY → ASSET → DATA → VALIDATOR → API → HOME/SHOP → PRODUCT → CART → CHECKOUT/ORDER → ADMIN
 
-without invented values, broken assets, public legacy catalogue content or unauthorised database changes.
+without invented values, broken assets, identity drift, public legacy catalogue content or unauthorised database changes.
