@@ -1,13 +1,14 @@
 {
-  "status": "AUTHORITATIVE 16-PRODUCT NAME AND RANGE HANDOFF — PRODUCT FACTS AND ASSETS REQUIRED",
-  "authority": "Current explicit owner instruction: 16 products, 10 Core and 6 Limited / Vintage, with no product-name changes",
+  "status": "AUTHORITATIVE 16-PRODUCT IDENTITY HANDOFF — PRODUCT FACTS AND ASSETS REQUIRED",
+  "authority": "BURNSVILLE-MASTER-AUTHORITY.md",
   "confirmedFacts": [
     "16 products total",
-    "10 Core product names",
-    "6 Limited / Vintage product names"
+    "10 Core product identities",
+    "6 Limited / Vintage product identities"
   ],
   "unresolved": [
-    "product identifiers and SKUs",
+    "Limited / Vintage descriptive display names, if any",
+    "SKU/identifier policy beyond the locked identities",
     "current approved asset files and asset roles",
     "descriptions",
     "heat levels",
@@ -18,21 +19,21 @@
     "stock"
   ],
   "products": [
-    {"collection":"Core","name":"GREEN SPARK","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"SUN GOLD","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"CITRUS FLARE","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"RED EMBER","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"DARK HARVEST","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"SALINE CURRENT","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"CALABRIAN GLOW","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"BIRD'S FIRE","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"VIOLETS FUSE","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"GHOST BLACK","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"FERMENT BLOOM","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"CASK 13","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"VELVET SCORCH","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"DESERT STATIC","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"FINAL BURN","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"NIGHT ORCHARD","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"}
+    {"collection":"Core","name":"GREEN SPARK","identifier":"01","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Core","name":"SUN GOLD","identifier":"02","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Core","name":"CITRUS FLARE","identifier":"03","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Core","name":"RED EMBER","identifier":"04","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Core","name":"DARK HARVEST","identifier":"05","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Core","name":"SALINE CURRENT","identifier":"06","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Core","name":"CALABRIAN SUN","identifier":"07","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Core","name":"BIRD’S FIRE","identifier":"08","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Core","name":"VIOLET’S FUSE","identifier":"09","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Core","name":"GHOST BLACK","identifier":"10","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Limited / Vintage","name":"P-X","identifier":"P-X","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Limited / Vintage","name":"CASK-13","identifier":"CASK-13","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Limited / Vintage","name":"POT-7","identifier":"POT-7","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Limited / Vintage","name":"TMR-200","identifier":"TMR-200","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Limited / Vintage","name":"X-666","identifier":"X-666","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Limited / Vintage","name":"B-42","identifier":"B-42","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"}
   ]
 }
