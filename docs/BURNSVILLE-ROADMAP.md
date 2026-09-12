@@ -22,7 +22,7 @@ Implemented:
 - product integration contract
 - catalogue migration safety plan
 - final integration QA checklist
-- final catalogue intake with the 15 currently confirmed names and explicit unresolved fields
+- final catalogue intake with 16 confirmed names, a 10/6 range split and explicit unresolved fields
 - stale catalogue replacement map replaced with a neutral control gate
 - catalogue authority reconciliation report
 - superseded 16-product maps quarantined as historical evidence and their installer disabled

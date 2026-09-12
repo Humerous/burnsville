@@ -7,7 +7,7 @@ Track verified remaining work. Do not use this file to invent new scope.
 ## RED — RELEASE BLOCKERS
 
 ### KI-002 — FINAL BURNSVILLE CATALOGUE NOT IN RUNTIME
-The current runtime still uses legacy third-party sample products and images. Fifteen current names are confirmed, but the final total, product facts, identifiers and matching assets remain unresolved. Replacement is blocked until the complete approved Burnsville catalogue and assets are available and validated.
+The current runtime still uses legacy third-party sample products and images. The final count and 16 names are confirmed, but product facts, identifiers and matching assets remain unresolved. Replacement is blocked until the complete approved Burnsville catalogue and assets are available and validated.
 
 ### KI-004 — FINAL PRODUCT IMAGE MODEL NOT CONFIRMED
 The current Product schema supports one required primary image. The conflict-free final product handoff must determine whether separate product-card, bottle, gallery or pairing imagery is structurally required.
@@ -56,7 +56,7 @@ FIXED. PR #2 is closed as superseded; branch history remains available for refer
 FIXED. The admin Product Edit input now matches the current MongoDB schema at 1–10.
 
 ### KI-016 — STALE LOCKED PRODUCT/ASSET AUTHORITY
-FIXED. Superseded catalogue/asset-map files are clearly marked as historical evidence, the conflicting installer is fail-closed, and the current partial authority is documented in `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
+FIXED. Superseded catalogue/asset-map files are clearly marked as historical evidence, the conflicting installer is fail-closed, and the current confirmed name/count authority is documented in `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
 
 ### KI-017 — LEGACY DEFAULT METADATA CLAIMS
 FIXED. Generic/unsupported metadata claims were replaced with neutral Burnsville defaults pending final release metadata.

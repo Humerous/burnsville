@@ -54,8 +54,8 @@ Superseded catalogue and asset-map files are retained only as explicitly marked 
 ### D-016 — NEUTRAL METADATA UNTIL RELEASE
 Unsupported legacy marketing claims were removed. Neutral Burnsville metadata is acceptable during development; final canonical/social/launch metadata waits for the released public identity and URL.
 
-### D-017 — CURRENT PRODUCT-NAME AUTHORITY IS PARTIAL
-The final build instruction confirms 10 currently known Core names and 5 currently known Limited / Vintage names. It does not confirm that 15 is the final total. Only those names are recorded as current facts; all identifiers, assets and product/commercial values remain unresolved until supplied or approved.
+### D-017 — FINAL PRODUCT COUNT AND NAMES
+The project owner confirmed 16 products: 10 Core and 6 Limited / Vintage. `NIGHT ORCHARD` is the sixth Limited product. The confirmed names are recorded in `backend/data/burnsville-final-catalogue-intake.json`; identifiers, assets and product/commercial values remain unresolved until supplied or approved.
 
 ## PENDING DECISIONS
 

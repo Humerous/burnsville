@@ -36,7 +36,7 @@
   "migration_notes": [
     "This file is preserved only to document the superseded 16-product mapping.",
     "SALINE CURRENT, CALABRIAN GLOW, FERMENT BLOOM and VELVET SCORCH conflict with the current final build handoff.",
-    "NIGHT ORCHARD is absent from the current known product list.",
+    "NIGHT ORCHARD is now confirmed as the sixth current Limited / Vintage product, but this historical file remains non-authoritative for its identifier, asset path and product facts.",
     "Do not reuse any identity, identifier, asset path or commercial/product fact from this file without explicit current approval."
   ]
 }

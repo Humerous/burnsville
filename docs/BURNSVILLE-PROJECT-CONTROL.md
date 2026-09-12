@@ -58,7 +58,7 @@ The primary V2 branch now contains:
 - controlled product-integration contract
 - safe catalogue migration plan
 - final product-integration QA checklist
-- final catalogue intake with 15 currently confirmed names and unresolved-field markers
+- final catalogue intake with 16 confirmed names, a 10/6 range split and unresolved-field markers
 - corrected catalogue replacement controls
 - catalogue authority reconciliation report
 - interim README safety notice
@@ -80,7 +80,7 @@ Not imported as authority:
 ## OPEN WORKSTREAMS
 
 1. Final product data/image architecture.
-2. Complete the partial Burnsville catalogue and asset handoff recorded in `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
+2. Complete the Burnsville product-fact and asset handoff recorded in `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
 3. Controlled catalogue migration and product-specific regression QA.
 4. Final release SEO/public metadata and legal destinations.
 5. Final public README/repository presentation.

@@ -1,12 +1,12 @@
 {
-  "status": "PARTIAL AUTHORITATIVE NAME HANDOFF — FINAL COUNT, PRODUCT FACTS AND ASSETS REQUIRED",
+  "status": "AUTHORITATIVE 16-PRODUCT NAME AND RANGE HANDOFF — PRODUCT FACTS AND ASSETS REQUIRED",
   "authority": "Current uploaded BURNSVILLE — FINAL WEBSITE BUILD instruction, LOCKED PRODUCT AUTHORITY section",
   "confirmedFacts": [
-    "10 currently known Core product names",
-    "5 currently known Limited / Vintage product names"
+    "16 products total",
+    "10 Core product names",
+    "6 Limited / Vintage product names"
   ],
   "unresolved": [
-    "final total product count",
     "product identifiers and SKUs",
     "current approved asset files and asset roles",
     "descriptions",
@@ -32,6 +32,7 @@
     {"collection":"Limited / Vintage","name":"CASK-13","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
     {"collection":"Limited / Vintage","name":"VELVET BURN","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
     {"collection":"Limited / Vintage","name":"DESERT STATIC","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"FINAL BURN","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"}
+    {"collection":"Limited / Vintage","name":"FINAL BURN","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
+    {"collection":"Limited / Vintage","name":"NIGHT ORCHARD","identifier":"DATA REQUIRED","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"}
   ]
 }

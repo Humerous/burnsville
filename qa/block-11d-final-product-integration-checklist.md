@@ -12,7 +12,7 @@ Do not infer missing product facts. Do not redesign supplied artwork. Do not mut
 
 ## 1. HANDOFF INTAKE
 
-- [ ] Final product count confirmed.
+- [x] Final product count confirmed: 16 total, 10 Core and 6 Limited / Vintage.
 - [ ] Every product has an approved identity/code where applicable.
 - [ ] Every product has approved visual assets.
 - [ ] Asset roles are explicitly classified.

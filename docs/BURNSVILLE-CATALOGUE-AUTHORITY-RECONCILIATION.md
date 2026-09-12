@@ -2,7 +2,7 @@
 
 ## STATUS
 
-PARTIAL AUTHORITY CONFIRMED / RUNTIME REPLACEMENT BLOCKED.
+PRODUCT COUNT AND NAMES CONFIRMED / PRODUCT FACTS AND ASSETS BLOCKED.
 
 Audit date: 2026-09-12
 
@@ -12,9 +12,9 @@ Starting HEAD: `3975fec90de2c9f9ed09b0a840a565897152d2cd`
 
 ## OUTCOME
 
-The final uploaded build instruction confirms 15 currently known product names: 10 Core and 5 Limited / Vintage. It does not confirm that 15 is the complete final catalogue, and it does not supply the remaining product facts or current matching product artwork.
+The project owner confirmed a final catalogue of 16 products: 10 Core and 6 Limited / Vintage. `NIGHT ORCHARD` is retained as the sixth Limited / Vintage product. The remaining product facts and current matching product artwork have not been supplied.
 
-The preserved 16-product dataset and its card/bottle assets are technically valid historical evidence. They cannot be promoted into the current runtime because several identities conflict with the final instruction, one historical product is absent from the current known list, and the historical cards do not meet the current 1:1 card rule.
+The preserved 16-product dataset and its card/bottle assets are technically valid historical evidence. They cannot be promoted into the current runtime because several identities conflict with the final instruction and the historical cards do not meet the current 1:1 card rule.
 
 No product data, image, runtime catalogue or database record was changed by this reconciliation.
 
@@ -67,12 +67,12 @@ The historical cards are portrait assets. The current final build instruction de
 | Limited / Vintage | VELVET BURN | VELVET SCORCH | Conflict. Historical labelled artwork is not current authority. |
 | Limited / Vintage | DESERT STATIC | DESERT STATIC | Name confirmed. Historical bottle/card remain candidates only pending current asset-role and geometry approval. |
 | Limited / Vintage | FINAL BURN | FINAL BURN | Name confirmed. Historical bottle/card remain candidates only pending current asset-role and geometry approval. |
-| Historical only | Not present in current known list | NIGHT ORCHARD | Excluded from the active intake unless the owner explicitly restores it. |
+| Limited / Vintage | NIGHT ORCHARD | NIGHT ORCHARD | Name and range membership confirmed. Historical bottle/card remain candidates only pending current asset-role and geometry approval. |
 
 ## CURRENT SAFE DECISIONS
 
-- The 15 names in `backend/data/burnsville-final-catalogue-intake.json` are the only current product facts recorded as confirmed.
-- The final catalogue count remains unresolved because the handoff says the names are currently known, not that the list is exhaustive.
+- The final catalogue contains 16 products: 10 Core and 6 Limited / Vintage.
+- The 16 names in `backend/data/burnsville-final-catalogue-intake.json` are the only current product facts recorded as confirmed.
 - `backend/data/burnsville-product-catalogue.json` and `backend/data/burnsville-product-asset-map.json` are retained as historical evidence and explicitly marked as superseded.
 - `scripts/install-approved-product-cards.sh` is disabled because its manifest installs superseded labelled assets.
 - No historical price, stock, heat, description, ingredients, pairings, ratings, reviews or identifiers may be copied into the current catalogue without explicit approval.
@@ -80,13 +80,12 @@ The historical cards are portrait assets. The current final build instruction de
 
 ## REQUIRED HANDOFF TO UNBLOCK RUNTIME REPLACEMENT
 
-1. Confirm the final total product count and whether any product is missing from the 15-name list.
-2. Supply the final identifier/SKU for every product.
-3. Supply current approved card and bottle assets with an explicit role for each file, including assets matching the renamed products.
-4. Confirm whether the final card standard is strictly 1254 × 1254 or approve a documented exception.
-5. Supply approved description, heat, flavour, ingredients, pairings, price and stock for every product.
-6. Confirm the final runtime image/gallery architecture.
-7. Review the completed replacement dataset and isolated migration/rollback plan before any shared data change.
+1. Supply the final identifier/SKU for every product.
+2. Supply current approved card and bottle assets with an explicit role for each file, including assets matching the renamed products.
+3. Confirm whether the final card standard is strictly 1254 × 1254 or approve a documented exception.
+4. Supply approved description, heat, flavour, ingredients, pairings, price and stock for every product.
+5. Confirm the final runtime image/gallery architecture.
+6. Review the completed replacement dataset and isolated migration/rollback plan before any shared data change.
 
 ## NEXT IMPLEMENTATION GATE
 
