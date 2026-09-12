@@ -48,11 +48,14 @@ The active branch must not retain stale destructive/seeding instructions. Until 
 ### D-014 — CURRENT TECHNICAL HEAT RANGE
 The current Product schema defines heat as 1–10 and the admin editor now matches that range. If the final approved Burnsville system later requires another scale, schema, validation, UI and QA must be changed together as an explicit product decision.
 
-### D-015 — STALE CATALOGUE/ASSET AUTHORITY REMOVED
-Superseded locked catalogue and asset-map files were removed from the active V2 branch. They must not be recreated as authority from Git history.
+### D-015 — STALE CATALOGUE/ASSET AUTHORITY QUARANTINED
+Superseded catalogue and asset-map files are retained only as explicitly marked historical evidence. The historical card installer is fail-closed. None of these files may be promoted from Git history or used for runtime integration.
 
 ### D-016 — NEUTRAL METADATA UNTIL RELEASE
 Unsupported legacy marketing claims were removed. Neutral Burnsville metadata is acceptable during development; final canonical/social/launch metadata waits for the released public identity and URL.
+
+### D-017 — CURRENT PRODUCT-NAME AUTHORITY IS PARTIAL
+The final build instruction confirms 10 currently known Core names and 5 currently known Limited / Vintage names. It does not confirm that 15 is the final total. Only those names are recorded as current facts; all identifiers, assets and product/commercial values remain unresolved until supplied or approved.
 
 ## PENDING DECISIONS
 

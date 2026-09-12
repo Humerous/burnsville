@@ -1,6 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
+echo "ERROR: This historical 16-card installer is disabled."
+echo "Its labelled asset manifest conflicts with the current final product handoff."
+echo "Use docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md and wait for current approved assets."
+exit 2
+
 EXPECTED_BRANCH="modernise/burnsville-v2"
 TARGET_REL="frontend/public/images/burnsville/cards"
 ZIP_OR_DIR="${1:-}"

@@ -1,5 +1,6 @@
 {
-  "status": "CURRENT APPROVED 16-CARD ASSET MAP - FILE INSTALLATION PENDING",
+  "status": "HISTORICAL 16-CARD ASSET MAP — SUPERSEDED; FILE INSTALLATION PROHIBITED",
+  "authority": "Historical mapping recorded in commit 7d1760c; retained as evidence only",
   "asset_directory": "/images/burnsville/cards/",
   "master_dimensions": [1122, 1402],
   "assets": [
@@ -21,9 +22,9 @@
     {"series":"limited-vintage","id":"X-666","name":"FINAL BURN","filename":"BURNSVILLE-X-666-FINAL-BURN.png","path":"/images/burnsville/cards/BURNSVILLE-X-666-FINAL-BURN.png","size":[1122,1402]}
   ],
   "rules": [
-    "This map records the approved 16-card master filenames and intended website paths.",
-    "Do not substitute historical Burnsville asset names or third-party product images.",
-    "Do not treat path presence in this map as proof that the binary asset is already installed.",
-    "Do not delete legacy runtime assets until the approved replacement catalogue passes isolated visual and functional QA."
+    "This map records a superseded 16-card filename set and is historical evidence only.",
+    "Several labels conflict with the current final build handoff and the 1122x1402 geometry conflicts with the current 1:1 card rule.",
+    "Do not install these paths or treat this map as current product or asset authority.",
+    "Do not delete legacy runtime assets until a current approved replacement catalogue passes isolated visual and functional QA."
   ]
 }

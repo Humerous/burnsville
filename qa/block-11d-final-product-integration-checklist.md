@@ -2,7 +2,9 @@
 
 ## STATUS
 
-PREPARED / WAITING FOR FINAL PRODUCT AND VISUAL HANDOFF.
+PARTIAL HANDOFF RECONCILED / WAITING FOR COMPLETE PRODUCT AND ASSET HANDOFF.
+
+Current evidence: `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
 
 ## RULE
 
@@ -14,8 +16,8 @@ Do not infer missing product facts. Do not redesign supplied artwork. Do not mut
 - [ ] Every product has an approved identity/code where applicable.
 - [ ] Every product has approved visual assets.
 - [ ] Asset roles are explicitly classified.
-- [ ] Required product facts/commercial values are supplied or explicitly unresolved.
-- [ ] Historical catalogue files are not used to fill missing values automatically.
+- [x] Required product facts/commercial values are supplied or explicitly unresolved.
+- [x] Historical catalogue files are not used to fill missing values automatically.
 
 ## 2. ARCHITECTURE GATES
 
@@ -23,7 +25,7 @@ Do not infer missing product facts. Do not redesign supplied artwork. Do not mut
 - [ ] If multiple structural images are required, approve schema/API/admin/UI expansion first.
 - [ ] Confirm Shop browsing/pagination behaviour.
 - [ ] Confirm homepage featured-product strategy.
-- [ ] Confirm whether heat remains guidance or becomes a real filter.
+- [x] Confirm whether heat remains guidance or becomes a real filter. Current implementation uses the real server-side heat filter.
 - [ ] Confirm whether MongoDB-ID product URLs remain acceptable or slugs are approved.
 
 ## 3. ASSET QA
