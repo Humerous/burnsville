@@ -27,7 +27,7 @@ The approved three-block visual UI was implemented and verified in commit `8d340
 11. Do not use historical catalogue or asset-map files as final product authority.
 12. Do not expose secrets or commit real credentials. Environment variable names may be documented in `.env.example`; values must remain external.
 13. Do not use `npm audit fix --force`.
-14. Do not lower QA gates to make a build pass.
+14. Do not lower, remove or bypass QA/authority gates merely to make a build pass.
 15. Do not deploy Production or change the production domain without explicit approval.
 
 ## WORKFLOW
@@ -44,6 +44,7 @@ REFERENCE INTAKE → CLASSIFY AUTHORITY → AGREE → UPDATE MASTER AUTHORITY �
 
 Before calling a coding block complete:
 
+- run `node qa/product-authority.mjs` for any product/catalogue/control change
 - run the relevant build
 - run relevant automated QA
 - run `git diff --check`
@@ -55,7 +56,7 @@ For UI work, final browser/responsive verification is required after the visual 
 
 ## CURRENT TECHNICAL BASELINE
 
-The current V2 branch has a working Vite frontend, Express/Mongoose backend, authentication, admin screens, product CRUD, cart, checkout/order flow, reviews, GridFS-backed admin image upload, Vercel preview deployment, and automated API/security/production-serving QA.
+The current V2 branch has a working Vite frontend, Express/Mongoose backend, authentication, admin screens, product CRUD, cart, checkout/order flow, reviews, GridFS-backed admin image upload, real server-side search/heat filtering/pagination, Vercel preview deployment, and automated API/security/production-serving QA.
 
 Treat these capabilities as assets to preserve.
 
