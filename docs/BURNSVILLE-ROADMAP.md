@@ -4,7 +4,7 @@
 
 FINAL PRODUCT INTEGRATION + RELEASE PREPARATION.
 
-The approved three-block visual UI and its responsive/browser QA are complete. Preserve that system while the final catalogue and release inputs are resolved.
+The approved three-block visual UI and its responsive/browser QA are complete. Product identity authority is locked in `BURNSVILLE-MASTER-AUTHORITY.md`. Preserve those systems while the remaining product facts, asset roles and release inputs are resolved.
 
 ## PACK 0 — CODEX READINESS + CONTROL
 
@@ -15,6 +15,7 @@ Goal: make the repository safe for longer Codex execution blocks.
 Implemented:
 
 - root `AGENTS.md`
+- root `BURNSVILLE-MASTER-AUTHORITY.md`
 - project control baseline
 - architecture baseline
 - decision register
@@ -22,19 +23,21 @@ Implemented:
 - product integration contract
 - catalogue migration safety plan
 - final integration QA checklist
-- final catalogue intake with 16 confirmed names, a 10/6 range split and explicit unresolved fields
-- stale catalogue replacement map replaced with a neutral control gate
+- final catalogue intake with 16 locked product identities, a 10/6 range split and explicit unresolved fields
+- supporting catalogue and asset maps quarantined from runtime authority
 - catalogue authority reconciliation report
-- original 16 product names confirmed; supporting facts/assets remain non-runtime and the portrait-card installer remains disabled pending geometry approval
+- portrait-card installer disabled pending geometry and asset-role approval
+- automated `qa/product-authority.mjs` identity guard wired into CI
 - interim README safety notice
 - active branch authority documented
 - current approved UI authority recorded
 
 Still intentionally excluded from authority:
 
-- unapproved historical product facts and rejected renamed forms
-- rejected asset maps
-- integration-branch visual/heat artwork decisions
+- unapproved historical product/commercial facts
+- historical descriptive labels as product identities
+- unapproved asset roles and paths
+- integration-branch visual assumptions
 
 Pass condition: future agents can identify source of truth, protected areas, open work and release gates without reconstructing chat history.
 
@@ -44,72 +47,52 @@ Status: COMPLETE for the supplied approved visual pack.
 
 Goal: turn uploaded visual references into one implementation authority.
 
-Actions:
-
-- classify references as authoritative/supporting/inspiration/superseded
-- resolve conflicting visual directions
-- document final typography, colour, spacing, component, imagery and responsive rules
-- define page-level reference hierarchy
-- create final design-system documentation
-
 Pass condition: visual implementation can proceed without guessing.
 
 ## PACK 2 — PRODUCT ARCHITECTURE + FINAL CATALOGUE CONTRACT
 
+Status: PARTIAL — PRODUCT IDENTITIES LOCKED; PRODUCT FACTS/ASSET ARCHITECTURE PENDING.
+
 Goal: define the exact data/image model required by the final product experience.
 
-Actions:
+Complete:
+
+- final product count: 16
+- final Core identities: 01–10
+- final Limited / Vintage identities: `P-X`, `CASK-13`, `POT-7`, `TMR-200`, `X-666`, `B-42`
+- current technical heat range: 1–10
+- real server-side heat filtering
+
+Still required:
 
 - decide whether one image remains sufficient
 - define any gallery/card/bottle/supporting image fields required
-- confirm product identity/code fields
-- confirm final shop browsing strategy
-- confirm final heat scale/filter behaviour
+- classify final runtime asset roles
+- resolve portrait-card versus approved square-card geometry
+- confirm final shop browsing/pagination behaviour
 - confirm homepage merchandising strategy
-- update admin data requirements
-- update final-catalogue validator
+- approve product facts/commercial values
+- update final-catalogue validator for the approved completed dataset
 
-Pass condition: product data architecture matches the approved UI and handoff.
+Pass condition: product data architecture matches the approved UI and complete handoff.
 
 ## PACK 3 — FINAL UI IMPLEMENTATION
 
 Status: COMPLETE in commit `8d3403ce4be7f221ea9e5862b9965ba915ed2957`.
 
-Goal: rebuild the customer/admin presentation around the existing working engine.
+Goal: preserve the approved customer/admin presentation and working engine.
 
-Preserve:
-
-- auth
-- authorization
-- product/business logic
-- cart
-- stock
-- orders
-- reviews
-- image upload
-- security/QA behaviour
-
-Rework as approved:
-
-- header/navigation
-- home
-- shop
-- product experience
-- auth/account
-- cart/checkout
-- admin presentation
-- footer
-- responsive styling
-
-Pass condition: approved UI implemented without functional regressions.
+Pass condition: approved UI remains implemented without functional regressions.
 
 ## PACK 4 — FINAL PRODUCT INTEGRATION
+
+Status: BLOCKED ONLY BY REMAINING APPROVED PRODUCT FACTS / ASSET-ROLE INPUTS.
 
 Goal: replace the legacy demo catalogue with approved Burnsville products.
 
 Flow:
 
-FINAL HANDOFF → VALIDATOR → ISOLATED DATASET → API QA → FRONTEND QA → MIGRATION REVIEW
+FINAL HANDOFF → AUTHORITY QA → VALIDATOR → ISOLATED DATASET → API QA → FRONTEND QA → MIGRATION REVIEW
 
 No missing product facts may be inferred.
 
@@ -119,20 +102,10 @@ Pass condition: all approved products/assets work through Home, Shop, Product, C
 
 Status: CUSTOMER E2E AND REQUIRED RESPONSIVE/ACCESSIBILITY QA COMPLETE; repeat product-specific checks after Pack 4 catalogue integration.
 
-Goal: prove the finished application.
+Required release checks include:
 
-Required flows:
-
-Customer:
-
-SIGN IN → SHOP → PRODUCT → CART → CHECKOUT → ORDER
-
-Admin:
-
-SIGN IN → PRODUCTS → EDIT → UPLOAD → SAVE
-
-Also verify:
-
+- customer flow
+- admin product/edit/upload flow
 - 1440 desktop
 - 768 tablet
 - 390 mobile
@@ -142,10 +115,11 @@ Also verify:
 - no horizontal overflow
 - no console errors
 - build and API QA
+- product-authority QA
 - production dependency gate
 - performance/image optimisation
 
-Pass condition: functional, responsive and accessibility gates pass.
+Pass condition: functional, responsive, accessibility and authority gates pass.
 
 ## PACK 6 — PUBLIC RELEASE
 
@@ -153,13 +127,13 @@ Goal: turn the completed app into a production and portfolio-quality release.
 
 Actions:
 
-- remove obsolete legacy product assets/data after rollback evidence exists
+- remove obsolete legacy product assets/data only after rollback evidence exists
 - write final public README
 - final SEO/meta/OpenGraph/canonical/sitemap/robots
 - final favicon/social imagery
-- reconcile and update PR descriptions
-- final release PR to `main`
-- production deployment after approval
+- keep PR #1 description current
+- final release review to `main`
+- production deployment after explicit approval
 - live QA
 - release/tag/handoff
 
@@ -167,4 +141,4 @@ Pass condition: production passes and repository documentation matches the relea
 
 ## GLOBAL RULE
 
-Do not jump forward merely because later work is technically possible. Each pack must preserve the pass conditions of previous packs.
+Do not jump forward merely because later work is technically possible. Each pack must preserve the pass conditions of previous packs. Product identity changes require explicit owner approval and an update to `BURNSVILLE-MASTER-AUTHORITY.md` before implementation.
