@@ -2,7 +2,7 @@
 
 > **Modernisation in progress**
 >
-> The active development source for the modernised Burnsville application is `modernise/burnsville-v2`. The approved three-block visual UI is implemented and verified; the final Burnsville product catalogue and public release inputs remain incomplete. Historical setup, seeding, product and deployment information previously stored in this README is no longer authoritative and has been intentionally removed from the active branch to prevent destructive or stale instructions from being followed.
+> The active development source for the modernised Burnsville application is `modernise/burnsville-v2`. The approved three-block visual UI is implemented and verified. Product identity authority is locked; final product facts, asset roles, runtime catalogue replacement and public release inputs remain incomplete. Historical setup, seeding, product and deployment information previously stored in this README is no longer authoritative.
 
 ## Current technical baseline
 
@@ -16,28 +16,34 @@ The modernised application currently includes:
 - reviews
 - server-authoritative order pricing and stock handling
 - protected GridFS-backed product image uploads
+- real server-side search, heat filtering and pagination
 - automated API/security/production-serving QA
 - browser journey, responsive and accessibility QA
 - Vercel preview deployment workflow
 
 ## Repository control
 
-Before making changes, read:
+Before making changes, read in this order:
 
-- `AGENTS.md`
-- `docs/BURNSVILLE-PROJECT-CONTROL.md`
-- `docs/BURNSVILLE-DECISIONS.md`
-- `docs/BURNSVILLE-ROADMAP.md`
-- `docs/BURNSVILLE-KNOWN-ISSUES.md`
+1. `AGENTS.md`
+2. `BURNSVILLE-MASTER-AUTHORITY.md` for locked product identities
+3. `docs/BURNSVILLE-PROJECT-CONTROL.md`
+4. `docs/BURNSVILLE-DECISIONS.md`
+5. `docs/BURNSVILLE-ROADMAP.md`
+6. `docs/BURNSVILLE-KNOWN-ISSUES.md`
+
+CI also runs `qa/product-authority.mjs` to prevent accidental product-identity drift.
 
 ## Important current boundaries
 
 - `main` is not the active development branch.
 - The current visual UI is approved implementation authority and must not be redesigned without a newer explicit instruction.
+- `BURNSVILLE-MASTER-AUTHORITY.md` is the sole current product-identity authority unless the owner explicitly approves a newer change.
 - The current runtime catalogue still contains temporary legacy third-party sample products pending the approved Burnsville replacement catalogue.
+- Historical catalogue/asset filenames are evidence only and cannot rename products or approve product facts.
 - Do not run the legacy destructive seeder for catalogue replacement.
 - Do not mutate shared Preview/Production catalogue data without explicit approval and a reviewed rollback procedure.
-- Do not infer missing product facts or visual decisions.
+- Do not infer missing product facts, commercial values, asset roles or visual decisions.
 
 ## Development
 
@@ -57,6 +63,12 @@ Build the frontend:
 
 ```bash
 npm run build --prefix frontend
+```
+
+Verify product authority:
+
+```bash
+node qa/product-authority.mjs
 ```
 
 The repository CI workflow is the authoritative integrated QA path while the modernisation is in progress.
