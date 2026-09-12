@@ -2,21 +2,25 @@
 
 ## STATUS
 
-PARTIAL HANDOFF RECONCILED / WAITING FOR COMPLETE PRODUCT AND ASSET HANDOFF.
+PRODUCT IDENTITIES LOCKED / WAITING FOR COMPLETE PRODUCT FACTS AND ASSET HANDOFF.
 
-Current evidence: `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
+Primary identity authority: `BURNSVILLE-MASTER-AUTHORITY.md`.
+Supporting evidence: `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
 
 ## RULE
 
-Do not infer missing product facts. Do not redesign supplied artwork. Do not mutate shared Preview/Production data during preparation or validation.
+Do not infer missing product facts. Do not redesign supplied artwork. Do not mutate shared Preview/Production data during preparation or validation. Do not reopen locked product identities unless the owner explicitly approves a change to the master authority.
 
 ## 1. HANDOFF INTAKE
 
 - [x] Final product count confirmed: 16 total, 10 Core and 6 Limited / Vintage.
-- [ ] Every product has an approved identity/code where applicable.
+- [x] Every product has a locked identity/code in `BURNSVILLE-MASTER-AUTHORITY.md`.
+- [x] Catalogue intake matches the master authority.
+- [x] Automated product-authority QA exists and is wired into CI.
 - [ ] Every product has approved visual assets.
 - [ ] Asset roles are explicitly classified.
-- [x] Required product facts/commercial values are supplied or explicitly unresolved.
+- [ ] Final card geometry is approved for runtime use.
+- [x] Required product facts/commercial values are explicitly unresolved where not yet approved.
 - [x] Historical catalogue files are not used to fill missing values automatically.
 
 ## 2. ARCHITECTURE GATES
@@ -25,7 +29,7 @@ Do not infer missing product facts. Do not redesign supplied artwork. Do not mut
 - [ ] If multiple structural images are required, approve schema/API/admin/UI expansion first.
 - [ ] Confirm Shop browsing/pagination behaviour.
 - [ ] Confirm homepage featured-product strategy.
-- [x] Confirm whether heat remains guidance or becomes a real filter. Current implementation uses the real server-side heat filter.
+- [x] Heat uses the current 1–10 technical range and real server-side filtering.
 - [ ] Confirm whether MongoDB-ID product URLs remain acceptable or slugs are approved.
 
 ## 3. ASSET QA
@@ -39,14 +43,14 @@ For every delivered runtime asset:
 - [ ] no accidental crop/stretch/border/padding
 - [ ] no unapproved colour shift
 - [ ] artwork/text/logo matches approved source
+- [ ] runtime role explicitly approved
 - [ ] runtime path resolves successfully
 
 ## 4. PRODUCT DATA QA
 
 For every replacement product:
 
-- [ ] name matches approved source
-- [ ] identifier/code matches approved source where applicable
+- [ ] identity/code matches `BURNSVILLE-MASTER-AUTHORITY.md`
 - [ ] asset mapping matches approved source
 - [ ] brand/category correct
 - [ ] description approved
@@ -57,6 +61,7 @@ For every replacement product:
 - [ ] price approved
 - [ ] stock approved
 - [ ] no legacy third-party reviews are carried over
+- [ ] product-authority QA passes
 - [ ] read-only catalogue validator passes
 
 ## 5. CUSTOMER FLOW QA
@@ -64,7 +69,7 @@ For every replacement product:
 ### HOME / SHOP
 
 - [ ] correct products displayed
-- [ ] correct imagery/name/price
+- [ ] correct imagery/identity/price
 - [ ] featured-product strategy matches approval
 - [ ] browse/search/pagination/filter behaviour matches approval
 - [ ] no legacy third-party product appears
@@ -114,8 +119,10 @@ At minimum test:
 
 ## 8. TECHNICAL QA
 
+- [ ] product-authority QA passes
 - [ ] frontend production build passes
 - [ ] integrated API QA passes
+- [ ] heat-filter API QA passes
 - [ ] review consistency QA passes
 - [ ] controlled functional API QA passes
 - [ ] production serving QA passes
@@ -138,6 +145,6 @@ Only after sections 1–8 pass:
 
 ## FINAL PASS
 
-ASSET → DATA → VALIDATOR → API → HOME/SHOP → PRODUCT → CART → CHECKOUT/ORDER → ADMIN
+AUTHORITY → ASSET → DATA → VALIDATOR → API → HOME/SHOP → PRODUCT → CART → CHECKOUT/ORDER → ADMIN
 
-must pass using approved Burnsville data/artwork only.
+must pass using approved Burnsville identities, data and artwork only.
