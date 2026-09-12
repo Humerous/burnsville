@@ -2,10 +2,6 @@ import React from 'react';
 import './newsletter-signup.css';
 
 const NewsletterSignup = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
-
   return (
     <section
       className='burnsville-newsletter'
@@ -22,20 +18,7 @@ const NewsletterSignup = () => {
           <span>Occasional updates from the Burnsville range.</span>
         </div>
 
-        <form className='burnsville-newsletter__form' onSubmit={handleSubmit}>
-          <label htmlFor='burnsville-newsletter-email'>Email address</label>
-          <div className='burnsville-newsletter__controls'>
-            <input
-              id='burnsville-newsletter-email'
-              name='email'
-              type='email'
-              autoComplete='email'
-              placeholder='Your email address'
-              required
-            />
-            <button type='submit'>Sign me up</button>
-          </div>
-        </form>
+        <p className='burnsville-newsletter__availability'>Newsletter subscriptions are not available yet.</p>
       </div>
     </section>
   );

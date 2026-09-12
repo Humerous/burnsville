@@ -13,6 +13,11 @@ import {
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants';
 import './admin-product-list.css';
 
+const priceFormatter = new Intl.NumberFormat('en-ZA', {
+  style: 'currency',
+  currency: 'ZAR',
+});
+
 const ProductListScreen = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1;
   const dispatch = useDispatch();
@@ -60,8 +65,8 @@ const ProductListScreen = ({ history, match }) => {
     pageNumber,
   ]);
 
-  const deleteHandler = (id) => {
-    if (window.confirm('Are you sure')) {
+  const deleteHandler = (id, name) => {
+    if (window.confirm(`Delete ${name}? This cannot be undone.`)) {
       dispatch(deleteProduct(id));
     }
   };
@@ -104,6 +109,7 @@ const ProductListScreen = ({ history, match }) => {
             </div>
           )}
           {errorDelete && <Message variant='danger'>{errorDelete}</Message>}
+          {successDelete && <Message variant='success'>Product deleted.</Message>}
           {loadingCreate && (
             <div className='burnsville-admin-products__inline-loader' aria-label='Creating product'>
               <Loader />
@@ -166,7 +172,9 @@ const ProductListScreen = ({ history, match }) => {
                           {product._id}
                         </td>
                         <td data-label='Name'>{product.name}</td>
-                        <td data-label='Price'>${product.price}</td>
+                        <td data-label='Price'>
+                          {priceFormatter.format(Number(product.price) || 0)}
+                        </td>
                         <td data-label='Category'>{product.category}</td>
                         <td data-label='Brand'>{product.brand}</td>
                         <td
@@ -182,7 +190,7 @@ const ProductListScreen = ({ history, match }) => {
                           </Link>
                           <button
                             className='burnsville-admin-products__action burnsville-admin-products__action--delete'
-                            onClick={() => deleteHandler(product._id)}
+                            onClick={() => deleteHandler(product._id, product.name)}
                             type='button'
                             aria-label={`Delete ${product.name}`}
                           >

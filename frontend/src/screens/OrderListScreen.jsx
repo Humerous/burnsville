@@ -7,6 +7,16 @@ import Meta from '../components/Meta';
 import { listOrders } from '../actions/orderActions';
 import './admin-order-list.css';
 
+const priceFormatter = new Intl.NumberFormat('en-ZA', {
+  style: 'currency',
+  currency: 'ZAR',
+});
+
+const formatDate = (value, fallback) =>
+  typeof value === 'string' && value.length >= 10
+    ? value.substring(0, 10)
+    : fallback;
+
 const OrderListScreen = ({ history }) => {
   const dispatch = useDispatch();
 
@@ -105,9 +115,11 @@ const OrderListScreen = ({ history }) => {
                           {order.user && order.user.name}
                         </td>
                         <td data-label='Date'>
-                          {order.createdAt.substring(0, 10)}
+                          {formatDate(order.createdAt, 'Date unavailable')}
                         </td>
-                        <td data-label='Total'>${order.totalPrice}</td>
+                        <td data-label='Total'>
+                          {priceFormatter.format(Number(order.totalPrice) || 0)}
+                        </td>
                         <td data-label='Paid'>
                           <span
                             className={`burnsville-admin-orders__status ${
@@ -117,7 +129,7 @@ const OrderListScreen = ({ history }) => {
                             }`}
                           >
                             {order.isPaid
-                              ? order.paidAt.substring(0, 10)
+                              ? formatDate(order.paidAt, 'Paid')
                               : 'Not paid'}
                           </span>
                         </td>
@@ -130,7 +142,7 @@ const OrderListScreen = ({ history }) => {
                             }`}
                           >
                             {order.isDelivered
-                              ? order.deliveredAt.substring(0, 10)
+                              ? formatDate(order.deliveredAt, 'Delivered')
                               : 'Not delivered'}
                           </span>
                         </td>

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Rating from '../components/Rating';
 import Meta from '../components/Meta';
+import Message from '../components/Message';
 import {
   listProductDetails,
   createProductReview,
@@ -30,11 +31,13 @@ const formatPrice = (price) => {
 
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState('');
+  const [reviewNotice, setReviewNotice] = useState(false);
   const [comment, setComment] = useState('');
   const [addingToCart, setAddingToCart] = useState(false);
   const [cartNotice, setCartNotice] = useState(false);
   const [cartError, setCartError] = useState('');
+  const cartNoticeCloseRef = useRef(null);
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.productDetails);
@@ -52,17 +55,30 @@ const ProductScreen = ({ history, match }) => {
   const {
     success: successProductReview,
     error: errorProductReview,
+    loading: loadingReview,
   } = productReviewCreate;
 
   useEffect(() => {
     if (successProductReview) {
-      alert('Review Submitted!');
-      setRating(0);
+      setReviewNotice(true);
+      setRating('');
       setComment('');
       dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
     }
     dispatch(listProductDetails(match.params.id));
-  }, [dispatch, match, successProductReview]);
+  }, [dispatch, match.params.id, successProductReview]);
+
+  useEffect(() => {
+    if (!cartNotice) {
+      return undefined;
+    }
+
+    const focusFrame = window.requestAnimationFrame(() => {
+      cartNoticeCloseRef.current?.focus();
+    });
+
+    return () => window.cancelAnimationFrame(focusFrame);
+  }, [cartNotice]);
 
   const stockCount = product ? Number(product.countInStock) || 0 : 0;
   const cartItem = cartItems.find((item) => item.product === match.params.id);
@@ -115,10 +131,10 @@ const ProductScreen = ({ history, match }) => {
     ? product.reviews
     : [];
   const pairings = product && Array.isArray(product.pairings)
-    ? product.pairings.filter(Boolean)
+    ? [...new Set(product.pairings.filter(Boolean))]
     : [];
   const productRating = product ? Number(product.rating) || 0 : 0;
-  const heatLevel = product && product.heatLevel ? Number(product.heatLevel) : null;
+  const heatLevel = product && Number(product.heatLevel) >= 1 && Number(product.heatLevel) <= 10 ? Number(product.heatLevel) : null;
   const reviewLabel = `${reviews.length} ${
     reviews.length === 1 ? 'review' : 'reviews'
   }`;
@@ -235,7 +251,7 @@ const ProductScreen = ({ history, match }) => {
                       {heatLevel && (
                         <div className='burnsville-product-profile__fact burnsville-product-profile__fact--heat'>
                           <dt>Heat</dt>
-                          <dd>{heatLevel >= 11 ? '11+' : heatLevel}/10</dd>
+                          <dd>{heatLevel}/10</dd>
                         </div>
                       )}
                       {product.flavourProfile && (
@@ -398,6 +414,7 @@ const ProductScreen = ({ history, match }) => {
                 <p className='burnsville-product-detail__eyebrow'>Share your view</p>
                 <h2>Write a customer review</h2>
 
+                {reviewNotice && <Message variant='success'>Your review has been submitted.</Message>}
                 {errorProductReview && (
                   <div
                     className='burnsville-product-detail__form-error'
@@ -412,11 +429,11 @@ const ProductScreen = ({ history, match }) => {
                     <div className='burnsville-product-detail__field'>
                       <label htmlFor='rating'>Rating</label>
                       <select
-                        id='rating'
+                        id='rating' required
                         value={rating}
                         onChange={(event) => setRating(event.target.value)}
                       >
-                        <option value='0'>Select a rating</option>
+                        <option value=''>Select a rating</option>
                         <option value='1'>1 - Poor</option>
                         <option value='2'>2 - Fair</option>
                         <option value='3'>3 - Good</option>
@@ -428,18 +445,18 @@ const ProductScreen = ({ history, match }) => {
                     <div className='burnsville-product-detail__field'>
                       <label htmlFor='comment'>Comment</label>
                       <textarea
-                        id='comment'
+                        id='comment' required maxLength={5000}
                         rows='5'
                         value={comment}
                         onChange={(event) => setComment(event.target.value)}
                       />
                     </div>
 
-                    <button type='submit'>Submit review</button>
+                    <button type='submit' disabled={loadingReview}>{loadingReview ? 'Submitting…' : 'Submit review'}</button>
                   </form>
                 ) : (
                   <p className='burnsville-product-detail__signin-message'>
-                    Please <Link to='/login'>sign in</Link> to write a review.
+                    Please <Link to={`/login?redirect=/product/${match.params.id}`}>sign in</Link> to write a review.
                   </p>
                 )}
               </div>
@@ -452,6 +469,7 @@ const ProductScreen = ({ history, match }) => {
               role='dialog'
               aria-modal='true'
               aria-labelledby='burnsville-cart-notice-title'
+              tabIndex='-1'
             >
               <div className='burnsville-cart-notice__panel'>
                 <button
@@ -459,6 +477,7 @@ const ProductScreen = ({ history, match }) => {
                   type='button'
                   onClick={() => setCartNotice(false)}
                   aria-label='Close added-to-cart confirmation'
+                  ref={cartNoticeCloseRef}
                 >
                   ×
                 </button>

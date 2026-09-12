@@ -15,6 +15,7 @@ const ProductRating = ({ value, count }) => {
   return (
     <div
       className='home-product-card__rating'
+      role='img'
       aria-label={`${rating} out of 5 stars${
         count ? ` from ${count} reviews` : ''
       }`}

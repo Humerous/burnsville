@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -15,6 +15,10 @@ import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderListScreen from './screens/OrderListScreen';
+import PacksScreen from './screens/PacksScreen';
+import JournalScreen from './screens/JournalScreen';
+import ContactScreen from './screens/ContactScreen';
+import NotFoundScreen from './screens/NotFoundScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
 import ProductListScreen from './screens/ProductListScreen';
@@ -76,11 +80,14 @@ const DialogAccessibilityManager = () => {
       document.body.style.overflow = 'hidden';
 
       focusFrame = window.requestAnimationFrame(() => {
-        focusFrame = null;
-        const firstFocusable = activeDialog?.querySelector(
-          DIALOG_FOCUSABLE_SELECTOR
-        );
-        firstFocusable?.focus();
+        focusFrame = window.requestAnimationFrame(() => {
+          focusFrame = null;
+          const firstFocusable = activeDialog?.querySelector(
+            DIALOG_FOCUSABLE_SELECTOR
+          );
+
+          (firstFocusable || activeDialog)?.focus();
+        });
       });
     };
 
@@ -150,14 +157,33 @@ const DialogAccessibilityManager = () => {
   return null;
 };
 
+const RouteFocus = () => {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      requestAnimationFrame(() => document.getElementById(hash.slice(1))?.scrollIntoView());
+    } else {
+      window.scrollTo(0, 0);
+      document.getElementById('main-content')?.focus({ preventScroll: true });
+    }
+  }, [pathname, hash]);
+  return null;
+};
+
 // <---- APP LINKS - BrowserRouter , Router ,Route ---->
 const App = () => {
   return (
     <Router>
       <DialogAccessibilityManager />
+      <RouteFocus />
+      <a className="burnsville-skip-link" href="#main-content">Skip to content</a>
       <Header />
-      <main className='py-3'>
+      <main className='py-3' id='main-content' tabIndex={-1}>
         <Container>
+          <Switch>
+          <Route path="/packs" component={PacksScreen} exact />
+          <Route path="/journal" component={JournalScreen} exact />
+          <Route path="/contact" component={ContactScreen} exact />
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
@@ -190,6 +216,8 @@ const App = () => {
             exact
           />
           <Route path='/' component={HomeScreen} exact />
+        <Route component={NotFoundScreen} />
+          </Switch>
         </Container>
       </main>
       <Footer />

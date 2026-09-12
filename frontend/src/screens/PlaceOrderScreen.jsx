@@ -77,7 +77,7 @@ const PlaceOrderScreen = ({ history }) => {
     }
 
     if (!userInfo) {
-      history.replace('/login?redirect=placeorder');
+      history.replace('/login?redirect=/placeorder');
       return;
     }
 

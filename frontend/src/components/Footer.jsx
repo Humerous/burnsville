@@ -1,23 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BrandLogo from './header/BrandLogo';
 import './footer.css';
 
 const footerGroups = [
   {
     title: 'Shop',
     links: [
-      { label: 'All sauces', to: '/' },
-      { label: 'Packs', to: '/' },
-      { label: 'Heat guide', to: '#' },
+      { label: 'All sauces', to: '/shop' },
+      { label: 'Packs', to: '/packs' },
+      { label: 'Heat guide', to: '/#shop-by-heat' },
     ],
   },
   {
     title: 'Explore',
     links: [
-      { label: 'Journal', to: '#' },
-      { label: 'Contact', to: '#' },
-      { label: 'About Burnsville', to: '#' },
+      { label: 'Journal', to: '/journal' },
+      { label: 'Contact', to: '/contact' },
     ],
   },
   {
@@ -37,8 +35,8 @@ const Footer = () => {
     <footer className='burnsville-footer'>
       <div className='burnsville-footer__inner'>
         <div className='burnsville-footer__brand'>
-          <BrandLogo />
-          <p>Heat-forward flavour with a bold Burnsville point of view.</p>
+          <Link to="/" aria-label="Burnsville home"><img className="burnsville-footer__seal" src="/android-chrome-192x192.png" width="96" height="96" alt="Burnsville Hot Sauce, Cape Town" /></Link>
+          <p>Heat. Flavour. Character.</p>
         </div>
 
         <nav className='burnsville-footer__nav' aria-label='Footer navigation'>
@@ -64,7 +62,7 @@ const Footer = () => {
 
       <div className='burnsville-footer__legal'>
         <p>&copy; {currentYear} Burnsville Hot Sauce.</p>
-        <p>Made for heat. Built for flavour.</p>
+        <p>Site by Chameleon Unicode Studios</p>
       </div>
     </footer>
   );

@@ -66,7 +66,7 @@ const PaymentScreen = ({ history }) => {
     }
 
     if (!userInfo) {
-      history.replace('/login?redirect=payment');
+      history.replace('/login?redirect=/payment');
       return;
     }
 

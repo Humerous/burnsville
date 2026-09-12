@@ -3,7 +3,17 @@ import { Alert } from 'react-bootstrap';
 
 // <---- MESSAGE FUNCTION - variant, children ---->
 const Message = ({ variant, children }) => {
-  return <Alert variant={variant}>{children}</Alert>;
+  const role = variant === 'danger' ? 'alert' : 'status';
+
+  return (
+    <Alert
+      className={`burnsville-message burnsville-message--${variant}`}
+      role={role}
+      variant={variant}
+    >
+      {children}
+    </Alert>
+  );
 };
 
 // <---- MESSAGE FUNCTION - defaultProps ---->

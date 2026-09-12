@@ -5,7 +5,6 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 import Meta from '../components/Meta';
 import { listUsers, deleteUser } from '../actions/userActions';
-import { USER_DELETE_REQUEST } from '../constants/userConstants';
 import './admin-users.css';
 
 const UserListScreen = ({ history }) => {
@@ -22,15 +21,14 @@ const UserListScreen = ({ history }) => {
 
   useEffect(() => {
     if (userInfo && userInfo.isAdmin) {
-      dispatch({ type: USER_DELETE_REQUEST });
       dispatch(listUsers());
     } else {
       history.push('/login');
     }
   }, [dispatch, successDelete, history, userInfo]);
 
-  const deleteHandler = (id) => {
-    if (window.confirm('Are you sure')) {
+  const deleteHandler = (id, name) => {
+    if (window.confirm(`Delete ${name}? This cannot be undone.`)) {
       dispatch(deleteUser(id));
     }
   };
@@ -72,6 +70,9 @@ const UserListScreen = ({ history }) => {
           </div>
 
           <div className='burnsville-admin-users__panel-body'>
+            {successDelete && (
+              <Message variant='success'>User deleted.</Message>
+            )}
             {loading ? (
               <div className='burnsville-admin-users__state' aria-label='Loading users'>
                 <Loader />
@@ -132,7 +133,7 @@ const UserListScreen = ({ history }) => {
                           </Link>
                           <button
                             className='burnsville-admin-users__action burnsville-admin-users__action--delete'
-                            onClick={() => deleteHandler(user._id)}
+                            onClick={() => deleteHandler(user._id, user.name)}
                             type='button'
                             aria-label={`Delete ${user.name}`}
                           >

@@ -10,6 +10,7 @@ import './preview-qa-fixes.css';
 import './heat-strip-reference-fix.css';
 import './block-11a-loading-fixes.css';
 import './block-11b-navigation-heat-fixes.css';
+import './components/completion.css';
 
 // <---- REDUX STORE ---->
 ReactDOM.render(

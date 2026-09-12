@@ -6,6 +6,7 @@ const Loader = () => {
   return (
     <Spinner
       animation='border'
+      className='burnsville-loader'
       role='status'
       style={{
         width: '40px',

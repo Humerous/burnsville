@@ -18,6 +18,7 @@ const CartScreen = ({ match, location, history }) => {
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+  const { userInfo } = useSelector((state) => state.userLogin);
 
   useEffect(() => {
     if (productId) {
@@ -35,7 +36,7 @@ const CartScreen = ({ match, location, history }) => {
   };
 
   const checkoutHandler = () => {
-    history.push('/login?redirect=shipping');
+    history.push(userInfo ? '/shipping' : '/login?redirect=/shipping');
   };
 
   const itemCount = cartItems.reduce((total, item) => total + item.qty, 0);

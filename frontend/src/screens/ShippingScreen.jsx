@@ -27,7 +27,7 @@ const ShippingScreen = ({ history }) => {
     }
 
     if (!userInfo) {
-      history.replace('/login?redirect=shipping');
+      history.replace('/login?redirect=/shipping');
     }
   }, [cartItems.length, history, userInfo]);
 

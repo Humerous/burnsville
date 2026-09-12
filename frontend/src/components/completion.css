@@ -1,0 +1,60 @@
+/* Shared extensions of the approved dark/cream Burnsville system. */
+:root { --burnsville-cream: #f3ede4; --burnsville-onyx: #111; --burnsville-chilli: #c82029; --burnsville-chilli-text: #a91d24; }
+.burnsville-header .burnsville-logo__descriptor { color: #ef5350; }
+.burnsville-skip-link { position: fixed; left: 1rem; top: -100px; padding: 14px 22px; background: #fff; color: #111; z-index: 10000; }
+.burnsville-skip-link:focus { top: 12px; }
+#main-content:focus { outline: none; }
+.burnsville-destination { background: #15120f; color: #f3ede4; width: 100vw; margin: -1rem calc(50% - 50vw); min-height: 68vh; padding: clamp(32px, 5vw, 72px) 24px; }
+.burnsville-destination__inner { max-width: 1160px; margin: auto; }
+.burnsville-destination__breadcrumb { display: flex; flex-wrap: wrap; gap: 12px; font-size: .8rem; }
+.burnsville-destination__breadcrumb a { color: #f3ede4; text-decoration: underline; }
+.burnsville-destination__heading { margin: 32px 0; border-bottom: 1px solid #71634d; padding-bottom: 24px; }
+.burnsville-destination__heading p { color: #efb556; text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; }
+.burnsville-destination__heading h1 { color: inherit; font-family: Anton, Impact, sans-serif; text-transform: uppercase; font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.08; margin: 0; padding: 0; }
+.burnsville-empty-state { background: #f3ede4; color: #111; border: 1px solid #d0c4b1; padding: clamp(28px, 6vw, 64px); }
+.burnsville-empty-state__rule { display: block; width: 48px; height: 3px; background: #c82029; margin-bottom: 24px; }
+.burnsville-empty-state h2 { font-family: Anton, Impact, sans-serif; text-transform: uppercase; font-size: clamp(1.6rem, 3vw, 2.5rem); }
+.burnsville-action { display: inline-flex; align-items: center; gap: 16px; background: #bd1e27; color: #fff; padding: 14px 22px; margin-top: 20px; text-transform: uppercase; font-weight: 700; font-size: .85rem; min-height: 48px; }
+.burnsville-action:hover { color: #fff; background: #111; }
+.burnsville-account-auth { background: #161310; padding-block: clamp(32px, 5vw, 64px); }
+.burnsville-account-auth__inner { max-width: 1040px; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); min-height: 0; }
+.burnsville-account-auth--register .burnsville-account-auth__inner { min-height: 0; }
+.burnsville-account-auth__panel { background: #f3ede4; padding: clamp(28px, 4vw, 48px); }
+.burnsville-account-auth__introduction { padding: clamp(28px, 4vw, 48px); min-height: 0; }
+.burnsville-account-auth__introduction h2 { font-size: clamp(2.5rem, 5vw, 4.6rem); }
+.burnsville-account-auth__panel h1 { font-size: clamp(2.4rem, 4vw, 3.6rem); }
+.burnsville-account-auth__field select, .burnsville-account-auth__field textarea { border: 1px solid #81776c; border-radius: 0; padding: 12px; width: 100%; min-height: 48px; background: #fbf6ed; color: #111; font-size: 1rem; }
+.burnsville-account-auth__field input { font-size: 1rem; }
+.burnsville-contact__account { color: #f3ede4; text-decoration: underline; margin-top: 24px; z-index: 1; }
+.burnsville-contact__account:hover { color: #efb556; }
+.burnsville-service-notice { border-left: 3px solid #a91d24; background: #e9dfd1; color: #342c23; padding: 16px; font-size: .88rem; }
+.burnsville-message { border: 0; border-left: 4px solid currentColor; border-radius: 0; font-family: Arial, Helvetica, sans-serif; margin-bottom: 18px; }
+.burnsville-message--danger { background: #f5d9d9; color: #7d171c; }
+.burnsville-message--success { background: #deecdd; color: #245c2c; }
+.burnsville-message--info { background: #e8e1d6; color: #302a24; }
+.burnsville-loader { color: #b3222a; }
+button:disabled { cursor: not-allowed; }
+.burnsville-account-auth__panel form > button:disabled { background: #686059; border-color: #686059; transform: none; }
+.burnsville-footer__seal { display: block; border-radius: 50%; }
+.burnsville-footer__inner { grid-template-columns: minmax(160px, .8fr) minmax(0, 2fr) minmax(160px, .8fr); gap: 32px; padding: 36px clamp(20px, 4vw, 56px); }
+.burnsville-footer__group a { min-height: 36px; align-items: center; }
+.burnsville-newsletter__availability { color: #f3ede4; background: #28211c; padding: 20px; border-left: 3px solid #bd8b40; margin: 0; }
+.burnsville-product-detail__grid { align-items: start; }
+.burnsville-product-detail__media img { object-fit: contain; }
+.burnsville-product-profile__fact:last-child dd { background: none; border: 0; color: #111; padding: 0; }
+.burnsville-product-profile__fact:last-child dd::before { display: none; }
+:where(a,button,input,select,textarea,summary):focus-visible { outline: 3px solid #bc812b; outline-offset: 4px; }
+@media (max-width: 840px) {
+  .burnsville-account-auth__inner { grid-template-columns: 1fr; }
+  .burnsville-account-auth__introduction { min-height: 260px; padding-bottom: 72px; }
+  .burnsville-footer__inner { grid-template-columns: 1fr; }
+  .burnsville-footer__statement { display: none; }
+}
+@media (max-width: 480px) {
+  .burnsville-destination { padding-inline: 16px; }
+  .burnsville-footer__nav { gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .burnsville-account-auth__panel { padding: 28px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

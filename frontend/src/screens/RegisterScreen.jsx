@@ -19,7 +19,8 @@ const RegisterScreen = ({ location, history }) => {
   const userRegister = useSelector((state) => state.userRegister);
   const { loading, error, userInfo } = userRegister;
 
-  const redirect = location.search ? location.search.split('=')[1] : '/';
+  const requestedRedirect = new URLSearchParams(location.search).get('redirect') || '/';
+  const redirect = requestedRedirect.startsWith('/') && !requestedRedirect.startsWith('//') ? requestedRedirect : '/';
 
   useEffect(() => {
     if (userInfo) {
@@ -32,7 +33,8 @@ const RegisterScreen = ({ location, history }) => {
     if (password !== confirmPassword) {
       setMessage('Passwords do not match');
     } else {
-      dispatch(register(name, email, password));
+      setMessage(null);
+      dispatch(register(name.trim(), email.trim(), password));
     }
   };
 
@@ -60,16 +62,17 @@ const RegisterScreen = ({ location, history }) => {
             <h1 id='burnsville-register-title'>Register</h1>
           </header>
 
-          {message && <Message variant='danger'>{message}</Message>}
+          {message && <div id='register-error'><Message variant='danger'>{message}</Message></div>}
           {error && <Message variant='danger'>{error}</Message>}
           {loading && <Loader />}
 
-          <form onSubmit={submitHandler}>
+          <form onSubmit={submitHandler} aria-busy={Boolean(loading)}>
             <div className='burnsville-account-auth__field'>
               <label htmlFor='name'>Name</label>
               <input
                 id='name'
-                type='name'
+                type='text'
+                autoComplete='name' required maxLength={100}
                 placeholder='Enter name'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -81,6 +84,7 @@ const RegisterScreen = ({ location, history }) => {
               <input
                 id='email'
                 type='email'
+                autoComplete='email' required maxLength={254}
                 placeholder='Enter email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -92,6 +96,7 @@ const RegisterScreen = ({ location, history }) => {
               <input
                 id='password'
                 type='password'
+                autoComplete='new-password' required minLength={8} maxLength={128}
                 placeholder='Enter password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -102,19 +107,22 @@ const RegisterScreen = ({ location, history }) => {
               <label htmlFor='confirmPassword'>Confirm password</label>
               <input
                 id='confirmPassword'
+                aria-invalid={Boolean(message)}
+                aria-describedby={message ? 'register-error' : undefined}
                 type='password'
+                autoComplete='new-password' required minLength={8} maxLength={128}
                 placeholder='Confirm password'
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
 
-            <button type='submit'>Register</button>
+            <button type='submit' disabled={loading}>{loading ? 'Creating account…' : 'Create account'}</button>
           </form>
 
           <p className='burnsville-account-auth__switch'>
             Have an account?{' '}
-            <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
+            <Link to={`/login?redirect=${encodeURIComponent(redirect)}`}>
               Login
             </Link>
           </p>

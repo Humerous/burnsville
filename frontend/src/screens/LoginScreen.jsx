@@ -16,7 +16,8 @@ const LoginScreen = ({ location, history }) => {
   const userLogin = useSelector((state) => state.userLogin);
   const { loading, error, userInfo } = userLogin;
 
-  const redirect = location.search ? location.search.split('=')[1] : '/';
+  const requestedRedirect = new URLSearchParams(location.search).get('redirect') || '/';
+  const redirect = requestedRedirect.startsWith('/') && !requestedRedirect.startsWith('//') ? requestedRedirect : '/';
 
   useEffect(() => {
     if (userInfo) {
@@ -56,12 +57,13 @@ const LoginScreen = ({ location, history }) => {
           {error && <Message variant='danger'>{error}</Message>}
           {loading && <Loader />}
 
-          <form onSubmit={submitHandler}>
+          <form onSubmit={submitHandler} aria-busy={Boolean(loading)}>
             <div className='burnsville-account-auth__field'>
               <label htmlFor='email'>Email address</label>
               <input
                 id='email'
                 type='email'
+                autoComplete='email' required maxLength={254}
                 placeholder='Enter email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -73,18 +75,19 @@ const LoginScreen = ({ location, history }) => {
               <input
                 id='password'
                 type='password'
+                autoComplete='current-password' required
                 placeholder='Enter password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
 
-            <button type='submit'>Sign in</button>
+            <button type='submit' disabled={loading}>{loading ? 'Signing in…' : 'Sign in'}</button>
           </form>
 
           <p className='burnsville-account-auth__switch'>
             New customer?{' '}
-            <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
+            <Link to={`/register?redirect=${encodeURIComponent(redirect)}`}>
               Register
             </Link>
           </p>
