@@ -1,6 +1,6 @@
 {
-  "status": "NAME-MATCHED 16-CARD SUPPORTING MAP — INSTALLATION PENDING GEOMETRY APPROVAL",
-  "authority": "Mapping recorded in commit 7d1760c; original product names confirmed unchanged by current explicit owner instruction",
+  "status": "16-CARD SUPPORTING MAP — MASTER PRODUCT IDENTITY AUTHORITY APPLIED; INSTALLATION PENDING GEOMETRY AND ROLE APPROVAL",
+  "authority": "BURNSVILLE-MASTER-AUTHORITY.md controls product identities; filenames and historical descriptive labels are supporting evidence only",
   "asset_directory": "/images/burnsville/cards/",
   "master_dimensions": [1122, 1402],
   "assets": [
@@ -10,19 +10,20 @@
     {"series":"core","id":"04","name":"RED EMBER","filename":"BURNSVILLE-04-RED-EMBER.png","path":"/images/burnsville/cards/BURNSVILLE-04-RED-EMBER.png","size":[1122,1402]},
     {"series":"core","id":"05","name":"DARK HARVEST","filename":"BURNSVILLE-05-DARK-HARVEST.png","path":"/images/burnsville/cards/BURNSVILLE-05-DARK-HARVEST.png","size":[1122,1402]},
     {"series":"core","id":"06","name":"SALINE CURRENT","filename":"BURNSVILLE-06-SALINE-CURRENT.png","path":"/images/burnsville/cards/BURNSVILLE-06-SALINE-CURRENT.png","size":[1122,1402]},
-    {"series":"core","id":"07","name":"CALABRIAN GLOW","filename":"BURNSVILLE-07-CALABRIAN-GLOW.png","path":"/images/burnsville/cards/BURNSVILLE-07-CALABRIAN-GLOW.png","size":[1122,1402]},
-    {"series":"core","id":"08","name":"BIRD'S FIRE","filename":"BURNSVILLE-08-BIRDS-FIRE.png","path":"/images/burnsville/cards/BURNSVILLE-08-BIRDS-FIRE.png","size":[1122,1402]},
-    {"series":"core","id":"09","name":"VIOLETS FUSE","filename":"BURNSVILLE-09-VIOLETS-FUSE.png","path":"/images/burnsville/cards/BURNSVILLE-09-VIOLETS-FUSE.png","size":[1122,1402]},
+    {"series":"core","id":"07","name":"CALABRIAN SUN","filename":"BURNSVILLE-07-CALABRIAN-GLOW.png","path":"/images/burnsville/cards/BURNSVILLE-07-CALABRIAN-GLOW.png","size":[1122,1402],"note":"historical filename label is not product-name authority"},
+    {"series":"core","id":"08","name":"BIRD’S FIRE","filename":"BURNSVILLE-08-BIRDS-FIRE.png","path":"/images/burnsville/cards/BURNSVILLE-08-BIRDS-FIRE.png","size":[1122,1402]},
+    {"series":"core","id":"09","name":"VIOLET’S FUSE","filename":"BURNSVILLE-09-VIOLETS-FUSE.png","path":"/images/burnsville/cards/BURNSVILLE-09-VIOLETS-FUSE.png","size":[1122,1402]},
     {"series":"core","id":"10","name":"GHOST BLACK","filename":"BURNSVILLE-10-GHOST-BLACK.png","path":"/images/burnsville/cards/BURNSVILLE-10-GHOST-BLACK.png","size":[1122,1402]},
-    {"series":"limited-vintage","id":"P-X","name":"FERMENT BLOOM","filename":"BURNSVILLE-P-X-FERMENT-BLOOM.png","path":"/images/burnsville/cards/BURNSVILLE-P-X-FERMENT-BLOOM.png","size":[1122,1402]},
-    {"series":"limited-vintage","id":"R-13","name":"CASK 13","filename":"BURNSVILLE-R-13-CASK-13.png","path":"/images/burnsville/cards/BURNSVILLE-R-13-CASK-13.png","size":[1122,1402]},
-    {"series":"limited-vintage","id":"POT-7","name":"VELVET SCORCH","filename":"BURNSVILLE-POT-7-VELVET-SCORCH.png","path":"/images/burnsville/cards/BURNSVILLE-POT-7-VELVET-SCORCH.png","size":[1122,1402]},
-    {"series":"limited-vintage","id":"TMR-200","name":"DESERT STATIC","filename":"BURNSVILLE-TMR-200.png","path":"/images/burnsville/cards/BURNSVILLE-TMR-200.png","size":[1122,1402]},
-    {"series":"limited-vintage","id":"B-42","name":"NIGHT ORCHARD","filename":"BURNSVILLE-B-42-NIGHT-ORCHARD.png","path":"/images/burnsville/cards/BURNSVILLE-B-42-NIGHT-ORCHARD.png","size":[1122,1402]},
-    {"series":"limited-vintage","id":"X-666","name":"FINAL BURN","filename":"BURNSVILLE-X-666-FINAL-BURN.png","path":"/images/burnsville/cards/BURNSVILLE-X-666-FINAL-BURN.png","size":[1122,1402]}
+    {"series":"limited-vintage","id":"P-X","name":"P-X","filename":"BURNSVILLE-P-X-FERMENT-BLOOM.png","path":"/images/burnsville/cards/BURNSVILLE-P-X-FERMENT-BLOOM.png","size":[1122,1402],"note":"historical descriptive filename is not product-name authority"},
+    {"series":"limited-vintage","id":"CASK-13","name":"CASK-13","filename":"BURNSVILLE-R-13-CASK-13.png","path":"/images/burnsville/cards/BURNSVILLE-R-13-CASK-13.png","size":[1122,1402],"note":"historical filename/id mapping requires final asset-role confirmation"},
+    {"series":"limited-vintage","id":"POT-7","name":"POT-7","filename":"BURNSVILLE-POT-7-VELVET-SCORCH.png","path":"/images/burnsville/cards/BURNSVILLE-POT-7-VELVET-SCORCH.png","size":[1122,1402],"note":"historical descriptive filename is not product-name authority"},
+    {"series":"limited-vintage","id":"TMR-200","name":"TMR-200","filename":"BURNSVILLE-TMR-200.png","path":"/images/burnsville/cards/BURNSVILLE-TMR-200.png","size":[1122,1402]},
+    {"series":"limited-vintage","id":"X-666","name":"X-666","filename":"BURNSVILLE-X-666-FINAL-BURN.png","path":"/images/burnsville/cards/BURNSVILLE-X-666-FINAL-BURN.png","size":[1122,1402],"note":"historical descriptive filename is not product-name authority"},
+    {"series":"limited-vintage","id":"B-42","name":"B-42","filename":"BURNSVILLE-B-42-NIGHT-ORCHARD.png","path":"/images/burnsville/cards/BURNSVILLE-B-42-NIGHT-ORCHARD.png","size":[1122,1402],"note":"historical descriptive filename is not product-name authority"}
   ],
   "rules": [
-    "This map records the name-matched 16-card filename set as supporting evidence.",
+    "BURNSVILLE-MASTER-AUTHORITY.md controls product identities.",
+    "Historical filenames and descriptive labels do not rename products.",
     "The 1122x1402 geometry conflicts with the current 1:1 card rule and requires explicit resolution.",
     "Do not install these paths or treat this map as final runtime asset authority until geometry and asset roles are approved.",
     "Do not delete legacy runtime assets until a current approved replacement catalogue passes isolated visual and functional QA."
