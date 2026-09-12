@@ -7,7 +7,7 @@ Track verified remaining work. Do not use this file to invent new scope.
 ## RED — RELEASE BLOCKERS
 
 ### KI-002 — FINAL BURNSVILLE CATALOGUE NOT IN RUNTIME
-The current runtime still uses legacy third-party sample products and images. The final count and 16 names are confirmed, but product facts, identifiers and matching assets remain unresolved. Replacement is blocked until the complete approved Burnsville catalogue and assets are available and validated.
+The current runtime still uses legacy third-party sample products and images. Product identity authority is now resolved in `BURNSVILLE-MASTER-AUTHORITY.md`, but product facts and final matching asset roles remain unresolved. Replacement is blocked until the complete approved Burnsville catalogue and assets are available and validated.
 
 ### KI-004 — FINAL PRODUCT IMAGE MODEL NOT CONFIRMED
 The current Product schema supports one required primary image. The conflict-free final product handoff must determine whether separate product-card, bottle, gallery or pairing imagery is structurally required.
@@ -55,8 +55,8 @@ FIXED. PR #2 is closed as superseded; branch history remains available for refer
 ### KI-015 — ADMIN HEAT RANGE MISMATCH
 FIXED. The admin Product Edit input now matches the current MongoDB schema at 1–10.
 
-### KI-016 — STALE LOCKED PRODUCT/ASSET AUTHORITY
-FIXED. The original 16 product names are confirmed unchanged. The supporting catalogue/asset maps remain non-runtime, the portrait-card installer is fail-closed pending geometry approval, and current authority is documented in `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
+### KI-016 — PRODUCT IDENTITY AUTHORITY CONFLICT
+FIXED. `BURNSVILLE-MASTER-AUTHORITY.md` is now the sole current product-identity authority. Core identities are locked at 01–10 with Core 07 `CALABRIAN SUN`; Limited / Vintage identities are locked as `P-X`, `CASK-13`, `POT-7`, `TMR-200`, `X-666`, and `B-42`. Historical descriptive labels and filenames remain supporting evidence only and cannot rename products.
 
 ### KI-017 — LEGACY DEFAULT METADATA CLAIMS
 FIXED. Generic/unsupported metadata claims were replaced with neutral Burnsville defaults pending final release metadata.
@@ -80,6 +80,7 @@ FIXED. Generic/unsupported metadata claims were replaced with neutral Burnsville
 - browser customer journey and responsive/accessibility QA
 - Vercel preview deployment pipeline
 - Codex/agent repository control layer present on active V2 branch
+- master product-identity authority present at repository root
 
 ## UPDATE RULE
 
