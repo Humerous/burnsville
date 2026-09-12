@@ -2,94 +2,92 @@
 
 ## STATUS
 
-PRODUCT COUNT AND NAMES CONFIRMED / PRODUCT FACTS AND ASSETS BLOCKED.
+PRODUCT IDENTITY CONFLICT RESOLVED / PRODUCT FACTS AND FINAL ASSET ROLES STILL PENDING.
 
 Audit date: 2026-09-12
 
-Active branch at audit: `modernise/burnsville-v2`
+Primary authority: `BURNSVILLE-MASTER-AUTHORITY.md`
 
-Starting HEAD: `3975fec90de2c9f9ed09b0a840a565897152d2cd`
+## RESOLVED AUTHORITY
 
-## OUTCOME
+The product-identity confusion is closed.
 
-The project owner confirmed a final catalogue of 16 products: 10 Core and 6 Limited / Vintage. The owner also confirmed that no product names change. The original names on the preserved 16-product set therefore remain current name authority. The remaining product facts, identifiers and final runtime asset roles are not yet approved.
+The sole current authority is:
 
-The preserved 16-product dataset and its card/bottle assets are technically valid supporting evidence. Its product names now match the current explicit instruction. The full dataset cannot yet be promoted into the runtime because its remaining facts are not explicitly approved and its 1122 × 1402 portrait cards do not meet the 1:1 card rule in the final build instruction.
+### Core
 
-No product data, image, runtime catalogue or database record was changed by this reconciliation.
+01 GREEN SPARK  
+02 SUN GOLD  
+03 CITRUS FLARE  
+04 RED EMBER  
+05 DARK HARVEST  
+06 SALINE CURRENT  
+07 CALABRIAN SUN  
+08 BIRD’S FIRE  
+09 VIOLET’S FUSE  
+10 GHOST BLACK
 
-## AUTHORITY USED
+### Limited / Vintage
 
-1. Current explicit user instruction.
-2. `pasted-text.txt` for build, safety and card-geometry constraints; its proposed renamed forms are superseded by the current explicit owner instruction.
-3. Current repository control documents.
-4. Uploaded PASS UI layouts as visual/layout evidence only.
-5. Preserved 16-product catalogue and assets: names confirmed, remaining facts and asset roles supporting evidence only.
+P-X  
+CASK-13  
+POT-7  
+TMR-200  
+X-666  
+B-42
 
-## SOURCE INVENTORY VERIFIED
+For Limited / Vintage, these codes are the authoritative product identities. Historical descriptive labels such as FERMENT BLOOM, VELVET SCORCH, DESERT STATIC, FINAL BURN, NIGHT ORCHARD, or other prior labels do not become current product names unless explicitly approved later.
 
-### Uploaded Desktop pack
+`CALABRIAN GLOW` is not the current Core 07 identity. Core 07 is `CALABRIAN SUN`.
 
-`/Users/videoimagetechnologies/Desktop/Approved Burnsville visual system..zip`
+No historical filename, screenshot transcription, catalogue map, commit, or automated reconciliation may override these identities.
 
-The archive contains flattened UI/storyboard PNG files and a favicon package. It contains no standalone product-card or bottle master set. OCR of `ALL SAUCES.png` confirms the unchanged names `SALINE CURRENT` and `CALABRIAN GLOW`, but the storyboard does not supply a complete 16-product data or asset handoff.
+## SUPPORTING ASSET EVIDENCE
 
-### Preserved historical checkout
+Historical card and bottle files remain supporting evidence only.
 
-`/Users/videoimagetechnologies/Documents/Developer/Projects/burnsville_mern-app`
+Some preserved filenames contain labels that no longer match the master identity authority. Those filenames may remain unchanged as historical file references until final asset-role decisions are made; they must not be interpreted as product-name authority.
 
-Verified supporting material:
+The preserved card set is 1122 × 1402 portrait. The later approved product-card standard is 1254 × 1254 square. This geometry question remains unresolved and separate from product identity.
 
-- 16 WEBP bottle derivatives at 1024 × 1536 with alpha.
-- 16 WEBP card derivatives at 1122 × 1402 without alpha.
-- Bottle derivative SHA-256 values match `qa/burnsville-bottle-source-register.json`.
-- Product data exists for the same historical 16-product set.
-- The historical data includes price, stock, descriptions, heat, ingredients and other commercial/product facts, but the current handoff does not approve those values for the current identities.
+## UNRESOLVED PRODUCT DATA
 
-The preserved cards are portrait assets. The final build instruction defines approved card geometry as 1:1 and 1254 × 1254 where applicable. The existing cards therefore require an explicit geometry decision before runtime installation.
+Do not infer or fabricate:
 
-## PRODUCT AUTHORITY MATRIX
+- Limited / Vintage descriptive display names, if any
+- additional SKU/identifier conventions
+- descriptions
+- heat values
+- flavour profiles
+- ingredients
+- pairings
+- prices
+- stock
+- final card/bottle/gallery/supporting asset roles
+- final product image/gallery architecture
 
-| Collection | Current confirmed name | Historical candidate | Disposition |
-| --- | --- | --- | --- |
-| Core | GREEN SPARK | GREEN SPARK | Name confirmed. Historical bottle/card remain candidates only pending current asset-role and geometry approval. |
-| Core | SUN GOLD | SUN GOLD | Name confirmed. Historical bottle/card remain candidates only pending current asset-role and geometry approval. |
-| Core | CITRUS FLARE | CITRUS FLARE | Name confirmed. Historical bottle/card remain candidates only pending current asset-role and geometry approval. |
-| Core | RED EMBER | RED EMBER | Name confirmed. Historical bottle/card remain candidates only pending current asset-role and geometry approval. |
-| Core | DARK HARVEST | DARK HARVEST | Name confirmed. Historical bottle/card remain candidates only pending current asset-role and geometry approval. |
-| Core | SALINE CURRENT | SALINE CURRENT | Name confirmed unchanged. Historical bottle/card remain candidates pending final asset-role and geometry approval. |
-| Core | CALABRIAN GLOW | CALABRIAN GLOW | Name confirmed unchanged. Historical bottle/card remain candidates pending final asset-role and geometry approval. |
-| Core | BIRD'S FIRE | BIRD'S FIRE | Name confirmed unchanged. Historical bottle/card remain candidates pending final asset-role and geometry approval. |
-| Core | VIOLETS FUSE | VIOLETS FUSE | Name confirmed unchanged. Historical bottle/card remain candidates pending final asset-role and geometry approval. |
-| Core | GHOST BLACK | GHOST BLACK | Name confirmed. Historical bottle/card remain candidates only pending current asset-role and geometry approval. |
-| Limited / Vintage | FERMENT BLOOM | FERMENT BLOOM | Name confirmed unchanged. Historical bottle/card remain candidates pending final asset-role and geometry approval. |
-| Limited / Vintage | CASK 13 | CASK 13 | Name confirmed unchanged. Final identifier and asset-role approval remain required. |
-| Limited / Vintage | VELVET SCORCH | VELVET SCORCH | Name confirmed unchanged. Historical bottle/card remain candidates pending final asset-role and geometry approval. |
-| Limited / Vintage | DESERT STATIC | DESERT STATIC | Name confirmed. Historical bottle/card remain candidates only pending current asset-role and geometry approval. |
-| Limited / Vintage | FINAL BURN | FINAL BURN | Name confirmed. Historical bottle/card remain candidates only pending current asset-role and geometry approval. |
-| Limited / Vintage | NIGHT ORCHARD | NIGHT ORCHARD | Name and range membership confirmed. Historical bottle/card remain candidates only pending current asset-role and geometry approval. |
+## CONTROL RULE
 
-## CURRENT SAFE DECISIONS
+When sources conflict:
 
-- The final catalogue contains 16 products: 10 Core and 6 Limited / Vintage.
-- All 16 original product names remain unchanged.
-- The 16 names in `backend/data/burnsville-final-catalogue-intake.json` are the only current product facts recorded as confirmed.
-- `backend/data/burnsville-product-catalogue.json` remains non-runtime supporting evidence: its names are confirmed, but its identifiers, paths and product/commercial facts are not automatically approved.
-- `backend/data/burnsville-product-asset-map.json` and `scripts/install-approved-product-cards.sh` remain non-runtime pending resolution of the portrait-card versus 1:1 geometry conflict.
-- No unapproved price, stock, heat, description, ingredients, pairings, ratings, reviews or identifiers may be copied into the current catalogue without explicit approval.
-- No shared database migration is authorised.
+1. current explicit owner instruction
+2. `BURNSVILLE-MASTER-AUTHORITY.md`
+3. current approved reference documentation
+4. current repository control documents
+5. historical evidence
 
-## REQUIRED HANDOFF TO UNBLOCK RUNTIME REPLACEMENT
+Historical evidence never promotes itself to authority.
 
-1. Supply the final identifier/SKU for every product.
-2. Confirm the runtime role for each supplied card and bottle asset across all 16 products.
-3. Confirm whether the final card standard is strictly 1254 × 1254 or approve a documented exception.
-4. Supply approved description, heat, flavour, ingredients, pairings, price and stock for every product.
-5. Confirm the final runtime image/gallery architecture.
-6. Review the completed replacement dataset and isolated migration/rollback plan before any shared data change.
+## SAFE CURRENT STATE
+
+- Product identity authority: RESOLVED.
+- General UI/backend/QA: PRESERVE.
+- Runtime catalogue replacement: NOT YET AUTHORISED.
+- Shared database mutation: NOT AUTHORISED.
+- Final product facts and asset roles: PENDING.
 
 ## NEXT IMPLEMENTATION GATE
 
-When the required handoff exists:
+After unresolved product facts and asset roles are explicitly approved:
 
-`ASSET → DATA → VALIDATOR → ISOLATED API → HOME/SHOP → PRODUCT → CART → CHECKOUT/ORDER → ADMIN → MIGRATION REVIEW`
+ASSET → DATA → VALIDATOR → ISOLATED API → HOME/SHOP → PRODUCT → CART → CHECKOUT/ORDER → ADMIN → MIGRATION REVIEW
