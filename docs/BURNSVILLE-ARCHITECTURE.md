@@ -4,6 +4,12 @@
 
 Burnsville is a MERN ecommerce application modernised to a Vite frontend while retaining an Express/Mongoose backend.
 
+## AUTHORITY LAYER
+
+`BURNSVILLE-MASTER-AUTHORITY.md` is the product-identity source of truth. `qa/product-authority.mjs` verifies the master authority and final catalogue intake remain aligned before integrated CI continues.
+
+Historical catalogue and asset mappings are evidence only and do not participate in runtime identity authority.
+
 ## FRONTEND
 
 Location: `frontend/`
@@ -63,11 +69,13 @@ Primary API groups:
 
 Uploaded GridFS product images are served through `/uploads/:filename`.
 
+The product API supports server-side search, heat filtering and pagination.
+
 ## PRODUCT DATA FLOW
 
 Current flow:
 
-MongoDB Product → Product API → React product surfaces → Cart → Checkout → Order
+Master identity authority → approved replacement data → MongoDB Product → Product API → React product surfaces → Cart → Checkout → Order
 
 The current Product model supports one required `image` string plus product metadata such as name, brand, category, description, heat level, flavour profile, pairings, ingredients, reviews, rating, price and stock.
 
@@ -104,10 +112,12 @@ This system should be preserved unless an approved architecture change replaces 
 
 Repository QA currently covers:
 
+- product-identity authority consistency
 - build
 - isolated MongoDB test runtime
 - seeded QA database
 - API integration tests
+- search/heat-filter behaviour
 - user/auth boundaries
 - authoritative pricing
 - stock handling
