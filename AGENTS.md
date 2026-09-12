@@ -8,23 +8,27 @@ Primary working branch: `modernise/burnsville-v2`.
 
 `main` is not the active development branch and must not be modified, merged, rebased, force-pushed, or deployed without explicit user approval.
 
+`BURNSVILLE-MASTER-AUTHORITY.md` is the sole current product-identity authority. If any repository file, historical mapping, commit, README, asset filename, screenshot transcription, prior Codex output, or older instruction conflicts with it, the master authority wins unless the owner explicitly issues a newer approval.
+
 The approved three-block visual UI was implemented and verified in commit `8d3403ce4be7f221ea9e5862b9965ba915ed2957`. Treat the current CSS, layout, colours, typography, product-card presentation, heat artwork and page styling as approved implementation authority unless a newer explicit user instruction supersedes it.
 
 ## NON-NEGOTIABLE RULES
 
 1. Do not invent missing product facts, product names, descriptions, ingredients, pairings, heat values, prices, stock, filenames, image paths, commercial data, or design decisions.
-2. Do not redesign or reinterpret visual work unless the user has explicitly approved the new direction.
-3. Preserve working business logic unless a verified defect or approved architecture change requires modification.
-4. Preserve authentication, authorization, product CRUD, cart, stock handling, orders, reviews, image upload, security checks, and automated QA while visual work changes.
-5. Do not use `backend/seeder.js` for catalogue replacement.
-6. Do not mutate Preview or Production MongoDB/Atlas data without explicit user approval and a reviewed migration/rollback procedure.
-7. Do not delete legacy runtime product data or assets until the approved Burnsville replacement catalogue passes isolated QA.
-8. Do not merge `modernise/burnsville-v2-integration-spec` wholesale. Harvest only explicitly reviewed material.
-9. Do not use historical catalogue or asset-map files as final product authority.
-10. Do not expose secrets or commit real credentials. Environment variable names may be documented in `.env.example`; values must remain external.
-11. Do not use `npm audit fix --force`.
-12. Do not lower QA gates to make a build pass.
-13. Do not deploy Production or change the production domain without explicit approval.
+2. Do not rename, reinterpret, substitute, normalise, or infer product identities from historical filenames, descriptive labels, old maps, screenshots, or prior Codex output. Use `BURNSVILLE-MASTER-AUTHORITY.md`.
+3. Any proposed product-identity change must stop for explicit owner approval before implementation.
+4. Do not redesign or reinterpret visual work unless the user has explicitly approved the new direction.
+5. Preserve working business logic unless a verified defect or approved architecture change requires modification.
+6. Preserve authentication, authorization, product CRUD, cart, stock handling, orders, reviews, image upload, security checks, and automated QA while visual work changes.
+7. Do not use `backend/seeder.js` for catalogue replacement.
+8. Do not mutate Preview or Production MongoDB/Atlas data without explicit user approval and a reviewed migration/rollback procedure.
+9. Do not delete legacy runtime product data or assets until the approved Burnsville replacement catalogue passes isolated QA.
+10. Do not merge `modernise/burnsville-v2-integration-spec` wholesale. Harvest only explicitly reviewed material.
+11. Do not use historical catalogue or asset-map files as final product authority.
+12. Do not expose secrets or commit real credentials. Environment variable names may be documented in `.env.example`; values must remain external.
+13. Do not use `npm audit fix --force`.
+14. Do not lower QA gates to make a build pass.
+15. Do not deploy Production or change the production domain without explicit approval.
 
 ## WORKFLOW
 
@@ -34,7 +38,7 @@ AUDIT → PLAN → IMPLEMENT → TEST → REVIEW → COMMIT
 
 For visual/product changes, use:
 
-REFERENCE INTAKE → CLASSIFY AUTHORITY → AGREE → IMPLEMENT → VISUAL QA → FUNCTIONAL QA
+REFERENCE INTAKE → CLASSIFY AUTHORITY → AGREE → UPDATE MASTER AUTHORITY → IMPLEMENT → VISUAL QA → FUNCTIONAL QA
 
 ## REQUIRED VERIFICATION
 
@@ -61,7 +65,6 @@ Treat these capabilities as assets to preserve.
 - Product routes use MongoDB IDs.
 - Shop API currently uses a page size of 10.
 - Homepage product showcase currently displays a limited subset.
-- Shop-by-Heat is currently presentation, not a true catalogue filter.
 - Runtime catalogue still contains legacy third-party sample products pending approved Burnsville replacement.
 
 Do not change these constraints merely for preference. Change them only when the final product/UI system requires it and the implementation is explicitly authorised.
@@ -71,9 +74,10 @@ Do not change these constraints merely for preference. Change them only when the
 When sources conflict, use this priority:
 
 1. Explicit current user instruction.
-2. Current approved reference handoff/documentation created after final reference intake.
-3. `docs/BURNSVILLE-PROJECT-CONTROL.md` and `docs/BURNSVILLE-DECISIONS.md`.
-4. Current tested runtime behaviour on `modernise/burnsville-v2`.
-5. Historical integration/reference documents.
+2. `BURNSVILLE-MASTER-AUTHORITY.md` for product identity and locked product decisions.
+3. Current approved reference handoff/documentation created after final reference intake.
+4. `docs/BURNSVILLE-PROJECT-CONTROL.md` and `docs/BURNSVILLE-DECISIONS.md`.
+5. Current tested runtime behaviour on `modernise/burnsville-v2`.
+6. Historical integration/reference documents.
 
-Historical files never override a newer explicit approval.
+Historical files and automated reconciliations never override a newer explicit approval or the current master authority.
