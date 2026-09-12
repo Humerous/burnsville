@@ -48,14 +48,14 @@ The active branch must not retain stale destructive/seeding instructions. Until 
 ### D-014 — CURRENT TECHNICAL HEAT RANGE
 The current Product schema defines heat as 1–10 and the admin editor now matches that range. If the final approved Burnsville system later requires another scale, schema, validation, UI and QA must be changed together as an explicit product decision.
 
-### D-015 — STALE CATALOGUE/ASSET AUTHORITY QUARANTINED
-Superseded catalogue and asset-map files are retained only as explicitly marked historical evidence. The historical card installer is fail-closed. None of these files may be promoted from Git history or used for runtime integration.
+### D-015 — SUPPORTING CATALOGUE/ASSET MAPS ARE NON-RUNTIME
+The original 16 product names in the supporting catalogue and asset maps are current. Their identifiers, paths, product facts and card geometry are not automatically approved for runtime integration. The portrait-card installer remains fail-closed until the geometry and asset-role decision is recorded.
 
 ### D-016 — NEUTRAL METADATA UNTIL RELEASE
 Unsupported legacy marketing claims were removed. Neutral Burnsville metadata is acceptable during development; final canonical/social/launch metadata waits for the released public identity and URL.
 
 ### D-017 — FINAL PRODUCT COUNT AND NAMES
-The project owner confirmed 16 products: 10 Core and 6 Limited / Vintage. `NIGHT ORCHARD` is the sixth Limited product. The confirmed names are recorded in `backend/data/burnsville-final-catalogue-intake.json`; identifiers, assets and product/commercial values remain unresolved until supplied or approved.
+The project owner confirmed 16 products: 10 Core and 6 Limited / Vintage, with no product-name changes. The original 16 names are recorded in `backend/data/burnsville-final-catalogue-intake.json`. Proposed renamed forms are rejected. Identifiers, final asset roles and product/commercial values remain unresolved until supplied or approved.
 
 ## PENDING DECISIONS
 

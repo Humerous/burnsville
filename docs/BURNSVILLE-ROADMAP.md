@@ -25,14 +25,14 @@ Implemented:
 - final catalogue intake with 16 confirmed names, a 10/6 range split and explicit unresolved fields
 - stale catalogue replacement map replaced with a neutral control gate
 - catalogue authority reconciliation report
-- superseded 16-product maps quarantined as historical evidence and their installer disabled
+- original 16 product names confirmed; supporting facts/assets remain non-runtime and the portrait-card installer remains disabled pending geometry approval
 - interim README safety notice
 - active branch authority documented
 - current approved UI authority recorded
 
 Still intentionally excluded from authority:
 
-- stale historical product names/facts
+- unapproved historical product facts and rejected renamed forms
 - rejected asset maps
 - integration-branch visual/heat artwork decisions
 

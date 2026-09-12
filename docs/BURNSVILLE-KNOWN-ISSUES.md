@@ -56,7 +56,7 @@ FIXED. PR #2 is closed as superseded; branch history remains available for refer
 FIXED. The admin Product Edit input now matches the current MongoDB schema at 1–10.
 
 ### KI-016 — STALE LOCKED PRODUCT/ASSET AUTHORITY
-FIXED. Superseded catalogue/asset-map files are clearly marked as historical evidence, the conflicting installer is fail-closed, and the current confirmed name/count authority is documented in `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
+FIXED. The original 16 product names are confirmed unchanged. The supporting catalogue/asset maps remain non-runtime, the portrait-card installer is fail-closed pending geometry approval, and current authority is documented in `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
 
 ### KI-017 — LEGACY DEFAULT METADATA CLAIMS
 FIXED. Generic/unsupported metadata claims were replaced with neutral Burnsville defaults pending final release metadata.

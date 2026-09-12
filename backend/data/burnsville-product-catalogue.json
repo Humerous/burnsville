@@ -1,42 +1,42 @@
 {
   "project": "BURNSVILLE",
-  "status": "HISTORICAL 16-PRODUCT MAPPING — SUPERSEDED; DO NOT USE FOR RUNTIME",
-  "source": "Historical mapping recorded in commit 12e01e4; retained as evidence only",
+  "status": "NAME-MATCHED 16-PRODUCT SUPPORTING MAP — NON-RUNTIME FACTS REQUIRE APPROVAL",
+  "source": "Mapping recorded in commit 12e01e4; original product names confirmed unchanged by current explicit owner instruction",
   "rules": {
     "core_range_count": 10,
     "limited_vintage_count": 6,
     "total_products": 16,
-    "historical_mapping_only": true,
-    "superseded_by_current_final_build_handoff": true,
-    "do_not_reuse_old_identity_by_numeric_slot": true,
+    "supporting_mapping_only": true,
+    "original_product_names_confirmed": true,
+    "do_not_infer_identifier_approval_from_name_confirmation": true,
     "do_not_mutate_existing_production_records_without_migration_approval": true,
     "do_not_invent_commercial_or_product_facts": true,
     "legacy_third_party_products_js_is_not_product_authority": true
   },
   "core": [
-    {"id":"01","name":"GREEN SPARK","series":"core","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-01-GREEN-SPARK.png"},
-    {"id":"02","name":"SUN GOLD","series":"core","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-02-SUN-GOLD.png"},
-    {"id":"03","name":"CITRUS FLARE","series":"core","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-03-CITRUS-FLARE.png"},
-    {"id":"04","name":"RED EMBER","series":"core","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-04-RED-EMBER.png"},
-    {"id":"05","name":"DARK HARVEST","series":"core","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-05-DARK-HARVEST.png"},
-    {"id":"06","name":"SALINE CURRENT","series":"core","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-06-SALINE-CURRENT.png"},
-    {"id":"07","name":"CALABRIAN GLOW","series":"core","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-07-CALABRIAN-GLOW.png"},
-    {"id":"08","name":"BIRD'S FIRE","series":"core","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-08-BIRDS-FIRE.png"},
-    {"id":"09","name":"VIOLET'S FUSE","series":"core","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-09-VIOLETS-FUSE.png"},
-    {"id":"10","name":"GHOST BLACK","series":"core","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-10-GHOST-BLACK.png"}
+    {"id":"01","name":"GREEN SPARK","series":"core","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-01-GREEN-SPARK.png"},
+    {"id":"02","name":"SUN GOLD","series":"core","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-02-SUN-GOLD.png"},
+    {"id":"03","name":"CITRUS FLARE","series":"core","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-03-CITRUS-FLARE.png"},
+    {"id":"04","name":"RED EMBER","series":"core","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-04-RED-EMBER.png"},
+    {"id":"05","name":"DARK HARVEST","series":"core","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-05-DARK-HARVEST.png"},
+    {"id":"06","name":"SALINE CURRENT","series":"core","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-06-SALINE-CURRENT.png"},
+    {"id":"07","name":"CALABRIAN GLOW","series":"core","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-07-CALABRIAN-GLOW.png"},
+    {"id":"08","name":"BIRD'S FIRE","series":"core","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-08-BIRDS-FIRE.png"},
+    {"id":"09","name":"VIOLETS FUSE","series":"core","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-09-VIOLETS-FUSE.png"},
+    {"id":"10","name":"GHOST BLACK","series":"core","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-10-GHOST-BLACK.png"}
   ],
   "limited_vintage": [
-    {"id":"P-X","name":"FERMENT BLOOM","series":"limited-vintage","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-P-X-FERMENT-BLOOM.png"},
-    {"id":"R-13","name":"CASK 13","series":"limited-vintage","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-R-13-CASK-13.png"},
-    {"id":"POT-7","name":"VELVET SCORCH","series":"limited-vintage","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-POT-7-VELVET-SCORCH.png"},
-    {"id":"TMR-200","name":"TMR-200","series":"limited-vintage","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-TMR-200.png"},
-    {"id":"B-42","name":"NIGHT ORCHARD","series":"limited-vintage","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-B-42-NIGHT-ORCHARD.png"},
-    {"id":"X-666","name":"FINAL BURN","series":"limited-vintage","status":"historical","image":"/images/burnsville/cards/BURNSVILLE-X-666-FINAL-BURN.png"}
+    {"id":"P-X","name":"FERMENT BLOOM","series":"limited-vintage","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-P-X-FERMENT-BLOOM.png"},
+    {"id":"R-13","name":"CASK 13","series":"limited-vintage","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-R-13-CASK-13.png"},
+    {"id":"POT-7","name":"VELVET SCORCH","series":"limited-vintage","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-POT-7-VELVET-SCORCH.png"},
+    {"id":"TMR-200","name":"DESERT STATIC","series":"limited-vintage","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-TMR-200.png"},
+    {"id":"B-42","name":"NIGHT ORCHARD","series":"limited-vintage","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-B-42-NIGHT-ORCHARD.png"},
+    {"id":"X-666","name":"FINAL BURN","series":"limited-vintage","status":"name-confirmed-facts-pending","image":"/images/burnsville/cards/BURNSVILLE-X-666-FINAL-BURN.png"}
   ],
   "migration_notes": [
-    "This file is preserved only to document the superseded 16-product mapping.",
-    "SALINE CURRENT, CALABRIAN GLOW, FERMENT BLOOM and VELVET SCORCH conflict with the current final build handoff.",
-    "NIGHT ORCHARD is now confirmed as the sixth current Limited / Vintage product, but this historical file remains non-authoritative for its identifier, asset path and product facts.",
+    "The original 16 product names are confirmed unchanged.",
+    "This supporting file remains non-authoritative for identifiers, asset paths and product/commercial facts until explicitly approved.",
+    "NIGHT ORCHARD is confirmed as the sixth current Limited / Vintage product.",
     "Do not reuse any identity, identifier, asset path or commercial/product fact from this file without explicit current approval."
   ]
 }

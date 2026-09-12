@@ -63,13 +63,13 @@ The primary V2 branch now contains:
 - catalogue authority reconciliation report
 - interim README safety notice
 
-Removed from active authority or retained as explicitly historical evidence:
+Excluded from runtime authority or retained as supporting evidence:
 
-- obsolete locked product catalogue, now marked historical
-- obsolete locked asset map, now marked historical
+- earlier locked product catalogue, retained as non-runtime evidence with names confirmed and remaining facts unapproved
+- earlier locked asset map, retained as non-runtime evidence pending card-geometry approval
 - invalid product asset-map JSON
 - stale Burnsville product catalogue JSON that contained superseded product identities
-- historical 16-card installer, now fail-closed
+- 16-card installer, fail-closed pending card-geometry approval
 
 Not imported as authority:
 

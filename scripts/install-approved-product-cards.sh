@@ -1,9 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "ERROR: This historical 16-card installer is disabled."
-echo "Its labelled asset manifest conflicts with the current final product handoff."
-echo "Use docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md and wait for current approved assets."
+echo "ERROR: This 1122x1402 portrait-card installer is disabled pending geometry approval."
+echo "The product names match, but the final build instruction specifies a 1:1 card standard."
+echo "Use docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md before installing assets."
 exit 2
 
 EXPECTED_BRANCH="modernise/burnsville-v2"
