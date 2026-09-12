@@ -2,13 +2,13 @@
 
 ## CURRENT MODE
 
-REFERENCE INTAKE + REPOSITORY CONTROL CONSOLIDATION.
+FINAL PRODUCT INTEGRATION + RELEASE PREPARATION.
 
-The final visual UI is not locked. Do not begin a broad visual rewrite until remaining references are classified.
+The approved three-block visual UI and its responsive/browser QA are complete. Preserve that system while the final catalogue and release inputs are resolved.
 
 ## PACK 0 — CODEX READINESS + CONTROL
 
-Status: IMPLEMENTED / FINAL QA RUN PENDING ON LATEST CONTROL COMMITS.
+Status: COMPLETE.
 
 Goal: make the repository safe for longer Codex execution blocks.
 
@@ -26,7 +26,7 @@ Implemented:
 - stale catalogue replacement map replaced with a neutral control gate
 - interim README safety notice
 - active branch authority documented
-- current UI explicitly marked provisional
+- current approved UI authority recorded
 
 Still intentionally excluded from authority:
 
@@ -37,6 +37,8 @@ Still intentionally excluded from authority:
 Pass condition: future agents can identify source of truth, protected areas, open work and release gates without reconstructing chat history.
 
 ## PACK 1 — REFERENCE INTAKE + FINAL DESIGN AUTHORITY
+
+Status: COMPLETE for the supplied approved visual pack.
 
 Goal: turn uploaded visual references into one implementation authority.
 
@@ -68,6 +70,8 @@ Actions:
 Pass condition: product data architecture matches the approved UI and handoff.
 
 ## PACK 3 — FINAL UI IMPLEMENTATION
+
+Status: COMPLETE in commit `8d3403ce4be7f221ea9e5862b9965ba915ed2957`.
 
 Goal: rebuild the customer/admin presentation around the existing working engine.
 
@@ -110,6 +114,8 @@ No missing product facts may be inferred.
 Pass condition: all approved products/assets work through Home, Shop, Product, Cart, Checkout/Order and Admin with no public legacy catalogue content.
 
 ## PACK 5 — E2E + ACCESSIBILITY + PERFORMANCE
+
+Status: CUSTOMER E2E AND REQUIRED RESPONSIVE/ACCESSIBILITY QA COMPLETE; repeat product-specific checks after Pack 4 catalogue integration.
 
 Goal: prove the finished application.
 

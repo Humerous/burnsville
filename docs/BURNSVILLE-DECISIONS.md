@@ -13,7 +13,7 @@ Record decisions that must survive future Codex/agent sessions and prevent accid
 `main` must remain unchanged until final release approval.
 
 ### D-003 — CURRENT UI STATUS
-The current visual UI is provisional and will change after final reference intake. Existing visual CSS/components are implementation history and functional reference, not final design authority.
+The current visual UI implements the supplied approved reference pack and is the active design authority. Preserve its CSS, components, product cards and responsive behavior unless a newer explicit user instruction supersedes it.
 
 ### D-004 — WORKING ENGINE MUST BE PRESERVED
 Authentication, authorization, product CRUD, cart, stock, checkout/order flow, reviews, admin functionality, upload security and automated QA must be preserved through the UI rebuild unless a verified defect requires change.
@@ -39,8 +39,8 @@ The existing admin image upload flow is a working technical capability and shoul
 ### D-011 — SECURITY DEPENDENCY POLICY
 Do not use `npm audit fix --force`. Dependency updates must be controlled and verified with existing QA.
 
-### D-012 — VISUAL AUTHORITY PENDING
-A final design-system document will be created only after remaining references have been uploaded, reviewed and classified.
+### D-012 — VISUAL AUTHORITY IMPLEMENTED
+RESOLVED. The supplied approved references and authorised final-build prompt control the current three-block UI implementation.
 
 ### D-013 — INTERIM README POLICY
 The active branch must not retain stale destructive/seeding instructions. Until final release documentation is written, README may contain a clearly marked modernisation-status notice and point to repository control files.
@@ -56,15 +56,11 @@ Unsupported legacy marketing claims were removed. Neutral Burnsville metadata is
 
 ## PENDING DECISIONS
 
-The following must remain open until the reference/product handoff is complete:
+The following must remain open until the final product and release handoff is complete:
 
-- final page composition and visual system
 - final product image/gallery model
 - final product catalogue facts and commercial values
 - final shop browsing/pagination/filtering model
-- whether heat levels become real filters
-- whether the final approved product system changes the current 1–10 heat scale
 - whether human-readable product slugs are introduced
 - final homepage featured-product strategy
-- final admin presentation
 - final SEO/public positioning copy

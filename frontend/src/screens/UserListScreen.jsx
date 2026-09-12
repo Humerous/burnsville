@@ -5,6 +5,7 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 import Meta from '../components/Meta';
 import { listUsers, deleteUser } from '../actions/userActions';
+import { USER_DELETE_RESET } from '../constants/userConstants';
 import './admin-users.css';
 
 const UserListScreen = ({ history }) => {
@@ -26,6 +27,11 @@ const UserListScreen = ({ history }) => {
       history.push('/login');
     }
   }, [dispatch, successDelete, history, userInfo]);
+
+  useEffect(
+    () => () => dispatch({ type: USER_DELETE_RESET }),
+    [dispatch]
+  );
 
   const deleteHandler = (id, name) => {
     if (window.confirm(`Delete ${name}? This cannot be undone.`)) {

@@ -28,6 +28,9 @@ Primary customer surfaces:
 - Payment
 - Place Order
 - Order detail
+- Packs
+- Journal
+- Contact
 
 Primary admin surfaces:
 
@@ -36,7 +39,7 @@ Primary admin surfaces:
 - User list/edit
 - Order list
 
-The current visual implementation is provisional and must not be treated as final design authority.
+The current visual implementation is the approved three-block UI authority from commit `8d3403ce4be7f221ea9e5862b9965ba915ed2957`.
 
 ## BACKEND
 
@@ -117,7 +120,7 @@ Repository QA currently covers:
 - production dependency audit at the configured severity gate
 - repository diff checks
 
-Browser-level E2E and final responsive/accessibility visual QA remain future work after the final UI is implemented.
+Browser-level customer E2E, targeted keyboard checks and responsive/accessibility visual QA were completed for the approved UI. Product-specific release QA must run again after the final Burnsville catalogue is integrated.
 
 ## DEPLOYMENT
 

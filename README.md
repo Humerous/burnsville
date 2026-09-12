@@ -2,7 +2,7 @@
 
 > **Modernisation in progress**
 >
-> The active development source for the modernised Burnsville application is `modernise/burnsville-v2`. The visual UI and final Burnsville product catalogue are still being finalised. Historical setup, seeding, product and deployment information previously stored in this README is no longer authoritative and has been intentionally removed from the active branch to prevent destructive or stale instructions from being followed.
+> The active development source for the modernised Burnsville application is `modernise/burnsville-v2`. The approved three-block visual UI is implemented and verified; the final Burnsville product catalogue and public release inputs remain incomplete. Historical setup, seeding, product and deployment information previously stored in this README is no longer authoritative and has been intentionally removed from the active branch to prevent destructive or stale instructions from being followed.
 
 ## Current technical baseline
 
@@ -17,6 +17,7 @@ The modernised application currently includes:
 - server-authoritative order pricing and stock handling
 - protected GridFS-backed product image uploads
 - automated API/security/production-serving QA
+- browser journey, responsive and accessibility QA
 - Vercel preview deployment workflow
 
 ## Repository control
@@ -32,7 +33,7 @@ Before making changes, read:
 ## Important current boundaries
 
 - `main` is not the active development branch.
-- The current visual UI is provisional and will change after final reference intake.
+- The current visual UI is approved implementation authority and must not be redesigned without a newer explicit instruction.
 - The current runtime catalogue still contains temporary legacy third-party sample products pending the approved Burnsville replacement catalogue.
 - Do not run the legacy destructive seeder for catalogue replacement.
 - Do not mutate shared Preview/Production catalogue data without explicit approval and a reviewed rollback procedure.
@@ -62,4 +63,4 @@ The repository CI workflow is the authoritative integrated QA path while the mod
 
 ## Final documentation
 
-A full public README with final screenshots, architecture, features, setup, deployment and portfolio case-study information will replace this interim notice after the final UI, catalogue and release QA are complete.
+A full public README with final screenshots, architecture, features, setup, deployment and portfolio case-study information will replace this interim notice after the final catalogue and release QA are complete.

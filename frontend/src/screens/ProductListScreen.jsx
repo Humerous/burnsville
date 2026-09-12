@@ -10,7 +10,10 @@ import {
   deleteProduct,
   createProduct,
 } from '../actions/productActions';
-import { PRODUCT_CREATE_RESET } from '../constants/productConstants';
+import {
+  PRODUCT_CREATE_RESET,
+  PRODUCT_DELETE_RESET,
+} from '../constants/productConstants';
 import './admin-product-list.css';
 
 const priceFormatter = new Intl.NumberFormat('en-ZA', {
@@ -64,6 +67,11 @@ const ProductListScreen = ({ history, match }) => {
     createdProduct,
     pageNumber,
   ]);
+
+  useEffect(
+    () => () => dispatch({ type: PRODUCT_DELETE_RESET }),
+    [dispatch]
+  );
 
   const deleteHandler = (id, name) => {
     if (window.confirm(`Delete ${name}? This cannot be undone.`)) {

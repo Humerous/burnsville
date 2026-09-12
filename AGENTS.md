@@ -8,7 +8,7 @@ Primary working branch: `modernise/burnsville-v2`.
 
 `main` is not the active development branch and must not be modified, merged, rebased, force-pushed, or deployed without explicit user approval.
 
-The current visual UI is PROVISIONAL and is expected to change after final reference intake. Do not treat existing CSS, layout, colours, typography, product-card presentation, heat artwork, or page styling as locked design authority.
+The approved three-block visual UI was implemented and verified in commit `8d3403ce4be7f221ea9e5862b9965ba915ed2957`. Treat the current CSS, layout, colours, typography, product-card presentation, heat artwork and page styling as approved implementation authority unless a newer explicit user instruction supersedes it.
 
 ## NON-NEGOTIABLE RULES
 

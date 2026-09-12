@@ -69,6 +69,10 @@ const ProductScreen = ({ history, match }) => {
   }, [dispatch, match.params.id, successProductReview]);
 
   useEffect(() => {
+    setReviewNotice(false);
+  }, [match.params.id]);
+
+  useEffect(() => {
     if (!cartNotice) {
       return undefined;
     }
@@ -113,6 +117,7 @@ const ProductScreen = ({ history, match }) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    setReviewNotice(false);
     dispatch(
       createProductReview(match.params.id, {
         rating,

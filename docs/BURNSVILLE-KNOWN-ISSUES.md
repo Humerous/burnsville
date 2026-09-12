@@ -6,20 +6,14 @@ Track verified remaining work. Do not use this file to invent new scope.
 
 ## RED — RELEASE BLOCKERS
 
-### KI-001 — FINAL UI NOT LOCKED
-The current visual UI is provisional. Remaining visual references must be reviewed before final design implementation.
-
 ### KI-002 — FINAL BURNSVILLE CATALOGUE NOT IN RUNTIME
 The current runtime still uses legacy third-party sample products and images. Replacement is blocked until the complete approved Burnsville catalogue and assets are available and validated.
 
 ### KI-004 — FINAL PRODUCT IMAGE MODEL NOT CONFIRMED
-The current Product schema supports one required primary image. Final references must determine whether separate product-card, bottle, gallery or pairing imagery is structurally required.
+The current Product schema supports one required primary image. The conflict-free final product handoff must determine whether separate product-card, bottle, gallery or pairing imagery is structurally required.
 
 ### KI-005 — FINAL PRODUCT DATA INCOMPLETE
 Final approved values for the complete runtime catalogue must be supplied/confirmed before migration. Missing values must not be invented.
-
-### KI-006 — FINAL BROWSER/RESPONSIVE/ACCESSIBILITY QA PENDING
-Existing automated API/production QA does not replace final browser-level verification after the UI rebuild.
 
 ## AMBER — MUST RESOLVE BEFORE RELEASE
 
@@ -28,9 +22,6 @@ Final catalogue browsing behaviour must be decided once the final range/UI is kn
 
 ### KI-008 — HOMEPAGE FEATURED PRODUCT STRATEGY IS PROVISIONAL
 Current homepage implementation displays a limited subset rather than an explicitly approved merchandising strategy.
-
-### KI-009 — SHOP-BY-HEAT IS NOT A FILTER
-Current heat presentation is guidance only. Final interaction depends on the approved UI/UX direction.
 
 ### KI-010 — PRODUCT ROUTES USE MONGODB IDS
 This is functional but may later be reconsidered for public-facing product URLs. It is not a current technical blocker.
@@ -42,6 +33,15 @@ Known-stale destructive/historical instructions were removed and replaced with a
 Legacy generic metadata has been removed and replaced with neutral Burnsville defaults. Final OpenGraph, canonical URL, sitemap/indexing and public launch metadata still require the final release identity/URL.
 
 ## CLOSED / FIXED
+
+### KI-001 — FINAL UI NOT LOCKED
+FIXED. The supplied approved references were implemented through the authorised three-block build and verified in commit `8d3403ce4be7f221ea9e5862b9965ba915ed2957`.
+
+### KI-006 — FINAL BROWSER/RESPONSIVE/ACCESSIBILITY QA PENDING
+FIXED for the approved UI. Customer E2E, targeted keyboard checks and the required 320–1024 responsive matrix passed. Product-specific release QA remains required after catalogue integration.
+
+### KI-009 — SHOP-BY-HEAT IS NOT A FILTER
+FIXED. Shop-by-Heat uses the existing real server-side heat filter and preserves the heat parameter through catalogue pagination.
 
 ### KI-003 — INTEGRATION-SPEC BRANCH CONSOLIDATION
 FIXED. Safe integration, validation and migration controls were consolidated into `modernise/burnsville-v2`. PR #2 was closed as superseded without merging stale product or visual assumptions.
@@ -76,6 +76,8 @@ FIXED. Generic/unsupported metadata claims were replaced with neutral Burnsville
 - upload security checks
 - integrated API QA
 - production serving QA
+- approved three-block customer/admin UI
+- browser customer journey and responsive/accessibility QA
 - Vercel preview deployment pipeline
 - Codex/agent repository control layer present on active V2 branch
 
