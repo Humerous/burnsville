@@ -8,6 +8,12 @@ Primary working branch: `modernise/burnsville-v2`.
 
 Current project mode: FINAL PRODUCT INTEGRATION + RELEASE PREPARATION PENDING.
 
+## MASTER AUTHORITY
+
+`BURNSVILLE-MASTER-AUTHORITY.md` is the sole current product-identity authority.
+
+No historical catalogue, asset map, filename, commit, screenshot transcription, prior Codex output, or automated reconciliation may override it unless the owner explicitly issues a newer approval.
+
 ## CURRENT VERIFIED FOUNDATION
 
 - Vite frontend builds successfully.
@@ -50,6 +56,7 @@ COMPLETE for the control layer and approved UI implementation.
 The primary V2 branch now contains:
 
 - root `AGENTS.md` agent rules
+- root `BURNSVILLE-MASTER-AUTHORITY.md` product-identity authority
 - project control
 - architecture baseline
 - decision register
@@ -58,29 +65,29 @@ The primary V2 branch now contains:
 - controlled product-integration contract
 - safe catalogue migration plan
 - final product-integration QA checklist
-- final catalogue intake with 16 confirmed names, a 10/6 range split and unresolved-field markers
+- final catalogue intake with 16 locked identities, a 10/6 range split and unresolved-field markers
 - corrected catalogue replacement controls
 - catalogue authority reconciliation report
 - interim README safety notice
 
 Excluded from runtime authority or retained as supporting evidence:
 
-- earlier locked product catalogue, retained as non-runtime evidence with names confirmed and remaining facts unapproved
-- earlier locked asset map, retained as non-runtime evidence pending card-geometry approval
-- invalid product asset-map JSON
-- stale Burnsville product catalogue JSON that contained superseded product identities
+- historical product/commercial facts not explicitly approved
+- historical asset labels and filenames that conflict with the master identity authority
+- earlier asset map retained only as supporting evidence pending card-geometry and role approval
 - 16-card installer, fail-closed pending card-geometry approval
 
 Not imported as authority:
 
-- stale product names/facts from the superseded integration branch
+- stale product names/facts from superseded mappings
+- historical descriptive Limited / Vintage labels
 - rejected asset assumptions
 - integration-branch visual/heat changes
 
 ## OPEN WORKSTREAMS
 
 1. Final product data/image architecture.
-2. Complete the Burnsville product-fact and asset handoff recorded in `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
+2. Complete the Burnsville product-fact and asset-role handoff recorded in `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
 3. Controlled catalogue migration and product-specific regression QA.
 4. Final release SEO/public metadata and legal destinations.
 5. Final public README/repository presentation.
@@ -91,6 +98,7 @@ Not imported as authority:
 - Final product catalogue not integrated.
 - Legacy third-party runtime catalogue remains present until approved replacement data passes QA.
 - Final product image architecture remains unconfirmed for catalogue integration.
+- Final product/commercial facts remain incomplete.
 - Product-specific browser/responsive/accessibility QA must run after catalogue replacement.
 - Final release URL/canonical/social metadata is not yet locked.
 
@@ -98,7 +106,7 @@ Not imported as authority:
 
 Material product or visual work follows:
 
-DISCUSS → AGREE → COMMAND → APPROVE → EXECUTE → QA
+DISCUSS → AGREE → UPDATE MASTER AUTHORITY → COMMAND → APPROVE → EXECUTE → QA
 
 Do not reopen approved technical work without a verified defect, new requirement or explicit user instruction.
 
