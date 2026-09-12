@@ -2,7 +2,7 @@
 
 ## STATUS
 
-CONTROLLED PREPARATION / FINAL USER HANDOFF PENDING.
+IDENTITY AUTHORITY LOCKED / FINAL PRODUCT FACTS AND ASSET HANDOFF PENDING.
 
 ## PURPOSE
 
@@ -12,16 +12,29 @@ This file is a planning/control artifact only. It does not authorise database mu
 
 ## CURRENT AUTHORITY
 
-Use:
+Use in this order:
 
-- `AGENTS.md`
-- `docs/BURNSVILLE-PROJECT-CONTROL.md`
-- `docs/BURNSVILLE-DECISIONS.md`
-- `docs/BURNSVILLE-PRODUCT-INTEGRATION.md`
-- `docs/BURNSVILLE-CATALOGUE-MIGRATION-PLAN.md`
-- `qa/block-11d-final-product-integration-checklist.md`
+1. `AGENTS.md`
+2. `BURNSVILLE-MASTER-AUTHORITY.md`
+3. `docs/BURNSVILLE-PROJECT-CONTROL.md`
+4. `docs/BURNSVILLE-DECISIONS.md`
+5. `docs/BURNSVILLE-PRODUCT-INTEGRATION.md`
+6. `docs/BURNSVILLE-CATALOGUE-MIGRATION-PLAN.md`
+7. `qa/block-11d-final-product-integration-checklist.md`
 
-Historical catalogue/asset files are not final authority.
+Historical catalogue/asset files are supporting evidence only.
+
+## ALREADY RESOLVED
+
+- 16 products total
+- 10 Core identities 01–10
+- 6 Limited / Vintage identities: `P-X`, `CASK-13`, `POT-7`, `TMR-200`, `X-666`, `B-42`
+- approved UI implementation
+- current technical heat range 1–10
+- real server-side heat filtering
+- product-identity drift guard in CI
+
+Do not spend a future implementation block re-auditing these unless the owner explicitly reopens them.
 
 ## SAFETY CONSTRAINTS
 
@@ -58,10 +71,10 @@ All product-specific/commercial values must come from the final approved handoff
 
 Before runtime replacement:
 
-1. Confirm final reference/UI authority.
-2. Confirm final product count and identities.
-3. Confirm product/image schema requirements.
-4. Confirm final product asset roles and runtime paths.
+1. Run `node qa/product-authority.mjs`.
+2. Confirm product/image schema requirements.
+3. Confirm final product asset roles and runtime paths.
+4. Resolve card geometry.
 5. Record only approved product facts/commercial data.
 6. Build one complete replacement dataset.
 7. Run the read-only catalogue validator.
@@ -74,6 +87,6 @@ Before runtime replacement:
 
 The replacement set must pass:
 
-ASSET → DATA → VALIDATOR → API → HOME/SHOP → PRODUCT → CART → CHECKOUT/ORDER → ADMIN
+AUTHORITY → ASSET → DATA → VALIDATOR → API → HOME/SHOP → PRODUCT → CART → CHECKOUT/ORDER → ADMIN
 
-with no invented values, no public legacy product content, and no unauthorised database changes.
+with no identity drift, invented values, public legacy product content, or unauthorised database changes.
