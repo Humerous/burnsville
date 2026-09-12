@@ -35,6 +35,9 @@ jobs:
           node --version
           npm --version
 
+      - name: Verify master product authority
+        run: node qa/product-authority.mjs
+
       - name: Install backend dependencies
         run: npm ci
 
