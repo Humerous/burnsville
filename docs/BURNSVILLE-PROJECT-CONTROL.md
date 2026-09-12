@@ -2,7 +2,7 @@
 
 ## STATUS
 
-Repository modernisation and the approved three-block visual UI are working and consolidated on the active V2 branch. The final product catalogue and public release inputs remain incomplete.
+Repository modernisation and the approved three-block visual UI are working and consolidated on the active V2 branch. Product identity authority is locked. Final product facts, asset roles, runtime catalogue replacement and public release inputs remain incomplete.
 
 Primary working branch: `modernise/burnsville-v2`.
 
@@ -13,6 +13,8 @@ Current project mode: FINAL PRODUCT INTEGRATION + RELEASE PREPARATION PENDING.
 `BURNSVILLE-MASTER-AUTHORITY.md` is the sole current product-identity authority.
 
 No historical catalogue, asset map, filename, commit, screenshot transcription, prior Codex output, or automated reconciliation may override it unless the owner explicitly issues a newer approval.
+
+`qa/product-authority.mjs` is the automated enforcement layer and must remain enabled in CI.
 
 ## CURRENT VERIFIED FOUNDATION
 
@@ -25,6 +27,7 @@ No historical catalogue, asset map, filename, commit, screenshot transcription, 
 - Reviews exist.
 - Admin product image upload exists and is protected.
 - Uploaded images are stored in MongoDB GridFS.
+- Real server-side search, heat filtering and pagination exist.
 - Automated API/security/production-serving QA is established and passing on the consolidated V2 baseline.
 - Browser customer-journey, responsive and accessibility QA passed for the approved UI.
 - A Vercel preview deployment pipeline exists for the working V2 branch.
@@ -57,6 +60,7 @@ The primary V2 branch now contains:
 
 - root `AGENTS.md` agent rules
 - root `BURNSVILLE-MASTER-AUTHORITY.md` product-identity authority
+- automated product-authority CI guard
 - project control
 - architecture baseline
 - decision register
@@ -82,7 +86,7 @@ Not imported as authority:
 - stale product names/facts from superseded mappings
 - historical descriptive Limited / Vintage labels
 - rejected asset assumptions
-- integration-branch visual/heat changes
+- integration-branch visual assumptions
 
 ## OPEN WORKSTREAMS
 
@@ -92,6 +96,23 @@ Not imported as authority:
 4. Final release SEO/public metadata and legal destinations.
 5. Final public README/repository presentation.
 6. Controlled release to `main` and production.
+
+## NEXT CODEX BLOCK — ENTRY CONDITIONS
+
+Do not spend the next major block re-auditing product identities or redesigning completed UI.
+
+Start final product integration only when the remaining approved inputs are available or can be verified from current approved sources:
+
+- final product facts/commercial values
+- final runtime asset-role assignments
+- card geometry decision
+- product image/gallery architecture decision
+
+Then execute:
+
+AUTHORITY QA → ASSET VALIDATION → REPLACEMENT DATASET → ISOLATED QA → CUSTOMER/ADMIN REGRESSION → MIGRATION REVIEW
+
+If a required approved input is absent, stop on that specific unresolved input rather than inventing or reopening completed work.
 
 ## RELEASE BLOCKERS
 
@@ -119,7 +140,7 @@ Burnsville is finished only when:
 - all final product assets resolve correctly
 - customer commerce flow passes end to end
 - admin edit/upload flow passes end to end
-- automated QA passes
+- product-authority QA and automated QA pass
 - responsive and accessibility QA passes
 - no legacy third-party catalogue content is public
 - final SEO/public metadata is correct
