@@ -82,7 +82,7 @@ The preserved cards are portrait assets. The final build instruction defines app
 ## REQUIRED HANDOFF TO UNBLOCK RUNTIME REPLACEMENT
 
 1. Supply the final identifier/SKU for every product.
-2. Supply current approved card and bottle assets with an explicit role for each file, including assets matching the renamed products.
+2. Confirm the runtime role for each supplied card and bottle asset across all 16 products.
 3. Confirm whether the final card standard is strictly 1254 × 1254 or approve a documented exception.
 4. Supply approved description, heat, flavour, ingredients, pairings, price and stock for every product.
 5. Confirm the final runtime image/gallery architecture.
