@@ -7,7 +7,7 @@ Track verified remaining work. Do not use this file to invent new scope.
 ## RED — RELEASE BLOCKERS
 
 ### KI-002 — FINAL BURNSVILLE CATALOGUE NOT IN RUNTIME
-The current runtime still uses legacy third-party sample products and images. Product identity authority is now resolved in `BURNSVILLE-MASTER-AUTHORITY.md`, but product facts and final matching asset roles remain unresolved. Replacement is blocked until the complete approved Burnsville catalogue and assets are available and validated.
+The current runtime still uses legacy third-party sample products and images. Product identity authority is resolved in `BURNSVILLE-MASTER-AUTHORITY.md`, but product facts and final matching asset roles remain unresolved. Replacement is blocked until the complete approved Burnsville catalogue and assets are available and validated.
 
 ### KI-004 — FINAL PRODUCT IMAGE MODEL NOT CONFIRMED
 The current Product schema supports one required primary image. The conflict-free final product handoff must determine whether separate product-card, bottle, gallery or pairing imagery is structurally required.
@@ -47,19 +47,25 @@ FIXED. Shop-by-Heat uses the existing real server-side heat filter and preserves
 FIXED. Safe integration, validation and migration controls were consolidated into `modernise/burnsville-v2`. PR #2 was closed as superseded without merging stale product or visual assumptions.
 
 ### KI-013 — PR #1 DESCRIPTION STALE
-FIXED. PR #1 now documents the current modernisation foundation, remaining blockers and draft merge status.
+FIXED. PR #1 documents the current modernisation foundation, master product authority, remaining blockers and draft merge status.
 
 ### KI-014 — PR #2 DRAFT PREPARATION BRANCH
 FIXED. PR #2 is closed as superseded; branch history remains available for reference.
 
 ### KI-015 — ADMIN HEAT RANGE MISMATCH
-FIXED. The admin Product Edit input now matches the current MongoDB schema at 1–10.
+FIXED. The admin Product Edit input matches the current MongoDB schema at 1–10.
 
 ### KI-016 — PRODUCT IDENTITY AUTHORITY CONFLICT
-FIXED. `BURNSVILLE-MASTER-AUTHORITY.md` is now the sole current product-identity authority. Core identities are locked at 01–10 with Core 07 `CALABRIAN SUN`; Limited / Vintage identities are locked as `P-X`, `CASK-13`, `POT-7`, `TMR-200`, `X-666`, and `B-42`. Historical descriptive labels and filenames remain supporting evidence only and cannot rename products.
+FIXED. `BURNSVILLE-MASTER-AUTHORITY.md` is the sole current product-identity authority. Core identities are locked at 01–10 with Core 07 `CALABRIAN SUN`; Limited / Vintage identities are locked as `P-X`, `CASK-13`, `POT-7`, `TMR-200`, `X-666`, and `B-42`. Historical descriptive labels and filenames remain supporting evidence only and cannot rename products.
 
 ### KI-017 — LEGACY DEFAULT METADATA CLAIMS
 FIXED. Generic/unsupported metadata claims were replaced with neutral Burnsville defaults pending final release metadata.
+
+### KI-018 — PRODUCT AUTHORITY DRIFT WAS NOT MACHINE-GUARDED
+FIXED. `qa/product-authority.mjs` validates the master authority against the final catalogue intake and rejects known conflicting identities. The check is wired into GitHub Actions before dependency installation/build QA.
+
+### KI-019 — DISABLED CARD INSTALLER RETAINED STALE INSTALL LOGIC
+FIXED. `scripts/install-approved-product-cards.sh` is now a hard fail-closed stub. Historical filenames cannot be installed by simply bypassing an early exit; asset roles, card geometry and runtime paths must be explicitly resolved first.
 
 ## GREEN — VERIFIED WORKING FOUNDATION
 
@@ -74,6 +80,7 @@ FIXED. Generic/unsupported metadata claims were replaced with neutral Burnsville
 - stock handling
 - GridFS-backed admin image upload
 - upload security checks
+- real server-side search/heat filtering/pagination
 - integrated API QA
 - production serving QA
 - approved three-block customer/admin UI
@@ -81,6 +88,7 @@ FIXED. Generic/unsupported metadata claims were replaced with neutral Burnsville
 - Vercel preview deployment pipeline
 - Codex/agent repository control layer present on active V2 branch
 - master product-identity authority present at repository root
+- automated product-authority CI gate
 
 ## UPDATE RULE
 
