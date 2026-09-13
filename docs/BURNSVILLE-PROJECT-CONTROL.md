@@ -2,11 +2,11 @@
 
 ## STATUS
 
-Repository modernisation and the approved three-block visual UI are working and consolidated on the active V2 branch. Product identity authority is locked. Final product facts, asset roles, runtime catalogue replacement and public release inputs remain incomplete.
+Repository modernisation and the approved three-block visual UI are working and consolidated on the active V2 branch. Product identities, Review 1 image architecture and all 16 bottle assets are locked. Final product facts, runtime catalogue replacement and public release inputs remain incomplete.
 
 Primary working branch: `modernise/burnsville-v2`.
 
-Current project mode: FINAL PRODUCT INTEGRATION + RELEASE PREPARATION PENDING.
+Current project mode: FINAL PRODUCT INTEGRATION → PRODUCT-SPECIFIC QA → REVIEW 1.
 
 ## MASTER AUTHORITY
 
@@ -15,6 +15,8 @@ Current project mode: FINAL PRODUCT INTEGRATION + RELEASE PREPARATION PENDING.
 No historical catalogue, asset map, filename, commit, screenshot transcription, prior Codex output, or automated reconciliation may override it unless the owner explicitly issues a newer approval.
 
 `qa/product-authority.mjs` is the automated enforcement layer and must remain enabled in CI.
+
+`qa/product-assets.mjs` enforces the approved 16-file Review 1 bottle map and must remain enabled in CI.
 
 ## CURRENT VERIFIED FOUNDATION
 
@@ -71,7 +73,8 @@ The primary V2 branch now contains:
 - safe catalogue migration plan
 - final product-integration QA checklist
 - read-only final-catalogue readiness validator with focused automated tests
-- final catalogue intake with 16 locked identities, a 10/6 range split and unresolved-field markers
+- final catalogue intake with 16 locked identities, approved image paths, safe defaults and unresolved product-fact markers
+- approved 16-bottle runtime asset map and automated integrity gate
 - corrected catalogue replacement controls
 - catalogue authority reconciliation report
 - interim README safety notice
@@ -80,8 +83,8 @@ Excluded from runtime authority or retained as supporting evidence:
 
 - historical product/commercial facts not explicitly approved
 - historical asset labels and filenames that conflict with the master identity authority
-- earlier asset map retained only as supporting evidence pending card-geometry and role approval
-- 16-card installer, fail-closed pending card-geometry approval
+- opaque portrait poster/card artwork retained as supporting evidence and excluded from REVIEW 1 runtime
+- historical 16-card installer retained as a fail-closed stub because those cards are not approved runtime imagery
 
 Not imported as authority:
 
@@ -92,9 +95,9 @@ Not imported as authority:
 
 ## OPEN WORKSTREAMS
 
-1. Final product data/image architecture.
-2. Complete the Burnsville product-fact and asset-role handoff recorded in `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
-3. Controlled catalogue migration and product-specific regression QA.
+1. Complete and approve the Burnsville product facts and commercial values.
+2. Controlled product-only catalogue migration and product-specific regression QA.
+3. Resolve or explicitly accept runtime identity-drift risk R-015 before shared release-candidate migration.
 4. Final release SEO/public metadata and legal destinations.
 5. Final public README/repository presentation.
 6. Controlled release to `main` and production.
@@ -106,13 +109,10 @@ Do not spend the next major block re-auditing product identities or redesigning 
 Start final product integration only when the remaining approved inputs are available or can be verified from current approved sources:
 
 - final product facts/commercial values
-- final runtime asset-role assignments
-- card geometry decision
-- product image/gallery architecture decision
 
 Then execute:
 
-AUTHORITY QA → ASSET VALIDATION → REPLACEMENT DATASET → ISOLATED QA → CUSTOMER/ADMIN REGRESSION → MIGRATION REVIEW
+PRODUCT FACT APPROVAL → AUTHORITY/ASSET/CATALOGUE QA → REPLACEMENT DATASET → ISOLATED QA → CUSTOMER/ADMIN REGRESSION → MIGRATION REVIEW
 
 If a required approved input is absent, stop on that specific unresolved input rather than inventing or reopening completed work.
 
@@ -120,8 +120,8 @@ If a required approved input is absent, stop on that specific unresolved input r
 
 - Final product catalogue not integrated.
 - Legacy third-party runtime catalogue remains present until approved replacement data passes QA.
-- Final product image architecture remains unconfirmed for catalogue integration.
 - Final product/commercial facts remain incomplete.
+- Runtime identifier/collection/admin-edit policy remains open under risk R-015 before a shared release candidate.
 - Product-specific browser/responsive/accessibility QA must run after catalogue replacement.
 - Final release URL/canonical/social metadata is not yet locked.
 

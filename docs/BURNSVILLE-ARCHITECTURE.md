@@ -79,7 +79,7 @@ Master identity authority → approved replacement data → MongoDB Product → 
 
 The current Product model supports one required `image` string plus product metadata such as name, brand, category, description, heat level, flavour profile, pairings, ingredients, reviews, rating, price and stock.
 
-The single-image model is a known constraint, not a final architecture decision.
+The single-image model is approved through REVIEW 1 under decision D-019. Any post-REVIEW 1 gallery or multi-image expansion requires a separate explicit architecture decision.
 
 ## ORDER INTEGRITY
 

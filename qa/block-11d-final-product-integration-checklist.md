@@ -28,10 +28,10 @@ Do not infer missing product facts. Do not redesign supplied artwork. Do not mut
 
 - [x] Current single `image` field is approved through REVIEW 1.
 - [x] No schema/API/admin/UI image-field expansion is required for REVIEW 1.
-- [ ] Confirm Shop browsing/pagination behaviour.
-- [ ] Confirm homepage featured-product strategy.
+- [x] REVIEW 1 preserves Shop page size 10.
+- [x] REVIEW 1 preserves the current first-four Home showcase.
 - [x] Heat uses the current 1–10 technical range and real server-side filtering.
-- [ ] Confirm whether MongoDB-ID product URLs remain acceptable or slugs are approved.
+- [x] REVIEW 1 preserves MongoDB-ID product URLs.
 
 ## 3. ASSET QA
 

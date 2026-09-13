@@ -28,18 +28,18 @@ Define the safe procedure for replacing the temporary legacy third-party catalog
 
 Before migration work begins, the complete replacement dataset must be reviewable and contain all required approved values for the target runtime schema.
 
-Product identities are already locked. Remaining required inputs are product facts/commercial values, approved runtime assets and roles, resolved card geometry, and the final image/gallery architecture.
+Product identities, Review 1 runtime assets/roles, card containment and the single-image architecture are already locked. The remaining required inputs are the approved product facts and commercial values.
 
 Any unresolved required value blocks migration.
 
 ## PRE-MIGRATION
 
 1. Run `node qa/product-authority.mjs`.
-2. Confirm the target environment.
-3. Back up/export the current product collection.
-4. Record current product IDs, names and image paths.
-5. Validate the replacement catalogue offline.
-6. Verify every referenced product asset exists and its runtime role is approved.
+2. Run `node qa/product-assets.mjs`.
+3. Confirm the target environment.
+4. Back up/export the current product collection.
+5. Record current product IDs, names and image paths.
+6. Validate the replacement catalogue offline.
 7. Confirm replacement identities match `BURNSVILLE-MASTER-AUTHORITY.md` exactly.
 8. Confirm no legacy third-party products/brands are present in the replacement dataset.
 9. Confirm review/rating handling.

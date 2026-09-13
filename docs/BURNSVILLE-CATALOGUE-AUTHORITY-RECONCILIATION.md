@@ -46,11 +46,11 @@ No historical filename, screenshot transcription, catalogue map, commit, or auto
 
 Historical card and bottle files remain supporting evidence only.
 
-Some preserved filenames contain labels that no longer match the master identity authority. Those filenames may remain unchanged as historical file references until final asset-role decisions are made; they must not be interpreted as product-name authority.
+Some preserved source filenames contain labels that no longer match the master identity authority. Those historical files remain unchanged as evidence and must not be interpreted as product-name authority. Corrected runtime files use the locked neutral paths in `backend/data/burnsville-product-asset-map.json`.
 
 The preserved card set is 1122 × 1402 portrait. It remains supporting marketing evidence and is excluded from the REVIEW 1 runtime. The approved runtime uses transparent portrait bottle renders contained inside the existing square product-card media without crop or stretch.
 
-Historical bottle renders containing visible conflicting identity text must be corrected before installation. Limited / Vintage display names are code-only through REVIEW 1.
+Historical bottle renders containing visible conflicting identity text were corrected before installation. Limited / Vintage display names are code-only through REVIEW 1.
 
 ## UNRESOLVED PRODUCT DATA
 

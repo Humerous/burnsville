@@ -2,7 +2,7 @@
 
 ## CURRENT MODE
 
-FINAL PRODUCT INTEGRATION + RELEASE PREPARATION.
+FINAL PRODUCT INTEGRATION → PRODUCT-SPECIFIC QA → REVIEW 1.
 
 The approved three-block visual UI and its responsive/browser QA are complete. Product identities and the Review 1 bottle-image architecture are locked in `BURNSVILLE-MASTER-AUTHORITY.md`. Preserve those systems while the remaining product facts and release inputs are resolved.
 
@@ -69,11 +69,12 @@ Complete:
 - portrait bottles contained without crop or stretch inside approved square-card media
 - opaque poster/card artworks excluded from Review 1 runtime
 - exact runtime asset map and integrity gate
+- Shop page size 10 preserved through REVIEW 1 under D-020
+- current first-four Home showcase preserved through REVIEW 1 under D-020
+- MongoDB-ID product routes preserved through REVIEW 1 under D-020
 
 Still required:
 
-- confirm final shop browsing/pagination behaviour
-- confirm homepage merchandising strategy
 - approve product facts/commercial values
 - complete the final-catalogue dataset so the existing validator passes
 

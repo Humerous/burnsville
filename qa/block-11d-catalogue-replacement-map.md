@@ -2,7 +2,7 @@
 
 ## STATUS
 
-IDENTITY AUTHORITY LOCKED / FINAL PRODUCT FACTS AND ASSET HANDOFF PENDING.
+IDENTITY AND REVIEW 1 ASSET AUTHORITY LOCKED / FINAL PRODUCT FACTS PENDING.
 
 ## PURPOSE
 
@@ -33,14 +33,18 @@ Historical catalogue/asset files are supporting evidence only.
 - current technical heat range 1–10
 - real server-side heat filtering
 - product-identity drift guard in CI
+- approved single-image Review 1 architecture
+- 16 approved transparent bottle assets and runtime paths
+- approved square-media containment rule
+- product-asset integrity guard in CI
 
 Do not spend a future implementation block re-auditing these unless the owner explicitly reopens them.
 
 ## SAFETY CONSTRAINTS
 
 - Do not invent or rename products.
-- Do not invent ingredients, descriptions, heat values, prices, stock, availability, filenames, dimensions or image paths.
-- Do not infer final asset roles.
+- Do not invent ingredients, descriptions, heat values, prices, stock or availability.
+- Do not replace or reinterpret the approved Review 1 runtime asset map.
 - Do not carry third-party products, descriptions, ratings or reviews into the final Burnsville catalogue.
 - New replacement products begin with rating/review values of zero unless real migrated review data is separately approved.
 - Do not mutate shared Preview/Production data during preparation.
@@ -72,16 +76,14 @@ All product-specific/commercial values must come from the final approved handoff
 Before runtime replacement:
 
 1. Run `node qa/product-authority.mjs`.
-2. Confirm product/image schema requirements.
-3. Confirm final product asset roles and runtime paths.
-4. Resolve card geometry.
-5. Record only approved product facts/commercial data.
-6. Build one complete replacement dataset.
-7. Run the read-only catalogue validator.
-8. Run isolated API/customer/admin QA.
-9. Review backup/rollback procedure.
-10. Obtain explicit approval before shared-environment migration.
-11. Remove legacy catalogue/assets only after the replacement passes.
+2. Run `node qa/product-assets.mjs` against the locked Review 1 map.
+3. Record only approved product facts/commercial data.
+4. Build one complete replacement dataset.
+5. Run the read-only catalogue validator.
+6. Run isolated API/customer/admin QA.
+7. Review backup/rollback procedure.
+8. Obtain explicit approval before shared-environment migration.
+9. Remove legacy catalogue/assets only after the replacement passes.
 
 ## PASS CONDITION
 

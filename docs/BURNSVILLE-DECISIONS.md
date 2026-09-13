@@ -28,7 +28,7 @@ Missing product facts, names, descriptions, ingredients, pairings, heat values, 
 The current third-party sample catalogue is temporary runtime data. It must not be deleted until the complete approved Burnsville replacement dataset passes isolated QA and rollback evidence exists.
 
 ### D-008 — PRODUCT IMAGE ARCHITECTURE
-The current single-image product schema is not yet approved as final. Do not expand it until the final product/asset handoff establishes whether multiple structural product images are required.
+SUPERSEDED FOR REVIEW 1 by D-019. The existing single-image product schema is approved through REVIEW 1. Any post-REVIEW 1 expansion to multiple structural images requires a separate explicit architecture decision.
 
 ### D-009 — DATABASE SAFETY
 Do not use the destructive legacy seeder for final catalogue replacement. Catalogue replacement must use a reviewed isolated migration with backup/rollback and explicit environment approval.
@@ -49,13 +49,13 @@ The active branch must not retain stale destructive/seeding instructions. Until 
 The current Product schema defines heat as 1–10 and the admin editor matches that range. Shop-by-Heat uses the real server-side heat filter. Product-specific heat values remain pending until explicitly approved.
 
 ### D-015 — SUPPORTING CATALOGUE/ASSET MAPS ARE NON-RUNTIME
-`BURNSVILLE-MASTER-AUTHORITY.md` controls all product identities. Supporting catalogue and asset maps may retain historical filenames or descriptive labels only as evidence. Those labels cannot rename products or approve identifiers, paths, facts, asset roles or card geometry. The portrait-card installer remains fail-closed until geometry and asset-role approval is recorded.
+`BURNSVILLE-MASTER-AUTHORITY.md` controls all product identities. Historical catalogue facts and opaque poster/card assets remain supporting evidence only. The approved runtime bottle map is `backend/data/burnsville-product-asset-map.json`; its neutral paths, roles and geometry are locked through REVIEW 1. The portrait-card installer remains fail-closed because those poster/card assets are excluded from runtime.
 
 ### D-016 — NEUTRAL METADATA UNTIL RELEASE
 Unsupported legacy marketing claims were removed. Neutral Burnsville metadata is acceptable during development; final canonical/social/launch metadata waits for the released public identity and URL.
 
 ### D-017 — FINAL PRODUCT IDENTITY AUTHORITY
-The project owner locked 16 product identities in `BURNSVILLE-MASTER-AUTHORITY.md`: 10 Core identities numbered 01–10 and 6 Limited / Vintage identities `P-X`, `CASK-13`, `POT-7`, `TMR-200`, `X-666`, and `B-42`. Historical descriptive Limited / Vintage labels are not product-name authority. Product facts, final asset roles and commercial values remain unresolved until explicitly supplied or approved.
+The project owner locked 16 product identities in `BURNSVILLE-MASTER-AUTHORITY.md`: 10 Core identities numbered 01–10 and 6 Limited / Vintage identities `P-X`, `CASK-13`, `POT-7`, `TMR-200`, `X-666`, and `B-42`. Historical descriptive Limited / Vintage labels are not product-name authority. Product facts and commercial values remain unresolved until explicitly supplied or approved.
 
 ### D-018 — PRODUCT AUTHORITY MUST BE MACHINE-CHECKED
 `qa/product-authority.mjs` must pass in CI. It verifies the master authority and final catalogue intake remain aligned and rejects reintroduction of known conflicting identities. Do not remove, bypass or weaken this gate merely to make CI pass.
@@ -63,12 +63,15 @@ The project owner locked 16 product identities in `BURNSVILLE-MASTER-AUTHORITY.m
 ### D-019 — REVIEW 1 PRODUCT IMAGE ARCHITECTURE
 Owner-approved on 2026-09-13. Keep the existing single `image` field through REVIEW 1. Use one transparent bottle render per product across existing customer/admin product surfaces, contained without crop or stretch inside the approved square card media. Exclude the 1122 × 1402 opaque poster/card artworks from runtime. Limited / Vintage display names remain code-only, and visible bottle identity text must match `BURNSVILLE-MASTER-AUTHORITY.md` before installation.
 
+### D-020 — REVIEW 1 CATALOGUE PRESENTATION BASELINE
+Preserve the current working catalogue presentation through REVIEW 1: Shop page size remains 10, Home continues to show the first four products returned by its current page-one request, and product routes remain `/product/:id` using MongoDB IDs. These are REVIEW 1 preservation decisions, not permanent post-release architecture. Reconsider them only after REVIEW 1 or through a newer explicit owner instruction.
+
 ## PENDING DECISIONS
 
 The following must remain open until the final product and release handoff is complete:
 
 - final product catalogue facts and commercial values
-- final shop browsing/pagination model
-- whether human-readable product slugs are introduced
-- final homepage featured-product strategy
+- post-REVIEW 1 shop browsing/pagination improvements, if required
+- post-REVIEW 1 human-readable product slugs, if required
+- post-REVIEW 1 curated homepage merchandising, if required
 - final SEO/public positioning copy

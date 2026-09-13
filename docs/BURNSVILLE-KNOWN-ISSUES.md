@@ -7,24 +7,21 @@ Track verified remaining work. Do not use this file to invent new scope.
 ## RED — RELEASE BLOCKERS
 
 ### KI-002 — FINAL BURNSVILLE CATALOGUE NOT IN RUNTIME
-The current runtime still uses legacy third-party sample products and images. Product identity authority is resolved in `BURNSVILLE-MASTER-AUTHORITY.md`, but product facts and final matching asset roles remain unresolved. Replacement is blocked until the complete approved Burnsville catalogue and assets are available and validated.
-
-### KI-004 — FINAL PRODUCT IMAGE MODEL NOT CONFIRMED
-The current Product schema supports one required primary image. The conflict-free final product handoff must determine whether separate product-card, bottle, gallery or pairing imagery is structurally required.
+The current runtime still uses legacy third-party sample products and images. Product identities, Review 1 image architecture and all 16 primary bottle assets are resolved. Replacement remains blocked until the complete approved Burnsville product facts and commercial values are available and validated.
 
 ### KI-005 — FINAL PRODUCT DATA INCOMPLETE
 Final approved values for the complete runtime catalogue must be supplied/confirmed before migration. Missing values must not be invented.
 
-## AMBER — MUST RESOLVE BEFORE RELEASE
+## AMBER — DEFERRED UNTIL AFTER REVIEW 1
 
 ### KI-007 — SHOP PAGE SIZE IS FIXED AT 10
-Final catalogue browsing behaviour must be decided once the final range/UI is known.
+Preserve the current 10-product page size through REVIEW 1. Any later browsing change requires a separate decision after the actual 16-product range has been reviewed.
 
 ### KI-008 — HOMEPAGE FEATURED PRODUCT STRATEGY IS PROVISIONAL
-Current homepage implementation displays a limited subset rather than an explicitly approved merchandising strategy.
+Preserve the current first-four-product Home showcase through REVIEW 1. A curated merchandising strategy may be decided after REVIEW 1.
 
 ### KI-010 — PRODUCT ROUTES USE MONGODB IDS
-This is functional but may later be reconsidered for public-facing product URLs. It is not a current technical blocker.
+Preserve the working MongoDB-ID routes through REVIEW 1. Human-readable slugs remain an optional later architecture decision.
 
 ### KI-011 — README IS INTERIM
 Known-stale destructive/historical instructions were removed and replaced with a modernisation notice. The complete public/portfolio README waits for the final released system.
@@ -33,6 +30,9 @@ Known-stale destructive/historical instructions were removed and replaced with a
 Legacy generic metadata has been removed and replaced with neutral Burnsville defaults. Final OpenGraph, canonical URL, sitemap/indexing and public launch metadata still require the final release identity/URL.
 
 ## CLOSED / FIXED
+
+### KI-004 — FINAL PRODUCT IMAGE MODEL NOT CONFIRMED
+FIXED for REVIEW 1. Decision D-019 approves the existing single `image` field with one transparent bottle render per product. All 16 runtime assets, their paths and square-media containment rule are locked and verified.
 
 ### KI-001 — FINAL UI NOT LOCKED
 FIXED. The supplied approved references were implemented through the authorised three-block build and verified in commit `8d3403ce4be7f221ea9e5862b9965ba915ed2957`.
@@ -65,7 +65,7 @@ FIXED. Generic/unsupported metadata claims were replaced with neutral Burnsville
 FIXED. `qa/product-authority.mjs` validates the master authority against the final catalogue intake and rejects known conflicting identities. The check is wired into GitHub Actions before dependency installation/build QA.
 
 ### KI-019 — DISABLED CARD INSTALLER RETAINED STALE INSTALL LOGIC
-FIXED. `scripts/install-approved-product-cards.sh` is now a hard fail-closed stub. Historical filenames cannot be installed by simply bypassing an early exit; asset roles, card geometry and runtime paths must be explicitly resolved first.
+FIXED. `scripts/install-approved-product-cards.sh` remains a hard fail-closed stub because the opaque portrait poster/card artworks are excluded from REVIEW 1 runtime. The approved transparent bottle assets are installed through the locked runtime map instead.
 
 ## GREEN — VERIFIED WORKING FOUNDATION
 
@@ -89,6 +89,7 @@ FIXED. `scripts/install-approved-product-cards.sh` is now a hard fail-closed stu
 - Codex/agent repository control layer present on active V2 branch
 - master product-identity authority present at repository root
 - automated product-authority CI gate
+- 16 approved Review 1 bottle assets with automated path/dimension/alpha/SHA-256 QA
 
 ## UPDATE RULE
 
