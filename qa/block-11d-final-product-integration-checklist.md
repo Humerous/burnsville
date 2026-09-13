@@ -17,6 +17,7 @@ Do not infer missing product facts. Do not redesign supplied artwork. Do not mut
 - [x] Every product has a locked identity/code in `BURNSVILLE-MASTER-AUTHORITY.md`.
 - [x] Catalogue intake matches the master authority.
 - [x] Automated product-authority QA exists and is wired into CI.
+- [x] Read-only catalogue readiness validator exists and does not access a database.
 - [ ] Every product has approved visual assets.
 - [ ] Asset roles are explicitly classified.
 - [ ] Final card geometry is approved for runtime use.

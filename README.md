@@ -31,8 +31,9 @@ Before making changes, read in this order:
 4. `docs/BURNSVILLE-DECISIONS.md`
 5. `docs/BURNSVILLE-ROADMAP.md`
 6. `docs/BURNSVILLE-KNOWN-ISSUES.md`
+7. `docs/BURNSVILLE-RISK-REGISTER.md`
 
-CI also runs `qa/product-authority.mjs` to prevent accidental product-identity drift.
+CI runs `qa/product-authority.mjs` to prevent accidental product-identity drift and tests the read-only final-catalogue readiness validator.
 
 ## Important current boundaries
 
@@ -70,6 +71,14 @@ Verify product authority:
 ```bash
 node qa/product-authority.mjs
 ```
+
+Check whether the final catalogue intake is complete and its static asset paths resolve:
+
+```bash
+npm run qa:catalogue
+```
+
+This command is read-only. It is expected to report blockers until every required product fact and runtime asset has been approved.
 
 The repository CI workflow is the authoritative integrated QA path while the modernisation is in progress.
 

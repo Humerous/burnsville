@@ -20,6 +20,7 @@ Implemented:
 - architecture baseline
 - decision register
 - known-issues register
+- targeted risk register
 - product integration contract
 - catalogue migration safety plan
 - final integration QA checklist
@@ -28,6 +29,7 @@ Implemented:
 - catalogue authority reconciliation report
 - portrait-card installer disabled pending geometry and asset-role approval
 - automated `qa/product-authority.mjs` identity guard wired into CI
+- read-only `qa/catalogue-readiness.mjs` final-data/asset gate with validator tests wired into CI
 - interim README safety notice
 - active branch authority documented
 - current approved UI authority recorded

@@ -38,6 +38,9 @@ jobs:
       - name: Verify master product authority
         run: node qa/product-authority.mjs
 
+      - name: Test read-only catalogue readiness validator
+        run: node qa/catalogue-readiness.test.mjs
+
       - name: Install backend dependencies
         run: npm ci
 

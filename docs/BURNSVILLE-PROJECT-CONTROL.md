@@ -66,9 +66,11 @@ The primary V2 branch now contains:
 - decision register
 - roadmap
 - known-issues register
+- targeted risk register
 - controlled product-integration contract
 - safe catalogue migration plan
 - final product-integration QA checklist
+- read-only final-catalogue readiness validator with focused automated tests
 - final catalogue intake with 16 locked identities, a 10/6 range split and unresolved-field markers
 - corrected catalogue replacement controls
 - catalogue authority reconciliation report
