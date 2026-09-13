@@ -2,7 +2,7 @@
 
 ## STATUS
 
-IDENTITIES LOCKED / FINAL PRODUCT FACTS, ASSET ROLES AND IMAGE ARCHITECTURE PENDING.
+IDENTITIES, REVIEW 1 IMAGE ARCHITECTURE AND CORRECTED ASSETS LOCKED / FINAL PRODUCT FACTS PENDING.
 
 This document defines how approved Burnsville products will enter the existing application without inventing facts, bypassing QA or creating a parallel product system.
 
@@ -39,7 +39,21 @@ Supply only explicitly approved values:
 
 Any value not supplied remains unresolved.
 
-## ASSET ROLE GATE
+## APPROVED REVIEW 1 ASSET ROLE
+
+The owner approved the following on 2026-09-13:
+
+- one transparent bottle render is the primary runtime image for each product
+- the same primary image flows through all existing customer/admin product surfaces
+- the current single `image` field remains sufficient through REVIEW 1
+- portrait bottle renders are contained inside approved square media areas without crop or stretch
+- opaque 1122 × 1402 poster/card artworks remain supporting marketing evidence and are not runtime product images
+- Limited / Vintage products use code-only display names through REVIEW 1
+- conflicting visible identity text must be corrected before a bottle asset is installed
+
+Any future gallery or additional structural product-image field requires a later explicit architecture decision.
+
+## ASSET CLASSIFICATION RULE
 
 Before implementation, each visual must be classified where relevant as one of:
 
@@ -78,7 +92,7 @@ The current runtime supports:
 - `price`
 - `countInStock`
 
-The current single `image` field is a known constraint. The final asset handoff must decide whether separate card/bottle/gallery/supporting image fields are required.
+The current single `image` field is approved through REVIEW 1. Do not add gallery/card/supporting fields during this stage.
 
 ## SAFE GENERAL DEFAULTS FOR NEW BURNSVILLE PRODUCTS
 
@@ -110,9 +124,9 @@ Completed control gates:
 
 Next gates:
 
-4. Confirm required product/image schema.
-5. Validate and classify final source assets.
-6. Resolve card geometry and approve runtime filenames/paths.
+4. Validate the approved single-image architecture against the current schema. — COMPLETE
+5. Correct, validate and install the approved bottle assets. — COMPLETE
+6. Record final runtime filenames/paths and asset evidence. — COMPLETE
 7. Complete approved product facts/commercial values.
 8. Build replacement JSON from approved values only.
 9. Run product-authority QA and the read-only catalogue validator.

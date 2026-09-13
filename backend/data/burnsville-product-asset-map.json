@@ -1,31 +1,269 @@
 {
-  "status": "16-CARD SUPPORTING MAP — MASTER PRODUCT IDENTITY AUTHORITY APPLIED; INSTALLATION PENDING GEOMETRY AND ROLE APPROVAL",
-  "authority": "BURNSVILLE-MASTER-AUTHORITY.md controls product identities; filenames and historical descriptive labels are supporting evidence only",
-  "asset_directory": "/images/burnsville/cards/",
-  "master_dimensions": [1122, 1402],
+  "status": "REVIEW 1 APPROVED PRIMARY RUNTIME BOTTLE MAP — VISUAL, TEXT AND ALPHA QA PASSED",
+  "authority": "BURNSVILLE-MASTER-AUTHORITY.md",
+  "approved_on": "2026-09-13",
+  "asset_directory": "/images/products/bottles/",
+  "master_dimensions": [
+    1024,
+    1536
+  ],
+  "role": "PRIMARY_RUNTIME_IMAGE",
+  "architecture": "one transparent bottle render per product using the existing single image field",
   "assets": [
-    {"series":"core","id":"01","name":"GREEN SPARK","filename":"BURNSVILLE-01-GREEN-SPARK.png","path":"/images/burnsville/cards/BURNSVILLE-01-GREEN-SPARK.png","size":[1122,1402]},
-    {"series":"core","id":"02","name":"SUN GOLD","filename":"BURNSVILLE-02-SUN-GOLD.png","path":"/images/burnsville/cards/BURNSVILLE-02-SUN-GOLD.png","size":[1122,1402]},
-    {"series":"core","id":"03","name":"CITRUS FLARE","filename":"BURNSVILLE-03-CITRUS-FLARE.png","path":"/images/burnsville/cards/BURNSVILLE-03-CITRUS-FLARE.png","size":[1122,1402]},
-    {"series":"core","id":"04","name":"RED EMBER","filename":"BURNSVILLE-04-RED-EMBER.png","path":"/images/burnsville/cards/BURNSVILLE-04-RED-EMBER.png","size":[1122,1402]},
-    {"series":"core","id":"05","name":"DARK HARVEST","filename":"BURNSVILLE-05-DARK-HARVEST.png","path":"/images/burnsville/cards/BURNSVILLE-05-DARK-HARVEST.png","size":[1122,1402]},
-    {"series":"core","id":"06","name":"SALINE CURRENT","filename":"BURNSVILLE-06-SALINE-CURRENT.png","path":"/images/burnsville/cards/BURNSVILLE-06-SALINE-CURRENT.png","size":[1122,1402]},
-    {"series":"core","id":"07","name":"CALABRIAN SUN","filename":"BURNSVILLE-07-CALABRIAN-GLOW.png","path":"/images/burnsville/cards/BURNSVILLE-07-CALABRIAN-GLOW.png","size":[1122,1402],"note":"historical filename label is not product-name authority"},
-    {"series":"core","id":"08","name":"BIRD’S FIRE","filename":"BURNSVILLE-08-BIRDS-FIRE.png","path":"/images/burnsville/cards/BURNSVILLE-08-BIRDS-FIRE.png","size":[1122,1402]},
-    {"series":"core","id":"09","name":"VIOLET’S FUSE","filename":"BURNSVILLE-09-VIOLETS-FUSE.png","path":"/images/burnsville/cards/BURNSVILLE-09-VIOLETS-FUSE.png","size":[1122,1402]},
-    {"series":"core","id":"10","name":"GHOST BLACK","filename":"BURNSVILLE-10-GHOST-BLACK.png","path":"/images/burnsville/cards/BURNSVILLE-10-GHOST-BLACK.png","size":[1122,1402]},
-    {"series":"limited-vintage","id":"P-X","name":"P-X","filename":"BURNSVILLE-P-X-FERMENT-BLOOM.png","path":"/images/burnsville/cards/BURNSVILLE-P-X-FERMENT-BLOOM.png","size":[1122,1402],"note":"historical descriptive filename is not product-name authority"},
-    {"series":"limited-vintage","id":"CASK-13","name":"CASK-13","filename":"BURNSVILLE-R-13-CASK-13.png","path":"/images/burnsville/cards/BURNSVILLE-R-13-CASK-13.png","size":[1122,1402],"note":"historical filename/id mapping requires final asset-role confirmation"},
-    {"series":"limited-vintage","id":"POT-7","name":"POT-7","filename":"BURNSVILLE-POT-7-VELVET-SCORCH.png","path":"/images/burnsville/cards/BURNSVILLE-POT-7-VELVET-SCORCH.png","size":[1122,1402],"note":"historical descriptive filename is not product-name authority"},
-    {"series":"limited-vintage","id":"TMR-200","name":"TMR-200","filename":"BURNSVILLE-TMR-200.png","path":"/images/burnsville/cards/BURNSVILLE-TMR-200.png","size":[1122,1402]},
-    {"series":"limited-vintage","id":"X-666","name":"X-666","filename":"BURNSVILLE-X-666-FINAL-BURN.png","path":"/images/burnsville/cards/BURNSVILLE-X-666-FINAL-BURN.png","size":[1122,1402],"note":"historical descriptive filename is not product-name authority"},
-    {"series":"limited-vintage","id":"B-42","name":"B-42","filename":"BURNSVILLE-B-42-NIGHT-ORCHARD.png","path":"/images/burnsville/cards/BURNSVILLE-B-42-NIGHT-ORCHARD.png","size":[1122,1402],"note":"historical descriptive filename is not product-name authority"}
+    {
+      "series": "core",
+      "id": "01",
+      "name": "GREEN SPARK",
+      "filename": "burnsville-01-green-spark-bottle.webp",
+      "path": "/images/products/bottles/burnsville-01-green-spark-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "ad50dca582eee700f76611526ca17b349d4a7ad8951a75c4b412f6f5b3f2e699",
+      "source_handling": "preserved source bottle render"
+    },
+    {
+      "series": "core",
+      "id": "02",
+      "name": "SUN GOLD",
+      "filename": "burnsville-02-sun-gold-bottle.webp",
+      "path": "/images/products/bottles/burnsville-02-sun-gold-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "86966b2c9786994fdb8c4542309eef87f7fbe6155bc3bf7f815c25bbc132b73d",
+      "source_handling": "preserved source bottle render"
+    },
+    {
+      "series": "core",
+      "id": "03",
+      "name": "CITRUS FLARE",
+      "filename": "burnsville-03-citrus-flare-bottle.webp",
+      "path": "/images/products/bottles/burnsville-03-citrus-flare-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "e8428986de81370c5335e1c4bc816203ff802d01dece8a889fbe9556f4156146",
+      "source_handling": "preserved source bottle render"
+    },
+    {
+      "series": "core",
+      "id": "04",
+      "name": "RED EMBER",
+      "filename": "burnsville-04-red-ember-bottle.webp",
+      "path": "/images/products/bottles/burnsville-04-red-ember-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "fe74dc770a004b4ee04dcd4d872eb3ddf241361b6087bf8b4baafa0659956c49",
+      "source_handling": "preserved source bottle render"
+    },
+    {
+      "series": "core",
+      "id": "05",
+      "name": "DARK HARVEST",
+      "filename": "burnsville-05-dark-harvest-bottle.webp",
+      "path": "/images/products/bottles/burnsville-05-dark-harvest-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "f18ebd821724885197ddcba6710682d3977883752b8a0610ea7ad2ac066ce584",
+      "source_handling": "preserved source bottle render"
+    },
+    {
+      "series": "core",
+      "id": "06",
+      "name": "SALINE CURRENT",
+      "filename": "burnsville-06-saline-current-bottle.webp",
+      "path": "/images/products/bottles/burnsville-06-saline-current-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "56906c20b523b62c7fe6178dd21bcb5f25344ba2fdc81e984f8a63d3a0ecbc0c",
+      "source_handling": "preserved source bottle render"
+    },
+    {
+      "series": "core",
+      "id": "07",
+      "name": "CALABRIAN SUN",
+      "filename": "burnsville-07-calabrian-sun-bottle.webp",
+      "path": "/images/products/bottles/burnsville-07-calabrian-sun-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "cd116e031520bc6978344027edfcfa780014abb9351de58c61529a977c638c88",
+      "source_handling": "identity-text-corrected; preserved source alpha restored"
+    },
+    {
+      "series": "core",
+      "id": "08",
+      "name": "BIRD’S FIRE",
+      "filename": "burnsville-08-birds-fire-bottle.webp",
+      "path": "/images/products/bottles/burnsville-08-birds-fire-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "d7abec562e0cf067bb4b53ae587e11511d1115a45a4b666ad51d0a4050f5d1bc",
+      "source_handling": "preserved source bottle render"
+    },
+    {
+      "series": "core",
+      "id": "09",
+      "name": "VIOLET’S FUSE",
+      "filename": "burnsville-09-violets-fuse-bottle.webp",
+      "path": "/images/products/bottles/burnsville-09-violets-fuse-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "f2a45c5d5e6df7f601ab4bf712e18bde751ff83430dfdf93ba1e40153821d2b1",
+      "source_handling": "identity-text-corrected; preserved source alpha restored"
+    },
+    {
+      "series": "core",
+      "id": "10",
+      "name": "GHOST BLACK",
+      "filename": "burnsville-10-ghost-black-bottle.webp",
+      "path": "/images/products/bottles/burnsville-10-ghost-black-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "9c4a36c5e0ef5d06461bf9134c1dca44736835235a36816421dc151ea453ca1d",
+      "source_handling": "preserved source bottle render"
+    },
+    {
+      "series": "limited-vintage",
+      "id": "P-X",
+      "name": "P-X",
+      "filename": "burnsville-p-x-bottle.webp",
+      "path": "/images/products/bottles/burnsville-p-x-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "29c5f37354b64d9df1c2048783dc9c9c05fbd5e0051363d2818cb22d5aa882c0",
+      "source_handling": "identity-text-corrected; preserved source alpha restored"
+    },
+    {
+      "series": "limited-vintage",
+      "id": "CASK-13",
+      "name": "CASK-13",
+      "filename": "burnsville-cask-13-bottle.webp",
+      "path": "/images/products/bottles/burnsville-cask-13-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "992ba8c58c5510fb45edb456e33840c2f22481f4a764f73073ea3807cf2f27eb",
+      "source_handling": "identity-text-corrected; preserved source alpha restored"
+    },
+    {
+      "series": "limited-vintage",
+      "id": "POT-7",
+      "name": "POT-7",
+      "filename": "burnsville-pot-7-bottle.webp",
+      "path": "/images/products/bottles/burnsville-pot-7-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "11cd445e50f97da7d3d8bd9d4e35867f0bce2268879cee2162ab74a411bc89c3",
+      "source_handling": "identity-text-corrected; preserved source alpha restored"
+    },
+    {
+      "series": "limited-vintage",
+      "id": "TMR-200",
+      "name": "TMR-200",
+      "filename": "burnsville-tmr-200-bottle.webp",
+      "path": "/images/products/bottles/burnsville-tmr-200-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "0ce0921770dfb01a03e92e05e8d3b4a4660cb6d76e783f1e9020d0f98c554e65",
+      "source_handling": "identity-text-corrected; preserved source alpha restored"
+    },
+    {
+      "series": "limited-vintage",
+      "id": "X-666",
+      "name": "X-666",
+      "filename": "burnsville-x-666-bottle.webp",
+      "path": "/images/products/bottles/burnsville-x-666-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "8ccf6fc7134637b0f670fc0b173d0877098485f7734e9f645b2540cb4c5684a8",
+      "source_handling": "identity-text-corrected; preserved source alpha restored"
+    },
+    {
+      "series": "limited-vintage",
+      "id": "B-42",
+      "name": "B-42",
+      "filename": "burnsville-b-42-bottle.webp",
+      "path": "/images/products/bottles/burnsville-b-42-bottle.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "alpha": true,
+      "sha256": "c32dd0ae461004b1d39d3b3dbc58a597a4d6b7155638be5d503a4930c6853b23",
+      "source_handling": "identity-text-corrected; preserved source alpha restored"
+    }
   ],
   "rules": [
     "BURNSVILLE-MASTER-AUTHORITY.md controls product identities.",
-    "Historical filenames and descriptive labels do not rename products.",
-    "The 1122x1402 geometry conflicts with the current 1:1 card rule and requires explicit resolution.",
-    "Do not install these paths or treat this map as final runtime asset authority until geometry and asset roles are approved.",
-    "Do not delete legacy runtime assets until a current approved replacement catalogue passes isolated visual and functional QA."
-  ]
+    "All 16 runtime assets use transparent WebP bottle renders and exact locked visible identities.",
+    "Portrait bottles must be contained without crop or stretch inside approved square product-card media.",
+    "Limited / Vintage products use code-only REVIEW 1 display names.",
+    "The preserved opaque poster/card artworks remain supporting evidence and are excluded from runtime.",
+    "Do not delete legacy runtime assets until the replacement catalogue passes isolated visual and functional QA."
+  ],
+  "qa": {
+    "visual": "passed 2026-09-13",
+    "visible_identity_text": "passed 2026-09-13",
+    "dimensions": "passed: all assets 1024x1536",
+    "alpha": "passed: all assets contain alpha; corrected alpha masks are pixel-identical to preserved sources",
+    "integrity": "enforced by qa/product-assets.mjs using SHA-256"
+  }
 }

@@ -2,7 +2,7 @@
 
 ## STATUS
 
-PRODUCT IDENTITIES LOCKED / WAITING FOR COMPLETE PRODUCT FACTS AND ASSET HANDOFF.
+PRODUCT IDENTITIES AND REVIEW 1 ASSETS LOCKED / WAITING FOR COMPLETE PRODUCT FACTS.
 
 Primary identity authority: `BURNSVILLE-MASTER-AUTHORITY.md`.
 Supporting evidence: `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
@@ -18,16 +18,16 @@ Do not infer missing product facts. Do not redesign supplied artwork. Do not mut
 - [x] Catalogue intake matches the master authority.
 - [x] Automated product-authority QA exists and is wired into CI.
 - [x] Read-only catalogue readiness validator exists and does not access a database.
-- [ ] Every product has approved visual assets.
-- [ ] Asset roles are explicitly classified.
-- [ ] Final card geometry is approved for runtime use.
+- [x] Every product has an approved primary runtime visual asset.
+- [x] Asset roles are explicitly classified for REVIEW 1.
+- [x] Runtime card geometry is approved: portrait bottle contained inside the existing square media area.
 - [x] Required product facts/commercial values are explicitly unresolved where not yet approved.
 - [x] Historical catalogue files are not used to fill missing values automatically.
 
 ## 2. ARCHITECTURE GATES
 
-- [ ] Confirm whether the current single `image` field is sufficient.
-- [ ] If multiple structural images are required, approve schema/API/admin/UI expansion first.
+- [x] Current single `image` field is approved through REVIEW 1.
+- [x] No schema/API/admin/UI image-field expansion is required for REVIEW 1.
 - [ ] Confirm Shop browsing/pagination behaviour.
 - [ ] Confirm homepage featured-product strategy.
 - [x] Heat uses the current 1–10 technical range and real server-side filtering.
@@ -37,22 +37,22 @@ Do not infer missing product facts. Do not redesign supplied artwork. Do not mut
 
 For every delivered runtime asset:
 
-- [ ] file opens correctly
-- [ ] dimensions recorded
-- [ ] aspect ratio preserved
-- [ ] transparency preserved where applicable
-- [ ] no accidental crop/stretch/border/padding
-- [ ] no unapproved colour shift
-- [ ] artwork/text/logo matches approved source
-- [ ] runtime role explicitly approved
-- [ ] runtime path resolves successfully
+- [x] file opens correctly
+- [x] dimensions recorded
+- [x] aspect ratio preserved
+- [x] transparency preserved
+- [x] no accidental crop/stretch/border/padding
+- [x] no unapproved colour shift outside the authorised identity-text corrections
+- [x] artwork/text/logo matches the approved Review 1 identity authority
+- [x] runtime role explicitly approved
+- [x] runtime path resolves successfully
 
 ## 4. PRODUCT DATA QA
 
 For every replacement product:
 
 - [ ] identity/code matches `BURNSVILLE-MASTER-AUTHORITY.md`
-- [ ] asset mapping matches approved source
+- [x] asset mapping matches approved Review 1 source
 - [ ] brand/category correct
 - [ ] description approved
 - [ ] heat approved and valid
@@ -62,7 +62,8 @@ For every replacement product:
 - [ ] price approved
 - [ ] stock approved
 - [ ] no legacy third-party reviews are carried over
-- [ ] product-authority QA passes
+- [x] product-authority QA passes
+- [x] product-asset QA passes
 - [ ] read-only catalogue validator passes
 
 ## 5. CUSTOMER FLOW QA
@@ -121,7 +122,7 @@ At minimum test:
 ## 8. TECHNICAL QA
 
 - [ ] product-authority QA passes
-- [ ] frontend production build passes
+- [x] frontend production build passes
 - [ ] integrated API QA passes
 - [ ] heat-filter API QA passes
 - [ ] review consistency QA passes
@@ -129,6 +130,7 @@ At minimum test:
 - [ ] production serving QA passes
 - [ ] production dependency gate passes
 - [ ] catalogue validator passes
+- [x] product-asset integrity validator passes
 - [ ] no broken image requests
 - [ ] no unexpected console/runtime errors
 - [ ] `git diff --check` passes

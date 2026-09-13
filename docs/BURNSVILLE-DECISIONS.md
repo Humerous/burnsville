@@ -60,11 +60,13 @@ The project owner locked 16 product identities in `BURNSVILLE-MASTER-AUTHORITY.m
 ### D-018 — PRODUCT AUTHORITY MUST BE MACHINE-CHECKED
 `qa/product-authority.mjs` must pass in CI. It verifies the master authority and final catalogue intake remain aligned and rejects reintroduction of known conflicting identities. Do not remove, bypass or weaken this gate merely to make CI pass.
 
+### D-019 — REVIEW 1 PRODUCT IMAGE ARCHITECTURE
+Owner-approved on 2026-09-13. Keep the existing single `image` field through REVIEW 1. Use one transparent bottle render per product across existing customer/admin product surfaces, contained without crop or stretch inside the approved square card media. Exclude the 1122 × 1402 opaque poster/card artworks from runtime. Limited / Vintage display names remain code-only, and visible bottle identity text must match `BURNSVILLE-MASTER-AUTHORITY.md` before installation.
+
 ## PENDING DECISIONS
 
 The following must remain open until the final product and release handoff is complete:
 
-- final product image/gallery model
 - final product catalogue facts and commercial values
 - final shop browsing/pagination model
 - whether human-readable product slugs are introduced

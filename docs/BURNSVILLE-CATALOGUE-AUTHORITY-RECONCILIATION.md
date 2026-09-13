@@ -2,7 +2,7 @@
 
 ## STATUS
 
-PRODUCT IDENTITY CONFLICT RESOLVED / PRODUCT FACTS AND FINAL ASSET ROLES STILL PENDING.
+PRODUCT IDENTITY, REVIEW 1 ASSET ARCHITECTURE AND CORRECTED ASSETS RESOLVED / PRODUCT FACTS STILL PENDING.
 
 Audit date: 2026-09-12
 
@@ -48,13 +48,14 @@ Historical card and bottle files remain supporting evidence only.
 
 Some preserved filenames contain labels that no longer match the master identity authority. Those filenames may remain unchanged as historical file references until final asset-role decisions are made; they must not be interpreted as product-name authority.
 
-The preserved card set is 1122 × 1402 portrait. The later approved product-card standard is 1254 × 1254 square. This geometry question remains unresolved and separate from product identity.
+The preserved card set is 1122 × 1402 portrait. It remains supporting marketing evidence and is excluded from the REVIEW 1 runtime. The approved runtime uses transparent portrait bottle renders contained inside the existing square product-card media without crop or stretch.
+
+Historical bottle renders containing visible conflicting identity text must be corrected before installation. Limited / Vintage display names are code-only through REVIEW 1.
 
 ## UNRESOLVED PRODUCT DATA
 
 Do not infer or fabricate:
 
-- Limited / Vintage descriptive display names, if any
 - additional SKU/identifier conventions
 - descriptions
 - heat values
@@ -63,8 +64,6 @@ Do not infer or fabricate:
 - pairings
 - prices
 - stock
-- final card/bottle/gallery/supporting asset roles
-- final product image/gallery architecture
 
 ## CONTROL RULE
 
@@ -84,10 +83,12 @@ Historical evidence never promotes itself to authority.
 - General UI/backend/QA: PRESERVE.
 - Runtime catalogue replacement: NOT YET AUTHORISED.
 - Shared database mutation: NOT AUTHORISED.
-- Final product facts and asset roles: PENDING.
+- Review 1 image architecture and asset roles: RESOLVED.
+- Corrected final bottle assets: VERIFIED AND INSTALLED.
+- Final product facts: PENDING.
 
 ## NEXT IMPLEMENTATION GATE
 
-After unresolved product facts and asset roles are explicitly approved:
+After unresolved product facts and commercial values are explicitly approved:
 
 ASSET → DATA → VALIDATOR → ISOLATED API → HOME/SHOP → PRODUCT → CART → CHECKOUT/ORDER → ADMIN → MIGRATION REVIEW

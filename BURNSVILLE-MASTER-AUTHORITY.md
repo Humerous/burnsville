@@ -49,7 +49,6 @@ The authoritative product identities are the following codes. Historical descrip
 
 The following remain pending until explicitly approved:
 
-- Limited / Vintage descriptive display names, if any
 - SKU/identifier policy beyond the locked identities above
 - final product descriptions
 - heat levels
@@ -58,9 +57,18 @@ The following remain pending until explicitly approved:
 - pairings
 - prices
 - stock defaults
-- final card/bottle/gallery/supporting asset roles
-- final product image/gallery architecture
-- final card geometry where preserved portrait assets conflict with the approved square-card standard
+
+## LOCKED REVIEW 1 IMAGE ARCHITECTURE
+
+Owner approval recorded: 2026-09-13.
+
+1. The existing single `image` product field remains the approved product-image architecture through REVIEW 1.
+2. Each product uses one transparent bottle render as its primary runtime image across Home, Shop, Product Detail, Cart, Checkout/Order and Admin.
+3. Portrait bottle renders must be contained inside the approved square product-card media area without cropping, stretching or redesigning the card.
+4. The preserved 1122 × 1402 opaque poster/card artworks are supporting marketing evidence only and are excluded from the REVIEW 1 runtime catalogue.
+5. Limited / Vintage products use the locked codes as their only REVIEW 1 display names. Historical descriptive labels are not approved display names.
+6. Visible product-identity text in runtime bottle artwork must match the locked identities in this file. Historical conflicting labels must be corrected before the asset is installed.
+7. Runtime filenames may use lowercase ASCII-safe slugs, but filenames do not change or replace the exact displayed identities above.
 
 ## CHANGE CONTROL
 

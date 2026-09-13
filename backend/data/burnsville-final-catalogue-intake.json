@@ -1,15 +1,15 @@
 {
-  "status": "AUTHORITATIVE 16-PRODUCT IDENTITY HANDOFF — PRODUCT FACTS AND ASSETS REQUIRED",
+  "status": "AUTHORITATIVE 16-PRODUCT REVIEW 1 INTAKE — IDENTITIES AND ASSETS READY; PRODUCT FACTS REQUIRED",
   "authority": "BURNSVILLE-MASTER-AUTHORITY.md",
   "confirmedFacts": [
     "16 products total",
     "10 Core product identities",
-    "6 Limited / Vintage product identities"
+    "6 Limited / Vintage code-only product identities",
+    "one approved transparent runtime bottle image per product",
+    "existing single image field approved through REVIEW 1"
   ],
   "unresolved": [
-    "Limited / Vintage descriptive display names, if any",
     "SKU/identifier policy beyond the locked identities",
-    "current approved asset files and asset roles",
     "descriptions",
     "heat levels",
     "flavour profiles",
@@ -19,21 +19,325 @@
     "stock"
   ],
   "products": [
-    {"collection":"Core","name":"GREEN SPARK","identifier":"01","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"SUN GOLD","identifier":"02","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"CITRUS FLARE","identifier":"03","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"RED EMBER","identifier":"04","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"DARK HARVEST","identifier":"05","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"SALINE CURRENT","identifier":"06","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"CALABRIAN SUN","identifier":"07","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"BIRD’S FIRE","identifier":"08","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"VIOLET’S FUSE","identifier":"09","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Core","name":"GHOST BLACK","identifier":"10","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"P-X","identifier":"P-X","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"CASK-13","identifier":"CASK-13","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"POT-7","identifier":"POT-7","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"TMR-200","identifier":"TMR-200","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"X-666","identifier":"X-666","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"},
-    {"collection":"Limited / Vintage","name":"B-42","identifier":"B-42","image":"DATA REQUIRED","description":"CONTENT REQUIRED","heatLevel":"DATA REQUIRED","flavourProfile":"DATA REQUIRED","ingredients":"DATA REQUIRED","pairings":["DATA REQUIRED"],"price":"DATA REQUIRED","countInStock":"DATA REQUIRED"}
+    {
+      "collection": "Core",
+      "name": "GREEN SPARK",
+      "identifier": "01",
+      "image": "/images/products/bottles/burnsville-01-green-spark-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "SUN GOLD",
+      "identifier": "02",
+      "image": "/images/products/bottles/burnsville-02-sun-gold-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "CITRUS FLARE",
+      "identifier": "03",
+      "image": "/images/products/bottles/burnsville-03-citrus-flare-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "RED EMBER",
+      "identifier": "04",
+      "image": "/images/products/bottles/burnsville-04-red-ember-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "DARK HARVEST",
+      "identifier": "05",
+      "image": "/images/products/bottles/burnsville-05-dark-harvest-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "SALINE CURRENT",
+      "identifier": "06",
+      "image": "/images/products/bottles/burnsville-06-saline-current-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "CALABRIAN SUN",
+      "identifier": "07",
+      "image": "/images/products/bottles/burnsville-07-calabrian-sun-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "BIRD’S FIRE",
+      "identifier": "08",
+      "image": "/images/products/bottles/burnsville-08-birds-fire-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "VIOLET’S FUSE",
+      "identifier": "09",
+      "image": "/images/products/bottles/burnsville-09-violets-fuse-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "GHOST BLACK",
+      "identifier": "10",
+      "image": "/images/products/bottles/burnsville-10-ghost-black-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Limited / Vintage",
+      "name": "P-X",
+      "identifier": "P-X",
+      "image": "/images/products/bottles/burnsville-p-x-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Limited / Vintage",
+      "name": "CASK-13",
+      "identifier": "CASK-13",
+      "image": "/images/products/bottles/burnsville-cask-13-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Limited / Vintage",
+      "name": "POT-7",
+      "identifier": "POT-7",
+      "image": "/images/products/bottles/burnsville-pot-7-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Limited / Vintage",
+      "name": "TMR-200",
+      "identifier": "TMR-200",
+      "image": "/images/products/bottles/burnsville-tmr-200-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Limited / Vintage",
+      "name": "X-666",
+      "identifier": "X-666",
+      "image": "/images/products/bottles/burnsville-x-666-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Limited / Vintage",
+      "name": "B-42",
+      "identifier": "B-42",
+      "image": "/images/products/bottles/burnsville-b-42-bottle.webp",
+      "description": "CONTENT REQUIRED",
+      "heatLevel": "DATA REQUIRED",
+      "flavourProfile": "DATA REQUIRED",
+      "ingredients": "DATA REQUIRED",
+      "pairings": [
+        "DATA REQUIRED"
+      ],
+      "price": "DATA REQUIRED",
+      "countInStock": "DATA REQUIRED",
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    }
   ]
 }

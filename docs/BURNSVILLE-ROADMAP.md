@@ -4,7 +4,7 @@
 
 FINAL PRODUCT INTEGRATION + RELEASE PREPARATION.
 
-The approved three-block visual UI and its responsive/browser QA are complete. Product identity authority is locked in `BURNSVILLE-MASTER-AUTHORITY.md`. Preserve those systems while the remaining product facts, asset roles and release inputs are resolved.
+The approved three-block visual UI and its responsive/browser QA are complete. Product identities and the Review 1 bottle-image architecture are locked in `BURNSVILLE-MASTER-AUTHORITY.md`. Preserve those systems while the remaining product facts and release inputs are resolved.
 
 ## PACK 0 — CODEX READINESS + CONTROL
 
@@ -25,11 +25,12 @@ Implemented:
 - catalogue migration safety plan
 - final integration QA checklist
 - final catalogue intake with 16 locked product identities, a 10/6 range split and explicit unresolved fields
-- supporting catalogue and asset maps quarantined from runtime authority
+- supporting catalogue facts quarantined from runtime authority
 - catalogue authority reconciliation report
-- portrait-card installer disabled pending geometry and asset-role approval
+- portrait-card installer remains disabled; opaque poster cards are excluded from Review 1 runtime
 - automated `qa/product-authority.mjs` identity guard wired into CI
 - read-only `qa/catalogue-readiness.mjs` final-data/asset gate with validator tests wired into CI
+- 16 approved transparent bottle assets with exact runtime identities and SHA-256 QA wired into CI
 - interim README safety notice
 - active branch authority documented
 - current approved UI authority recorded
@@ -38,7 +39,6 @@ Still intentionally excluded from authority:
 
 - unapproved historical product/commercial facts
 - historical descriptive labels as product identities
-- unapproved asset roles and paths
 - integration-branch visual assumptions
 
 Pass condition: future agents can identify source of truth, protected areas, open work and release gates without reconstructing chat history.
@@ -53,7 +53,7 @@ Pass condition: visual implementation can proceed without guessing.
 
 ## PACK 2 — PRODUCT ARCHITECTURE + FINAL CATALOGUE CONTRACT
 
-Status: PARTIAL — PRODUCT IDENTITIES LOCKED; PRODUCT FACTS/ASSET ARCHITECTURE PENDING.
+Status: PARTIAL — PRODUCT IDENTITIES AND REVIEW 1 IMAGE ARCHITECTURE LOCKED; PRODUCT FACTS PENDING.
 
 Goal: define the exact data/image model required by the final product experience.
 
@@ -64,17 +64,18 @@ Complete:
 - final Limited / Vintage identities: `P-X`, `CASK-13`, `POT-7`, `TMR-200`, `X-666`, `B-42`
 - current technical heat range: 1–10
 - real server-side heat filtering
+- current single `image` field approved through REVIEW 1
+- 16 transparent bottle renders approved as primary runtime images
+- portrait bottles contained without crop or stretch inside approved square-card media
+- opaque poster/card artworks excluded from Review 1 runtime
+- exact runtime asset map and integrity gate
 
 Still required:
 
-- decide whether one image remains sufficient
-- define any gallery/card/bottle/supporting image fields required
-- classify final runtime asset roles
-- resolve portrait-card versus approved square-card geometry
 - confirm final shop browsing/pagination behaviour
 - confirm homepage merchandising strategy
 - approve product facts/commercial values
-- update final-catalogue validator for the approved completed dataset
+- complete the final-catalogue dataset so the existing validator passes
 
 Pass condition: product data architecture matches the approved UI and complete handoff.
 
@@ -88,7 +89,7 @@ Pass condition: approved UI remains implemented without functional regressions.
 
 ## PACK 4 — FINAL PRODUCT INTEGRATION
 
-Status: BLOCKED ONLY BY REMAINING APPROVED PRODUCT FACTS / ASSET-ROLE INPUTS.
+Status: BLOCKED ONLY BY REMAINING APPROVED PRODUCT FACTS / COMMERCIAL VALUES.
 
 Goal: replace the legacy demo catalogue with approved Burnsville products.
 
