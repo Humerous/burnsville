@@ -98,7 +98,7 @@ Evidence grades:
 | Core 05 — DARK HARVEST | Porcini and ancho come together with kokum, coffee and blackstrap molasses in DARK HARVEST. **[C; matches A]** | Hot **[B]**; 7/10 **[C]** | **OWNER REQUIRED**; no independent flavour phrase found | Porcini; ancho; kokum; coffee; blackstrap molasses **[A/C]** | **OWNER REQUIRED**; historical list is empty **[C]** | R179.98 **[B/C]** | 200 **[C]** |
 | Core 06 — SALINE CURRENT | Tomatillo and serrano come together with saltbush, dill and nori in SALINE CURRENT. **[C; matches A]** | **CONFLICT:** Very Hot **[B]**; 3/10 **[C]** | **OWNER REQUIRED**; no independent flavour phrase found | Tomatillo; serrano; saltbush; dill; nori **[A/C]** | **OWNER REQUIRED**; historical list is empty **[C]** | R179.98 **[B/C]** | 200 **[C]** |
 | Core 07 — CALABRIAN SUN | Roasted aubergine and Calabrian chilli come together with fennel seed, oregano and pomegranate molasses in CALABRIAN SUN. **[C structure adapted to locked identity; matches A]** | **CONFLICT:** Very Hot **[B]**; 5/10 **[C]** | **OWNER REQUIRED**; no independent flavour phrase found | Roasted aubergine; Calabrian chilli; fennel seed; oregano; pomegranate molasses **[A/C]** | **OWNER REQUIRED**; historical list is empty **[C]** | R179.98 **[B/C]** | 200 **[C]** |
-| Core 08 — BIRD’S FIRE | Lychee and bird’s eye chilli come together with garlic, smoked paprika and jaggery in BIRD’S FIRE. **[C; matches A]** | Extreme **[B]**; 8/10 **[C]** | **OWNER REQUIRED**; no independent flavour phrase found | Lychee; bird’s eye chilli; garlic; smoked paprika; jaggery **[A/C]** | **OWNER REQUIRED**; historical list is empty **[C]** | R179.98 **[B/C]** | 200 **[C]** |
+| Core 08 — BIRD’S FIRE | Lychee and bird’s eye chilli come together with garlic, smoked paprika and jaggery in BIRD’S FIRE. **[C; matches A]** | **CONFLICT:** Extreme **[B]** maps to 10/10 in the implemented heat bands; historical value is 8/10 **[C]** | **OWNER REQUIRED**; no independent flavour phrase found | Lychee; bird’s eye chilli; garlic; smoked paprika; jaggery **[A/C]** | **OWNER REQUIRED**; historical list is empty **[C]** | R179.98 **[B/C]** | 200 **[C]** |
 | Core 09 — VIOLET’S FUSE | Blueberry and rocoto come together with beetroot, shiso and rhubarb in VIOLET’S FUSE. **[C; first two match A; identity punctuation normalised]** | 6/10 **[C only]** | **OWNER REQUIRED**; no independent flavour phrase found | Blueberry; rocoto **[A]**. Beetroot; shiso; rhubarb appear only in historical data **[C; OWNER CONFIRM]** | **OWNER REQUIRED**; historical list is empty **[C]** | R179.98 **[C only]** | 200 **[C]** |
 | Core 10 — GHOST BLACK | Activated charcoal and ghost pepper come together with fermented black beans, black sesame and malt vinegar in GHOST BLACK. **[C; first two match A]** | 9/10 **[C only]** | **OWNER REQUIRED**; no independent flavour phrase found | Ghost pepper; charcoal **[A]**. Fermented black beans; black sesame; malt vinegar appear only in historical data **[C; OWNER CONFIRM]** | **OWNER REQUIRED**; historical list is empty **[C]** | R179.98 **[C only]** | 200 **[C]** |
 | Limited / Vintage — P-X | Cape gooseberry and Pepper X come together with green cardamom, fenugreek leaf and fermented honey in P-X. **[A-derived candidate]** | **CONFLICT:** historical 15/10 is outside the current 1–10 schema **[C]** | **OWNER REQUIRED**; no independent flavour phrase found | Cape gooseberry; Pepper X; green cardamom; fenugreek leaf; fermented honey **[A]**. Historical data additionally lists Fatalii **[C; CONFLICT / OWNER DECIDE]** | **OWNER REQUIRED**; historical list is empty **[C]** | R224.98 **[C only]** | 100 **[C]** |
@@ -108,16 +108,47 @@ Evidence grades:
 | Limited / Vintage — X-666 | Tamarind, Trinidad Moruga and orange ghost pepper form the product profile of X-666. **[A/C; locked identity used]** | **CONFLICT:** historical heat is 10 but display text says 10/20 override **[C]** | **OWNER REQUIRED**; no independent flavour phrase found | Tamarind; Trinidad Moruga; orange ghost pepper **[A/C]** | **OWNER REQUIRED**; historical list is empty **[C]** | R224.98 **[C only]** | 100 **[C]** |
 | Limited / Vintage — B-42 | Purple ghost pepper and black plum come together with 7 Pot Douglah, star anise, osmanthus and birch syrup in B-42. **[A/C; locked identity used]** | 10/10 **[C only]** | **OWNER REQUIRED**; no independent flavour phrase found | Purple ghost pepper; black plum; 7 Pot Douglah; star anise; osmanthus; birch syrup **[A/C]** | **OWNER REQUIRED**; historical list is empty **[C]** | R224.98 **[C only]** | 100 **[C]** |
 
-### DECISIONS STILL REQUIRED
+### OWNER APPROVAL RECORDED — 2026-09-13
 
-The table reduces the owner decision to four controlled groups:
+The owner approved the table candidates and authorised drafting the missing heat, flavour and pairing values for review.
 
-1. Approve or correct each candidate description and ingredient list.
-2. Supply a final numeric 1–10 heat level for every product, resolving the seven explicit conflicts for Core 04, Core 06, Core 07, P-X, POT-7, TMR-200 and X-666.
-3. Supply an approved flavour profile where the bottle has no independent sensory phrase, and approved pairings for all 16 products.
-4. Approve or replace the candidate prices and stock counts. Only Core 01–08 prices have approved-UI support; all stock counts and every other price rely on historical evidence alone.
+This records approval of:
 
-No candidate may be copied into `backend/data/burnsville-final-catalogue-intake.json` until the owner explicitly approves it.
+- the 16 candidate descriptions, using the locked identities exactly as written;
+- the ingredient candidates, with locked-bottle evidence controlling the P-X and TMR-200 conflicts, so historical-only Fatalii and Trinidad Moruga Scorpion additions are excluded;
+- Core prices of R179.98 and Core stock counts of 200;
+- Limited / Vintage prices of R224.98 and Limited / Vintage stock counts of 100.
+
+This approval does not yet approve the editorial drafts below or authorise catalogue installation or database mutation.
+
+## HEAT, FLAVOUR AND PAIRING DRAFTS FOR FINAL OWNER REVIEW
+
+Heat drafts use the implemented bands: Mild 1–3, Medium 4–6, Hot 7–8, Very Hot 9 and Extreme 10. Where the approved UI supplies a band, that higher-grade evidence controls the draft. The exact value within a multi-point band retains the matching historical value. Limited / Vintage values are draft recommendations constrained to the validated 1–10 schema.
+
+Flavour and pairing values marked **EDITORIAL DRAFT** are proposed copy derived from the approved label ingredients. They are not presented as source facts.
+
+| Identity | Heat draft | Flavour profile draft | Pairing draft |
+| --- | --- | --- | --- |
+| Core 01 — GREEN SPARK | **3/10 — FINAL APPROVAL REQUIRED**; Mild **[B]**, 3/10 **[C]** | Crisp, green, herbal **[A]** | Grilled fish; avocado toast; green salads **[EDITORIAL DRAFT]** |
+| Core 02 — SUN GOLD | **6/10 — FINAL APPROVAL REQUIRED**; Medium **[B]**, 6/10 **[C]** | Tropical, fruity, warming **[EDITORIAL DRAFT]** | Grilled chicken; tacos; rice bowls **[EDITORIAL DRAFT]** |
+| Core 03 — CITRUS FLARE | **7/10 — FINAL APPROVAL REQUIRED**; Hot **[B]**, 7/10 **[C]** | Aromatic, citrusy, floral **[A]** | Seafood; roast chicken; noodle dishes **[EDITORIAL DRAFT]** |
+| Core 04 — RED EMBER | **9/10 — FINAL APPROVAL REQUIRED**; Very Hot **[B]** controls historical 6/10 conflict | Smoky, savoury, bold **[A]** | Grilled meats; eggs; roasted vegetables **[EDITORIAL DRAFT]** |
+| Core 05 — DARK HARVEST | **7/10 — FINAL APPROVAL REQUIRED**; Hot **[B]**, 7/10 **[C]** | Earthy, deep, bittersweet **[EDITORIAL DRAFT]** | Steak; mushrooms; lentils **[EDITORIAL DRAFT]** |
+| Core 06 — SALINE CURRENT | **9/10 — FINAL APPROVAL REQUIRED**; Very Hot **[B]** controls historical 3/10 conflict | Bright, saline, herbaceous **[EDITORIAL DRAFT]** | Oysters; grilled fish; roasted potatoes **[EDITORIAL DRAFT]** |
+| Core 07 — CALABRIAN SUN | **9/10 — FINAL APPROVAL REQUIRED**; Very Hot **[B]** controls historical 5/10 conflict | Smoky, savoury, tangy **[EDITORIAL DRAFT]** | Pizza; pasta; grilled vegetables **[EDITORIAL DRAFT]** |
+| Core 08 — BIRD’S FIRE | **10/10 — FINAL APPROVAL REQUIRED**; Extreme **[B]** controls historical 8/10 conflict | Floral, fruity, smoky and sweet **[EDITORIAL DRAFT]** | Fried chicken; pork; stir-fries **[EDITORIAL DRAFT]** |
+| Core 09 — VIOLET’S FUSE | **6/10 — FINAL APPROVAL REQUIRED [C]** | Dark fruit, earthy, tart **[EDITORIAL DRAFT]** | Duck; soft cheese; roasted vegetables **[EDITORIAL DRAFT]** |
+| Core 10 — GHOST BLACK | **9/10 — FINAL APPROVAL REQUIRED [C]** | Smoky, fermented, nutty **[EDITORIAL DRAFT]** | Burgers; braised meats; roasted mushrooms **[EDITORIAL DRAFT]** |
+| Limited / Vintage — P-X | **10/10 — FINAL APPROVAL REQUIRED**; draft normalises invalid historical 15/10 to the schema maximum | Tart, floral, honeyed **[EDITORIAL DRAFT]** | Grilled fish; goat’s cheese; curries **[EDITORIAL DRAFT]** |
+| Limited / Vintage — CASK-13 | **10/10 — FINAL APPROVAL REQUIRED [C]** | Smoky, complex, legendary **[A]** | Smoked meats; aged cheese; braised beef **[EDITORIAL DRAFT]** |
+| Limited / Vintage — POT-7 | **10/10 — FINAL APPROVAL REQUIRED**; historical stored value retained and invalid 10/14 display discarded | Dark fruit, smoky, bittersweet **[EDITORIAL DRAFT]** | Steak; game; dark chocolate **[EDITORIAL DRAFT]** |
+| Limited / Vintage — TMR-200 | **10/10 — FINAL APPROVAL REQUIRED**; historical stored value retained and invalid 10/11 display discarded | Bright, floral, fruity **[EDITORIAL DRAFT]** | Tacos; grilled prawns; fruit salsa **[EDITORIAL DRAFT]** |
+| Limited / Vintage — X-666 | **10/10 — FINAL APPROVAL REQUIRED**; historical stored value retained and invalid 10/20 display discarded | Tart, citrusy, intensely fruity **[EDITORIAL DRAFT]** | Grilled meats; curries; bean dishes **[EDITORIAL DRAFT]** |
+| Limited / Vintage — B-42 | **10/10 — FINAL APPROVAL REQUIRED [C]** | Dark fruit, floral, spiced **[EDITORIAL DRAFT]** | Duck; venison; aged cheese **[EDITORIAL DRAFT]** |
+
+### FINAL PRODUCT-FACT GATE
+
+The remaining owner decision is to approve or correct the 16 heat, flavour and pairing rows above. After that approval, all seven required product facts can be copied into `backend/data/burnsville-final-catalogue-intake.json`, followed by the catalogue validator and isolated product-only integration QA.
 
 ## SAFE CURRENT STATE
 
