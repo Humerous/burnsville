@@ -2,7 +2,7 @@
 
 ## STATUS
 
-PRODUCT IDENTITIES AND REVIEW 1 ASSETS LOCKED / WAITING FOR COMPLETE PRODUCT FACTS.
+PRODUCT IDENTITIES, REVIEW 1 ASSETS AND APPROVED FACTS RECORDED / CORE HEAT, FLAVOUR AND PAIRINGS PENDING.
 
 Primary identity authority: `BURNSVILLE-MASTER-AUTHORITY.md`.
 Supporting evidence: `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
@@ -21,7 +21,8 @@ Do not infer missing product facts. Do not redesign supplied artwork. Do not mut
 - [x] Every product has an approved primary runtime visual asset.
 - [x] Asset roles are explicitly classified for REVIEW 1.
 - [x] Runtime card geometry is approved: portrait bottle contained inside the existing square media area.
-- [x] Required product facts/commercial values are explicitly unresolved where not yet approved.
+- [x] Approved descriptions, ingredients, prices, stock and Limited / Vintage runtime heat are recorded.
+- [x] Core heat, all flavour profiles and all pairings remain explicitly unresolved.
 - [x] Historical catalogue files are not used to fill missing values automatically.
 
 ## 2. ARCHITECTURE GATES
@@ -51,17 +52,17 @@ For every delivered runtime asset:
 
 For every replacement product:
 
-- [ ] identity/code matches `BURNSVILLE-MASTER-AUTHORITY.md`
+- [x] identity/code matches `BURNSVILLE-MASTER-AUTHORITY.md`
 - [x] asset mapping matches approved Review 1 source
-- [ ] brand/category correct
-- [ ] description approved
+- [x] brand/category correct
+- [x] description approved
 - [ ] heat approved and valid
 - [ ] flavour profile approved
-- [ ] ingredients approved
+- [x] ingredients approved
 - [ ] pairings approved
-- [ ] price approved
-- [ ] stock approved
-- [ ] no legacy third-party reviews are carried over
+- [x] price approved
+- [x] stock approved
+- [x] no legacy third-party reviews are carried over
 - [x] product-authority QA passes
 - [x] product-asset QA passes
 - [ ] read-only catalogue validator passes

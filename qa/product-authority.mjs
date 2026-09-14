@@ -19,6 +19,15 @@ const expected = [
   { collection: 'Limited / Vintage', identifier: 'B-42', name: 'B-42' },
 ];
 
+const limitedHeatAuthority = [
+  ['P-X', '10/15'],
+  ['CASK-13', '10/10'],
+  ['POT-7', '10/14'],
+  ['TMR-200', '10/12'],
+  ['X-666', '10/20'],
+  ['B-42', '10/13'],
+];
+
 const fail = (message) => {
   console.error(`PRODUCT AUTHORITY QA FAILED: ${message}`);
   process.exit(1);
@@ -69,5 +78,19 @@ for (const forbidden of forbiddenActiveIdentities) {
   }
 }
 
+for (const [identifier, sourceScale] of limitedHeatAuthority) {
+  const product = intake.products.find(
+    (candidate) => candidate.identifier === identifier
+  );
+
+  if (product?.heatLevel !== 10) {
+    fail(`${identifier} runtime heatLevel must be 10`);
+  }
+
+  if (!master.includes(`${identifier} — ${sourceScale} — Extreme`)) {
+    fail(`${identifier} source heat authority ${sourceScale} is missing from ${masterPath}`);
+  }
+}
+
 console.log('PRODUCT AUTHORITY QA PASSED');
-console.log(`Validated ${expected.length} locked identities against ${masterPath} and catalogue intake.`);
+console.log(`Validated ${expected.length} locked identities and 6 Limited / Vintage heat mappings against ${masterPath} and catalogue intake.`);

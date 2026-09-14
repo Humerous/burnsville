@@ -22,7 +22,7 @@ Authentication, authorization, product CRUD, cart, stock, checkout/order flow, r
 `modernise/burnsville-v2-integration-spec` is superseded. Its safe validation, migration and QA concepts were selectively consolidated into the primary V2 branch. PR #2 is closed without merge. Stale product identities and visual assumptions from that branch are historical only.
 
 ### D-006 — NO INVENTED PRODUCT DATA
-Missing product facts, names, descriptions, ingredients, pairings, heat values, prices, stock, filenames or paths must remain unresolved until explicitly supplied or approved.
+Missing product facts, names, Core heat values, flavour profiles, pairings, SKUs, filenames or paths must remain unresolved until explicitly supplied or approved. Descriptions, ingredients, prices and stock were approved on 2026-09-13. Limited / Vintage runtime heat values were approved on 2026-09-14.
 
 ### D-007 — LEGACY CATALOGUE
 The current third-party sample catalogue is temporary runtime data. It must not be deleted until the complete approved Burnsville replacement dataset passes isolated QA and rollback evidence exists.
@@ -46,7 +46,7 @@ RESOLVED. The supplied approved references and authorised final-build prompt con
 The active branch must not retain stale destructive/seeding instructions. Until final release documentation is written, README may contain a clearly marked modernisation-status notice and point to repository control files.
 
 ### D-014 — CURRENT TECHNICAL HEAT RANGE
-The current Product schema defines heat as 1–10 and the admin editor matches that range. Shop-by-Heat uses the real server-side heat filter. Product-specific heat values remain pending until explicitly approved.
+The current Product schema defines heat as 1–10 and the admin editor matches that range. Shop-by-Heat uses the real server-side heat filter. Core product heat values remain pending. All six Limited / Vintage products are approved at runtime heat 10 in the Extreme band under D-021.
 
 ### D-015 — SUPPORTING CATALOGUE/ASSET MAPS ARE NON-RUNTIME
 `BURNSVILLE-MASTER-AUTHORITY.md` controls all product identities. Historical catalogue facts and opaque poster/card assets remain supporting evidence only. The approved runtime bottle map is `backend/data/burnsville-product-asset-map.json`; its neutral paths, roles and geometry are locked through REVIEW 1. The portrait-card installer remains fail-closed because those poster/card assets are excluded from runtime.
@@ -55,7 +55,7 @@ The current Product schema defines heat as 1–10 and the admin editor matches t
 Unsupported legacy marketing claims were removed. Neutral Burnsville metadata is acceptable during development; final canonical/social/launch metadata waits for the released public identity and URL.
 
 ### D-017 — FINAL PRODUCT IDENTITY AUTHORITY
-The project owner locked 16 product identities in `BURNSVILLE-MASTER-AUTHORITY.md`: 10 Core identities numbered 01–10 and 6 Limited / Vintage identities `P-X`, `CASK-13`, `POT-7`, `TMR-200`, `X-666`, and `B-42`. Historical descriptive Limited / Vintage labels are not product-name authority. Product facts and commercial values remain unresolved until explicitly supplied or approved.
+The project owner locked 16 product identities in `BURNSVILLE-MASTER-AUTHORITY.md`: 10 Core identities numbered 01–10 and 6 Limited / Vintage identities `P-X`, `CASK-13`, `POT-7`, `TMR-200`, `X-666`, and `B-42`. Historical descriptive Limited / Vintage labels are not product-name authority. Descriptions, ingredients, prices and stock were approved on 2026-09-13. Core heat values, all flavour profiles and all pairings remain unresolved.
 
 ### D-018 — PRODUCT AUTHORITY MUST BE MACHINE-CHECKED
 `qa/product-authority.mjs` must pass in CI. It verifies the master authority and final catalogue intake remain aligned and rejects reintroduction of known conflicting identities. Do not remove, bypass or weaken this gate merely to make CI pass.
@@ -66,11 +66,14 @@ Owner-approved on 2026-09-13. Keep the existing single `image` field through REV
 ### D-020 — REVIEW 1 CATALOGUE PRESENTATION BASELINE
 Preserve the current working catalogue presentation through REVIEW 1: Shop page size remains 10, Home continues to show the first four products returned by its current page-one request, and product routes remain `/product/:id` using MongoDB IDs. These are REVIEW 1 preservation decisions, not permanent post-release architecture. Reconsider them only after REVIEW 1 or through a newer explicit owner instruction.
 
+### D-021 — LIMITED / VINTAGE HEAT AUTHORITY
+Owner-approved on 2026-09-14. All six Limited / Vintage products use runtime `heatLevel: 10` and the existing Extreme filter band. Preserve the original artwork scales as authority evidence only: P-X 10/15, CASK-13 10/10, POT-7 10/14, TMR-200 10/12, X-666 10/20 and B-42 10/13. The denominators do not enter the 1–10 runtime field, and no new runtime schema field is required for REVIEW 1. Historical descriptive labels visible on source artwork remain non-authoritative.
+
 ## PENDING DECISIONS
 
 The following must remain open until the final product and release handoff is complete:
 
-- final product catalogue facts and commercial values
+- Core heat values, all flavour profiles and all pairings
 - post-REVIEW 1 shop browsing/pagination improvements, if required
 - post-REVIEW 1 human-readable product slugs, if required
 - post-REVIEW 1 curated homepage merchandising, if required

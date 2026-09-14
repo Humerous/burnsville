@@ -7,10 +7,10 @@ Track verified remaining work. Do not use this file to invent new scope.
 ## RED — RELEASE BLOCKERS
 
 ### KI-002 — FINAL BURNSVILLE CATALOGUE NOT IN RUNTIME
-The current runtime still uses legacy third-party sample products and images. Product identities, Review 1 image architecture and all 16 primary bottle assets are resolved. Replacement remains blocked until the complete approved Burnsville product facts and commercial values are available and validated.
+The current runtime still uses legacy third-party sample products and images. Product identities, Review 1 image architecture, all 16 primary bottle assets, descriptions, ingredients, prices, stock and Limited / Vintage runtime heat are resolved. Replacement remains blocked until Core heat, all flavour profiles and all pairings are approved and the complete intake is validated.
 
 ### KI-005 — FINAL PRODUCT DATA INCOMPLETE
-Final approved values for the complete runtime catalogue must be supplied/confirmed before migration. Missing values must not be invented.
+Core heat values, all flavour profiles and all pairings must be explicitly approved before migration. Missing values must not be invented.
 
 ## AMBER — DEFERRED UNTIL AFTER REVIEW 1
 

@@ -95,7 +95,7 @@ Not imported as authority:
 
 ## OPEN WORKSTREAMS
 
-1. Complete and approve the Burnsville product facts and commercial values.
+1. Approve the remaining Core heat values, all flavour profiles and all pairings.
 2. Controlled product-only catalogue migration and product-specific regression QA.
 3. Resolve or explicitly accept runtime identity-drift risk R-015 before shared release-candidate migration.
 4. Final release SEO/public metadata and legal destinations.
@@ -108,7 +108,7 @@ Do not spend the next major block re-auditing product identities or redesigning 
 
 Start final product integration only when the remaining approved inputs are available or can be verified from current approved sources:
 
-- final product facts/commercial values
+- final Core heat values, flavour profiles and pairings
 
 Then execute:
 
@@ -120,7 +120,7 @@ If a required approved input is absent, stop on that specific unresolved input r
 
 - Final product catalogue not integrated.
 - Legacy third-party runtime catalogue remains present until approved replacement data passes QA.
-- Final product/commercial facts remain incomplete.
+- Core heat values, flavour profiles and pairings remain incomplete; descriptions, ingredients, prices, stock and Limited / Vintage runtime heat are approved.
 - Runtime identifier/collection/admin-edit policy remains open under risk R-015 before a shared release candidate.
 - Product-specific browser/responsive/accessibility QA must run after catalogue replacement.
 - Final release URL/canonical/social metadata is not yet locked.

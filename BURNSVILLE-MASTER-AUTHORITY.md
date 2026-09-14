@@ -2,7 +2,7 @@
 
 ## STATUS
 
-LOCKED PRODUCT IDENTITY AUTHORITY.
+LOCKED PRODUCT IDENTITY AND LIMITED / VINTAGE HEAT AUTHORITY.
 
 This file is the sole current authority for Burnsville product identities on `modernise/burnsville-v2`.
 
@@ -12,7 +12,7 @@ If any repository file, historical mapping, commit, README, asset filename, scre
 
 1. Do not rename, reinterpret, substitute, normalise, or infer a product identity from historical filenames or descriptive labels.
 2. Historical catalogue and asset maps are supporting evidence only unless this file explicitly promotes a field.
-3. Missing product facts must remain unresolved. Do not invent descriptions, heat values, flavour profiles, ingredients, pairings, prices, stock, SKUs, image roles, or filenames.
+3. Missing product facts must remain unresolved. Do not invent Core heat values, flavour profiles, pairings, SKUs, image roles, or filenames.
 4. A later automated reconciliation may not supersede this file without explicit owner approval.
 5. Any proposed identity change must stop for owner approval before implementation.
 6. Approved UI/backend/QA work must not be changed merely to reconcile catalogue authority.
@@ -45,18 +45,33 @@ The authoritative product identities are the following codes. Historical descrip
 | X-666 |
 | B-42 |
 
+## APPROVED PRODUCT FACTS
+
+Description, ingredient, price and stock approval recorded: 2026-09-13.
+
+The final-catalogue intake may use the approved descriptions, ingredients, prices and stock counts recorded in `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
+
+Limited / Vintage heat approval recorded: 2026-09-14. All six products are approved as `heatLevel: 10` for the existing runtime filter and therefore belong to the `Extreme` band.
+
+The original artwork establishes these exact displayed source scales:
+
+- P-X — 10/15 — Extreme
+- CASK-13 — 10/10 — Extreme
+- POT-7 — 10/14 — Extreme
+- TMR-200 — 10/12 — Extreme
+- X-666 — 10/20 — Extreme
+- B-42 — 10/13 — Extreme
+
+The denominators are source/display evidence. They must not be stored in the existing 1–10 `heatLevel` field, and no new runtime field is required for REVIEW 1.
+
 ## CURRENTLY UNRESOLVED
 
 The following remain pending until explicitly approved:
 
 - SKU/identifier policy beyond the locked identities above
-- final product descriptions
-- heat levels
-- flavour profiles
-- ingredients
-- pairings
-- prices
-- stock defaults
+- Core heat levels
+- all flavour profiles
+- all pairings
 
 ## LOCKED REVIEW 1 IMAGE ARCHITECTURE
 
