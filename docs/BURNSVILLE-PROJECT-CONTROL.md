@@ -2,7 +2,7 @@
 
 ## STATUS
 
-Repository modernisation and the approved three-block visual UI are working and consolidated on the active V2 branch. Product identities, Review 1 image architecture and all 16 bottle assets are locked. Final product facts, runtime catalogue replacement and public release inputs remain incomplete.
+Repository modernisation, the approved three-block visual UI, final Review 1 catalogue, product-only replacement procedure and isolated QA are complete on the active V2 branch. Shared Preview and Production data remain unchanged.
 
 Primary working branch: `modernise/burnsville-v2`.
 
@@ -37,7 +37,7 @@ No historical catalogue, asset map, filename, commit, screenshot transcription, 
 
 ## CURRENT VISUAL STATUS
 
-APPROVED UI IMPLEMENTED / RELEASE DATA PENDING.
+APPROVED UI IMPLEMENTED / PREVIEW MIGRATION READY FOR OWNER APPROVAL.
 
 The current UI implements the supplied approved storyboard system across customer, admin and application-state surfaces.
 
@@ -73,7 +73,7 @@ The primary V2 branch now contains:
 - safe catalogue migration plan
 - final product-integration QA checklist
 - read-only final-catalogue readiness validator with focused automated tests
-- final catalogue intake with 16 locked identities, approved image paths, safe defaults and unresolved product-fact markers
+- final catalogue intake with 16 locked identities, all approved facts and approved image paths
 - approved 16-bottle runtime asset map and automated integrity gate
 - corrected catalogue replacement controls
 - catalogue authority reconciliation report
@@ -95,29 +95,25 @@ Not imported as authority:
 
 ## OPEN WORKSTREAMS
 
-1. Controlled product-only catalogue migration and product-specific regression QA.
-2. Resolve or explicitly accept runtime identity-drift risk R-015 before shared release-candidate migration.
-3. Final release SEO/public metadata and legal destinations.
-4. Final public README/repository presentation.
-5. Controlled release to `main` and production.
+1. Owner-approved product-only migration to the shared Preview database and post-migration QA.
+2. Final release SEO/public metadata and legal destinations.
+3. Final public README/repository presentation.
+4. Controlled release to `main` and Production.
 
 ## NEXT CODEX BLOCK — ENTRY CONDITIONS
 
 Do not spend the next major block re-auditing product identities or redesigning completed UI.
 
-All seven required product facts are approved in the final intake. Execute:
+The isolated product-only replacement, rollback, product-specific API/browser QA and required responsive/accessibility matrix pass. The next controlled action is:
 
-PRODUCT FACT APPROVAL → AUTHORITY/ASSET/CATALOGUE QA → REPLACEMENT DATASET → ISOLATED QA → CUSTOMER/ADMIN REGRESSION → MIGRATION REVIEW
+OWNER APPROVAL → SHARED PREVIEW PRODUCT-ONLY MIGRATION → POST-MIGRATION QA
 
-If a required approved input is absent, stop on that specific unresolved input rather than inventing or reopening completed work.
+Do not mutate Preview until the owner explicitly authorises that exact stage.
 
 ## RELEASE BLOCKERS
 
-- Final product catalogue not integrated.
-- Legacy third-party runtime catalogue remains present until approved replacement data passes QA.
-- Product-only migration and product-specific QA remain incomplete.
-- Runtime identifier/collection/admin-edit policy remains open under risk R-015 before a shared release candidate.
-- Product-specific browser/responsive/accessibility QA must run after catalogue replacement.
+- Shared Preview still contains its current catalogue until owner-approved migration.
+- Post-migration Preview comparison and customer/admin browser QA remain required.
 - Final release URL/canonical/social metadata is not yet locked.
 
 ## CHANGE CONTROL

@@ -1,5 +1,4 @@
 import assert from 'node:assert/strict';
-import productsFixture from '../backend/data/products.js';
 
 const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:5001';
 
@@ -62,36 +61,25 @@ for (const product of catalogue.products) {
   assertAuthoritativeSummary(product, `Catalogue product ${product.name}`);
 }
 
-const legacyFixture = productsFixture.find(
-  (product) => Number(product.numReviews) > 0 && Number(product.rating) > 0
-);
-assert.ok(legacyFixture, 'Legacy fixture with seeded rating metadata not found');
-
-const legacyCatalogueProduct = catalogue.products.find(
-  (product) => product.name === legacyFixture.name
-);
-assert.ok(
-  legacyCatalogueProduct,
-  `Legacy fixture ${legacyFixture.name} missing from catalogue`
+const catalogueProduct = catalogue.products[0];
+assert.equal(
+  catalogueProduct.reviews.length,
+  0,
+  'Unreviewed catalogue product unexpectedly contains review records'
 );
 assert.equal(
-  legacyCatalogueProduct.reviews.length,
+  catalogueProduct.numReviews,
   0,
-  'Legacy fixture unexpectedly contains actual review records'
+  'Unreviewed catalogue product returned a non-zero review count'
 );
 assert.equal(
-  legacyCatalogueProduct.numReviews,
+  catalogueProduct.rating,
   0,
-  'Legacy seeded review count leaked into the public catalogue'
-);
-assert.equal(
-  legacyCatalogueProduct.rating,
-  0,
-  'Legacy seeded rating leaked into the public catalogue'
+  'Unreviewed catalogue product returned a non-zero rating'
 );
 
 console.log('BLOCK 11B: verify product-detail review summary');
-const detail = await requestJson(`/api/products/${legacyCatalogueProduct._id}`);
+const detail = await requestJson(`/api/products/${catalogueProduct._id}`);
 assertAuthoritativeSummary(detail, `Product detail ${detail.name}`);
 assert.equal(detail.numReviews, 0, 'Product detail review count is not authoritative');
 assert.equal(detail.rating, 0, 'Product detail rating is not authoritative');

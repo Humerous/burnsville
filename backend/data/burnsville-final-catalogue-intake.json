@@ -1,5 +1,5 @@
 {
-  "status": "AUTHORITATIVE 16-PRODUCT REVIEW 1 INTAKE — ALL PRODUCT FACTS APPROVED; ISOLATED QA READY",
+  "status": "AUTHORITATIVE 16-PRODUCT REVIEW 1 INTAKE — ISOLATED QA PASSED; PREVIEW MIGRATION READY FOR OWNER APPROVAL",
   "authority": "BURNSVILLE-MASTER-AUTHORITY.md",
   "confirmedFacts": [
     "16 products total",
@@ -9,10 +9,11 @@
     "existing single image field approved through REVIEW 1",
     "descriptions, ingredients, prices and stock approved by the owner on 2026-09-13",
     "all six Limited / Vintage runtime heat levels approved as 10 (Extreme) on 2026-09-14",
-    "Core heat levels, all flavour profiles and all pairings approved by the owner on 2026-09-14"
+    "Core heat levels, all flavour profiles and all pairings approved by the owner on 2026-09-14",
+    "locked Review 1 identifiers and Core / Limited collection policy approved on 2026-09-14"
   ],
   "unresolved": [
-    "SKU/identifier policy beyond the locked Review 1 identities remains deferred"
+    "Any separate post-Review 1 commercial SKU scheme remains deferred"
   ],
   "products": [
     {

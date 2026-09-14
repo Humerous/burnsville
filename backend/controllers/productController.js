@@ -22,8 +22,11 @@ const withAuthoritativeReviewSummary = (product) => {
       ) / numReviews
     : 0;
 
+  const { catalogueCollection, ...publicProduct } = productObject;
+
   return {
-    ...productObject,
+    ...publicProduct,
+    collection: catalogueCollection,
     reviews,
     rating,
     numReviews,
@@ -133,12 +136,34 @@ const updateProduct = asyncHandler(async (req, res) => {
     flavourProfile,
     pairings,
     ingredients,
+    identifier,
+    collection,
   } = req.body;
 
   const product = await Product.findById(req.params.id);
 
   if (product) {
-    product.name = name;
+    const identityLocked = Boolean(product.identifier);
+
+    if (
+      identityLocked &&
+      ((name !== undefined && name !== product.name) ||
+        (identifier !== undefined && identifier !== product.identifier) ||
+        (collection !== undefined && collection !== product.catalogueCollection))
+    ) {
+      res.status(400);
+      throw new Error(
+        'Approved Burnsville product name, identifier and collection are locked'
+      );
+    }
+
+    if (!identityLocked) {
+      product.name = name;
+      if (identifier !== undefined) product.identifier = identifier || undefined;
+      if (collection !== undefined) {
+        product.catalogueCollection = collection || undefined;
+      }
+    }
     product.price = price;
     product.description = description;
     product.image = image;

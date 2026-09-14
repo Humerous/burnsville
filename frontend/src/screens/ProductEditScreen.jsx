@@ -13,6 +13,8 @@ const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id;
 
   const [name, setName] = useState('');
+  const [identifier, setIdentifier] = useState('');
+  const [collection, setCollection] = useState('');
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState('');
   const [brand, setBrand] = useState('');
@@ -54,6 +56,8 @@ const ProductEditScreen = ({ match, history }) => {
       dispatch(listProductDetails(productId));
     } else {
       setName(product.name);
+      setIdentifier(product.identifier || '');
+      setCollection(product.collection || '');
       setPrice(product.price);
       setImage(product.image);
       setBrand(product.brand);
@@ -117,6 +121,8 @@ const ProductEditScreen = ({ match, history }) => {
       updateProduct({
         _id: productId,
         name,
+        identifier,
+        collection,
         price,
         image,
         brand,
@@ -137,6 +143,8 @@ const ProductEditScreen = ({ match, history }) => {
   if (!userInfo || !userInfo.isAdmin) {
     return null;
   }
+
+  const identityLocked = Boolean(product.identifier);
 
   return (
     <section
@@ -222,8 +230,32 @@ const ProductEditScreen = ({ match, history }) => {
                       placeholder='Enter name'
                       value={name}
                       onChange={(e) => setName(e.target.value)}
+                      readOnly={identityLocked}
                     />
                   </div>
+
+                  {identityLocked && (
+                    <>
+                      <div className='burnsville-admin-product-edit__field'>
+                        <label htmlFor='admin-product-identifier'>Identifier</label>
+                        <input
+                          id='admin-product-identifier'
+                          type='text'
+                          value={identifier}
+                          readOnly
+                        />
+                      </div>
+                      <div className='burnsville-admin-product-edit__field'>
+                        <label htmlFor='admin-product-collection'>Collection</label>
+                        <input
+                          id='admin-product-collection'
+                          type='text'
+                          value={collection}
+                          readOnly
+                        />
+                      </div>
+                    </>
+                  )}
 
                   <div className='burnsville-admin-product-edit__field'>
                     <label htmlFor='admin-product-brand'>Brand</label>

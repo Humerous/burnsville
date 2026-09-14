@@ -2,7 +2,7 @@
 
 ## STATUS
 
-IDENTITIES, REVIEW 1 IMAGE ARCHITECTURE AND CORRECTED ASSETS LOCKED / FINAL PRODUCT FACTS PENDING.
+REVIEW 1 CATALOGUE INTEGRATED / ISOLATED QA PASSED / PREVIEW MIGRATION READY FOR OWNER APPROVAL.
 
 This document defines how approved Burnsville products will enter the existing application without inventing facts, bypassing QA or creating a parallel product system.
 
@@ -22,22 +22,9 @@ Already complete:
 
 Do not request re-approval of these identities unless the owner explicitly reopens them.
 
-## REQUIRED REMAINING HANDOFF PER PRODUCT
+## COMPLETED PRODUCT HANDOFF
 
-Supply only explicitly approved values:
-
-- approved primary/runtime visual asset
-- approved asset role
-- description if supplied
-- heat value if supplied
-- flavour profile if supplied
-- ingredients if supplied
-- pairings if supplied
-- price if supplied
-- stock/availability if supplied
-- any descriptive display name for Limited / Vintage only if explicitly approved
-
-Any value not supplied remains unresolved.
+All 16 Review 1 products have approved identity, collection, primary asset, description, heat, flavour profile, ingredients, pairings, price and stock values in `backend/data/burnsville-final-catalogue-intake.json`. New replacement products start with empty reviews and zero derived rating values.
 
 ## APPROVED REVIEW 1 ASSET ROLE
 
@@ -122,20 +109,20 @@ Completed control gates:
 2. Authority drift protected by `qa/product-authority.mjs` in CI.
 3. Approved UI and working commerce engine preserved.
 
-Next gates:
+Completed Review 1 integration gates:
 
 4. Validate the approved single-image architecture against the current schema. — COMPLETE
 5. Correct, validate and install the approved bottle assets. — COMPLETE
 6. Record final runtime filenames/paths and asset evidence. — COMPLETE
-7. Complete approved product facts/commercial values.
-8. Build replacement JSON from approved values only.
-9. Run product-authority QA and the read-only catalogue validator.
-10. Test against an isolated database/runtime.
-11. Verify Home, Shop, Product, Cart, Checkout/Order and Admin.
-12. Verify responsive and accessibility behaviour.
-13. Review migration and rollback procedure.
-14. Migrate a shared environment only with explicit approval.
-15. Remove legacy third-party catalogue data/assets only after replacement QA passes.
+7. Complete approved product facts/commercial values. — COMPLETE
+8. Build replacement JSON from approved values only. — COMPLETE
+9. Run product-authority QA and the catalogue validator. — COMPLETE
+10. Prove product-only replacement, rerun safety and rollback against an isolated database. — COMPLETE
+11. Verify Home, Shop, Product, Cart, Checkout/Order, reviews and Admin. — COMPLETE
+12. Verify 1440/768/390/320 responsive and accessibility behaviour. — COMPLETE
+13. Review and document the executable migration and rollback procedure. — COMPLETE
+14. Migrate shared Preview only with explicit owner approval. — PENDING OWNER APPROVAL
+15. Remove legacy source data/assets only after shared Preview and Production release acceptance. — DEFERRED
 
 ## PASS CONDITION
 

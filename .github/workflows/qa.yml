@@ -81,12 +81,14 @@ jobs:
           docker exec burnsville-mongo mongosh --quiet --eval \
             "if (rs.status().myState !== 1) { quit(1) }"
 
-      - name: Seed isolated QA database
+      - name: Prove product-only replacement and rollback in isolated QA
         env:
           MONGO_URI: mongodb://127.0.0.1:27017/burnsville_qa?replicaSet=rs0
-          JWT_SECRET: burnsville-ci-only-secret
+          BURNSVILLE_PRODUCT_REPLACEMENT: '1'
+          BURNSVILLE_QA_KEEP_DB: '1'
+          BURNSVILLE_QA_EVIDENCE: /tmp/burnsville-product-replacement-evidence.json
           NODE_ENV: test
-        run: npm run data:import
+        run: npm run qa:product-replacement
 
       - name: Start API test runtime
         env:
@@ -107,6 +109,11 @@ jobs:
 
           cat /tmp/burnsville-api.log
           exit 1
+
+      - name: Run exact product catalogue API QA
+        env:
+          BASE_URL: http://127.0.0.1:5001
+        run: npm run qa:product-catalogue-api
 
       - name: Run integrated API QA
         env:

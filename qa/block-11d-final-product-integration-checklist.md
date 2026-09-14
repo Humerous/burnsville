@@ -2,7 +2,7 @@
 
 ## STATUS
 
-PRODUCT IDENTITIES, REVIEW 1 ASSETS AND ALL REQUIRED PRODUCT FACTS APPROVED / VALIDATOR PASSED.
+PREVIEW MIGRATION READY FOR OWNER APPROVAL / SHARED DATA UNCHANGED.
 
 Primary identity authority: `BURNSVILLE-MASTER-AUTHORITY.md`.
 Supporting evidence: `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
@@ -71,78 +71,78 @@ For every replacement product:
 
 ### HOME / SHOP
 
-- [ ] correct products displayed
-- [ ] correct imagery/identity/price
-- [ ] featured-product strategy matches approval
-- [ ] browse/search/pagination/filter behaviour matches approval
-- [ ] no legacy third-party product appears
+- [x] correct products displayed
+- [x] correct imagery/identity/price
+- [x] featured-product strategy matches approval
+- [x] browse/search/pagination/filter behaviour matches approval
+- [x] no legacy third-party product appears
 
 ### PRODUCT
 
-- [ ] correct product loads
-- [ ] all approved imagery displays
-- [ ] description/heat/flavour/ingredients/pairings display correctly
-- [ ] price/stock display correctly
-- [ ] quantity respects stock
-- [ ] add to cart works
-- [ ] review UI works
+- [x] correct product loads
+- [x] all approved imagery displays
+- [x] description/heat/flavour/ingredients/pairings display correctly
+- [x] price/stock display correctly
+- [x] quantity respects stock
+- [x] add to cart works
+- [x] review UI works
 
 ### CART / CHECKOUT / ORDER
 
-- [ ] product identity persists
-- [ ] product image/path remains valid
-- [ ] authoritative price remains correct
-- [ ] quantity/stock rules hold
-- [ ] order creation succeeds
+- [x] product identity persists
+- [x] product image/path remains valid
+- [x] authoritative price remains correct
+- [x] quantity/stock rules hold
+- [x] order creation succeeds
 
 ## 6. ADMIN QA
 
-- [ ] admin authentication required
-- [ ] product list loads
-- [ ] product edit loads
-- [ ] all approved editable fields persist
-- [ ] image upload works
-- [ ] invalid/non-admin uploads remain blocked
-- [ ] save/update returns the expected product state
+- [x] admin authentication required
+- [x] product list loads
+- [x] product edit loads
+- [x] all approved editable fields persist
+- [x] image upload works
+- [x] invalid/non-admin uploads remain blocked
+- [x] save/update returns the expected product state
 
 ## 7. RESPONSIVE / ACCESSIBILITY QA
 
 At minimum test:
 
-- [ ] 1440px
-- [ ] 768px
-- [ ] 390px
-- [ ] 320px
-- [ ] no horizontal overflow
-- [ ] artwork not clipped
-- [ ] text readable
-- [ ] controls reachable/tappable
-- [ ] keyboard/focus behaviour works
-- [ ] core WCAG 2.2 AA checks pass
+- [x] 1440px
+- [x] 768px
+- [x] 390px
+- [x] 320px
+- [x] no horizontal overflow
+- [x] artwork not clipped
+- [x] text readable
+- [x] controls reachable/tappable
+- [x] keyboard/focus behaviour works
+- [x] core WCAG 2.2 AA checks pass
 
 ## 8. TECHNICAL QA
 
-- [ ] product-authority QA passes
+- [x] product-authority QA passes
 - [x] frontend production build passes
-- [ ] integrated API QA passes
-- [ ] heat-filter API QA passes
-- [ ] review consistency QA passes
-- [ ] controlled functional API QA passes
-- [ ] production serving QA passes
-- [ ] production dependency gate passes
+- [x] integrated API QA passes
+- [x] heat-filter API QA passes
+- [x] review consistency QA passes
+- [x] controlled functional API QA passes
+- [x] production serving QA passes
+- [x] production dependency gate passes
 - [x] catalogue validator passes
 - [x] product-asset integrity validator passes
-- [ ] no broken image requests
-- [ ] no unexpected console/runtime errors
-- [ ] `git diff --check` passes
+- [x] no broken image requests
+- [x] no unexpected console/runtime errors
+- [x] `git diff --check` passes
 
 ## 9. LEGACY CLEANUP GATE
 
 Only after sections 1–8 pass:
 
-- [ ] no runtime record references old third-party image paths
-- [ ] no public page exposes third-party product data
-- [ ] rollback evidence is preserved
+- [x] no runtime record references old third-party image paths in the tested replacement state
+- [x] no public page exposes third-party product data in the tested replacement state
+- [x] rollback evidence is preserved
 - [ ] remove/supersede legacy runtime catalogue data
 - [ ] remove unreferenced legacy product assets
 - [ ] rewrite obsolete README catalogue/seeder references

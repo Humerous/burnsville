@@ -72,6 +72,9 @@ Owner-approved on 2026-09-14. All six Limited / Vintage products use runtime `he
 ### D-022 — FINAL REVIEW 1 PRODUCT FACTS
 Owner-approved on 2026-09-14. The Core heat values, all 16 flavour profiles and all 16 pairing sets in `backend/data/burnsville-final-catalogue-intake.json` are final REVIEW 1 authority. This completes the seven required product facts for all 16 products and authorises offline validation plus isolated product-only migration QA. It does not authorise Preview or Production database mutation.
 
+### D-023 — REVIEW 1 RUNTIME IDENTITY AND PRODUCT-ONLY REPLACEMENT
+Owner-approved on 2026-09-14. The locked Core numbers and Limited / Vintage codes are stable REVIEW 1 runtime identifiers. Mongo stores them as unique immutable `identifier` values and stores the approved range as `catalogueCollection`; the API exposes `collection`. Admin edits cannot change an installed Burnsville product's name, identifier or collection. `scripts/product-catalogue-replacement.mjs` is the only approved replacement/rollback path for this stage, changes Product records only, and requires explicit environment gates. Isolated QA proved exact 16-product replacement, stable IDs on rerun, unchanged Users/Orders, zero legacy products in the replacement state and exact snapshot rollback. Shared Preview migration still requires explicit owner approval.
+
 ## PENDING DECISIONS
 
 The following must remain open until the final product and release handoff is complete:

@@ -25,6 +25,16 @@ const productSchema = mongoose.Schema(
       required: true,
       ref: 'User',
     },
+    identifier: {
+      type: String,
+      trim: true,
+      immutable: true,
+    },
+    catalogueCollection: {
+      type: String,
+      enum: ['Core', 'Limited / Vintage'],
+      immutable: true,
+    },
     name: {
       type: String,
       required: true,
@@ -90,6 +100,11 @@ const productSchema = mongoose.Schema(
   {
     timestamps: true,
   }
+);
+
+productSchema.index(
+  { identifier: 1 },
+  { unique: true, sparse: true, name: 'unique_product_identifier' }
 );
 
 // <---- NEW PRODUCT MODEL- new product for mongoDB schema ---->

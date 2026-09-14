@@ -2,7 +2,7 @@
 
 ## STATUS
 
-TARGETED RISK DELTA COMPLETE FOR REMOTE HEAD `2967be17796a2f818d6a07c6d9f79393fe454fb1`.
+TARGETED RISK DELTA UPDATED FOR PREVIEW-MIGRATION READINESS ON 2026-09-14.
 
 Audit date: 2026-09-13
 
@@ -22,7 +22,7 @@ No active P0 event was found. The documented P1 risks block only their dependent
 
 | ID | Severity | Evidence | Impact | Required treatment | Can current independent work continue? |
 |---|---|---|---|---|---|
-| A — Destructive legacy seeder | P1 / controlled | `backend/seeder.js` deletes orders, products and users. Production/Vercel execution is blocked, while isolated CI still invokes `npm run data:import`. | Running it against a shared non-Vercel environment could destroy unrelated data. | Keep it limited to disposable QA. Never use it for final catalogue migration or rollback. | Yes. |
+| A — Destructive legacy seeder | P1 / isolated from active QA | `backend/seeder.js` still deletes orders, products and users. Production/Vercel execution is blocked, and CI no longer invokes it. | Running it against a shared non-Vercel environment could destroy unrelated data. | Keep it disabled for catalogue replacement and rollback. Use only the gated product-only procedure. | Yes. |
 | B — Legacy empty-database bootstrap | P1 / controlled | `backend/bootstrap.js` inserts `backend/data/products.js`, which contains ten third-party sample products, whenever the product collection is empty. | An empty shared environment could be populated with legacy catalogue data if the command is used. | Do not use bootstrap for final integration. Replace only through the reviewed product-only migration after isolated proof. | Yes. |
 | C — Working branch unprotected | P1 | GitHub branch-protection API returned `Branch not protected` for `modernise/burnsville-v2` on 2026-09-13. | Approved work can be overwritten or pushed without required checks. | Add appropriate protection after confirming the required-check policy; do not rewrite branch history. | Yes; preserve clean commits and CI evidence. |
 | D — Release branch unprotected | P1 / release gate | GitHub branch-protection API returned `Branch not protected` for `main` on 2026-09-13. PR #1 is still a draft. | A release could bypass review or required QA. | Protect `main` and require the intended QA checks before REVIEW 1 exits into release. | Yes; no merge to `main`. |
@@ -41,19 +41,19 @@ No active P0 event was found. The documented P1 risks block only their dependent
 
 | ID | Severity | Evidence | Impact | Required treatment | Can current independent work continue? |
 |---|---|---|---|---|---|
-| R-015 — Runtime identity drift is not structurally prevented | P1 / product architecture | The Product model has no locked `identifier` or `collection` field, and admin product updates can replace `name`. `qa/product-authority.mjs` validates repository control files, not database records. | The final database could contain renamed, duplicated or misclassified products even while CI authority QA passes. | Resolve the identifier/SKU policy and admin-edit boundary before final migration. Extend isolated QA to compare runtime records with the master authority. Do not change the approved CRUD flow without that decision. | Yes; offline validation and evidence work can continue. |
-| R-016 — No release-ready catalogue validator existed | P1 / addressed for preparation | The authority guard checks identity alignment only. The intake still contains explicit product-fact placeholders; Review 1 assets and safe review defaults are now resolved. | An incomplete dataset could otherwise reach migration review without field, money, stock, review or asset-path proof. | `qa/catalogue-readiness.mjs` provides a read-only gate. Keep it outside blocking CI until the approved dataset is complete, then require it in isolated integration QA. | Yes. |
+| R-015 — Runtime identity drift is not structurally prevented | CLOSED FOR REVIEW 1 | Product records now have unique immutable `identifier` plus immutable `catalogueCollection`; the API exposes `collection`. Admin updates reject changes to name, identifier or collection for installed authority-managed products. Isolated QA compares all runtime product facts with the approved intake. | The identified Review 1 drift path is closed while ordinary product CRUD, routes and operational field edits remain available. | Preserve D-023 and the runtime comparison gate. Any separate commercial SKU design remains post-Review 1. | Closed for Preview migration readiness. |
+| R-016 — No release-ready catalogue validator existed | CLOSED | The completed intake passes `qa/catalogue-readiness.mjs`; the product-only replacement loads that validator before database access and CI proves the exact dataset in isolation. | Incomplete product facts cannot enter the approved replacement path. | Preserve the catalogue and replacement gates. | Closed. |
 | R-017 — Current runtime still exposes legacy catalogue sources | P1 / known release blocker | `backend/data/products.js` contains ten third-party products and `frontend/public/images` retains their product files. | Final public catalogue acceptance cannot pass until approved replacement data and assets have passed rollback-safe integration. | Preserve as rollback evidence for now. Remove only after replacement QA and migration approval. | Yes; no cleanup yet. |
 | R-018 — Candidate bottle artwork contains historical visible labels | P1 / treated and closed | The preserved 16-file bottle set contained historical visible labels that conflict with the master authority. | Using the files unchanged could visually reintroduce identities that the repository correctly rejects in data. | Owner approved exact-label correction on 2026-09-13. All 16 neutral-path runtime assets now pass visual/text/dimension/alpha QA; corrected assets preserve source alpha pixel-for-pixel, and CI verifies their SHA-256 integrity. Historical sources remain preserved outside runtime. | Closed for Review 1; reopen only if an approved asset changes. |
 
 ## CURRENT RELEASE POSITION
 
-- Product identity authority: VERIFIED.
-- Approved UI/backend/QA: PRESERVE.
-- Final product facts and commercial values: OWNER INPUT REQUIRED.
-- Read-only catalogue readiness gate: IMPLEMENTED; the current placeholder intake is expected to fail it.
-- Shared database mutation: NOT AUTHORISED.
-- REVIEW 1: NOT READY.
+- Product identity and Review 1 facts: VERIFIED.
+- Approved UI/backend/QA: PRESERVED AND REGRESSION-TESTED.
+- Product-only replacement and rollback: ISOLATED QA PASSED.
+- R-015 runtime identity boundary: CLOSED FOR REVIEW 1.
+- Shared Preview database mutation: NOT YET AUTHORISED.
+- REVIEW 1 path: PREVIEW MIGRATION READY FOR OWNER APPROVAL.
 - Production release: NOT AUTHORISED.
 
 ## UPDATE RULE

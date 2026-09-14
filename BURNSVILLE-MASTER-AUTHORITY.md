@@ -68,11 +68,13 @@ Core heat, flavour-profile and pairing approval recorded: 2026-09-14.
 
 The approved Core runtime heat values are: 01 = 3, 02 = 6, 03 = 7, 04 = 9, 05 = 7, 06 = 9, 07 = 9, 08 = 10, 09 = 6 and 10 = 9. All 16 approved flavour profiles and pairing sets are recorded in `backend/data/burnsville-final-catalogue-intake.json`.
 
-## CURRENTLY UNRESOLVED
+## REVIEW 1 IDENTIFIER AND COLLECTION POLICY
 
-The following remain pending until explicitly approved:
+Owner approval recorded: 2026-09-14.
 
-- SKU/identifier policy beyond the locked identities above
+The locked Core numbers and Limited / Vintage codes above are the stable REVIEW 1 runtime identifiers. They are unique and immutable once installed. Runtime records also store one controlled collection value: `Core` or `Limited / Vintage`. The public API exposes that collection as `collection` while the Mongo model stores it as `catalogueCollection` to avoid Mongoose's reserved `collection` property.
+
+Admin product editing may update approved operational product fields, but it may not rename a product or change its identifier or collection. A separate commercial SKU scheme is deferred until after REVIEW 1 and does not block Preview migration.
 
 ## LOCKED REVIEW 1 IMAGE ARCHITECTURE
 

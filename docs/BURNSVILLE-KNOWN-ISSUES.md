@@ -6,8 +6,8 @@ Track verified remaining work. Do not use this file to invent new scope.
 
 ## RED — RELEASE BLOCKERS
 
-### KI-002 — FINAL BURNSVILLE CATALOGUE NOT IN RUNTIME
-The current runtime still uses legacy third-party sample products and images. Product identities, Review 1 image architecture, all 16 primary bottle assets, all seven required product facts and the real catalogue validator are resolved. Replacement now requires isolated product-only migration QA.
+### KI-002 — SHARED PREVIEW CATALOGUE NOT YET MIGRATED
+The approved 16-product Burnsville catalogue, safe product-only replacement procedure, rollback and isolated product/customer/admin/responsive QA all pass. The shared Preview database remains unchanged pending explicit owner approval for migration and post-migration QA.
 
 ## AMBER — DEFERRED UNTIL AFTER REVIEW 1
 
@@ -84,7 +84,8 @@ FIXED. `scripts/install-approved-product-cards.sh` remains a hard fail-closed st
 - integrated API QA
 - production serving QA
 - approved three-block customer/admin UI
-- browser customer journey and responsive/accessibility QA
+- browser customer journey and 1440/768/390/320 responsive/accessibility QA
+- isolated product-only replacement, idempotency and exact rollback QA
 - Vercel preview deployment pipeline
 - Codex/agent repository control layer present on active V2 branch
 - master product-identity authority present at repository root

@@ -2,7 +2,7 @@
 
 ## STATUS
 
-PREPARED / NO SHARED DATABASE MUTATION AUTHORISED.
+ISOLATED QA PASSED / PREVIEW MIGRATION READY FOR OWNER APPROVAL / NO SHARED DATABASE MUTATION AUTHORISED.
 
 ## PURPOSE
 
@@ -28,9 +28,7 @@ Define the safe procedure for replacing the temporary legacy third-party catalog
 
 Before migration work begins, the complete replacement dataset must be reviewable and contain all required approved values for the target runtime schema.
 
-Product identities, Review 1 runtime assets/roles, card containment and the single-image architecture are already locked. The remaining required inputs are the approved product facts and commercial values.
-
-Any unresolved required value blocks migration.
+Product identities, Review 1 runtime assets/roles, card containment, single-image architecture and every required product fact are approved. A separate post-Review 1 commercial SKU scheme remains deferred and does not block Preview migration.
 
 ## PRE-MIGRATION
 
@@ -81,11 +79,17 @@ Production migration remains blocked until Preview passes and production migrati
 
 Use the same reviewed dataset and migration procedure that passed isolated and Preview testing.
 
+## EXECUTABLE PROCEDURE
+
+The reviewed entrypoint is `scripts/product-catalogue-replacement.mjs`.
+
+Apply requires `MONGO_URI`, `BURNSVILLE_PRODUCT_REPLACEMENT=1` and a unique `BURNSVILLE_PRODUCT_SNAPSHOT` path. A non-loopback target additionally requires `BURNSVILLE_ALLOW_SHARED_PRODUCT_REPLACEMENT=1`. Production and Vercel runtime execution remain blocked.
+
+Rollback uses the same entrypoint with `rollback` and the exact protected snapshot path. Both actions use Mongo transactions and compare Users/Orders counts and SHA-256 digests before and after.
+
 ## ROLLBACK
 
-Rollback must restore the previous product collection without changing users/orders.
-
-The legacy destructive seeder is not a rollback mechanism.
+Isolated QA restored all ten original product records to the exact pre-migration product digest while Users and Orders remained unchanged. The legacy destructive seeder is not a replacement or rollback mechanism.
 
 ## REPOSITORY CLEANUP
 

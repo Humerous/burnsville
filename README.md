@@ -2,7 +2,7 @@
 
 > **Modernisation in progress**
 >
-> The active development source for the modernised Burnsville application is `modernise/burnsville-v2`. The approved three-block visual UI is implemented and verified. Product identities and the Review 1 bottle-image architecture are locked; final product facts, runtime catalogue replacement and public release inputs remain incomplete. Historical setup, seeding, product and deployment information previously stored in this README is no longer authoritative.
+> The active development source for the modernised Burnsville application is `modernise/burnsville-v2`. The approved three-block visual UI, final 16-product Review 1 catalogue and safe product-only replacement procedure are implemented and verified in isolation. Shared Preview and Production data remain unchanged. Historical setup, seeding, product and deployment information previously stored in this README is no longer authoritative.
 
 ## Current technical baseline
 
@@ -33,18 +33,18 @@ Before making changes, read in this order:
 6. `docs/BURNSVILLE-KNOWN-ISSUES.md`
 7. `docs/BURNSVILLE-RISK-REGISTER.md`
 
-CI runs `qa/product-authority.mjs` to prevent accidental product-identity drift, `qa/product-assets.mjs` to verify all 16 approved bottle files, and tests the read-only final-catalogue readiness validator.
+CI runs `qa/product-authority.mjs` to prevent accidental product-identity drift, `qa/product-assets.mjs` to verify all 16 approved bottle files, validates the final catalogue, and proves product-only replacement, rerun safety and rollback in an isolated database.
 
 ## Important current boundaries
 
 - `main` is not the active development branch.
 - The current visual UI is approved implementation authority and must not be redesigned without a newer explicit instruction.
 - `BURNSVILLE-MASTER-AUTHORITY.md` is the sole current product-identity authority unless the owner explicitly approves a newer change.
-- The current runtime catalogue still contains temporary legacy third-party sample products pending the approved Burnsville replacement catalogue.
+- Shared Preview retains its current catalogue until the owner explicitly approves the product-only migration.
 - Historical catalogue/asset filenames are evidence only and cannot rename products or approve product facts. Approved Review 1 runtime paths are recorded in `backend/data/burnsville-product-asset-map.json`.
 - Do not run the legacy destructive seeder for catalogue replacement.
 - Do not mutate shared Preview/Production catalogue data without explicit approval and a reviewed rollback procedure.
-- Do not infer missing product facts or commercial values.
+- Do not reopen approved Review 1 product facts or identities without explicit owner authority.
 
 ## Development
 
@@ -84,7 +84,7 @@ Check whether the final catalogue intake is complete and its static asset paths 
 npm run qa:catalogue
 ```
 
-This command is read-only. It is expected to report blockers until every required product fact has been approved.
+This command is read-only and must pass before any product-only replacement.
 
 The repository CI workflow is the authoritative integrated QA path while the modernisation is in progress.
 

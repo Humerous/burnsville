@@ -16,6 +16,9 @@
     "qa:product-assets": "node qa/product-assets.mjs",
     "qa:catalogue": "node qa/catalogue-readiness.mjs",
     "test:catalogue-validator": "node qa/catalogue-readiness.test.mjs",
+    "qa:product-replacement": "node qa/product-replacement-isolated.mjs",
+    "qa:product-catalogue-api": "node qa/product-catalogue-api.mjs",
+    "catalogue:replace": "node scripts/product-catalogue-replacement.mjs",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
     "data:bootstrap": "node backend/bootstrap"
