@@ -2,7 +2,7 @@
 
 ## STATUS
 
-PRODUCT IDENTITIES, REVIEW 1 ASSETS, DESCRIPTIONS, INGREDIENTS, PRICES, STOCK AND LIMITED HEAT RESOLVED / CORE HEAT, FLAVOUR AND PAIRINGS PENDING.
+PRODUCT IDENTITIES, REVIEW 1 ASSETS AND ALL SEVEN REQUIRED PRODUCT FACTS APPROVED / ISOLATED QA READY.
 
 Audit date: 2026-09-14
 
@@ -92,11 +92,11 @@ When sources conflict:
 
 Historical evidence never promotes itself to authority.
 
-## EXACT UNRESOLVED OWNER APPROVAL TABLE
+## FINAL APPROVED PRODUCT-FACT TABLE
 
-Approve each proposed value as written or supply a correction. The heat column applies only to the 10 Core products; Limited / Vintage runtime heat is already approved and is therefore omitted.
+Final owner approval recorded on 2026-09-14. This table records the approved runtime heat, flavour profile and pairings for all 16 products.
 
-| Identity | Core heat awaiting approval | Flavour profile awaiting approval | Pairings awaiting approval |
+| Identity | Runtime heat | Flavour profile | Pairings |
 | --- | --- | --- | --- |
 | Core 01 — GREEN SPARK | 3/10 | Crisp, green, herbal | Grilled fish; avocado toast; green salads |
 | Core 02 — SUN GOLD | 6/10 | Tropical, fruity, warming | Grilled chicken; tacos; rice bowls |
@@ -108,18 +108,18 @@ Approve each proposed value as written or supply a correction. The heat column a
 | Core 08 — BIRD’S FIRE | 10/10 | Floral, fruity, smoky and sweet | Fried chicken; pork; stir-fries |
 | Core 09 — VIOLET’S FUSE | 6/10 | Dark fruit, earthy, tart | Duck; soft cheese; roasted vegetables |
 | Core 10 — GHOST BLACK | 9/10 | Smoky, fermented, nutty | Burgers; braised meats; roasted mushrooms |
-| Limited / Vintage — P-X | — | Tart, floral, honeyed | Grilled fish; goat’s cheese; curries |
-| Limited / Vintage — CASK-13 | — | Smoky, complex, legendary | Smoked meats; aged cheese; braised beef |
-| Limited / Vintage — POT-7 | — | Dark fruit, smoky, bittersweet | Steak; game; dark chocolate |
-| Limited / Vintage — TMR-200 | — | Bright, floral, fruity | Tacos; grilled prawns; fruit salsa |
-| Limited / Vintage — X-666 | — | Tart, citrusy, intensely fruity | Grilled meats; curries; bean dishes |
-| Limited / Vintage — B-42 | — | Dark fruit, floral, spiced | Duck; venison; aged cheese |
+| Limited / Vintage — P-X | 10/10 | Tart, floral, honeyed | Grilled fish; goat’s cheese; curries |
+| Limited / Vintage — CASK-13 | 10/10 | Smoky, complex, legendary | Smoked meats; aged cheese; braised beef |
+| Limited / Vintage — POT-7 | 10/10 | Dark fruit, smoky, bittersweet | Steak; game; dark chocolate |
+| Limited / Vintage — TMR-200 | 10/10 | Bright, floral, fruity | Tacos; grilled prawns; fruit salsa |
+| Limited / Vintage — X-666 | 10/10 | Tart, citrusy, intensely fruity | Grilled meats; curries; bean dishes |
+| Limited / Vintage — B-42 | 10/10 | Dark fruit, floral, spiced | Duck; venison; aged cheese |
 
-## FINAL PRODUCT-FACT GATE
+## FINAL PRODUCT-FACT GATE — PASSED
 
-The owner has not yet approved the proposed Core heat values, any final flavour profiles or any final pairings.
+All required descriptions, heat values, flavour profiles, ingredients, pairings, prices and stock values are explicitly approved and recorded in the final intake. The real read-only catalogue validator passes all 16 products.
 
-After explicit owner approval of the table above, complete the final intake, run the real catalogue validator, prepare the product-only replacement procedure, run isolated database and product-specific functional QA, and verify 1440 / 768 / 390 / 320 layouts. Do not migrate Preview or Production without a later explicit approval.
+The product-only replacement procedure and isolated database QA are next. Do not migrate Preview or Production without a later explicit approval.
 
 ## SAFE CURRENT STATE
 
@@ -131,10 +131,9 @@ After explicit owner approval of the table above, complete the final intake, run
 - Corrected final bottle assets: VERIFIED AND INSTALLED.
 - Descriptions, ingredients, prices and stock: APPROVED.
 - Limited / Vintage runtime heat and source-scale evidence: APPROVED.
-- Core heat, all flavour profiles and all pairings: PENDING.
+- Core heat, all flavour profiles and all pairings: APPROVED.
+- Real catalogue validator: PASSED.
 
 ## NEXT IMPLEMENTATION GATE
 
-After the exact unresolved product facts above are explicitly approved:
-
-FINAL INTAKE → REAL CATALOGUE VALIDATOR → PRODUCT-ONLY REPLACEMENT PROCEDURE → ISOLATED DATABASE QA → PRODUCT-SPECIFIC FUNCTIONAL QA → 1440 / 768 / 390 / 320 QA → PREVIEW MIGRATION READY
+PRODUCT-ONLY REPLACEMENT PROCEDURE → ISOLATED DATABASE QA → PRODUCT-SPECIFIC FUNCTIONAL QA → 1440 / 768 / 390 / 320 QA → PREVIEW MIGRATION READY

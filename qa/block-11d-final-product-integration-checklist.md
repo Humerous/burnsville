@@ -2,7 +2,7 @@
 
 ## STATUS
 
-PRODUCT IDENTITIES, REVIEW 1 ASSETS AND APPROVED FACTS RECORDED / CORE HEAT, FLAVOUR AND PAIRINGS PENDING.
+PRODUCT IDENTITIES, REVIEW 1 ASSETS AND ALL REQUIRED PRODUCT FACTS APPROVED / VALIDATOR PASSED.
 
 Primary identity authority: `BURNSVILLE-MASTER-AUTHORITY.md`.
 Supporting evidence: `docs/BURNSVILLE-CATALOGUE-AUTHORITY-RECONCILIATION.md`.
@@ -22,7 +22,7 @@ Do not infer missing product facts. Do not redesign supplied artwork. Do not mut
 - [x] Asset roles are explicitly classified for REVIEW 1.
 - [x] Runtime card geometry is approved: portrait bottle contained inside the existing square media area.
 - [x] Approved descriptions, ingredients, prices, stock and Limited / Vintage runtime heat are recorded.
-- [x] Core heat, all flavour profiles and all pairings remain explicitly unresolved.
+- [x] Core heat, all flavour profiles and all pairings are explicitly approved.
 - [x] Historical catalogue files are not used to fill missing values automatically.
 
 ## 2. ARCHITECTURE GATES
@@ -56,16 +56,16 @@ For every replacement product:
 - [x] asset mapping matches approved Review 1 source
 - [x] brand/category correct
 - [x] description approved
-- [ ] heat approved and valid
-- [ ] flavour profile approved
+- [x] heat approved and valid
+- [x] flavour profile approved
 - [x] ingredients approved
-- [ ] pairings approved
+- [x] pairings approved
 - [x] price approved
 - [x] stock approved
 - [x] no legacy third-party reviews are carried over
 - [x] product-authority QA passes
 - [x] product-asset QA passes
-- [ ] read-only catalogue validator passes
+- [x] read-only catalogue validator passes
 
 ## 5. CUSTOMER FLOW QA
 
@@ -130,7 +130,7 @@ At minimum test:
 - [ ] controlled functional API QA passes
 - [ ] production serving QA passes
 - [ ] production dependency gate passes
-- [ ] catalogue validator passes
+- [x] catalogue validator passes
 - [x] product-asset integrity validator passes
 - [ ] no broken image requests
 - [ ] no unexpected console/runtime errors

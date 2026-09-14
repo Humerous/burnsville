@@ -2,7 +2,7 @@
 
 ## STATUS
 
-LOCKED PRODUCT IDENTITY AND LIMITED / VINTAGE HEAT AUTHORITY.
+LOCKED PRODUCT IDENTITY AND PRODUCT-FACT AUTHORITY.
 
 This file is the sole current authority for Burnsville product identities on `modernise/burnsville-v2`.
 
@@ -12,7 +12,7 @@ If any repository file, historical mapping, commit, README, asset filename, scre
 
 1. Do not rename, reinterpret, substitute, normalise, or infer a product identity from historical filenames or descriptive labels.
 2. Historical catalogue and asset maps are supporting evidence only unless this file explicitly promotes a field.
-3. Missing product facts must remain unresolved. Do not invent Core heat values, flavour profiles, pairings, SKUs, image roles, or filenames.
+3. Missing future product facts must remain unresolved. Do not invent SKUs, image roles, filenames, or changes to the approved final catalogue.
 4. A later automated reconciliation may not supersede this file without explicit owner approval.
 5. Any proposed identity change must stop for owner approval before implementation.
 6. Approved UI/backend/QA work must not be changed merely to reconcile catalogue authority.
@@ -64,14 +64,15 @@ The original artwork establishes these exact displayed source scales:
 
 The denominators are source/display evidence. They must not be stored in the existing 1–10 `heatLevel` field, and no new runtime field is required for REVIEW 1.
 
+Core heat, flavour-profile and pairing approval recorded: 2026-09-14.
+
+The approved Core runtime heat values are: 01 = 3, 02 = 6, 03 = 7, 04 = 9, 05 = 7, 06 = 9, 07 = 9, 08 = 10, 09 = 6 and 10 = 9. All 16 approved flavour profiles and pairing sets are recorded in `backend/data/burnsville-final-catalogue-intake.json`.
+
 ## CURRENTLY UNRESOLVED
 
 The following remain pending until explicitly approved:
 
 - SKU/identifier policy beyond the locked identities above
-- Core heat levels
-- all flavour profiles
-- all pairings
 
 ## LOCKED REVIEW 1 IMAGE ARCHITECTURE
 

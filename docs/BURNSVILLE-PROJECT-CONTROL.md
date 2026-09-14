@@ -95,22 +95,17 @@ Not imported as authority:
 
 ## OPEN WORKSTREAMS
 
-1. Approve the remaining Core heat values, all flavour profiles and all pairings.
-2. Controlled product-only catalogue migration and product-specific regression QA.
-3. Resolve or explicitly accept runtime identity-drift risk R-015 before shared release-candidate migration.
-4. Final release SEO/public metadata and legal destinations.
-5. Final public README/repository presentation.
-6. Controlled release to `main` and production.
+1. Controlled product-only catalogue migration and product-specific regression QA.
+2. Resolve or explicitly accept runtime identity-drift risk R-015 before shared release-candidate migration.
+3. Final release SEO/public metadata and legal destinations.
+4. Final public README/repository presentation.
+5. Controlled release to `main` and production.
 
 ## NEXT CODEX BLOCK — ENTRY CONDITIONS
 
 Do not spend the next major block re-auditing product identities or redesigning completed UI.
 
-Start final product integration only when the remaining approved inputs are available or can be verified from current approved sources:
-
-- final Core heat values, flavour profiles and pairings
-
-Then execute:
+All seven required product facts are approved in the final intake. Execute:
 
 PRODUCT FACT APPROVAL → AUTHORITY/ASSET/CATALOGUE QA → REPLACEMENT DATASET → ISOLATED QA → CUSTOMER/ADMIN REGRESSION → MIGRATION REVIEW
 
@@ -120,7 +115,7 @@ If a required approved input is absent, stop on that specific unresolved input r
 
 - Final product catalogue not integrated.
 - Legacy third-party runtime catalogue remains present until approved replacement data passes QA.
-- Core heat values, flavour profiles and pairings remain incomplete; descriptions, ingredients, prices, stock and Limited / Vintage runtime heat are approved.
+- Product-only migration and product-specific QA remain incomplete.
 - Runtime identifier/collection/admin-edit policy remains open under risk R-015 before a shared release candidate.
 - Product-specific browser/responsive/accessibility QA must run after catalogue replacement.
 - Final release URL/canonical/social metadata is not yet locked.

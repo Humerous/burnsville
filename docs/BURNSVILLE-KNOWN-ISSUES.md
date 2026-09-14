@@ -7,10 +7,7 @@ Track verified remaining work. Do not use this file to invent new scope.
 ## RED — RELEASE BLOCKERS
 
 ### KI-002 — FINAL BURNSVILLE CATALOGUE NOT IN RUNTIME
-The current runtime still uses legacy third-party sample products and images. Product identities, Review 1 image architecture, all 16 primary bottle assets, descriptions, ingredients, prices, stock and Limited / Vintage runtime heat are resolved. Replacement remains blocked until Core heat, all flavour profiles and all pairings are approved and the complete intake is validated.
-
-### KI-005 — FINAL PRODUCT DATA INCOMPLETE
-Core heat values, all flavour profiles and all pairings must be explicitly approved before migration. Missing values must not be invented.
+The current runtime still uses legacy third-party sample products and images. Product identities, Review 1 image architecture, all 16 primary bottle assets, all seven required product facts and the real catalogue validator are resolved. Replacement now requires isolated product-only migration QA.
 
 ## AMBER — DEFERRED UNTIL AFTER REVIEW 1
 
@@ -30,6 +27,9 @@ Known-stale destructive/historical instructions were removed and replaced with a
 Legacy generic metadata has been removed and replaced with neutral Burnsville defaults. Final OpenGraph, canonical URL, sitemap/indexing and public launch metadata still require the final release identity/URL.
 
 ## CLOSED / FIXED
+
+### KI-005 — FINAL PRODUCT DATA INCOMPLETE
+FIXED. All seven required product facts for all 16 products were approved by 2026-09-14 and recorded in the authoritative final intake.
 
 ### KI-004 — FINAL PRODUCT IMAGE MODEL NOT CONFIRMED
 FIXED for REVIEW 1. Decision D-019 approves the existing single `image` field with one transparent bottle render per product. All 16 runtime assets, their paths and square-media containment rule are locked and verified.
