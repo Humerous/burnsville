@@ -1,0 +1,131 @@
+.burnsville-home-framework {
+  --framework-cream: var(--burnsville-cream, #f3ede4);
+  --framework-onyx: var(--burnsville-onyx, #111111);
+  --framework-red: var(--burnsville-chilli, #d2282b);
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+}
+
+/* The three discovery sections behave as one top-of-page system. */
+.burnsville-home-framework > .burnsville-home-hero,
+.burnsville-home-framework > .burnsville-heat-strip,
+.burnsville-home-framework > .home-product-showcase {
+  margin-left: 0;
+  width: 100%;
+}
+
+.burnsville-home-framework > .burnsville-home-hero {
+  margin-top: -1rem;
+}
+
+/* Use the heat guide as the dark navigation bridge between brand impact and product shopping. */
+.burnsville-home-framework > .burnsville-heat-strip {
+  background-color: var(--framework-onyx);
+  background-image:
+    radial-gradient(circle at 22% 34%, rgba(243, 237, 228, 0.08) 0 0.7px, transparent 1px),
+    radial-gradient(circle at 75% 68%, rgba(210, 40, 43, 0.16) 0 0.7px, transparent 1px),
+    linear-gradient(90deg, rgba(210, 40, 43, 0.06), transparent 34%, rgba(210, 40, 43, 0.05));
+  border-bottom-color: rgba(243, 237, 228, 0.14);
+  border-top: 1px solid rgba(243, 237, 228, 0.12);
+  color: var(--framework-cream);
+  position: relative;
+  z-index: 4;
+}
+
+.burnsville-home-framework .burnsville-heat-strip__heading,
+.burnsville-home-framework .burnsville-heat-strip__level {
+  border-color: rgba(243, 237, 228, 0.14);
+}
+
+.burnsville-home-framework .burnsville-heat-strip__heading h2,
+.burnsville-home-framework .burnsville-heat-strip__range,
+.burnsville-home-framework .burnsville-heat-strip__guide-link {
+  color: var(--framework-cream);
+}
+
+.burnsville-home-framework .burnsville-heat-strip__level {
+  color: var(--framework-cream);
+}
+
+.burnsville-home-framework .burnsville-heat-strip__level-copy strong {
+  color: var(--framework-cream);
+}
+
+.burnsville-home-framework .burnsville-heat-strip__level:hover {
+  background: rgba(243, 237, 228, 0.07);
+  box-shadow: inset 0 -3px 0 var(--heat-color);
+  color: var(--framework-cream);
+}
+
+.burnsville-home-framework .burnsville-heat-strip__level:active {
+  background: rgba(243, 237, 228, 0.1);
+}
+
+.burnsville-home-framework .burnsville-heat-strip__dot {
+  background: rgba(243, 237, 228, 0.18);
+}
+
+.burnsville-home-framework .burnsville-heat-strip__dot--active {
+  background: var(--heat-color);
+}
+
+.burnsville-home-framework .burnsville-heat-strip__guide-link:hover,
+.burnsville-home-framework .burnsville-heat-strip__guide-link:focus-visible {
+  color: #f26358;
+}
+
+.burnsville-home-framework .burnsville-heat-strip__level:focus-visible,
+.burnsville-home-framework .burnsville-heat-strip__guide-link:focus-visible {
+  outline-color: var(--framework-cream);
+}
+
+/* Product discovery starts immediately after the navigation rail, but with enough breathing room to read as the shopping stage. */
+.burnsville-home-framework > .home-product-showcase {
+  border-top: 0;
+  position: relative;
+}
+
+.burnsville-home-framework > .home-product-showcase::before {
+  background: linear-gradient(90deg, var(--framework-red), rgba(210, 40, 43, 0));
+  content: '';
+  height: 3px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: min(22vw, 290px);
+  z-index: 2;
+}
+
+.burnsville-home-framework .home-product-showcase__inner {
+  padding-top: clamp(54px, 5vw, 72px);
+  padding-bottom: clamp(56px, 5vw, 76px);
+}
+
+@media (max-width: 900px) {
+  .burnsville-home-framework > .burnsville-heat-strip {
+    overflow: hidden;
+  }
+
+  .burnsville-home-framework .burnsville-heat-strip__inner {
+    background: var(--framework-onyx);
+  }
+}
+
+@media (max-width: 720px) {
+  .burnsville-home-framework .home-product-showcase__inner {
+    padding-top: 44px;
+    padding-bottom: 48px;
+  }
+
+  .burnsville-home-framework > .home-product-showcase::before {
+    width: 110px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .burnsville-home-framework *,
+  .burnsville-home-framework *::before,
+  .burnsville-home-framework *::after {
+    scroll-behavior: auto !important;
+  }
+}

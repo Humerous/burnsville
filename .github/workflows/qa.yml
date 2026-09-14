@@ -1,0 +1,221 @@
+name: Burnsville QA
+
+on:
+  push:
+    branches:
+      - modernise/burnsville-v2
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrated-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Use Node 24
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            frontend/package-lock.json
+
+      - name: Runtime versions
+        run: |
+          node --version
+          npm --version
+
+      - name: Verify master product authority
+        run: node qa/product-authority.mjs
+
+      - name: Verify approved product bottle assets
+        run: node qa/product-assets.mjs
+
+      - name: Test read-only catalogue readiness validator
+        run: node qa/catalogue-readiness.test.mjs
+
+      - name: Install backend dependencies
+        run: npm ci
+
+      - name: Install frontend dependencies
+        run: npm ci --prefix frontend --include=dev
+
+      - name: Build Vite frontend
+        run: npm run build --prefix frontend
+
+      - name: Start isolated MongoDB replica set
+        run: |
+          docker run -d --name burnsville-mongo \
+            -p 27017:27017 \
+            mongo:8.0 \
+            --replSet rs0 --bind_ip_all
+
+          for attempt in {1..30}; do
+            if docker exec burnsville-mongo mongosh --quiet --eval "db.adminCommand({ ping: 1 }).ok" | grep -q 1; then
+              break
+            fi
+            sleep 2
+          done
+
+          docker exec burnsville-mongo mongosh --quiet --eval \
+            "rs.initiate({_id:'rs0',members:[{_id:0,host:'127.0.0.1:27017'}]})"
+
+          for attempt in {1..30}; do
+            if docker exec burnsville-mongo mongosh --quiet --eval \
+              "rs.status().myState" | grep -q 1; then
+              break
+            fi
+            sleep 2
+          done
+
+          docker exec burnsville-mongo mongosh --quiet --eval \
+            "if (rs.status().myState !== 1) { quit(1) }"
+
+      - name: Prove product-only replacement and rollback in isolated QA
+        env:
+          MONGO_URI: mongodb://127.0.0.1:27017/burnsville_qa?replicaSet=rs0
+          BURNSVILLE_PRODUCT_REPLACEMENT: '1'
+          BURNSVILLE_QA_KEEP_DB: '1'
+          BURNSVILLE_QA_EVIDENCE: /tmp/burnsville-product-replacement-evidence.json
+          NODE_ENV: test
+        run: npm run qa:product-replacement
+
+      - name: Start API test runtime
+        env:
+          MONGO_URI: mongodb://127.0.0.1:27017/burnsville_qa?replicaSet=rs0
+          JWT_SECRET: burnsville-ci-only-secret
+          NODE_ENV: test
+          PORT: '5001'
+        run: |
+          node backend/server.js > /tmp/burnsville-api.log 2>&1 &
+          echo $! > /tmp/burnsville-server.pid
+
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:5001/api/products > /dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+
+          cat /tmp/burnsville-api.log
+          exit 1
+
+      - name: Run exact product catalogue API QA
+        env:
+          BASE_URL: http://127.0.0.1:5001
+        run: npm run qa:product-catalogue-api
+
+      - name: Run integrated API QA
+        env:
+          BASE_URL: http://127.0.0.1:5001
+        run: node qa/integrated-api.mjs
+
+      - name: Run heat-filter API QA
+        env:
+          BASE_URL: http://127.0.0.1:5001
+          MONGO_URI: mongodb://127.0.0.1:27017/burnsville_qa?replicaSet=rs0
+          BURNSVILLE_QA_HEAT_FILTER: '1'
+        run: node qa/heat-filter-api.mjs
+
+      - name: Run Block 11B review consistency QA
+        env:
+          BASE_URL: http://127.0.0.1:5001
+        run: node qa/block-11b-review-consistency.mjs
+
+      - name: Run Block 10C controlled synthetic functional API QA
+        env:
+          BASE_URL: http://127.0.0.1:5001
+        run: node qa/block-10c-functional-api.mjs
+
+      - name: Restart in production mode
+        env:
+          MONGO_URI: mongodb://127.0.0.1:27017/burnsville_qa?replicaSet=rs0
+          JWT_SECRET: burnsville-ci-only-secret
+          NODE_ENV: production
+          PORT: '5001'
+        run: |
+          kill "$(cat /tmp/burnsville-server.pid)"
+          wait "$(cat /tmp/burnsville-server.pid)" 2>/dev/null || true
+
+          node backend/server.js > /tmp/burnsville-production.log 2>&1 &
+          echo $! > /tmp/burnsville-server.pid
+
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:5001/ > /dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+
+          cat /tmp/burnsville-production.log
+          exit 1
+
+      - name: Run production serving QA
+        env:
+          BASE_URL: http://127.0.0.1:5001
+        run: node qa/production-static.mjs
+
+      - name: Audit production dependencies
+        run: |
+          audit_with_retry() {
+            label="$1"
+            shift
+            attempt=1
+
+            while [ "$attempt" -le 3 ]; do
+              set +e
+              output=$("$@" 2>&1)
+              status=$?
+              set -e
+
+              printf '%s\n' "$output"
+
+              if [ "$status" -eq 0 ]; then
+                return 0
+              fi
+
+              if printf '%s\n' "$output" | grep -Eqi \
+                'audit endpoint returned an error|ECONNRESET|ETIMEDOUT|EAI_AGAIN|ENETUNREACH|socket hang up|503 Service Unavailable'; then
+                if [ "$attempt" -lt 3 ]; then
+                  echo "$label audit registry request failed; retrying ($attempt/3)..."
+                  sleep $((attempt * 3))
+                  attempt=$((attempt + 1))
+                  continue
+                fi
+
+                echo "$label audit could not reach the registry after 3 attempts."
+                return 2
+              fi
+
+              echo "$label production dependency audit failed."
+              return "$status"
+            done
+          }
+
+          audit_with_retry backend npm audit --omit=dev --audit-level=high
+          audit_with_retry frontend npm audit --prefix frontend --omit=dev --audit-level=high
+
+      - name: Repository diff check
+        run: git diff --check
+
+      - name: Cleanup
+        if: always()
+        run: |
+          if [ -f /tmp/burnsville-server.pid ]; then
+            kill "$(cat /tmp/burnsville-server.pid)" 2>/dev/null || true
+          fi
+          docker rm -f burnsville-mongo 2>/dev/null || true
+          echo '--- API log ---'
+          cat /tmp/burnsville-api.log 2>/dev/null || true
+          echo '--- Production log ---'
+          cat /tmp/burnsville-production.log 2>/dev/null || true

@@ -1,0 +1,372 @@
+{
+  "status": "AUTHORITATIVE 16-PRODUCT REVIEW 1 INTAKE — ISOLATED QA PASSED; PREVIEW MIGRATION READY FOR OWNER APPROVAL",
+  "authority": "BURNSVILLE-MASTER-AUTHORITY.md",
+  "confirmedFacts": [
+    "16 products total",
+    "10 Core product identities",
+    "6 Limited / Vintage code-only product identities",
+    "one approved transparent runtime bottle image per product",
+    "existing single image field approved through REVIEW 1",
+    "descriptions, ingredients, prices and stock approved by the owner on 2026-09-13",
+    "all six Limited / Vintage runtime heat levels approved as 10 (Extreme) on 2026-09-14",
+    "Core heat levels, all flavour profiles and all pairings approved by the owner on 2026-09-14",
+    "locked Review 1 identifiers and Core / Limited collection policy approved on 2026-09-14"
+  ],
+  "unresolved": [
+    "Any separate post-Review 1 commercial SKU scheme remains deferred"
+  ],
+  "products": [
+    {
+      "collection": "Core",
+      "name": "GREEN SPARK",
+      "identifier": "01",
+      "image": "/images/products/bottles/burnsville-01-green-spark-bottle.webp",
+      "description": "Green apple and jalapeño come together with sorrel leaf, cilantro and celery seed in GREEN SPARK.",
+      "heatLevel": 3,
+      "flavourProfile": "Crisp, green, herbal",
+      "ingredients": "Green Apple / Jalapeño / Sorrel Leaf / Cilantro / Celery Seed",
+      "pairings": [
+        "Grilled fish",
+        "Avocado toast",
+        "Green salads"
+      ],
+      "price": 179.98,
+      "countInStock": 200,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "SUN GOLD",
+      "identifier": "02",
+      "image": "/images/products/bottles/burnsville-02-sun-gold-bottle.webp",
+      "description": "Mango, habanero and pineapple come together with fresh ginger and coconut sugar in SUN GOLD.",
+      "heatLevel": 6,
+      "flavourProfile": "Tropical, fruity, warming",
+      "ingredients": "Mango / Habanero / Pineapple / Fresh Ginger / Coconut Sugar",
+      "pairings": [
+        "Grilled chicken",
+        "Tacos",
+        "Rice bowls"
+      ],
+      "price": 179.98,
+      "countInStock": 200,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "CITRUS FLARE",
+      "identifier": "03",
+      "image": "/images/products/bottles/burnsville-03-citrus-flare-bottle.webp",
+      "description": "Yuzu and ají amarillo form an aromatic, citrusy and floral CITRUS FLARE.",
+      "heatLevel": 7,
+      "flavourProfile": "Aromatic, citrusy, floral",
+      "ingredients": "Yuzu / Ají Amarillo / Lemongrass / Sumac / Quince",
+      "pairings": [
+        "Seafood",
+        "Roast chicken",
+        "Noodle dishes"
+      ],
+      "price": 179.98,
+      "countInStock": 200,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "RED EMBER",
+      "identifier": "04",
+      "image": "/images/products/bottles/burnsville-04-red-ember-bottle.webp",
+      "description": "Roasted red pepper and Morita chilli come together with carrot, cumin seed and sherry vinegar in RED EMBER.",
+      "heatLevel": 9,
+      "flavourProfile": "Smoky, savoury, bold",
+      "ingredients": "Roasted Red Pepper / Morita Chilli / Carrot / Cumin Seed / Sherry Vinegar",
+      "pairings": [
+        "Grilled meats",
+        "Eggs",
+        "Roasted vegetables"
+      ],
+      "price": 179.98,
+      "countInStock": 200,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "DARK HARVEST",
+      "identifier": "05",
+      "image": "/images/products/bottles/burnsville-05-dark-harvest-bottle.webp",
+      "description": "Porcini and ancho come together with kokum, coffee and blackstrap molasses in DARK HARVEST.",
+      "heatLevel": 7,
+      "flavourProfile": "Earthy, deep, bittersweet",
+      "ingredients": "Porcini / Ancho / Kokum / Coffee / Blackstrap Molasses",
+      "pairings": [
+        "Steak",
+        "Mushrooms",
+        "Lentils"
+      ],
+      "price": 179.98,
+      "countInStock": 200,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "SALINE CURRENT",
+      "identifier": "06",
+      "image": "/images/products/bottles/burnsville-06-saline-current-bottle.webp",
+      "description": "Tomatillo and serrano come together with saltbush, dill and nori in SALINE CURRENT.",
+      "heatLevel": 9,
+      "flavourProfile": "Bright, saline, herbaceous",
+      "ingredients": "Tomatillo / Serrano / Saltbush / Dill / Nori",
+      "pairings": [
+        "Oysters",
+        "Grilled fish",
+        "Roasted potatoes"
+      ],
+      "price": 179.98,
+      "countInStock": 200,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "CALABRIAN SUN",
+      "identifier": "07",
+      "image": "/images/products/bottles/burnsville-07-calabrian-sun-bottle.webp",
+      "description": "Roasted aubergine and Calabrian chilli come together with fennel seed, oregano and pomegranate molasses in CALABRIAN SUN.",
+      "heatLevel": 9,
+      "flavourProfile": "Smoky, savoury, tangy",
+      "ingredients": "Roasted Aubergine / Calabrian Chilli / Fennel Seed / Oregano / Pomegranate Molasses",
+      "pairings": [
+        "Pizza",
+        "Pasta",
+        "Grilled vegetables"
+      ],
+      "price": 179.98,
+      "countInStock": 200,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "BIRD’S FIRE",
+      "identifier": "08",
+      "image": "/images/products/bottles/burnsville-08-birds-fire-bottle.webp",
+      "description": "Lychee and bird’s eye chilli come together with garlic, smoked paprika and jaggery in BIRD’S FIRE.",
+      "heatLevel": 10,
+      "flavourProfile": "Floral, fruity, smoky and sweet",
+      "ingredients": "Lychee / Bird’s Eye Chilli / Garlic / Smoked Paprika / Jaggery",
+      "pairings": [
+        "Fried chicken",
+        "Pork",
+        "Stir-fries"
+      ],
+      "price": 179.98,
+      "countInStock": 200,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "VIOLET’S FUSE",
+      "identifier": "09",
+      "image": "/images/products/bottles/burnsville-09-violets-fuse-bottle.webp",
+      "description": "Blueberry and rocoto come together with beetroot, shiso and rhubarb in VIOLET’S FUSE.",
+      "heatLevel": 6,
+      "flavourProfile": "Dark fruit, earthy, tart",
+      "ingredients": "Blueberry / Rocoto / Beetroot / Shiso / Rhubarb",
+      "pairings": [
+        "Duck",
+        "Soft cheese",
+        "Roasted vegetables"
+      ],
+      "price": 179.98,
+      "countInStock": 200,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Core",
+      "name": "GHOST BLACK",
+      "identifier": "10",
+      "image": "/images/products/bottles/burnsville-10-ghost-black-bottle.webp",
+      "description": "Activated charcoal and ghost pepper come together with fermented black beans, black sesame and malt vinegar in GHOST BLACK.",
+      "heatLevel": 9,
+      "flavourProfile": "Smoky, fermented, nutty",
+      "ingredients": "Ghost Pepper / Charcoal / Fermented Black Beans / Black Sesame / Malt Vinegar",
+      "pairings": [
+        "Burgers",
+        "Braised meats",
+        "Roasted mushrooms"
+      ],
+      "price": 179.98,
+      "countInStock": 200,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Limited / Vintage",
+      "name": "P-X",
+      "identifier": "P-X",
+      "image": "/images/products/bottles/burnsville-p-x-bottle.webp",
+      "description": "Cape gooseberry and Pepper X come together with green cardamom, fenugreek leaf and fermented honey in P-X.",
+      "heatLevel": 10,
+      "flavourProfile": "Tart, floral, honeyed",
+      "ingredients": "Cape Gooseberry / Pepper X / Green Cardamom / Fenugreek Leaf / Fermented Honey",
+      "pairings": [
+        "Grilled fish",
+        "Goat’s cheese",
+        "Curries"
+      ],
+      "price": 224.98,
+      "countInStock": 100,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Limited / Vintage",
+      "name": "CASK-13",
+      "identifier": "CASK-13",
+      "image": "/images/products/bottles/burnsville-cask-13-bottle.webp",
+      "description": "Smoked rooibos and Carolina Reaper come together with juniper berry, date syrup and verjus in CASK-13.",
+      "heatLevel": 10,
+      "flavourProfile": "Smoky, complex, legendary",
+      "ingredients": "Smoked Rooibos / Carolina Reaper / Juniper Berry / Date Syrup / Verjus",
+      "pairings": [
+        "Smoked meats",
+        "Aged cheese",
+        "Braised beef"
+      ],
+      "price": 224.98,
+      "countInStock": 100,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Limited / Vintage",
+      "name": "POT-7",
+      "identifier": "POT-7",
+      "image": "/images/products/bottles/burnsville-pot-7-bottle.webp",
+      "description": "7 Pot Douglah and sour cherry come together with Urfa biber, cacao nib, vanilla and maple syrup in POT-7.",
+      "heatLevel": 10,
+      "flavourProfile": "Dark fruit, smoky, bittersweet",
+      "ingredients": "7 Pot Douglah / Sour Cherry / Urfa Biber / Cacao Nib / Vanilla / Maple Syrup",
+      "pairings": [
+        "Steak",
+        "Game",
+        "Dark chocolate"
+      ],
+      "price": 224.98,
+      "countInStock": 100,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Limited / Vintage",
+      "name": "TMR-200",
+      "identifier": "TMR-200",
+      "image": "/images/products/bottles/burnsville-tmr-200-bottle.webp",
+      "description": "Prickly pear and 7 Pot Primo come together with strawberry, hibiscus and agave in TMR-200.",
+      "heatLevel": 10,
+      "flavourProfile": "Bright, floral, fruity",
+      "ingredients": "Prickly Pear / 7 Pot Primo / Strawberry / Hibiscus / Agave",
+      "pairings": [
+        "Tacos",
+        "Grilled prawns",
+        "Fruit salsa"
+      ],
+      "price": 224.98,
+      "countInStock": 100,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Limited / Vintage",
+      "name": "X-666",
+      "identifier": "X-666",
+      "image": "/images/products/bottles/burnsville-x-666-bottle.webp",
+      "description": "Tamarind, Trinidad Moruga and orange ghost pepper form the product profile of X-666.",
+      "heatLevel": 10,
+      "flavourProfile": "Tart, citrusy, intensely fruity",
+      "ingredients": "Tamarind / Trinidad Moruga / Orange Ghost Pepper",
+      "pairings": [
+        "Grilled meats",
+        "Curries",
+        "Bean dishes"
+      ],
+      "price": 224.98,
+      "countInStock": 100,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    },
+    {
+      "collection": "Limited / Vintage",
+      "name": "B-42",
+      "identifier": "B-42",
+      "image": "/images/products/bottles/burnsville-b-42-bottle.webp",
+      "description": "Purple ghost pepper and black plum come together with 7 Pot Douglah, star anise, osmanthus and birch syrup in B-42.",
+      "heatLevel": 10,
+      "flavourProfile": "Dark fruit, floral, spiced",
+      "ingredients": "Purple Ghost Pepper / Black Plum / 7 Pot Douglah / Star Anise / Osmanthus / Birch Syrup",
+      "pairings": [
+        "Duck",
+        "Venison",
+        "Aged cheese"
+      ],
+      "price": 224.98,
+      "countInStock": 100,
+      "brand": "Burnsville",
+      "category": "Hot Sauce",
+      "rating": 0,
+      "numReviews": 0,
+      "reviews": []
+    }
+  ]
+}
