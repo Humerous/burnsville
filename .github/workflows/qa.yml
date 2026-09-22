@@ -3,6 +3,7 @@ name: Burnsville QA
 on:
   push:
     branches:
+      - main
       - modernise/burnsville-v2
   pull_request:
     branches:
