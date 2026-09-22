@@ -1,0 +1,49 @@
+name: Burnsville Deployment History Cleanup
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  deployments: write
+
+jobs:
+  cleanup-deployments:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove GitHub deployment history
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          mapfile -t ids < <(
+            gh api --paginate "repos/${GITHUB_REPOSITORY}/deployments?per_page=100" --jq '.[].id'
+          )
+
+          echo "Found ${#ids[@]} deployment records."
+
+          if [ "${#ids[@]}" -eq 0 ]; then
+            exit 0
+          fi
+
+          for id in "${ids[@]}"; do
+            gh api --method POST               "repos/${GITHUB_REPOSITORY}/deployments/${id}/statuses"               -f state=inactive               -f description="Repository history cleanup" >/dev/null 2>&1 || true
+          done
+
+          for id in "${ids[@]}"; do
+            gh api --method DELETE               "repos/${GITHUB_REPOSITORY}/deployments/${id}" >/dev/null 2>&1 || true
+          done
+
+          mapfile -t remaining < <(
+            gh api --paginate "repos/${GITHUB_REPOSITORY}/deployments?per_page=100" --jq '.[].id'
+          )
+
+          echo "Remaining deployment records: ${#remaining[@]}"
+
+          if [ "${#remaining[@]}" -ne 0 ]; then
+            printf '%s\n' "${remaining[@]}"
+            exit 1
+          fi
