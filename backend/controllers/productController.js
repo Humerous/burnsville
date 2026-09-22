@@ -18,7 +18,7 @@ const withAuthoritativeReviewSummary = (product) => {
   const rating = numReviews
     ? reviews.reduce(
         (total, review) => total + (Number(review.rating) || 0),
-        0
+        0,
       ) / numReviews
     : 0;
 
@@ -50,9 +50,7 @@ const getProducts = asyncHandler(async (req, res) => {
   const requestedHeat = req.query.heat
     ? String(req.query.heat).trim().toLowerCase()
     : '';
-  const heatRange = requestedHeat
-    ? HEAT_FILTER_RANGES[requestedHeat]
-    : null;
+  const heatRange = requestedHeat ? HEAT_FILTER_RANGES[requestedHeat] : null;
 
   if (requestedHeat && !heatRange) {
     res.status(400);
@@ -149,17 +147,19 @@ const updateProduct = asyncHandler(async (req, res) => {
       identityLocked &&
       ((name !== undefined && name !== product.name) ||
         (identifier !== undefined && identifier !== product.identifier) ||
-        (collection !== undefined && collection !== product.catalogueCollection))
+        (collection !== undefined &&
+          collection !== product.catalogueCollection))
     ) {
       res.status(400);
       throw new Error(
-        'Approved Burnsville product name, identifier and collection are locked'
+        'Approved Burnsville product name, identifier and collection are locked',
       );
     }
 
     if (!identityLocked) {
       product.name = name;
-      if (identifier !== undefined) product.identifier = identifier || undefined;
+      if (identifier !== undefined)
+        product.identifier = identifier || undefined;
       if (collection !== undefined) {
         product.catalogueCollection = collection || undefined;
       }
@@ -196,7 +196,7 @@ const createProductReview = asyncHandler(async (req, res) => {
 
   if (product) {
     const alreadyReviewed = product.reviews.find(
-      (r) => r.user.toString() === req.user._id.toString()
+      (r) => r.user.toString() === req.user._id.toString(),
     );
 
     if (alreadyReviewed) {

@@ -3,7 +3,10 @@ import fs from 'node:fs';
 
 const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:5001';
 const approved = JSON.parse(
-  fs.readFileSync('backend/data/burnsville-final-catalogue-intake.json', 'utf8')
+  fs.readFileSync(
+    'backend/data/burnsville-final-catalogue-intake.json',
+    'utf8',
+  ),
 ).products;
 
 const request = async (requestPath, options = {}) => {
@@ -32,12 +35,27 @@ const request = async (requestPath, options = {}) => {
 };
 
 const expectStatus = (result, status, label) =>
-  assert.equal(result.status, status, `${label}: HTTP ${result.status}: ${result.text}`);
+  assert.equal(
+    result.status,
+    status,
+    `${label}: HTTP ${result.status}: ${result.text}`,
+  );
 
 const runtimeFields = [
-  'identifier', 'collection', 'name', 'image', 'description', 'heatLevel',
-  'flavourProfile', 'ingredients', 'pairings', 'price', 'countInStock',
-  'brand', 'category',
+  'identifier',
+  'collection',
+  'name',
+  'image',
+  'cardImage',
+  'description',
+  'heatLevel',
+  'flavourProfile',
+  'ingredients',
+  'pairings',
+  'price',
+  'countInStock',
+  'brand',
+  'category',
 ];
 
 console.log('PRODUCT QA: pagination and exact approved runtime catalogue');
@@ -47,27 +65,61 @@ expectStatus(pageOne, 200, 'Shop page one');
 expectStatus(pageTwo, 200, 'Shop page two');
 assert.equal(pageOne.data.page, 1);
 assert.equal(pageOne.data.pages, 2);
-assert.equal(pageOne.data.products.length, 10, 'Shop page one must contain 10 products');
-assert.equal(pageTwo.data.products.length, 6, 'Shop page two must contain 6 products');
+assert.equal(
+  pageOne.data.products.length,
+  10,
+  'Shop page one must contain 10 products',
+);
+assert.equal(
+  pageTwo.data.products.length,
+  6,
+  'Shop page two must contain 6 products',
+);
 const runtimeProducts = [...pageOne.data.products, ...pageTwo.data.products];
-assert.equal(runtimeProducts.length, 16, 'Public catalogue must contain 16 products');
+assert.equal(
+  runtimeProducts.length,
+  16,
+  'Public catalogue must contain 16 products',
+);
 
 for (const expected of approved) {
-  const actual = runtimeProducts.find((product) => product.identifier === expected.identifier);
+  const actual = runtimeProducts.find(
+    (product) => product.identifier === expected.identifier,
+  );
   assert.ok(actual, `Missing public product ${expected.identifier}`);
   for (const field of runtimeFields) {
-    assert.deepEqual(actual[field], expected[field], `${expected.identifier}.${field} drift`);
+    assert.deepEqual(
+      actual[field],
+      expected[field],
+      `${expected.identifier}.${field} drift`,
+    );
   }
-  assert.ok(actual._id, `${expected.identifier} must retain a MongoDB ID route`);
-  assert.equal(actual.rating, 0, `${expected.identifier} should begin without rating`);
-  assert.equal(actual.numReviews, 0, `${expected.identifier} should begin without reviews`);
+  assert.ok(
+    actual._id,
+    `${expected.identifier} must retain a MongoDB ID route`,
+  );
+  assert.equal(
+    actual.rating,
+    0,
+    `${expected.identifier} should begin without rating`,
+  );
+  assert.equal(
+    actual.numReviews,
+    0,
+    `${expected.identifier} should begin without reviews`,
+  );
 }
 assert.ok(runtimeProducts.every((product) => product.brand === 'Burnsville'));
 
 console.log('PRODUCT QA: search, heat filters and product detail');
-const search = await request(`/api/products?keyword=${encodeURIComponent('GREEN SPARK')}`);
+const search = await request(
+  `/api/products?keyword=${encodeURIComponent('GREEN SPARK')}`,
+);
 expectStatus(search, 200, 'Search');
-assert.deepEqual(search.data.products.map(({ identifier }) => identifier), ['01']);
+assert.deepEqual(
+  search.data.products.map(({ identifier }) => identifier),
+  ['01'],
+);
 
 const expectedHeatCounts = {
   mild: 1,
@@ -82,11 +134,17 @@ for (const [heat, count] of Object.entries(expectedHeatCounts)) {
   assert.equal(response.data.products.length, count, `${heat} heat count`);
 }
 
-const greenSpark = runtimeProducts.find(({ identifier }) => identifier === '01');
+const greenSpark = runtimeProducts.find(
+  ({ identifier }) => identifier === '01',
+);
 const detail = await request(`/api/products/${greenSpark._id}`);
 expectStatus(detail, 200, 'Product detail');
 for (const field of runtimeFields) {
-  assert.deepEqual(detail.data[field], approved[0][field], `Detail ${field} drift`);
+  assert.deepEqual(
+    detail.data[field],
+    approved[0][field],
+    `Detail ${field} drift`,
+  );
 }
 
 console.log('PRODUCT QA: customer review and authoritative checkout/order');
@@ -97,7 +155,9 @@ const customerLogin = await request('/api/users/login', {
 expectStatus(customerLogin, 200, 'Customer login');
 const customerToken = customerLogin.data.token;
 
-const reviewProduct = runtimeProducts.find(({ identifier }) => identifier === 'P-X');
+const reviewProduct = runtimeProducts.find(
+  ({ identifier }) => identifier === 'P-X',
+);
 const review = await request(`/api/products/${reviewProduct._id}/reviews`, {
   method: 'POST',
   token: customerToken,
@@ -114,13 +174,15 @@ const order = await request('/api/orders', {
   method: 'POST',
   token: customerToken,
   body: {
-    orderItems: [{
-      product: greenSpark._id,
-      qty: 1,
-      name: 'FORGED NAME',
-      image: '/forged.jpg',
-      price: 0.01,
-    }],
+    orderItems: [
+      {
+        product: greenSpark._id,
+        qty: 1,
+        name: 'FORGED NAME',
+        image: '/forged.jpg',
+        price: 0.01,
+      },
+    ],
     shippingAddress: {
       address: '16 Burnsville QA Road',
       city: 'Cape Town',
@@ -192,10 +254,14 @@ assert.equal(stockRestore.data.countInStock, approved[0].countInStock);
 
 const pngBytes = Buffer.from(
   'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=',
-  'base64'
+  'base64',
 );
 const uploadForm = new FormData();
-uploadForm.append('image', new Blob([pngBytes], { type: 'image/png' }), 'product-qa.png');
+uploadForm.append(
+  'image',
+  new Blob([pngBytes], { type: 'image/png' }),
+  'product-qa.png',
+);
 const upload = await request('/api/upload', {
   method: 'POST',
   token: adminToken,
@@ -206,4 +272,6 @@ assert.match(upload.text, /^\/uploads\/[a-f0-9]{32}\.png$/);
 const uploadedAsset = await request(upload.text);
 expectStatus(uploadedAsset, 200, 'Uploaded image serving');
 
-console.log('PASS: exact Burnsville product API, customer, order, review and admin QA');
+console.log(
+  'PASS: exact Burnsville product API, customer, order, review and admin QA',
+);

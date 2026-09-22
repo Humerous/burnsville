@@ -1,0 +1,273 @@
+{
+  "status": "REVIEW 1 APPROVED FULL PRODUCT CARD MAP — SOURCE PACKAGE VERIFIED",
+  "authority": "BURNSVILLE-MASTER-AUTHORITY.md",
+  "approved_on": "2026-09-21",
+  "asset_directory": "/images/products/cards/",
+  "role": "PRIMARY_BROWSE_CARD_IMAGE",
+  "architecture": "one approved full product card per product using cardImage for flavour selection, product discovery and browse/shop presentation",
+  "assets": [
+    {
+      "series": "core",
+      "id": "01",
+      "name": "GREEN SPARK",
+      "source_filename": "01_GREEN_SPARK.webp",
+      "filename": "burnsville-01-green-spark-card.webp",
+      "path": "/images/products/cards/burnsville-01-green-spark-card.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "1234713d714ca02db2c16af20488bee1f997c9f991ad5e07909e2283d8b6e161",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "core",
+      "id": "02",
+      "name": "SUN GOLD",
+      "source_filename": "02_SUN_GOLD.webp",
+      "filename": "burnsville-02-sun-gold-card.webp",
+      "path": "/images/products/cards/burnsville-02-sun-gold-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "1cd3526e3c7da5632a326c093b5aa9d4034cb063b326bf63cf7a39bfe4b065d7",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "core",
+      "id": "03",
+      "name": "CITRUS FLARE",
+      "source_filename": "03_CITRUS_FLARE.webp",
+      "filename": "burnsville-03-citrus-flare-card.webp",
+      "path": "/images/products/cards/burnsville-03-citrus-flare-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "0984187b4d9d0cc2a67195ce84e6eed286bc777848b772bd61626e443eb8cc9b",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "core",
+      "id": "04",
+      "name": "RED EMBER",
+      "source_filename": "04_RED_EMBER.webp",
+      "filename": "burnsville-04-red-ember-card.webp",
+      "path": "/images/products/cards/burnsville-04-red-ember-card.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "df8649ae6a26d4caa441d557102c13c6672efb0dbfce3caed2239b273d5c8814",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "core",
+      "id": "05",
+      "name": "DARK HARVEST",
+      "source_filename": "05_DARK_HARVEST.webp",
+      "filename": "burnsville-05-dark-harvest-card.webp",
+      "path": "/images/products/cards/burnsville-05-dark-harvest-card.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "52cd881d6f90f583563fdd28274ee62b5cb4cc1aacd669638e0b95d63f10d296",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "core",
+      "id": "06",
+      "name": "SALINE CURRENT",
+      "source_filename": "06_SALINE_CURRENT.webp",
+      "filename": "burnsville-06-saline-current-card.webp",
+      "path": "/images/products/cards/burnsville-06-saline-current-card.webp",
+      "size": [
+        1086,
+        1448
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "87f092c8f096f2770a7f67e5f811c7aa6e2202b2cf0f3af072b0ed2224d9286d",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "core",
+      "id": "07",
+      "name": "CALABRIAN GLOW",
+      "source_filename": "07_CALABRIAN_SUN.webp",
+      "filename": "burnsville-07-calabrian-glow-card.webp",
+      "path": "/images/products/cards/burnsville-07-calabrian-glow-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "aa24ceeb7b8885b3e8bad170bd10dfab87c8d0104d24278a2b24c111d1216bd8",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "core",
+      "id": "08",
+      "name": "BIRD’S FIRE",
+      "source_filename": "08_BIRDS_FIRE.webp",
+      "filename": "burnsville-08-birds-fire-card.webp",
+      "path": "/images/products/cards/burnsville-08-birds-fire-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "02556e17e0e40b201cf573520d1dd0ac9074909fda8294a43e77f05b51a8f08e",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "core",
+      "id": "09",
+      "name": "VIOLET’S FUSE",
+      "source_filename": "09_VIOLETS_FUSE.webp",
+      "filename": "burnsville-09-violets-fuse-card.webp",
+      "path": "/images/products/cards/burnsville-09-violets-fuse-card.webp",
+      "size": [
+        1086,
+        1448
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "18c910162cd94be2a1bcf78cb60f5b917a40c5b360823e94deb13fa215c47154",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "core",
+      "id": "10",
+      "name": "GHOST BLACK",
+      "source_filename": "10_GHOST_BLACK.webp",
+      "filename": "burnsville-10-ghost-black-card.webp",
+      "path": "/images/products/cards/burnsville-10-ghost-black-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "173f4bdfadcb1340f521baf80b001c718524ba2d673b4763c27806549bff082c",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "limited-vintage",
+      "id": "P-X",
+      "name": "P-X",
+      "source_filename": "11_P_X.webp",
+      "filename": "burnsville-p-x-card.webp",
+      "path": "/images/products/cards/burnsville-p-x-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "0b499c8dc548b5e5f0a0b6c46cb375364a90782ea3de13875330c44704176975",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "limited-vintage",
+      "id": "CASK-13",
+      "name": "CASK-13",
+      "source_filename": "12_CASK_13.webp",
+      "filename": "burnsville-cask-13-card.webp",
+      "path": "/images/products/cards/burnsville-cask-13-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "80554f87b2ebb5741fb16332c9e278b2c7f2fcc548b27c34d803c3745197dbd4",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "limited-vintage",
+      "id": "POT-7",
+      "name": "POT-7",
+      "source_filename": "13_POT_7.webp",
+      "filename": "burnsville-pot-7-card.webp",
+      "path": "/images/products/cards/burnsville-pot-7-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "ebcf7a44727dbbd7350412a627499ec1badc003cc162aea00766e734cdcaf1ec",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "limited-vintage",
+      "id": "TMR-200",
+      "name": "TMR-200",
+      "source_filename": "14_TMR_200.webp",
+      "filename": "burnsville-tmr-200-card.webp",
+      "path": "/images/products/cards/burnsville-tmr-200-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "85cfa12cd98f1da19449088a3dc91aa483cbcd399e34d10bec99dfece9a30940",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "limited-vintage",
+      "id": "X-666",
+      "name": "X-666",
+      "source_filename": "15_X_666.webp",
+      "filename": "burnsville-x-666-card.webp",
+      "path": "/images/products/cards/burnsville-x-666-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "e7087771bbed4e60f120565bc2ad4a839a26f77c1ba8a9b09f2947b5a3a03381",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    },
+    {
+      "series": "limited-vintage",
+      "id": "B-42",
+      "name": "B-42",
+      "source_filename": "16_B_42.webp",
+      "filename": "burnsville-b-42-card.webp",
+      "path": "/images/products/cards/burnsville-b-42-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "format": "webp",
+      "opaque": true,
+      "sha256": "d6adf3686e690991c8609566deb468d5c5e70007122dc8b37be6ee951d8e0e32",
+      "source_handling": "approved card copied without pixel changes; runtime filename normalised only"
+    }
+  ],
+  "rules": [
+    "BURNSVILLE-MASTER-AUTHORITY.md controls product identities and approved customer-facing wording.",
+    "The 16 full product cards are primary customer-facing artwork for flavour selection, product discovery and browse/shop presentation.",
+    "Card artwork is copied without redesign, crop, recolour, regeneration, typography replacement or wording changes.",
+    "Runtime filenames may be ASCII-safe and do not replace the approved identities or artwork wording.",
+    "Transparent bottle assets remain a separate approved asset class."
+  ]
+}

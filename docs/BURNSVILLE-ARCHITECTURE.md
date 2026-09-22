@@ -1,145 +1,78 @@
-# BURNSVILLE — ARCHITECTURE
+# BURNSVILLE — CURRENT ARCHITECTURE
 
-## APPLICATION SHAPE
+## APPLICATION
 
-Burnsville is a MERN ecommerce application modernised to a Vite frontend while retaining an Express/Mongoose backend.
+Burnsville is a Vite/React frontend with an Express/Mongoose backend.
 
-## AUTHORITY LAYER
+## PRODUCT AUTHORITY
 
-`BURNSVILLE-MASTER-AUTHORITY.md` is the product-identity source of truth. `qa/product-authority.mjs` verifies the master authority and final catalogue intake remain aligned before integrated CI continues.
+- `BURNSVILLE-MASTER-AUTHORITY.md`
+- `backend/data/burnsville-final-catalogue-intake.json`
+- `backend/data/burnsville-product-asset-map.json`
+- `backend/data/burnsville-product-card-asset-map.json`
 
-Historical catalogue and asset mappings are evidence only and do not participate in runtime identity authority.
+## PRODUCT DATA FLOW
 
-## FRONTEND
+`MongoDB Product → /api/products → React product surfaces → Cart → Checkout → Order`
 
-Location: `frontend/`
+MongoDB stores product data and asset paths. Product artwork is served as static runtime assets from the frontend public directory.
 
-Core technologies:
+## PRODUCT IMAGE CONTRACT
 
-- React
-- React Router
-- Redux
-- Axios
-- Vite
+`image` = approved transparent bottle asset.
 
-Primary customer surfaces:
+`cardImage` = approved full product card.
+
+Home and Shop render `cardImage || image`.
+
+Product Detail follows the active visual authority: bottle primary, full product card secondary.
+
+## RUNTIME ASSETS
+
+- `frontend/public/images/products/bottles/`
+- `frontend/public/images/products/cards/`
+
+Exactly 16 approved bottle assets and 16 approved card assets are expected.
+
+## FRONTEND SURFACES
+
+Customer:
 
 - Home
 - Shop
-- Product detail
+- Product Detail
 - Cart
-- Login/Register
+- Contact
+- Login / Register
 - Profile
 - Shipping
 - Payment
 - Place Order
-- Order detail
-- Packs
-- Journal
-- Contact
+- Order Detail
 
-Primary admin surfaces:
+Admin:
 
-- Product list
-- Product edit
-- User list/edit
-- Order list
+- Products
+- Users
+- Orders
 
-The current visual implementation is the approved three-block UI authority from commit `8d3403ce4be7f221ea9e5862b9965ba915ed2957`.
+Packs and Journal are not part of the current implementation scope.
 
 ## BACKEND
 
-Location: `backend/`
-
-Core technologies:
-
-- Node.js
-- Express
-- Mongoose
-- JWT authentication
-- Multer
-- MongoDB GridFS for uploaded product imagery
-
-Primary API groups:
+Primary APIs:
 
 - `/api/products`
 - `/api/users`
 - `/api/orders`
 - `/api/upload`
 
-Uploaded GridFS product images are served through `/uploads/:filename`.
+Authentication uses JWTs. Admin upload uses MongoDB GridFS through `/uploads/:filename`.
 
-The product API supports server-side search, heat filtering and pagination.
+## DATABASE INITIALIZATION
 
-## PRODUCT DATA FLOW
-
-Current flow:
-
-Master identity authority → approved replacement data → MongoDB Product → Product API → React product surfaces → Cart → Checkout → Order
-
-The current Product model supports one required `image` string plus product metadata such as name, brand, category, description, heat level, flavour profile, pairings, ingredients, reviews, rating, price and stock.
-
-The single-image model is approved through REVIEW 1 under decision D-019. Any post-REVIEW 1 gallery or multi-image expansion requires a separate explicit architecture decision.
-
-## ORDER INTEGRITY
-
-Order creation uses authoritative server-side product records for item identity and price. Client-submitted prices are not trusted as the source of truth.
-
-Stock is updated during order creation with insufficient-stock rejection.
-
-## AUTHORIZATION
-
-Authentication uses JWTs.
-
-Administrative product, user and upload operations require authenticated admin access.
-
-## IMAGE UPLOAD
-
-Current upload behaviour:
-
-- admin-only
-- one file per request
-- JPEG/PNG only
-- 5 MB maximum
-- binary signature verification
-- random generated filename
-- GridFS storage
-- `/uploads/...` serving route
-
-This system should be preserved unless an approved architecture change replaces it deliberately.
+`npm run data:bootstrap` initializes an empty/current-only database with the approved 16-product catalogue. If unrelated product records already exist, bootstrap fails instead of mixing catalogues.
 
 ## QA
 
-Repository QA currently covers:
-
-- product-identity authority consistency
-- build
-- isolated MongoDB test runtime
-- seeded QA database
-- API integration tests
-- search/heat-filter behaviour
-- user/auth boundaries
-- authoritative pricing
-- stock handling
-- order ownership
-- payment input/authorization boundaries
-- admin upload authorization
-- binary image validation
-- review consistency
-- production static serving
-- production dependency audit at the configured severity gate
-- repository diff checks
-
-Browser-level customer E2E, targeted keyboard checks and responsive/accessibility visual QA were completed for the approved UI. Product-specific release QA must run again after the final Burnsville catalogue is integrated.
-
-## DEPLOYMENT
-
-The project is linked to Vercel and receives preview deployments from development branches.
-
-Preview deployment success is not equivalent to final production release approval.
-
-## LEGACY BOUNDARY
-
-The runtime catalogue still contains historical third-party sample products/assets. They remain temporarily to preserve a functioning application while the approved Burnsville replacement catalogue is prepared.
-
-Do not remove them until replacement catalogue integration and rollback QA pass.
+The repository validates product identity, catalogue completeness, bottle/card asset integrity, frontend build, current catalogue API behaviour, authentication, ordering, reviews, uploads and production serving.

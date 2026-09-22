@@ -9,7 +9,7 @@ const EXPECTED = [
   ['core', '04', 'RED EMBER', 'burnsville-04-red-ember-bottle.webp'],
   ['core', '05', 'DARK HARVEST', 'burnsville-05-dark-harvest-bottle.webp'],
   ['core', '06', 'SALINE CURRENT', 'burnsville-06-saline-current-bottle.webp'],
-  ['core', '07', 'CALABRIAN SUN', 'burnsville-07-calabrian-sun-bottle.webp'],
+  ['core', '07', 'CALABRIAN GLOW', 'burnsville-07-calabrian-sun-bottle.webp'],
   ['core', '08', 'BIRD’S FIRE', 'burnsville-08-birds-fire-bottle.webp'],
   ['core', '09', 'VIOLET’S FUSE', 'burnsville-09-violets-fuse-bottle.webp'],
   ['core', '10', 'GHOST BLACK', 'burnsville-10-ghost-black-bottle.webp'],
@@ -81,7 +81,6 @@ const readWebpMetadata = (bytes) => {
 
 const mapPath = path.resolve('backend/data/burnsville-product-asset-map.json');
 const intakePath = path.resolve('backend/data/burnsville-final-catalogue-intake.json');
-const cataloguePath = path.resolve('backend/data/burnsville-product-catalogue.json');
 const publicRoot = path.resolve('frontend/public');
 const assetDirectory = path.resolve(publicRoot, 'images/products/bottles');
 
@@ -89,13 +88,11 @@ if (!fs.existsSync(mapPath)) fail(`${mapPath} is missing`);
 
 const assetMap = JSON.parse(fs.readFileSync(mapPath, 'utf8'));
 const intake = JSON.parse(fs.readFileSync(intakePath, 'utf8'));
-const catalogue = JSON.parse(fs.readFileSync(cataloguePath, 'utf8'));
-const catalogueProducts = [...catalogue.core, ...catalogue.limited_vintage];
 if (assetMap.authority !== 'BURNSVILLE-MASTER-AUTHORITY.md') {
   fail('asset map must declare BURNSVILLE-MASTER-AUTHORITY.md as authority');
 }
-if (assetMap.role !== 'PRIMARY_RUNTIME_IMAGE') {
-  fail('asset map role must be PRIMARY_RUNTIME_IMAGE');
+if (assetMap.role !== 'SECONDARY_PRODUCT_ASSET') {
+  fail('asset map role must be SECONDARY_PRODUCT_ASSET');
 }
 if (assetMap.asset_directory !== '/images/products/bottles/') {
   fail('asset map must use /images/products/bottles/');
@@ -128,9 +125,6 @@ EXPECTED.forEach((expected, index) => {
   if (intake.products?.[index]?.image !== expectedPath) {
     fail(`final catalogue intake image for ${expected.id} must be ${expectedPath}`);
   }
-  if (catalogueProducts[index]?.image !== expectedPath) {
-    fail(`supporting catalogue image for ${expected.id} must be ${expectedPath}`);
-  }
   if (JSON.stringify(actual.size) !== JSON.stringify([1024, 1536])) {
     fail(`assets[${index}].size must be [1024,1536]`);
   }
@@ -156,4 +150,4 @@ EXPECTED.forEach((expected, index) => {
 });
 
 console.log('PRODUCT ASSET QA PASSED');
-console.log('Validated 16 locked runtime bottle assets, dimensions, alpha metadata and SHA-256 integrity.');
+console.log('Validated 16 approved transparent bottle assets, dimensions, alpha metadata and SHA-256 integrity.');

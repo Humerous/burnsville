@@ -1,16 +1,17 @@
 {
-  "status": "AUTHORITATIVE 16-PRODUCT REVIEW 1 INTAKE — ISOLATED QA PASSED; PREVIEW MIGRATION READY FOR OWNER APPROVAL",
+  "status": "AUTHORITATIVE CURRENT 16-PRODUCT BURNSVILLE RUNTIME CATALOGUE",
   "authority": "BURNSVILLE-MASTER-AUTHORITY.md",
   "confirmedFacts": [
     "16 products total",
     "10 Core product identities",
-    "6 Limited / Vintage code-only product identities",
-    "one approved transparent runtime bottle image per product",
-    "existing single image field approved through REVIEW 1",
+    "6 Limited / Vintage immutable code identities",
+    "one approved full product card per product for flavour selection, product discovery and browse/shop presentation",
+    "one approved transparent bottle asset per product retained as a separate asset class",
     "descriptions, ingredients, prices and stock approved by the owner on 2026-09-13",
     "all six Limited / Vintage runtime heat levels approved as 10 (Extreme) on 2026-09-14",
     "Core heat levels, all flavour profiles and all pairings approved by the owner on 2026-09-14",
-    "locked Review 1 identifiers and Core / Limited collection policy approved on 2026-09-14"
+    "locked Review 1 identifiers and Core / Limited collection policy approved on 2026-09-14",
+    "product-card review and updated image-role authority approved on 2026-09-21"
   ],
   "unresolved": [
     "Any separate post-Review 1 commercial SKU scheme remains deferred"
@@ -36,7 +37,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-01-green-spark-card.webp"
     },
     {
       "collection": "Core",
@@ -58,7 +60,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-02-sun-gold-card.webp"
     },
     {
       "collection": "Core",
@@ -80,7 +83,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-03-citrus-flare-card.webp"
     },
     {
       "collection": "Core",
@@ -102,7 +106,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-04-red-ember-card.webp"
     },
     {
       "collection": "Core",
@@ -124,7 +129,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-05-dark-harvest-card.webp"
     },
     {
       "collection": "Core",
@@ -146,14 +152,15 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-06-saline-current-card.webp"
     },
     {
       "collection": "Core",
-      "name": "CALABRIAN SUN",
+      "name": "CALABRIAN GLOW",
       "identifier": "07",
       "image": "/images/products/bottles/burnsville-07-calabrian-sun-bottle.webp",
-      "description": "Roasted aubergine and Calabrian chilli come together with fennel seed, oregano and pomegranate molasses in CALABRIAN SUN.",
+      "description": "Roasted aubergine and Calabrian chilli come together with fennel seed, oregano and pomegranate molasses in CALABRIAN GLOW.",
       "heatLevel": 9,
       "flavourProfile": "Smoky, savoury, tangy",
       "ingredients": "Roasted Aubergine / Calabrian Chilli / Fennel Seed / Oregano / Pomegranate Molasses",
@@ -168,7 +175,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-07-calabrian-glow-card.webp"
     },
     {
       "collection": "Core",
@@ -190,7 +198,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-08-birds-fire-card.webp"
     },
     {
       "collection": "Core",
@@ -212,7 +221,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-09-violets-fuse-card.webp"
     },
     {
       "collection": "Core",
@@ -234,7 +244,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-10-ghost-black-card.webp"
     },
     {
       "collection": "Limited / Vintage",
@@ -256,7 +267,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-p-x-card.webp"
     },
     {
       "collection": "Limited / Vintage",
@@ -278,7 +290,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-cask-13-card.webp"
     },
     {
       "collection": "Limited / Vintage",
@@ -300,7 +313,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-pot-7-card.webp"
     },
     {
       "collection": "Limited / Vintage",
@@ -322,7 +336,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-tmr-200-card.webp"
     },
     {
       "collection": "Limited / Vintage",
@@ -344,7 +359,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-x-666-card.webp"
     },
     {
       "collection": "Limited / Vintage",
@@ -366,7 +382,8 @@
       "category": "Hot Sauce",
       "rating": 0,
       "numReviews": 0,
-      "reviews": []
+      "reviews": [],
+      "cardImage": "/images/products/cards/burnsville-b-42-card.webp"
     }
   ]
 }

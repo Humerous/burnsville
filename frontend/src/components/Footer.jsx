@@ -7,14 +7,12 @@ const footerGroups = [
     title: 'Shop',
     links: [
       { label: 'All sauces', to: '/shop' },
-      { label: 'Packs', to: '/packs' },
       { label: 'Heat guide', to: '/#shop-by-heat' },
     ],
   },
   {
     title: 'Explore',
     links: [
-      { label: 'Journal', to: '/journal' },
       { label: 'Contact', to: '/contact' },
     ],
   },

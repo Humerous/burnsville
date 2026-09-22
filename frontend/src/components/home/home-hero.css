@@ -35,14 +35,21 @@
 }
 
 .burnsville-home-hero__content::after {
-  background: linear-gradient(90deg, transparent, rgba(17, 17, 17, 0.12));
+  background: linear-gradient(
+    90deg,
+    rgba(243, 237, 228, 1) 0%,
+    rgba(243, 237, 228, 0.9) 24%,
+    rgba(243, 237, 228, 0.48) 58%,
+    rgba(243, 237, 228, 0) 100%
+  );
   bottom: 0;
   content: '';
   pointer-events: none;
   position: absolute;
-  right: 0;
+  right: -72px;
   top: 0;
-  width: 1px;
+  width: 96px;
+  z-index: 4;
 }
 
 .burnsville-home-hero__copy {
@@ -385,6 +392,21 @@
   .burnsville-home-hero {
     grid-template-columns: minmax(0, 1fr);
     min-height: 0;
+  }
+
+  .burnsville-home-hero__content::after {
+    background: linear-gradient(
+      180deg,
+      rgba(243, 237, 228, 1) 0%,
+      rgba(243, 237, 228, 0.82) 30%,
+      rgba(243, 237, 228, 0) 100%
+    );
+    bottom: -72px;
+    height: 96px;
+    left: 0;
+    right: 0;
+    top: auto;
+    width: auto;
   }
 
   .burnsville-home-hero__content {

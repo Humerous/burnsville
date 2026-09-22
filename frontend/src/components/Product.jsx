@@ -58,7 +58,7 @@ const Product = ({ product }) => {
         <Link className='shop-product-card__media' to={productPath}>
           <img
             className='shop-product-card__image'
-            src={product.image}
+            src={product.cardImage || product.image}
             alt={product.name}
             loading='lazy'
           />
@@ -157,6 +157,7 @@ Product.propTypes = {
     _id: PropTypes.string.isRequired,
     brand: PropTypes.string,
     image: PropTypes.string.isRequired,
+    cardImage: PropTypes.string,
     name: PropTypes.string.isRequired,
     numReviews: PropTypes.number,
     price: PropTypes.number.isRequired,

@@ -19,31 +19,41 @@ If any repository file, historical mapping, commit, README, asset filename, scre
 
 ## LOCKED CORE RANGE
 
-| # | Product identity |
-|---|---|
-| 01 | GREEN SPARK |
-| 02 | SUN GOLD |
-| 03 | CITRUS FLARE |
-| 04 | RED EMBER |
-| 05 | DARK HARVEST |
-| 06 | SALINE CURRENT |
-| 07 | CALABRIAN SUN |
-| 08 | BIRD’S FIRE |
-| 09 | VIOLET’S FUSE |
-| 10 | GHOST BLACK |
+| #   | Product identity  |
+| --- | ----------------- |
+| 01  | GREEN SPARK       |
+| 02  | SUN GOLD          |
+| 03  | CITRUS FLARE      |
+| 04  | RED EMBER         |
+| 05  | DARK HARVEST      |
+| 06  | SALINE CURRENT    |
+| 07  | CALABRIAN GLOW    |
+| 08  | BIRD’S FIRE       |
+| 09  | VIOLET’S FUSE     |
+| 10  | GHOST BLACK       |
 
 ## LOCKED LIMITED / VINTAGE RANGE
 
-The authoritative product identities are the following codes. Historical descriptive labels are not product-name authority.
+The authoritative immutable catalogue identities are the following codes.
 
-| Product identity |
-|---|
-| P-X |
-| CASK-13 |
-| POT-7 |
-| TMR-200 |
-| X-666 |
-| B-42 |
+Approved customer-facing wording printed on the approved product cards may also be used for presentation where explicitly listed below.
+
+The approved customer-facing wording does not replace the immutable catalogue identity unless this file explicitly states otherwise.
+
+| Product identity | Approved customer-facing wording |
+| ---------------- | -------------------------------- |
+| P-X              | FERMENT BLOOM                    |
+| CASK-13          | CASK 13                           |
+| POT-7            | VELVET SCORCH                     |
+| TMR-200          | No additional wording required    |
+| X-666            | FINAL BURN                        |
+| B-42             | NIGHT ORCHARD                     |
+
+CASK-13 also carries the approved printed product code `R-13` on the approved product card.
+
+`R-13` does not replace the immutable catalogue identity `CASK-13`.
+
+Historical descriptive labels remain non-authoritative unless explicitly approved in this file.
 
 ## APPROVED PRODUCT FACTS
 
@@ -72,21 +82,55 @@ The approved Core runtime heat values are: 01 = 3, 02 = 6, 03 = 7, 04 = 9, 05 = 
 
 Owner approval recorded: 2026-09-14.
 
-The locked Core numbers and Limited / Vintage codes above are the stable REVIEW 1 runtime identifiers. They are unique and immutable once installed. Runtime records also store one controlled collection value: `Core` or `Limited / Vintage`. The public API exposes that collection as `collection` while the Mongo model stores it as `catalogueCollection` to avoid Mongoose's reserved `collection` property.
+The locked Core numbers and Limited / Vintage codes above are the stable REVIEW 1 runtime identifiers. They are unique and immutable once installed.
 
-Admin product editing may update approved operational product fields, but it may not rename a product or change its identifier or collection. A separate commercial SKU scheme is deferred until after REVIEW 1 and does not block Preview migration.
+The approved customer-facing wording defined in this file does not alter those stable runtime identifiers.
+
+Runtime records also store one controlled collection value: `Core` or `Limited / Vintage`. The public API exposes that collection as `collection` while the Mongo model stores it as `catalogueCollection` to avoid Mongoose's reserved `collection` property.
+
+Admin product editing may update approved operational product fields, but it may not change a product's stable identifier or collection.
+
+Approved customer-facing wording must remain consistent with this authority.
+
+A separate commercial SKU scheme is deferred until after REVIEW 1 and does not block Preview migration.
 
 ## LOCKED REVIEW 1 IMAGE ARCHITECTURE
 
-Owner approval recorded: 2026-09-13.
+Owner product-card review approval recorded: 2026-09-21.
 
-1. The existing single `image` product field remains the approved product-image architecture through REVIEW 1.
-2. Each product uses one transparent bottle render as its primary runtime image across Home, Shop, Product Detail, Cart, Checkout/Order and Admin.
-3. Portrait bottle renders must be contained inside the approved square product-card media area without cropping, stretching or redesigning the card.
-4. The preserved 1122 × 1402 opaque poster/card artworks are supporting marketing evidence only and are excluded from the REVIEW 1 runtime catalogue.
-5. Limited / Vintage products use the locked codes as their only REVIEW 1 display names. Historical descriptive labels are not approved display names.
-6. Visible product-identity text in runtime bottle artwork must match the locked identities in this file. Historical conflicting labels must be corrected before the asset is installed.
-7. Runtime filenames may use lowercase ASCII-safe slugs, but filenames do not change or replace the exact displayed identities above.
+### FULL PRODUCT CARD
+
+1. The complete 16-card product-card set is approved.
+2. The full product cards are the primary customer-facing artwork for flavour selection, product discovery and browse/shop presentation.
+3. The product cards are approved runtime presentation assets and must not be described as obsolete posters, supporting evidence only, or excluded source artwork.
+4. All 16 approved product cards are accepted as supplied.
+5. The application must accommodate the approved artwork.
+6. The approved product cards must not be redesigned, cropped, rewritten, recoloured, regenerated, have their typography replaced, have their ingredients changed, have their artwork wording changed, or have their dimensions destructively standardised without explicit owner approval.
+
+### TRANSPARENT BOTTLE
+
+7. The existing transparent bottle renders remain approved product assets.
+8. Transparent bottles are a separate asset class from the full product cards.
+9. Transparent bottles are not being deleted.
+10. Transparent bottles must not be described as the sole or primary image for flavour-selection browsing.
+11. Their exact secondary runtime placement will be determined during implementation.
+12. No Product Detail, Cart, Checkout, Order or Admin image-placement rule is approved by this authority update.
+
+### CUSTOMER-FACING ARTWORK WORDING
+
+13. Approved artwork wording on the full product cards may coexist with the immutable runtime identifiers defined in this file.
+14. Approved Limited / Vintage customer-facing wording must not be interpreted as a replacement for the immutable catalogue identities unless explicitly stated.
+15. Product 07 uses `CALABRIAN GLOW` as its approved product identity and customer-facing wording.
+16. CASK-13 remains the immutable catalogue identity even where the approved product card displays `CASK 13` and printed product code `R-13`.
+17. Runtime filenames may use lowercase ASCII-safe slugs, but filenames do not change or replace the exact approved identities or customer-facing wording defined in this file.
+
+### IMPLEMENTATION BOUNDARY
+
+18. This authority defines the approved asset classes and their customer-facing roles only.
+19. It does not approve a final technical field structure for supporting both asset classes.
+20. It does not approve final Product Detail, Cart, Checkout, Order or Admin asset placement.
+21. Those implementation decisions must be resolved separately before dependent implementation begins.
+22. No missing image-placement rule, schema field, filename or runtime behaviour may be invented by inference.
 
 ## CHANGE CONTROL
 

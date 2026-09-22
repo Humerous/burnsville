@@ -17,19 +17,12 @@ import './header/header-reference.css';
 
 const NAV_ITEMS = [
   { label: 'Shop', href: '/shop' },
-  { label: 'Sauces', href: '/shop' },
-  { label: 'Packs', href: '/packs' },
   { label: 'Heat Guide', href: '/#shop-by-heat' },
-  { label: 'Journal', href: '/journal' },
   { label: 'Contact', href: '/contact' },
 ];
 
 const DESKTOP_NAV_ITEMS = [
   { label: 'Shop', href: '/shop', shopMenu: true },
-  { label: 'Sauces', href: '/shop' },
-  { label: 'Packs', href: '/packs' },
-  { label: 'Heat Guide', href: '/#shop-by-heat' },
-  { label: 'Journal', href: '/journal' },
   { label: 'Contact', href: '/contact' },
 ];
 

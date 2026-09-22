@@ -1,5 +1,5 @@
 {
-  "status": "REVIEW 1 APPROVED PRIMARY RUNTIME BOTTLE MAP — VISUAL, TEXT AND ALPHA QA PASSED",
+  "status": "REVIEW 1 APPROVED TRANSPARENT BOTTLE ASSET MAP — BOTTLE QA PASSED",
   "authority": "BURNSVILLE-MASTER-AUTHORITY.md",
   "approved_on": "2026-09-13",
   "asset_directory": "/images/products/bottles/",
@@ -7,8 +7,8 @@
     1024,
     1536
   ],
-  "role": "PRIMARY_RUNTIME_IMAGE",
-  "architecture": "one transparent bottle render per product using the existing single image field",
+  "role": "SECONDARY_PRODUCT_ASSET",
+  "architecture": "transparent bottle asset set retained separately from primary full product cards; exact secondary runtime placement remains separately controlled",
   "assets": [
     {
       "series": "core",
@@ -103,7 +103,7 @@
     {
       "series": "core",
       "id": "07",
-      "name": "CALABRIAN SUN",
+      "name": "CALABRIAN GLOW",
       "filename": "burnsville-07-calabrian-sun-bottle.webp",
       "path": "/images/products/bottles/burnsville-07-calabrian-sun-bottle.webp",
       "size": [
@@ -252,12 +252,11 @@
     }
   ],
   "rules": [
-    "BURNSVILLE-MASTER-AUTHORITY.md controls product identities.",
-    "All 16 runtime assets use transparent WebP bottle renders and exact locked visible identities.",
-    "Portrait bottles must be contained without crop or stretch inside approved square product-card media.",
-    "Limited / Vintage products use code-only REVIEW 1 display names.",
-    "The preserved opaque poster/card artworks remain supporting evidence and are excluded from runtime.",
-    "Do not delete legacy runtime assets until the replacement catalogue passes isolated visual and functional QA."
+    "BURNSVILLE-MASTER-AUTHORITY.md controls product identities and approved customer-facing wording.",
+    "All 16 transparent bottle WebPs remain approved product assets.",
+    "Full product cards are the primary artwork for flavour selection, product discovery and browse/shop presentation.",
+    "Transparent bottles are a separate asset class and are not the sole or primary browse image.",
+    "Exact secondary bottle placement is controlled separately and must not be inferred from this map."
   ],
   "qa": {
     "visual": "passed 2026-09-13",

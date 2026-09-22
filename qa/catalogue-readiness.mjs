@@ -9,7 +9,7 @@ const EXPECTED_PRODUCTS = [
   ['Core', '04', 'RED EMBER'],
   ['Core', '05', 'DARK HARVEST'],
   ['Core', '06', 'SALINE CURRENT'],
-  ['Core', '07', 'CALABRIAN SUN'],
+  ['Core', '07', 'CALABRIAN GLOW'],
   ['Core', '08', 'BIRD’S FIRE'],
   ['Core', '09', 'VIOLET’S FUSE'],
   ['Core', '10', 'GHOST BLACK'],
@@ -31,7 +31,7 @@ const PLACEHOLDER_VALUES = new Set([
 ]);
 
 const HISTORICAL_IDENTITIES = new Set([
-  'CALABRIAN GLOW',
+  'CALABRIAN SUN',
   'FERMENT BLOOM',
   'VELVET SCORCH',
   'DESERT STATIC',
@@ -203,18 +203,22 @@ export const validateCatalogue = (
       errors.push(`${label} must not contain runtime user or _id values`);
     }
 
-    if (!isApprovedText(product.image) || !product.image.startsWith('/')) {
-      errors.push(`${label}.image must be an approved absolute public path`);
-    } else {
-      const extension = path.extname(product.image).toLowerCase();
-      if (!['.png', '.jpg', '.jpeg', '.webp', '.avif'].includes(extension)) {
-        errors.push(`${label}.image must use a supported web image extension`);
+    for (const imageField of ['image', 'cardImage']) {
+      const imagePath = product[imageField];
+      if (!isApprovedText(imagePath) || !imagePath.startsWith('/')) {
+        errors.push(`${label}.${imageField} must be an approved absolute public path`);
+        continue;
       }
 
-      const resolvedAsset = resolvePublicAsset(assetRoot, product.image);
+      const extension = path.extname(imagePath).toLowerCase();
+      if (!['.png', '.jpg', '.jpeg', '.webp', '.avif'].includes(extension)) {
+        errors.push(`${label}.${imageField} must use a supported web image extension`);
+      }
+
+      const resolvedAsset = resolvePublicAsset(assetRoot, imagePath);
       if (!resolvedAsset || !fileExists(resolvedAsset)) {
         errors.push(
-          `${label}.image does not resolve under ${path.resolve(assetRoot)}: ${product.image}`
+          `${label}.${imageField} does not resolve under ${path.resolve(assetRoot)}: ${imagePath}`
         );
       }
     }

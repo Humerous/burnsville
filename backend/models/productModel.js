@@ -14,7 +14,7 @@ const reviewSchema = mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 // <---- NEW PRODUCT SCHEMA- new product for mongoDB schema ---->
@@ -42,6 +42,10 @@ const productSchema = mongoose.Schema(
     image: {
       type: String,
       required: true,
+    },
+    cardImage: {
+      type: String,
+      trim: true,
     },
     brand: {
       type: String,
@@ -99,12 +103,12 @@ const productSchema = mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 productSchema.index(
   { identifier: 1 },
-  { unique: true, sparse: true, name: 'unique_product_identifier' }
+  { unique: true, sparse: true, name: 'unique_product_identifier' },
 );
 
 // <---- NEW PRODUCT MODEL- new product for mongoDB schema ---->

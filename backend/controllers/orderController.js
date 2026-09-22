@@ -53,7 +53,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
           {
             new: true,
             session,
-          }
+          },
         );
 
         if (!updatedProduct) {
@@ -73,14 +73,12 @@ const addOrderItems = asyncHandler(async (req, res) => {
       const itemsPrice = roundCurrency(
         authoritativeItems.reduce(
           (total, item) => total + item.price * item.qty,
-          0
-        )
+          0,
+        ),
       );
       const shippingPrice = itemsPrice > 100 ? 0 : 100;
       const vatPrice = roundCurrency(itemsPrice * 0.15);
-      const totalPrice = roundCurrency(
-        itemsPrice + shippingPrice + vatPrice
-      );
+      const totalPrice = roundCurrency(itemsPrice + shippingPrice + vatPrice);
 
       const order = new Order({
         orderItems: authoritativeItems,
@@ -99,7 +97,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
     if (
       error &&
       /transaction numbers are only allowed|replica set member or mongos/i.test(
-        error.message
+        error.message,
       )
     ) {
       res.status(503);
@@ -123,7 +121,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
 const getOrderById = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id).populate(
     'user',
-    'name email'
+    'name email',
   );
 
   if (order) {

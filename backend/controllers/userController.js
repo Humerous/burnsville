@@ -25,7 +25,11 @@ const validateEmail = (email, res) => {
 };
 
 const validatePassword = (password, res) => {
-  if (typeof password !== 'string' || password.length < 8 || password.length > 128) {
+  if (
+    typeof password !== 'string' ||
+    password.length < 8 ||
+    password.length > 128
+  ) {
     res.status(400);
     throw new Error('Password must be between 8 and 128 characters');
   }

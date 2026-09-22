@@ -15,8 +15,6 @@ import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderListScreen from './screens/OrderListScreen';
-import PacksScreen from './screens/PacksScreen';
-import JournalScreen from './screens/JournalScreen';
 import ContactScreen from './screens/ContactScreen';
 import NotFoundScreen from './screens/NotFoundScreen';
 import UserListScreen from './screens/UserListScreen';
@@ -181,8 +179,6 @@ const App = () => {
       <main className='py-3' id='main-content' tabIndex={-1}>
         <Container>
           <Switch>
-          <Route path="/packs" component={PacksScreen} exact />
-          <Route path="/journal" component={JournalScreen} exact />
           <Route path="/contact" component={ContactScreen} exact />
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />

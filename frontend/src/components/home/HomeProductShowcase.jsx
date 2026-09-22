@@ -57,7 +57,7 @@ const HomeProductCard = ({ product, featured, quickAddStatus, onQuickAdd }) => {
       >
         <img
           className='home-product-card__image'
-          src={product.image}
+          src={product.cardImage || product.image}
           alt={product.name}
           loading='lazy'
         />
@@ -109,6 +109,7 @@ HomeProductCard.propTypes = {
     _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    cardImage: PropTypes.string,
     brand: PropTypes.string,
     price: PropTypes.number.isRequired,
     rating: PropTypes.number,

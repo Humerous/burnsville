@@ -8,7 +8,7 @@ const identities = [
   ['Core', '04', 'RED EMBER'],
   ['Core', '05', 'DARK HARVEST'],
   ['Core', '06', 'SALINE CURRENT'],
-  ['Core', '07', 'CALABRIAN SUN'],
+  ['Core', '07', 'CALABRIAN GLOW'],
   ['Core', '08', 'BIRD’S FIRE'],
   ['Core', '09', 'VIOLET’S FUSE'],
   ['Core', '10', 'GHOST BLACK'],
@@ -27,6 +27,7 @@ const buildCatalogue = () => ({
     identifier,
     name,
     image: `/images/burnsville/${identifier}.png`,
+    cardImage: `/images/burnsville/cards/${identifier}.webp`,
     brand: 'Burnsville',
     category: 'Hot Sauce',
     description: 'Approved test description',
@@ -46,10 +47,10 @@ const validationOptions = { fileExists: () => true };
 assert.deepEqual(validateCatalogue(buildCatalogue(), validationOptions), []);
 
 const aliasCatalogue = buildCatalogue();
-aliasCatalogue.products[6].name = 'CALABRIAN GLOW';
+aliasCatalogue.products[6].name = 'CALABRIAN SUN';
 assert(
   validateCatalogue(aliasCatalogue, validationOptions).some((error) =>
-    error.includes('CALABRIAN SUN')
+    error.includes('CALABRIAN GLOW')
   )
 );
 

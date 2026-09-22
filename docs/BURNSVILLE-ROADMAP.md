@@ -1,148 +1,47 @@
 # BURNSVILLE — COMPLETION ROADMAP
 
-## CURRENT MODE
+## COMPLETE
 
-FINAL PRODUCT INTEGRATION → PRODUCT-SPECIFIC QA → REVIEW 1.
+- Node 24 repository baseline
+- final 16-product authority
+- card + bottle architecture
+- 16 approved full product cards
+- 16 approved transparent bottle assets
+- current `cardImage` support
+- Home / Shop `cardImage || image`
+- isolated catalogue QA
+- current-only repository cleanup
+- current production database connection verified by live catalogue API
+- live Vercel production deployment verified `READY`
+- final source/static catalogue audit
+- GitHub push-readiness correction for `.env.example`
+- closeout record prepared
 
-The approved three-block visual UI and its responsive/browser QA are complete. Product identities and the Review 1 bottle-image architecture are locked in `BURNSVILLE-MASTER-AUTHORITY.md`. Preserve those systems while the remaining product facts and release inputs are resolved.
+## ACTIVE STAGE
 
-## PACK 0 — CODEX READINESS + CONTROL
+`FINAL GITHUB PUSH`
 
-Status: COMPLETE.
+## FINAL SEQUENCE
 
-Goal: make the repository safe for longer Codex execution blocks.
+1. copy the audited closeout package into the existing `Humerous/burnsville` working tree while preserving `.git`
+2. remain on `modernise/burnsville-v2`
+3. review `git status`, `git diff --check` and the final diff
+4. run the repository QA commands
+5. commit the closeout snapshot
+6. push `modernise/burnsville-v2`
+7. confirm GitHub Actions passes
+8. mark project `CLOSED`
 
-Implemented:
+## NO FURTHER FEATURE WORK REQUIRED FOR CLOSEOUT
 
-- root `AGENTS.md`
-- root `BURNSVILLE-MASTER-AUTHORITY.md`
-- project control baseline
-- architecture baseline
-- decision register
-- known-issues register
-- targeted risk register
-- product integration contract
-- catalogue migration safety plan
-- final integration QA checklist
-- final catalogue intake with 16 locked product identities, a 10/6 range split and explicit unresolved fields
-- supporting catalogue facts quarantined from runtime authority
-- catalogue authority reconciliation report
-- portrait-card installer remains disabled; opaque poster cards are excluded from Review 1 runtime
-- automated `qa/product-authority.mjs` identity guard wired into CI
-- read-only `qa/catalogue-readiness.mjs` final-data/asset gate with validator tests wired into CI
-- 16 approved transparent bottle assets with exact runtime identities and SHA-256 QA wired into CI
-- interim README safety notice
-- active branch authority documented
-- current approved UI authority recorded
+Do not reopen visual, catalogue or architecture work unless a verified defect is discovered during the final push/CI gate.
 
-Still intentionally excluded from authority:
+## OUT OF SCOPE
 
-- unapproved historical product/commercial facts
-- historical descriptive labels as product identities
-- integration-branch visual assumptions
-
-Pass condition: future agents can identify source of truth, protected areas, open work and release gates without reconstructing chat history.
-
-## PACK 1 — REFERENCE INTAKE + FINAL DESIGN AUTHORITY
-
-Status: COMPLETE for the supplied approved visual pack.
-
-Goal: turn uploaded visual references into one implementation authority.
-
-Pass condition: visual implementation can proceed without guessing.
-
-## PACK 2 — PRODUCT ARCHITECTURE + FINAL CATALOGUE CONTRACT
-
-Status: PARTIAL — PRODUCT IDENTITIES AND REVIEW 1 IMAGE ARCHITECTURE LOCKED; PRODUCT FACTS PENDING.
-
-Goal: define the exact data/image model required by the final product experience.
-
-Complete:
-
-- final product count: 16
-- final Core identities: 01–10
-- final Limited / Vintage identities: `P-X`, `CASK-13`, `POT-7`, `TMR-200`, `X-666`, `B-42`
-- current technical heat range: 1–10
-- real server-side heat filtering
-- current single `image` field approved through REVIEW 1
-- 16 transparent bottle renders approved as primary runtime images
-- portrait bottles contained without crop or stretch inside approved square-card media
-- opaque poster/card artworks excluded from Review 1 runtime
-- exact runtime asset map and integrity gate
-- Shop page size 10 preserved through REVIEW 1 under D-020
-- current first-four Home showcase preserved through REVIEW 1 under D-020
-- MongoDB-ID product routes preserved through REVIEW 1 under D-020
-
-Still required:
-
-- approve product facts/commercial values
-- complete the final-catalogue dataset so the existing validator passes
-
-Pass condition: product data architecture matches the approved UI and complete handoff.
-
-## PACK 3 — FINAL UI IMPLEMENTATION
-
-Status: COMPLETE in commit `8d3403ce4be7f221ea9e5862b9965ba915ed2957`.
-
-Goal: preserve the approved customer/admin presentation and working engine.
-
-Pass condition: approved UI remains implemented without functional regressions.
-
-## PACK 4 — FINAL PRODUCT INTEGRATION
-
-Status: BLOCKED ONLY BY REMAINING APPROVED PRODUCT FACTS / COMMERCIAL VALUES.
-
-Goal: replace the legacy demo catalogue with approved Burnsville products.
-
-Flow:
-
-FINAL HANDOFF → AUTHORITY QA → VALIDATOR → ISOLATED DATASET → API QA → FRONTEND QA → MIGRATION REVIEW
-
-No missing product facts may be inferred.
-
-Pass condition: all approved products/assets work through Home, Shop, Product, Cart, Checkout/Order and Admin with no public legacy catalogue content.
-
-## PACK 5 — E2E + ACCESSIBILITY + PERFORMANCE
-
-Status: CUSTOMER E2E AND REQUIRED RESPONSIVE/ACCESSIBILITY QA COMPLETE; repeat product-specific checks after Pack 4 catalogue integration.
-
-Required release checks include:
-
-- customer flow
-- admin product/edit/upload flow
-- 1440 desktop
-- 768 tablet
-- 390 mobile
-- 320 narrow mobile
-- WCAG 2.2 AA fundamentals
-- keyboard/focus behaviour
-- no horizontal overflow
-- no console errors
-- build and API QA
-- product-authority QA
-- production dependency gate
-- performance/image optimisation
-
-Pass condition: functional, responsive, accessibility and authority gates pass.
-
-## PACK 6 — PUBLIC RELEASE
-
-Goal: turn the completed app into a production and portfolio-quality release.
-
-Actions:
-
-- remove obsolete legacy product assets/data only after rollback evidence exists
-- write final public README
-- final SEO/meta/OpenGraph/canonical/sitemap/robots
-- final favicon/social imagery
-- keep PR #1 description current
-- final release review to `main`
-- production deployment after explicit approval
-- live QA
-- release/tag/handoff
-
-Pass condition: production passes and repository documentation matches the released system.
-
-## GLOBAL RULE
-
-Do not jump forward merely because later work is technically possible. Each pack must preserve the pass conditions of previous packs. Product identity changes require explicit owner approval and an update to `BURNSVILLE-MASTER-AUTHORITY.md` before implementation.
+- Packs development
+- Journal development
+- unrelated features
+- speculative animation
+- broad architecture rewrites
+- product artwork redesign
+- payment gateway production integration
