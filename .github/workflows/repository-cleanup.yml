@@ -1,0 +1,45 @@
+name: Burnsville Repository Cleanup
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove obsolete branches and tags
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          refs=(
+            "heads/archive/old-main-before-modernised-2026-09-22"
+            "heads/archive/pre-closeout-2026-09-22"
+            "heads/archive/pre-closeout-final-2026-09-22"
+            "heads/archive/pre-reset-main-2026-09-11"
+            "heads/archive/pre-reset-modernise-2026-09-11"
+            "heads/cleanup/archive-favicon"
+            "heads/modernise/burnsville-v2-integration-spec"
+            "heads/modernise/burnsville-v2-integration-spec-checkpoint"
+            "heads/modernise/burnsville-v2"
+            "heads/restore/last-working-build"
+            "tags/archive-2022-original"
+            "tags/archive-2022-restored-working"
+          )
+
+          for ref in "${refs[@]}"; do
+            echo "Deleting ${ref}"
+            gh api --method DELETE "repos/${GITHUB_REPOSITORY}/git/refs/${ref}"
+          done
+
+          echo "Remaining branches:"
+          gh api "repos/${GITHUB_REPOSITORY}/branches?per_page=100" --jq '.[].name'
+
+          echo "Remaining tags:"
+          gh api "repos/${GITHUB_REPOSITORY}/git/refs/tags" --jq '.[].ref' || true
