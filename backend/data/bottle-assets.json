@@ -13,7 +13,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "ad50dca582eee700f76611526ca17b349d4a7ad8951a75c4b412f6f5b3f2e699"
+      "sha256": "ad50dca582eee700f76611526ca17b349d4a7ad8951a75c4b412f6f5b3f2e699",
+      "format": "webp"
     },
     {
       "identifier": "02",
@@ -25,7 +26,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "86966b2c9786994fdb8c4542309eef87f7fbe6155bc3bf7f815c25bbc132b73d"
+      "sha256": "86966b2c9786994fdb8c4542309eef87f7fbe6155bc3bf7f815c25bbc132b73d",
+      "format": "webp"
     },
     {
       "identifier": "03",
@@ -37,7 +39,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "e8428986de81370c5335e1c4bc816203ff802d01dece8a889fbe9556f4156146"
+      "sha256": "e8428986de81370c5335e1c4bc816203ff802d01dece8a889fbe9556f4156146",
+      "format": "webp"
     },
     {
       "identifier": "04",
@@ -49,7 +52,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "fe74dc770a004b4ee04dcd4d872eb3ddf241361b6087bf8b4baafa0659956c49"
+      "sha256": "fe74dc770a004b4ee04dcd4d872eb3ddf241361b6087bf8b4baafa0659956c49",
+      "format": "webp"
     },
     {
       "identifier": "05",
@@ -61,7 +65,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "f18ebd821724885197ddcba6710682d3977883752b8a0610ea7ad2ac066ce584"
+      "sha256": "f18ebd821724885197ddcba6710682d3977883752b8a0610ea7ad2ac066ce584",
+      "format": "webp"
     },
     {
       "identifier": "06",
@@ -73,7 +78,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "56906c20b523b62c7fe6178dd21bcb5f25344ba2fdc81e984f8a63d3a0ecbc0c"
+      "sha256": "56906c20b523b62c7fe6178dd21bcb5f25344ba2fdc81e984f8a63d3a0ecbc0c",
+      "format": "webp"
     },
     {
       "identifier": "07",
@@ -85,7 +91,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "cd116e031520bc6978344027edfcfa780014abb9351de58c61529a977c638c88"
+      "sha256": "cd116e031520bc6978344027edfcfa780014abb9351de58c61529a977c638c88",
+      "format": "webp"
     },
     {
       "identifier": "08",
@@ -97,7 +104,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "d7abec562e0cf067bb4b53ae587e11511d1115a45a4b666ad51d0a4050f5d1bc"
+      "sha256": "d7abec562e0cf067bb4b53ae587e11511d1115a45a4b666ad51d0a4050f5d1bc",
+      "format": "webp"
     },
     {
       "identifier": "09",
@@ -109,7 +117,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "f2a45c5d5e6df7f601ab4bf712e18bde751ff83430dfdf93ba1e40153821d2b1"
+      "sha256": "f2a45c5d5e6df7f601ab4bf712e18bde751ff83430dfdf93ba1e40153821d2b1",
+      "format": "webp"
     },
     {
       "identifier": "10",
@@ -121,7 +130,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "9c4a36c5e0ef5d06461bf9134c1dca44736835235a36816421dc151ea453ca1d"
+      "sha256": "9c4a36c5e0ef5d06461bf9134c1dca44736835235a36816421dc151ea453ca1d",
+      "format": "webp"
     },
     {
       "identifier": "P-X",
@@ -133,7 +143,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "29c5f37354b64d9df1c2048783dc9c9c05fbd5e0051363d2818cb22d5aa882c0"
+      "sha256": "29c5f37354b64d9df1c2048783dc9c9c05fbd5e0051363d2818cb22d5aa882c0",
+      "format": "webp"
     },
     {
       "identifier": "CASK-13",
@@ -145,7 +156,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "992ba8c58c5510fb45edb456e33840c2f22481f4a764f73073ea3807cf2f27eb"
+      "sha256": "992ba8c58c5510fb45edb456e33840c2f22481f4a764f73073ea3807cf2f27eb",
+      "format": "webp"
     },
     {
       "identifier": "POT-7",
@@ -157,7 +169,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "11cd445e50f97da7d3d8bd9d4e35867f0bce2268879cee2162ab74a411bc89c3"
+      "sha256": "11cd445e50f97da7d3d8bd9d4e35867f0bce2268879cee2162ab74a411bc89c3",
+      "format": "webp"
     },
     {
       "identifier": "TMR-200",
@@ -169,7 +182,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "0ce0921770dfb01a03e92e05e8d3b4a4660cb6d76e783f1e9020d0f98c554e65"
+      "sha256": "0ce0921770dfb01a03e92e05e8d3b4a4660cb6d76e783f1e9020d0f98c554e65",
+      "format": "webp"
     },
     {
       "identifier": "X-666",
@@ -181,7 +195,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "8ccf6fc7134637b0f670fc0b173d0877098485f7734e9f645b2540cb4c5684a8"
+      "sha256": "8ccf6fc7134637b0f670fc0b173d0877098485f7734e9f645b2540cb4c5684a8",
+      "format": "webp"
     },
     {
       "identifier": "B-42",
@@ -193,7 +208,8 @@
         1536
       ],
       "alpha": true,
-      "sha256": "c32dd0ae461004b1d39d3b3dbc58a597a4d6b7155638be5d503a4930c6853b23"
+      "sha256": "c32dd0ae461004b1d39d3b3dbc58a597a4d6b7155638be5d503a4930c6853b23",
+      "format": "webp"
     }
   ]
 }
