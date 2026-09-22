@@ -8,21 +8,25 @@ This repository is the sole current Burnsville working tree.
 
 - one current MongoDB database
 - 16 approved Burnsville products only
-- no archived third-party catalogue records
+- no archived third-party catalogue records in the active application
 - current bottle and card asset paths only
 
 ## CURRENT STAGE
 
-`READY FOR FINAL GITHUB PUSH / CLOSEOUT`
+`CLOSED — 2026-09-22`
 
-The current package was audited on 2026-09-22 against the live Vercel deployment. Static catalogue and asset QA pass, the live production catalogue returns the approved 16-product set, and no Vercel runtime error clusters were reported in the preceding seven-day window at audit time.
+The modernized project is authoritative on `main`.
 
-The only operational gate remaining is the final GitHub commit/push and successful GitHub Actions run.
+The final closeout commit passed GitHub Actions, including the Node 24 build, isolated MongoDB QA, catalogue API QA, integrated API QA, heat-filter QA, functional API QA and production-serving checks.
 
-See `BURNSVILLE-CLOSEOUT.md` for the final evidence, limitations and accepted residual items.
+The former `main` state is preserved at:
+
+`archive/old-main-before-modernised-2026-09-22`
+
+See `BURNSVILLE-CLOSEOUT.md` for final evidence, limitations and accepted residual items.
 
 ## CONTROL RULE
 
 `DISCUSS → AGREE → COMMAND → APPROVE → EXECUTE → QA`
 
-Do not switch database, repository, deployment, branch or environment without explicit approval.
+Burnsville is closed. Do not reopen the project unless a verified defect requires corrective work.
