@@ -16,25 +16,26 @@
 - final source/static catalogue audit
 - GitHub push-readiness correction for `.env.example`
 - closeout record prepared
+- final closeout commit pushed
+- GitHub Actions passed
+- modernized project promoted to `main`
+- old `main` preserved in archive branch
 
-## ACTIVE STAGE
+## PROJECT STATUS
 
-`FINAL GITHUB PUSH`
+`CLOSED — 2026-09-22`
 
-## FINAL SEQUENCE
+No further feature work is required for closeout.
 
-1. copy the audited closeout package into the existing `Humerous/burnsville` working tree while preserving `.git`
-2. remain on `modernise/burnsville-v2`
-3. review `git status`, `git diff --check` and the final diff
-4. run the repository QA commands
-5. commit the closeout snapshot
-6. push `modernise/burnsville-v2`
-7. confirm GitHub Actions passes
-8. mark project `CLOSED`
+## AUTHORITATIVE BRANCH
 
-## NO FURTHER FEATURE WORK REQUIRED FOR CLOSEOUT
+`main`
 
-Do not reopen visual, catalogue or architecture work unless a verified defect is discovered during the final push/CI gate.
+## HISTORICAL RECOVERY
+
+`archive/old-main-before-modernised-2026-09-22`
+
+Additional archive and modernization branches remain historical references only.
 
 ## OUT OF SCOPE
 
