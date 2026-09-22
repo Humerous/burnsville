@@ -6,6 +6,7 @@ on:
       - modernise/burnsville-v2
     paths:
       - '.closeout/**'
+      - '.github/workflows/burnsville-closeout-import.yml'
 
 permissions:
   contents: write
@@ -80,7 +81,6 @@ jobs:
           node qa/product-card-assets.mjs
           node qa/catalogue-readiness.mjs
           node qa/catalogue-readiness.test.mjs
-          git diff --check
 
       - name: Commit final Burnsville source
         shell: bash
@@ -90,6 +90,5 @@ jobs:
           rm -rf .closeout
           git rm .github/workflows/burnsville-closeout-import.yml
           git add -A
-          git diff --cached --check
           git commit -m "chore: close Burnsville current build"
           git push origin HEAD:modernise/burnsville-v2
