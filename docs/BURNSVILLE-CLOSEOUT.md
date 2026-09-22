@@ -1,76 +1,55 @@
 # BURNSVILLE — CLOSEOUT
 
 **Date:** 2026-09-22  
-**Status:** READY FOR FINAL GITHUB PUSH  
-**Target repository:** `Humerous/burnsville`  
-**Target branch:** `modernise/burnsville-v2`  
+**Status:** CLOSED  
+**Repository:** `Humerous/burnsville`  
+**Authoritative branch:** `main`  
+**Final modernized closeout commit:** `ca6d34e3e78882e2a51482359ab8f06163d28edd`  
 **Live reference:** `https://burnsville-current.vercel.app/`
 
 ## CLOSEOUT DECISION
 
-The supplied current-only Burnsville package has been reviewed against the deployed production reference and prepared as the final GitHub closeout candidate.
+Burnsville is closed as a completed portfolio and learning project.
 
-The repository must be marked **CLOSED** only after:
+The modernized project was promoted to `main` after the final closeout commit passed GitHub Actions. The former `main` state was preserved before promotion under:
 
-1. the final snapshot is committed to `modernise/burnsville-v2`;
-2. the push succeeds;
-3. GitHub Actions completes successfully on that commit.
+`archive/old-main-before-modernised-2026-09-22`
 
-No push, merge, deployment, production database mutation or live configuration change was performed during this audit.
+No project history was deleted and no force push was used.
 
-## VERIFIED IN THIS AUDIT
+## VERIFIED
 
 - 16 locked Burnsville product identities pass authority QA.
 - 16 transparent bottle assets pass path, dimension, alpha metadata and SHA-256 checks.
 - 16 full product-card assets pass path, dimension and SHA-256 checks.
-- Catalogue readiness and catalogue validator tests pass without a database.
-- Backend and QA JavaScript / MJS sources pass Node syntax checks.
-- Repository JSON files parse successfully.
-- No `.env` file is included in the supplied package.
-- No obvious private key, GitHub token, AWS access key, OpenAI key or credential-bearing MongoDB URI was found by the audit scan.
-- Production Vercel deployment is `READY` and the canonical alias responds successfully.
-- Production catalogue API returns the complete 16-product current catalogue across two pages.
-- Production top-products endpoint responds successfully.
-- Approved product WebP assets are served by production.
-- Vercel reported no grouped runtime errors in the preceding seven-day window at audit time.
-
-## PUSH-READINESS CORRECTION
-
-The supplied `.gitignore` ended with `.env*`, which also ignored `.env.example` in a clean Git working tree.
-
-That was corrected by explicitly allowing:
-
-`!.env.example`
-
-This is required because the README setup procedure depends on `.env.example` being versioned.
-
-## BUILD / TEST LIMITATION
-
-A clean local dependency reinstall and Node 24 build could not be reproduced inside the audit sandbox because outbound npm package access was unavailable and the sandbox Node runtime was Node 22 rather than the repository's locked Node 24 baseline.
-
-This is recorded as an audit-environment limitation, not as a project build failure. The live Vercel production deployment is compiled and `READY`, and repository static/catalogue QA passed in the supplied source tree.
+- Catalogue readiness and catalogue validator tests pass.
+- GitHub Actions completed successfully on the final closeout commit.
+- Node 24 dependency installation and Vite production build passed in GitHub Actions.
+- Isolated MongoDB replacement and rollback QA passed.
+- Exact catalogue API QA passed.
+- Integrated API QA passed.
+- Heat-filter API QA passed.
+- Review consistency QA passed.
+- Controlled functional API QA passed.
+- Production-mode restart and serving QA passed.
+- Repository diff check passed.
+- Production Vercel deployment was verified `READY` during the closeout audit.
+- Production catalogue API returned the complete approved 16-product catalogue during the audit.
+- `.env.example` is versionable and no `.env` file is part of the closeout package.
 
 ## ACCEPTED RESIDUAL ITEMS
 
-These items do not block repository closeout but must not be misrepresented:
+These items do not block closure and must not be misrepresented:
 
 - Payment-provider selection is UI / workflow scaffolding only. Live payment gateway credentials and processing are not implemented.
-- The legacy `/api/config/paypal` endpoint remains present and currently returns an empty response.
-- The admin product routes retain create, edit and delete capability. The 16-product current-only catalogue therefore depends on authorised admin use and the existing authority controls.
-- Full automated rendered desktop/tablet/mobile visual regression was not reproduced during this audit. Closure relies on the current owner closeout instruction plus the verified live deployment and source/runtime checks recorded here.
+- The legacy `/api/config/paypal` endpoint remains present and returns no configured live client ID.
+- Admin product routes retain create, edit and delete capability. Catalogue integrity therefore depends on authorised admin use and the existing authority controls.
+- Full automated rendered desktop/tablet/mobile visual regression was not reproduced during the source audit.
 
-## FINAL PUSH GATE
+## FINAL STATE
 
-Before committing:
+`main` is the authoritative final branch.
 
-```bash
-git status
-git diff --check
-git diff --stat
-npm run qa:product-assets
-npm run qa:product-cards
-npm run qa:catalogue
-npm run test:catalogue-validator
-```
+Historical branches are retained only for recovery and provenance.
 
-After the final push, confirm the GitHub Actions run is green. At that point the project state may be changed from `READY FOR FINAL GITHUB PUSH` to `CLOSED` without further feature work.
+No further visual, catalogue, architecture or feature work is required. Reopen only for a verified defect.
