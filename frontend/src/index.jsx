@@ -6,11 +6,11 @@ import './bootstrap.min.css';
 import './index.css';
 import App from './App';
 import './mobile-header.css';
-import './interaction-refinements.css';
+import './interactions.css';
 import './heat-strip.css';
 import './loading-states.css';
-import './navigation-heat.css';
-import './components/completion.css';
+import './navigation.css';
+import './components/theme.css';
 
 ReactDOM.render(
   <Provider store={store}>

@@ -13,7 +13,7 @@ import {
 import ShopDrawer from './header/ShopDrawer';
 import { logout } from '../actions/userActions';
 import './header/header.css';
-import './header/header-reference.css';
+import './header/header-layout.css';
 
 const NAV_ITEMS = [
   { label: 'Shop', href: '/shop' },

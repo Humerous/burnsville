@@ -2,7 +2,7 @@
   "name": "burnsville-mern-app",
   "version": "1.0.0",
   "description": "Modern MERN eCommerce portfolio project for the Burnsville hot sauce catalogue.",
-  "main": "server.js",
+  "main": "backend/server.js",
   "type": "module",
   "engines": {
     "node": "24.x"
@@ -42,5 +42,13 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Humerous/burnsville.git"
-  }
+  },
+  "keywords": [
+    "mern",
+    "react",
+    "express",
+    "mongodb",
+    "ecommerce",
+    "portfolio"
+  ]
 }

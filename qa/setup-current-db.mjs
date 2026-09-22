@@ -35,7 +35,7 @@ try {
 
   const admin = users.find((user) => user.isAdmin);
   const approved = JSON.parse(
-    fs.readFileSync('backend/data/burnsville-final-catalogue-intake.json', 'utf8'),
+    fs.readFileSync('backend/data/catalogue.json', 'utf8'),
   ).products;
 
   assert.equal(approved.length, 16);

@@ -1,65 +1,136 @@
 # Burnsville
 
-Modern MERN eCommerce portfolio project built around a 16-product hot sauce catalogue.
+[![Burnsville QA](https://github.com/Humerous/burnsville/actions/workflows/qa.yml/badge.svg)](https://github.com/Humerous/burnsville/actions/workflows/qa.yml)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+Burnsville is a modern MERN eCommerce portfolio project built around a curated 16-product hot sauce catalogue.
 
 **Live demo:** https://burnsville-current.vercel.app/
 
 ## Status
 
-**Complete**
+**Complete.** The authoritative source is the `main` branch. Repository changes are verified by the Burnsville QA workflow.
 
-The final application is maintained on `main` and has passed the repository CI suite on Node 24.
+## Product catalogue
 
-## Highlights
+The application contains ten Core sauces and six Limited / Vintage releases. Product identity, heat level, copy, pricing, stock and runtime asset paths are defined in `backend/data/catalogue.json`.
 
-- 16-product Burnsville catalogue
+| Collection | Products |
+| --- | --- |
+| Core | GREEN SPARK, SUN GOLD, CITRUS FLARE, RED EMBER, DARK HARVEST, SALINE CURRENT, CALABRIAN GLOW, BIRD’S FIRE, VIOLET’S FUSE, GHOST BLACK |
+| Limited / Vintage | P-X, CASK-13, POT-7, TMR-200, X-666, B-42 |
+
+Each product has two verified WebP assets:
+
+- a transparent bottle image for bottle-led product presentation
+- a full product card for Home and Shop discovery
+
+The integrity manifests in `backend/data/bottle-assets.json` and `backend/data/card-assets.json` pin filenames, dimensions and SHA-256 hashes.
+
+## Features
+
 - responsive Home, Shop and Product Detail experiences
-- dedicated product-card and transparent bottle artwork
-- cart and checkout flow
-- user registration, login and profile management
-- order workflow
+- product search, heat filtering and pagination
+- cart and multi-step checkout flow
+- registration, authentication and profile management
+- customer order history and product reviews
 - admin product, user and order management
-- JWT authentication
-- MongoDB / Mongoose data layer
-- Vite production build
-- automated GitHub Actions QA
-
-## Stack
-
-**Frontend:** React, Redux, React Router, Vite  
-**Backend:** Node.js, Express, Mongoose  
-**Database:** MongoDB  
-**Deployment:** Vercel  
-**CI:** GitHub Actions, Node 24
+- protected image upload backed by MongoDB GridFS
+- server-authoritative pricing, VAT, stock and order totals
+- keyboard-accessible navigation, focus management and dialog handling
+- automated catalogue, API, asset-integrity and production-serving QA
 
 ## Architecture
 
-`MongoDB → Express API → React UI → Cart → Checkout → Order`
+`MongoDB → Express API → React / Redux UI → Cart → Checkout → Order`
 
-Product data and asset paths are stored in MongoDB. Approved runtime artwork is served from:
+The frontend is a React application built with Vite. The backend is an Express API using Mongoose. Product data is stored in MongoDB while approved catalogue artwork is served as static frontend assets. Uploaded admin artwork is stored in MongoDB GridFS.
 
-- `frontend/public/images/products/cards/`
-- `frontend/public/images/products/bottles/`
+Primary API surfaces:
 
-The current catalogue source is:
+- `/api/products`
+- `/api/users`
+- `/api/orders`
+- `/api/upload`
+- `/uploads/:filename`
 
-`backend/data/burnsville-final-catalogue-intake.json`
+## Technology
 
-## Local setup
+| Layer | Technology |
+| --- | --- |
+| Frontend | React 16, Redux, React Router, Vite |
+| UI | React Bootstrap, custom responsive CSS |
+| Backend | Node.js 24, Express |
+| Data | MongoDB, Mongoose, GridFS |
+| Auth | JWT, bcrypt |
+| CI | GitHub Actions |
+| Deployment | Vercel |
 
-Use Node 24.x.
+## Repository structure
+
+```text
+backend/
+  config/
+  controllers/
+  data/
+  middleware/
+  models/
+  routes/
+  utils/
+frontend/
+  public/
+  src/
+qa/
+.github/workflows/qa.yml
+```
+
+The repository intentionally contains only runtime source, production assets, machine-readable catalogue data, QA, deployment configuration and this README.
+
+## Local development
+
+### Requirements
+
+- Node.js 24.x
+- npm
+- MongoDB
+
+### Install
 
 ```bash
 npm ci
 npm ci --prefix frontend
+```
+
+Create the local environment file:
+
+```bash
 cp .env.example .env
+```
+
+Required environment values:
+
+| Variable | Purpose |
+| --- | --- |
+| `MONGO_URI` | MongoDB connection string |
+| `JWT_SECRET` | JWT signing secret |
+| `PORT` | Express port, defaults to 5001 |
+| `NODE_ENV` | Runtime mode |
+
+Initialize an empty database with the approved catalogue:
+
+```bash
 npm run data:bootstrap
+```
+
+Start the development environment:
+
+```bash
 npm run dev
 ```
 
-`npm run data:bootstrap` initializes an empty database with the approved 16-product catalogue and refuses to mix unrelated product records into the current dataset.
+## Quality assurance
 
-## QA
+Run the static catalogue and asset checks:
 
 ```bash
 npm run qa:product-assets
@@ -69,14 +140,12 @@ npm run test:catalogue-validator
 npm run build --prefix frontend
 ```
 
-The GitHub Actions workflow additionally verifies the current catalogue API, integrated API behaviour, heat filters, reviews, functional flows and production static serving.
-
-## Documentation
-
-- [Architecture](docs/ARCHITECTURE.md)
-- [Product catalogue](docs/PRODUCT-CATALOGUE.md)
-- [Visual guide](docs/VISUAL-GUIDE.md)
+GitHub Actions additionally runs the application against an isolated MongoDB replica set and verifies catalogue APIs, authentication, reviews, orders, heat filtering, admin boundaries and production static serving.
 
 ## Commerce scope
 
-Checkout and order workflows are implemented. Payment-provider selections are integration scaffolding only; live merchant credentials and production gateway processing are not included in this portfolio build.
+The cart, checkout and order workflows are implemented. Payment-provider selection is integration scaffolding only; live merchant credentials, transaction confirmation and production payment processing are intentionally not included in this portfolio build.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

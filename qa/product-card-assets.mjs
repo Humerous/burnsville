@@ -35,8 +35,8 @@ const readWebpSize = (bytes) => {
   return null;
 };
 
-const mapPath = path.resolve('backend/data/burnsville-product-card-asset-map.json');
-const intakePath = path.resolve('backend/data/burnsville-final-catalogue-intake.json');
+const mapPath = path.resolve('backend/data/card-assets.json');
+const intakePath = path.resolve('backend/data/catalogue.json');
 const publicRoot = path.resolve('frontend/public');
 const cardDirectory = path.resolve(publicRoot, 'images/products/cards');
 
@@ -47,9 +47,9 @@ for (const required of [mapPath, intakePath, cardDirectory]) {
 const assetMap = JSON.parse(fs.readFileSync(mapPath, 'utf8'));
 const intake = JSON.parse(fs.readFileSync(intakePath, 'utf8'));
 
-if (assetMap.authority !== 'docs/PRODUCT-CATALOGUE.md') fail('card asset map authority is incorrect');
-if (assetMap.role !== 'PRIMARY_BROWSE_CARD_IMAGE') fail('card asset map role is incorrect');
-if (assetMap.asset_directory !== '/images/products/cards/') fail('card asset directory is incorrect');
+if (assetMap.version !== 1) fail('card asset manifest version must be 1');
+if (assetMap.catalogue !== 'backend/data/catalogue.json') fail('card asset manifest catalogue path is incorrect');
+if (assetMap.directory !== '/images/products/cards/') fail('card asset directory is incorrect');
 if (!Array.isArray(assetMap.assets) || assetMap.assets.length !== 16) fail('card asset map must contain exactly 16 assets');
 
 const directoryFiles = fs.readdirSync(cardDirectory).filter((filename) => filename.endsWith('.webp')).sort();
@@ -59,7 +59,7 @@ if (JSON.stringify(directoryFiles) !== JSON.stringify(expectedFiles)) fail('runt
 assetMap.assets.forEach((asset, index) => {
   const expectedPath = `/images/products/cards/${asset.filename}`;
   if (asset.path !== expectedPath) fail(`assets[${index}].path must be ${expectedPath}`);
-  if (intake.products?.[index]?.cardImage !== expectedPath) fail(`final catalogue cardImage for ${asset.id} must be ${expectedPath}`);
+  if (intake.products?.[index]?.cardImage !== expectedPath) fail(`catalogue cardImage for ${asset.identifier} must be ${expectedPath}`);
   const filePath = path.resolve(cardDirectory, asset.filename);
   if (!filePath.startsWith(`${cardDirectory}${path.sep}`) || !fs.existsSync(filePath)) fail(`assets[${index}] does not resolve under the runtime card directory`);
   const bytes = fs.readFileSync(filePath);

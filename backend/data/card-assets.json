@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "catalogue": "backend/data/catalogue.json",
+  "directory": "/images/products/cards/",
+  "assets": [
+    {
+      "identifier": "01",
+      "name": "GREEN SPARK",
+      "filename": "burnsville-01-green-spark-card.webp",
+      "path": "/images/products/cards/burnsville-01-green-spark-card.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "1234713d714ca02db2c16af20488bee1f997c9f991ad5e07909e2283d8b6e161"
+    },
+    {
+      "identifier": "02",
+      "name": "SUN GOLD",
+      "filename": "burnsville-02-sun-gold-card.webp",
+      "path": "/images/products/cards/burnsville-02-sun-gold-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "1cd3526e3c7da5632a326c093b5aa9d4034cb063b326bf63cf7a39bfe4b065d7"
+    },
+    {
+      "identifier": "03",
+      "name": "CITRUS FLARE",
+      "filename": "burnsville-03-citrus-flare-card.webp",
+      "path": "/images/products/cards/burnsville-03-citrus-flare-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "0984187b4d9d0cc2a67195ce84e6eed286bc777848b772bd61626e443eb8cc9b"
+    },
+    {
+      "identifier": "04",
+      "name": "RED EMBER",
+      "filename": "burnsville-04-red-ember-card.webp",
+      "path": "/images/products/cards/burnsville-04-red-ember-card.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "df8649ae6a26d4caa441d557102c13c6672efb0dbfce3caed2239b273d5c8814"
+    },
+    {
+      "identifier": "05",
+      "name": "DARK HARVEST",
+      "filename": "burnsville-05-dark-harvest-card.webp",
+      "path": "/images/products/cards/burnsville-05-dark-harvest-card.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "52cd881d6f90f583563fdd28274ee62b5cb4cc1aacd669638e0b95d63f10d296"
+    },
+    {
+      "identifier": "06",
+      "name": "SALINE CURRENT",
+      "filename": "burnsville-06-saline-current-card.webp",
+      "path": "/images/products/cards/burnsville-06-saline-current-card.webp",
+      "size": [
+        1086,
+        1448
+      ],
+      "sha256": "87f092c8f096f2770a7f67e5f811c7aa6e2202b2cf0f3af072b0ed2224d9286d"
+    },
+    {
+      "identifier": "07",
+      "name": "CALABRIAN GLOW",
+      "filename": "burnsville-07-calabrian-glow-card.webp",
+      "path": "/images/products/cards/burnsville-07-calabrian-glow-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "aa24ceeb7b8885b3e8bad170bd10dfab87c8d0104d24278a2b24c111d1216bd8"
+    },
+    {
+      "identifier": "08",
+      "name": "BIRD’S FIRE",
+      "filename": "burnsville-08-birds-fire-card.webp",
+      "path": "/images/products/cards/burnsville-08-birds-fire-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "02556e17e0e40b201cf573520d1dd0ac9074909fda8294a43e77f05b51a8f08e"
+    },
+    {
+      "identifier": "09",
+      "name": "VIOLET’S FUSE",
+      "filename": "burnsville-09-violets-fuse-card.webp",
+      "path": "/images/products/cards/burnsville-09-violets-fuse-card.webp",
+      "size": [
+        1086,
+        1448
+      ],
+      "sha256": "18c910162cd94be2a1bcf78cb60f5b917a40c5b360823e94deb13fa215c47154"
+    },
+    {
+      "identifier": "10",
+      "name": "GHOST BLACK",
+      "filename": "burnsville-10-ghost-black-card.webp",
+      "path": "/images/products/cards/burnsville-10-ghost-black-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "173f4bdfadcb1340f521baf80b001c718524ba2d673b4763c27806549bff082c"
+    },
+    {
+      "identifier": "P-X",
+      "name": "P-X",
+      "filename": "burnsville-p-x-card.webp",
+      "path": "/images/products/cards/burnsville-p-x-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "0b499c8dc548b5e5f0a0b6c46cb375364a90782ea3de13875330c44704176975"
+    },
+    {
+      "identifier": "CASK-13",
+      "name": "CASK-13",
+      "filename": "burnsville-cask-13-card.webp",
+      "path": "/images/products/cards/burnsville-cask-13-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "80554f87b2ebb5741fb16332c9e278b2c7f2fcc548b27c34d803c3745197dbd4"
+    },
+    {
+      "identifier": "POT-7",
+      "name": "POT-7",
+      "filename": "burnsville-pot-7-card.webp",
+      "path": "/images/products/cards/burnsville-pot-7-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "ebcf7a44727dbbd7350412a627499ec1badc003cc162aea00766e734cdcaf1ec"
+    },
+    {
+      "identifier": "TMR-200",
+      "name": "TMR-200",
+      "filename": "burnsville-tmr-200-card.webp",
+      "path": "/images/products/cards/burnsville-tmr-200-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "85cfa12cd98f1da19449088a3dc91aa483cbcd399e34d10bec99dfece9a30940"
+    },
+    {
+      "identifier": "X-666",
+      "name": "X-666",
+      "filename": "burnsville-x-666-card.webp",
+      "path": "/images/products/cards/burnsville-x-666-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "e7087771bbed4e60f120565bc2ad4a839a26f77c1ba8a9b09f2947b5a3a03381"
+    },
+    {
+      "identifier": "B-42",
+      "name": "B-42",
+      "filename": "burnsville-b-42-card.webp",
+      "path": "/images/products/cards/burnsville-b-42-card.webp",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "d6adf3686e690991c8609566deb468d5c5e70007122dc8b37be6ee951d8e0e32"
+    }
+  ]
+}

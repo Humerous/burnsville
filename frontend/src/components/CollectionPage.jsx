@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Meta from './Meta';
-import './completion.css';
+import './theme.css';
 
 export default function CollectionPage({ title, eyebrow, children }) {
   return <section className="burnsville-destination" aria-labelledby="destination-title">

@@ -11,7 +11,7 @@ dotenv.config();
 
 const SYSTEM_OWNER_EMAIL = 'catalogue-owner@burnsville.invalid';
 const cataloguePath = path.resolve(
-  'backend/data/burnsville-final-catalogue-intake.json',
+  'backend/data/catalogue.json',
 );
 
 const loadCatalogue = () => {

@@ -21,7 +21,9 @@ const identities = [
 ];
 
 const buildCatalogue = () => ({
-  authority: 'docs/PRODUCT-CATALOGUE.md',
+  version: 1,
+  brand: 'Burnsville',
+  currency: 'ZAR',
   products: identities.map(([collection, identifier, name]) => ({
     collection,
     identifier,

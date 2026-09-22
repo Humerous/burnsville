@@ -75,11 +75,9 @@ export const validateCatalogue = (
   const errors = [];
   const products = catalogue?.products;
 
-  if (catalogue?.authority !== 'docs/PRODUCT-CATALOGUE.md') {
-    errors.push(
-      'catalogue authority must be docs/PRODUCT-CATALOGUE.md'
-    );
-  }
+  if (catalogue?.version !== 1) errors.push('catalogue.version must be 1');
+  if (catalogue?.brand !== 'Burnsville') errors.push('catalogue.brand must be "Burnsville"');
+  if (catalogue?.currency !== 'ZAR') errors.push('catalogue.currency must be "ZAR"');
 
   if (!Array.isArray(products)) {
     return [...errors, 'products must be an array'];
@@ -236,7 +234,7 @@ const run = () => {
       !(assetRootFlag >= 0 && index === assetRootFlag + 1)
   );
   const inputPath = path.resolve(
-    positionalArgs[0] || 'backend/data/burnsville-final-catalogue-intake.json'
+    positionalArgs[0] || 'backend/data/catalogue.json'
   );
   const assetRoot = path.resolve(
     assetRootFlag >= 0 && args[assetRootFlag + 1]

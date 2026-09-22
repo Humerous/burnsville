@@ -61,7 +61,7 @@ const OrderScreen = ({ match, history }) => {
           <p>
             Card checkout is routed through Peach Payments. Merchant sandbox
             credentials and provider-side transaction verification are required
-            before money can be processed. This Preview keeps the order unpaid
+            before money can be processed. This portfolio build keeps the order unpaid
             until that activation is complete.
           </p>
         </div>
@@ -75,7 +75,7 @@ const OrderScreen = ({ match, history }) => {
           <p>
             Peach Payments is selected. Merchant sandbox credentials,
             provider-side transaction verification and webhook handling are
-            required before payment can be confirmed. This Preview keeps the
+            required before payment can be confirmed. This portfolio build keeps the
             order unpaid until activation is complete.
           </p>
         </div>

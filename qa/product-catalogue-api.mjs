@@ -4,7 +4,7 @@ import fs from 'node:fs';
 const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:5001';
 const approved = JSON.parse(
   fs.readFileSync(
-    'backend/data/burnsville-final-catalogue-intake.json',
+    'backend/data/catalogue.json',
     'utf8',
   ),
 ).products;

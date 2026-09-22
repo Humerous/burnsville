@@ -19,7 +19,7 @@ const EXPECTED = [
   ['limited-vintage', 'TMR-200', 'TMR-200', 'burnsville-tmr-200-bottle.webp'],
   ['limited-vintage', 'X-666', 'X-666', 'burnsville-x-666-bottle.webp'],
   ['limited-vintage', 'B-42', 'B-42', 'burnsville-b-42-bottle.webp'],
-].map(([series, id, name, filename]) => ({ series, id, name, filename }));
+].map(([, identifier, name, filename]) => ({ identifier, name, filename }));
 
 const fail = (message) => {
   console.error(`PRODUCT ASSET QA FAILED: ${message}`);
@@ -79,8 +79,8 @@ const readWebpMetadata = (bytes) => {
   return null;
 };
 
-const mapPath = path.resolve('backend/data/burnsville-product-asset-map.json');
-const intakePath = path.resolve('backend/data/burnsville-final-catalogue-intake.json');
+const mapPath = path.resolve('backend/data/bottle-assets.json');
+const intakePath = path.resolve('backend/data/catalogue.json');
 const publicRoot = path.resolve('frontend/public');
 const assetDirectory = path.resolve(publicRoot, 'images/products/bottles');
 
@@ -88,15 +88,9 @@ if (!fs.existsSync(mapPath)) fail(`${mapPath} is missing`);
 
 const assetMap = JSON.parse(fs.readFileSync(mapPath, 'utf8'));
 const intake = JSON.parse(fs.readFileSync(intakePath, 'utf8'));
-if (assetMap.authority !== 'docs/PRODUCT-CATALOGUE.md') {
-  fail('asset map must declare docs/PRODUCT-CATALOGUE.md as authority');
-}
-if (assetMap.role !== 'SECONDARY_PRODUCT_ASSET') {
-  fail('asset map role must be SECONDARY_PRODUCT_ASSET');
-}
-if (assetMap.asset_directory !== '/images/products/bottles/') {
-  fail('asset map must use /images/products/bottles/');
-}
+if (assetMap.version !== 1) fail('bottle asset manifest version must be 1');
+if (assetMap.catalogue !== 'backend/data/catalogue.json') fail('bottle asset manifest catalogue path is incorrect');
+if (assetMap.directory !== '/images/products/bottles/') fail('bottle asset directory is incorrect');
 if (!Array.isArray(assetMap.assets) || assetMap.assets.length !== EXPECTED.length) {
   fail(`asset map must contain exactly ${EXPECTED.length} assets`);
 }
@@ -112,7 +106,7 @@ if (JSON.stringify(directoryFiles) !== JSON.stringify(expectedFiles)) {
 
 EXPECTED.forEach((expected, index) => {
   const actual = assetMap.assets[index];
-  for (const field of ['series', 'id', 'name', 'filename']) {
+  for (const field of ['identifier', 'name', 'filename']) {
     if (actual?.[field] !== expected[field]) {
       fail(`assets[${index}].${field} must be ${JSON.stringify(expected[field])}`);
     }
@@ -123,7 +117,7 @@ EXPECTED.forEach((expected, index) => {
     fail(`assets[${index}].path must be ${expectedPath}`);
   }
   if (intake.products?.[index]?.image !== expectedPath) {
-    fail(`final catalogue intake image for ${expected.id} must be ${expectedPath}`);
+    fail(`catalogue image for ${expected.identifier} must be ${expectedPath}`);
   }
   if (JSON.stringify(actual.size) !== JSON.stringify([1024, 1536])) {
     fail(`assets[${index}].size must be [1024,1536]`);
