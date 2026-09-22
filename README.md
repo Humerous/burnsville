@@ -1,12 +1,12 @@
 # Burnsville
 
-Current-only Burnsville MERN ecommerce application.
+Modernized Burnsville MERN ecommerce application preserved as a completed portfolio and learning project.
 
 ## Project status
 
-`READY FOR FINAL GITHUB PUSH / CLOSEOUT`
+`CLOSED — 2026-09-22`
 
-Final audit record: `docs/BURNSVILLE-CLOSEOUT.md`
+Final closeout record: `docs/BURNSVILLE-CLOSEOUT.md`
 
 Live reference: `https://burnsville-current.vercel.app/`
 
@@ -19,7 +19,7 @@ Live reference: `https://burnsville-current.vercel.app/`
 - current product identity authority: `BURNSVILLE-MASTER-AUTHORITY.md`
 - current visual authority: `docs/BURNSVILLE-VISUAL-IMPLEMENTATION-AUTHORITY-V1.1-END-OF-DAY.md`
 
-The repository contains no third-party sample catalogue or third-party product artwork.
+The active application contains only the current Burnsville catalogue and approved product artwork.
 
 ## Runtime data flow
 
@@ -58,6 +58,18 @@ npm run test:catalogue-validator
 npm run build --prefix frontend
 ```
 
+The final closeout commit passed GitHub Actions.
+
+## Repository state
+
+`main` is the authoritative final modernized branch.
+
+The former pre-modernization `main` state is preserved at:
+
+`archive/old-main-before-modernised-2026-09-22`
+
+Historical branches remain for recovery and provenance only.
+
 ## Control
 
-Use one current project, one current database and one current asset set. Do not reconnect this repository to an archived Burnsville database or copy old product fixtures/assets back into the working tree.
+Burnsville is closed. Do not reopen visual, catalogue or architecture work unless a verified defect requires corrective work.
