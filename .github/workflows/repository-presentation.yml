@@ -1,0 +1,41 @@
+name: Burnsville Repository Presentation
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  presentation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update repository presentation
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          gh api --method PATCH "repos/${GITHUB_REPOSITORY}"             -f description="Modern MERN eCommerce portfolio project with a 16-product hot sauce catalogue, cart, checkout, user accounts, admin tools and automated QA."             -f homepage="https://burnsville-current.vercel.app/"             -F has_wiki=false             -F has_projects=false
+
+          gh api --method PUT "repos/${GITHUB_REPOSITORY}/topics" --input - <<'JSON'
+          {
+            "names": [
+              "mern",
+              "react",
+              "vite",
+              "redux",
+              "nodejs",
+              "express",
+              "mongodb",
+              "mongoose",
+              "ecommerce",
+              "jwt",
+              "vercel",
+              "github-actions",
+              "portfolio-project"
+            ]
+          }
+          JSON
