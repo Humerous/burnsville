@@ -1,0 +1,33 @@
+name: Repository Housekeeping
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  clean-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove older workflow runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          gh api --paginate "repos/${GITHUB_REPOSITORY}/actions/runs?per_page=100"             --jq '.workflow_runs[] | select(.head_sha != env.GITHUB_SHA) | .id'             > /tmp/run-ids.txt
+
+          count=$(wc -l < /tmp/run-ids.txt | tr -d ' ')
+          echo "Removing ${count} older workflow runs."
+
+          while read -r id; do
+            [ -z "${id}" ] && continue
+            gh api --method DELETE "repos/${GITHUB_REPOSITORY}/actions/runs/${id}" >/dev/null 2>&1 || true
+          done < /tmp/run-ids.txt
+
+          remaining=$(gh api --paginate "repos/${GITHUB_REPOSITORY}/actions/runs?per_page=100" --jq '.workflow_runs | length' | awk '{s+=$1} END {print s+0}')
+          echo "Remaining workflow runs: ${remaining}"
