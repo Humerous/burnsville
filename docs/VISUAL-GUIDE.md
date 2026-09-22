@@ -1,8 +1,4 @@
-# BURNSVILLE — VISUAL AUTHORITY
-
-## STATUS
-
-`FINAL`
+# Burnsville Visual Guide
 
 ## PRODUCT ARTWORK
 

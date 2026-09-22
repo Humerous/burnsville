@@ -75,9 +75,9 @@ export const validateCatalogue = (
   const errors = [];
   const products = catalogue?.products;
 
-  if (catalogue?.authority !== 'BURNSVILLE-MASTER-AUTHORITY.md') {
+  if (catalogue?.authority !== 'docs/PRODUCT-CATALOGUE.md') {
     errors.push(
-      'catalogue authority must be BURNSVILLE-MASTER-AUTHORITY.md'
+      'catalogue authority must be docs/PRODUCT-CATALOGUE.md'
     );
   }
 

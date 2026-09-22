@@ -47,7 +47,7 @@ for (const required of [mapPath, intakePath, cardDirectory]) {
 const assetMap = JSON.parse(fs.readFileSync(mapPath, 'utf8'));
 const intake = JSON.parse(fs.readFileSync(intakePath, 'utf8'));
 
-if (assetMap.authority !== 'BURNSVILLE-MASTER-AUTHORITY.md') fail('card asset map authority is incorrect');
+if (assetMap.authority !== 'docs/PRODUCT-CATALOGUE.md') fail('card asset map authority is incorrect');
 if (assetMap.role !== 'PRIMARY_BROWSE_CARD_IMAGE') fail('card asset map role is incorrect');
 if (assetMap.asset_directory !== '/images/products/cards/') fail('card asset directory is incorrect');
 if (!Array.isArray(assetMap.assets) || assetMap.assets.length !== 16) fail('card asset map must contain exactly 16 assets');

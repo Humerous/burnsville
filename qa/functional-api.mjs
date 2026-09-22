@@ -2,11 +2,11 @@ import assert from 'node:assert/strict';
 
 const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:5001';
 const runId = `${Date.now()}-${process.pid}`;
-const password = 'Block10C!Pass123';
-const primaryEmail = `block10c-primary-${runId}@example.test`;
-const primaryUpdatedEmail = `block10c-primary-updated-${runId}@example.test`;
-const secondaryEmail = `block10c-secondary-${runId}@example.test`;
-const productName = `Block 10C Synthetic Sauce ${runId}`;
+const password = 'FunctionalQA!Pass123';
+const primaryEmail = `functional-primary-${runId}@example.test`;
+const primaryUpdatedEmail = `functional-primary-updated-${runId}@example.test`;
+const secondaryEmail = `functional-secondary-${runId}@example.test`;
+const productName = `Functional QA Synthetic Sauce ${runId}`;
 
 const request = async (path, options = {}) => {
   const headers = new Headers(options.headers || {});
@@ -116,7 +116,7 @@ const cleanup = async () => {
 };
 
 try {
-  console.log('BLOCK 10C: authenticate isolated admin fixture');
+  console.log('authenticate isolated admin fixture');
   const adminLogin = await request('/api/users/login', {
     method: 'POST',
     body: { email: 'admin@example.com', password: '123456' },
@@ -126,17 +126,17 @@ try {
   assert.ok(adminLogin.data.token, 'Admin fixture token missing');
   adminToken = adminLogin.data.token;
 
-  console.log('BLOCK 10C: registration and login verification');
+  console.log('registration and login verification');
   const registration = await request('/api/users', {
     method: 'POST',
     body: {
-      name: '  Block 10C Primary  ',
+      name: '  Functional QA Primary  ',
       email: `  ${primaryEmail.toUpperCase()}  `,
       password,
     },
   });
   expectStatus(registration, 201, 'Primary synthetic registration');
-  assert.equal(registration.data.name, 'Block 10C Primary', 'Registered name not normalized');
+  assert.equal(registration.data.name, 'Functional QA Primary', 'Registered name not normalized');
   assert.equal(registration.data.email, primaryEmail, 'Registered email not normalized');
   assert.equal(registration.data.isAdmin, false, 'Synthetic customer unexpectedly admin');
   assert.ok(registration.data.token, 'Registration token missing');
@@ -164,7 +164,7 @@ try {
   const secondaryRegistration = await request('/api/users', {
     method: 'POST',
     body: {
-      name: 'Block 10C Secondary',
+      name: 'Functional QA Secondary',
       email: secondaryEmail,
       password,
     },
@@ -173,17 +173,17 @@ try {
   secondaryToken = secondaryRegistration.data.token;
   secondaryUserId = secondaryRegistration.data._id;
 
-  console.log('BLOCK 10C: profile update verification');
+  console.log('profile update verification');
   const profileUpdate = await request('/api/users/profile', {
     method: 'PUT',
     token: primaryToken,
     body: {
-      name: '  Block 10C Primary Updated  ',
+      name: '  Functional QA Primary Updated  ',
       email: ` ${primaryUpdatedEmail.toUpperCase()} `,
     },
   });
   expectStatus(profileUpdate, 200, 'Profile update');
-  assert.equal(profileUpdate.data.name, 'Block 10C Primary Updated', 'Updated name not normalized');
+  assert.equal(profileUpdate.data.name, 'Functional QA Primary Updated', 'Updated name not normalized');
   assert.equal(profileUpdate.data.email, primaryUpdatedEmail, 'Updated email not normalized');
   assert.ok(profileUpdate.data.token, 'Updated profile token missing');
   primaryToken = profileUpdate.data.token;
@@ -205,7 +205,7 @@ try {
   expectStatus(updatedLogin, 200, 'Updated-email login');
   primaryToken = updatedLogin.data.token;
 
-  console.log('BLOCK 10C: admin API boundary verification');
+  console.log('admin API boundary verification');
   const customerUserList = await request('/api/users', { token: primaryToken });
   expectStatus(customerUserList, 403, 'Customer user-list denial');
 
@@ -237,7 +237,7 @@ try {
   });
   expectStatus(adminUserDetail, 200, 'Admin user detail');
 
-  console.log('BLOCK 10C: controlled synthetic product creation');
+  console.log('controlled synthetic product creation');
   const productCreate = await request('/api/products', {
     method: 'POST',
     token: adminToken,
@@ -254,7 +254,7 @@ try {
     brand: 'Burnsville QA',
     category: 'Synthetic QA',
     countInStock: 6,
-    description: 'Controlled Block 10C synthetic product used only in the isolated QA database.',
+    description: 'Controlled synthetic product used only in the isolated QA database.',
     heatLevel: 3,
     flavourProfile: 'Citrus, smoke, controlled QA',
     pairings: ['Tacos', 'Wings'],
@@ -277,7 +277,7 @@ try {
   });
   expectStatus(customerProductUpdate, 403, 'Customer product-update denial');
 
-  console.log('BLOCK 10C: catalogue and product-detail verification');
+  console.log('catalogue and product-detail verification');
   const catalogue = await request(
     `/api/products?keyword=${encodeURIComponent(productName)}&pageNumber=1`
   );
@@ -294,7 +294,7 @@ try {
   assert.equal(productDetail.data.countInStock, 6, 'Synthetic product starting stock incorrect');
   assert.deepEqual(productDetail.data.pairings, ['Tacos', 'Wings'], 'Synthetic pairings incorrect');
 
-  console.log('BLOCK 10C: review-submission verification');
+  console.log('review-submission verification');
   const unauthenticatedReview = await request(`/api/products/${syntheticProductId}/reviews`, {
     method: 'POST',
     body: { rating: 4, comment: 'Should not be accepted' },
@@ -304,7 +304,7 @@ try {
   const reviewCreate = await request(`/api/products/${syntheticProductId}/reviews`, {
     method: 'POST',
     token: primaryToken,
-    body: { rating: 4, comment: 'Controlled Block 10C review.' },
+    body: { rating: 4, comment: 'Controlled functional QA review.' },
   });
   expectStatus(reviewCreate, 201, 'Synthetic review creation');
 
@@ -326,7 +326,7 @@ try {
   });
   expectStatus(duplicateReview, 400, 'Duplicate review rejection');
 
-  console.log('BLOCK 10C: cart-to-order verification');
+  console.log('cart-to-order verification');
   const orderCreate = await request('/api/orders', {
     method: 'POST',
     token: primaryToken,
@@ -341,7 +341,7 @@ try {
         },
       ],
       shippingAddress: {
-        address: '10 Block C Street',
+        address: '10 Functional QA Street',
         city: 'Cape Town',
         postalCode: '8001',
         country: 'South Africa',
@@ -412,7 +412,7 @@ try {
   expectStatus(adminDeliver, 200, 'Admin delivery-state update');
   assert.equal(adminDeliver.data.isDelivered, true, 'Admin delivery update not persisted');
 
-  console.log('PASS: Block 10C controlled synthetic functional API QA');
+  console.log('FUNCTIONAL API QA PASSED');
 } finally {
   await cleanup();
 }

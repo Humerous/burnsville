@@ -52,7 +52,7 @@ const fail = (message) => {
   process.exit(1);
 };
 
-const masterPath = 'BURNSVILLE-MASTER-AUTHORITY.md';
+const masterPath = 'docs/PRODUCT-CATALOGUE.md';
 const intakePath = 'backend/data/burnsville-final-catalogue-intake.json';
 
 if (!fs.existsSync(masterPath)) fail(`${masterPath} is missing`);

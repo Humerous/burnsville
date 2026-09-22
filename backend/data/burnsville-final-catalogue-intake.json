@@ -1,6 +1,6 @@
 {
   "status": "AUTHORITATIVE CURRENT 16-PRODUCT BURNSVILLE RUNTIME CATALOGUE",
-  "authority": "BURNSVILLE-MASTER-AUTHORITY.md",
+  "authority": "docs/PRODUCT-CATALOGUE.md",
   "confirmedFacts": [
     "16 products total",
     "10 Core product identities",

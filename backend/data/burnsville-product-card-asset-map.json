@@ -1,6 +1,6 @@
 {
-  "status": "REVIEW 1 APPROVED FULL PRODUCT CARD MAP — SOURCE PACKAGE VERIFIED",
-  "authority": "BURNSVILLE-MASTER-AUTHORITY.md",
+  "status": "APPROVED FULL PRODUCT CARD MAP — SOURCE PACKAGE VERIFIED",
+  "authority": "docs/PRODUCT-CATALOGUE.md",
   "approved_on": "2026-09-21",
   "asset_directory": "/images/products/cards/",
   "role": "PRIMARY_BROWSE_CARD_IMAGE",
@@ -264,7 +264,7 @@
     }
   ],
   "rules": [
-    "BURNSVILLE-MASTER-AUTHORITY.md controls product identities and approved customer-facing wording.",
+    "docs/PRODUCT-CATALOGUE.md controls product identities and approved customer-facing wording.",
     "The 16 full product cards are primary customer-facing artwork for flavour selection, product discovery and browse/shop presentation.",
     "Card artwork is copied without redesign, crop, recolour, regeneration, typography replacement or wording changes.",
     "Runtime filenames may be ASCII-safe and do not replace the approved identities or artwork wording.",

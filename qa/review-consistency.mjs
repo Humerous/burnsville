@@ -52,7 +52,7 @@ const assertAuthoritativeSummary = (product, label) => {
   );
 };
 
-console.log('BLOCK 11B: verify catalogue review summaries');
+console.log('verify catalogue review summaries');
 const catalogue = await requestJson('/api/products');
 assert.ok(Array.isArray(catalogue.products), 'Catalogue products missing');
 assert.ok(catalogue.products.length > 0, 'Catalogue unexpectedly empty');
@@ -78,10 +78,10 @@ assert.equal(
   'Unreviewed catalogue product returned a non-zero rating'
 );
 
-console.log('BLOCK 11B: verify product-detail review summary');
+console.log('verify product-detail review summary');
 const detail = await requestJson(`/api/products/${catalogueProduct._id}`);
 assertAuthoritativeSummary(detail, `Product detail ${detail.name}`);
 assert.equal(detail.numReviews, 0, 'Product detail review count is not authoritative');
 assert.equal(detail.rating, 0, 'Product detail rating is not authoritative');
 
-console.log('BLOCK 11B review consistency QA passed');
+console.log('REVIEW CONSISTENCY QA PASSED');

@@ -88,8 +88,8 @@ if (!fs.existsSync(mapPath)) fail(`${mapPath} is missing`);
 
 const assetMap = JSON.parse(fs.readFileSync(mapPath, 'utf8'));
 const intake = JSON.parse(fs.readFileSync(intakePath, 'utf8'));
-if (assetMap.authority !== 'BURNSVILLE-MASTER-AUTHORITY.md') {
-  fail('asset map must declare BURNSVILLE-MASTER-AUTHORITY.md as authority');
+if (assetMap.authority !== 'docs/PRODUCT-CATALOGUE.md') {
+  fail('asset map must declare docs/PRODUCT-CATALOGUE.md as authority');
 }
 if (assetMap.role !== 'SECONDARY_PRODUCT_ASSET') {
   fail('asset map role must be SECONDARY_PRODUCT_ASSET');

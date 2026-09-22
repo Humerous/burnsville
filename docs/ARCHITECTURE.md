@@ -4,9 +4,9 @@
 
 Burnsville is a Vite/React frontend with an Express/Mongoose backend.
 
-## PRODUCT AUTHORITY
+## PRODUCT CATALOGUE
 
-- `BURNSVILLE-MASTER-AUTHORITY.md`
+- `docs/PRODUCT-CATALOGUE.md`
 - `backend/data/burnsville-final-catalogue-intake.json`
 - `backend/data/burnsville-product-asset-map.json`
 - `backend/data/burnsville-product-card-asset-map.json`

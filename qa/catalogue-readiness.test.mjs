@@ -21,7 +21,7 @@ const identities = [
 ];
 
 const buildCatalogue = () => ({
-  authority: 'BURNSVILLE-MASTER-AUTHORITY.md',
+  authority: 'docs/PRODUCT-CATALOGUE.md',
   products: identities.map(([collection, identifier, name]) => ({
     collection,
     identifier,

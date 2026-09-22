@@ -1,6 +1,4 @@
-/* Mobile/tablet header QA fixes: keep the drawer aligned with the left-side
-   hamburger trigger, prevent the Burnsville wordmark changing size when the
-   drawer opens, and use one controlled display typeface across devices. */
+/* Responsive mobile and tablet header layout. */
 
 :root {
   --burnsville-display-font: 'Anton', Impact, Haettenschweiler, 'Arial Narrow Bold',
@@ -18,9 +16,7 @@
 }
 
 @media (max-width: 1180px) {
-  /* Keep the mobile menu trigger and its close control on the same left-side
-     anchor. Opening the drawer must not make the control appear to jump from
-     the hamburger position to the opposite side of the panel. */
+  /* Keep the menu trigger and close control aligned to the same left-side anchor. */
   .burnsville-header__bar {
     grid-template-columns: 44px minmax(0, 1fr) 88px !important;
   }
@@ -88,9 +84,7 @@
     grid-template-columns: 44px minmax(0, 1fr) 88px !important;
   }
 
-  /* On phones the old 88vw drawer left a narrow strip of the underlying
-     header visible, including the cart control. That made the menu state look
-     unstable even though the trigger itself was anchored. */
+  /* Use the full viewport width for the mobile drawer. */
   .burnsville-drawer__panel {
     max-width: none !important;
     width: 100vw !important;

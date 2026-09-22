@@ -3,8 +3,7 @@
   "git": {
     "deploymentEnabled": {
       "*": false,
-      "main": false,
-      "modernise/burnsville-v2": true
+      "main": false
     }
   },
   "services": {

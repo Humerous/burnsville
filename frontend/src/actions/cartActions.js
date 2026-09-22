@@ -45,7 +45,7 @@ const writeCartItem = async (id, qty, increment, dispatch, getState) => {
 export const addToCart = (id, qty) => async (dispatch, getState) =>
   writeCartItem(id, qty, true, dispatch, getState);
 
-// Set an absolute quantity from the cart quantity selector / legacy cart route.
+// Set an absolute quantity from the cart quantity selector / cart route.
 export const setCartQuantity = (id, qty) => async (dispatch, getState) =>
   writeCartItem(id, qty, false, dispatch, getState);
 

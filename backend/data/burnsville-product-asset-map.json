@@ -1,6 +1,6 @@
 {
-  "status": "REVIEW 1 APPROVED TRANSPARENT BOTTLE ASSET MAP — BOTTLE QA PASSED",
-  "authority": "BURNSVILLE-MASTER-AUTHORITY.md",
+  "status": "APPROVED TRANSPARENT BOTTLE ASSET MAP — QA PASSED",
+  "authority": "docs/PRODUCT-CATALOGUE.md",
   "approved_on": "2026-09-13",
   "asset_directory": "/images/products/bottles/",
   "master_dimensions": [
@@ -252,7 +252,7 @@
     }
   ],
   "rules": [
-    "BURNSVILLE-MASTER-AUTHORITY.md controls product identities and approved customer-facing wording.",
+    "docs/PRODUCT-CATALOGUE.md controls product identities and approved customer-facing wording.",
     "All 16 transparent bottle WebPs remain approved product assets.",
     "Full product cards are the primary artwork for flavour selection, product discovery and browse/shop presentation.",
     "Transparent bottles are a separate asset class and are not the sole or primary browse image.",

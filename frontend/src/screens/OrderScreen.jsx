@@ -124,7 +124,7 @@ const OrderScreen = ({ match, history }) => {
 
     return (
       <div className='burnsville-order__provider-notice'>
-        <strong>Legacy payment method</strong>
+        <strong>Previous payment method</strong>
         <p>
           This order uses a payment method that is no longer offered by the
           current Burnsville checkout. The order remains unpaid.
