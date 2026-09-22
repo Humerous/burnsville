@@ -1,32 +1,24 @@
 # BURNSVILLE — PROJECT CONTROL
 
-## CURRENT PROJECT
+## STATUS
 
-This repository is the sole current Burnsville working tree.
+`COMPLETE`
+
+## AUTHORITATIVE BRANCH
+
+`main`
 
 ## CURRENT DATA CONTRACT
 
 - one current MongoDB database
-- 16 approved Burnsville products only
-- no archived third-party catalogue records in the active application
-- current bottle and card asset paths only
+- exactly 16 approved Burnsville products
+- approved card and bottle assets only
+- current catalogue authority enforced by repository QA
 
-## CURRENT STAGE
+## FINAL VERIFICATION
 
-`CLOSED — 2026-09-22`
+The final repository state passes GitHub Actions on Node 24, including frontend build, catalogue validation, isolated MongoDB setup, API checks and production-serving verification.
 
-The modernized project is authoritative on `main`.
+## CONTROL
 
-The final closeout commit passed GitHub Actions, including the Node 24 build, isolated MongoDB QA, catalogue API QA, integrated API QA, heat-filter QA, functional API QA and production-serving checks.
-
-The former `main` state is preserved at:
-
-`archive/old-main-before-modernised-2026-09-22`
-
-See `BURNSVILLE-CLOSEOUT.md` for final evidence, limitations and accepted residual items.
-
-## CONTROL RULE
-
-`DISCUSS → AGREE → COMMAND → APPROVE → EXECUTE → QA`
-
-Burnsville is closed. Do not reopen the project unless a verified defect requires corrective work.
+Burnsville is complete. Reopen only for a verified defect or an explicitly approved new scope.

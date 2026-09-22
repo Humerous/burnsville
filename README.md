@@ -1,40 +1,51 @@
 # Burnsville
 
-Modernized Burnsville MERN ecommerce application preserved as a completed portfolio and learning project.
+Modern MERN eCommerce portfolio project built around a 16-product hot sauce catalogue.
 
-## Project status
+**Live demo:** https://burnsville-current.vercel.app/
 
-`CLOSED — 2026-09-22`
+## Status
 
-Final closeout record: `docs/BURNSVILLE-CLOSEOUT.md`
+**Complete**
 
-Live reference: `https://burnsville-current.vercel.app/`
+The final application is maintained on `main` and has passed the repository CI suite on Node 24.
 
-## Current catalogue
+## Highlights
 
-- 16 approved Burnsville products only
-- full product cards for Home / Shop discovery
-- transparent bottle assets retained separately
-- current catalogue source: `backend/data/burnsville-final-catalogue-intake.json`
-- current product identity authority: `BURNSVILLE-MASTER-AUTHORITY.md`
-- current visual authority: `docs/BURNSVILLE-VISUAL-IMPLEMENTATION-AUTHORITY-V1.1-END-OF-DAY.md`
+- 16-product Burnsville catalogue
+- responsive Home, Shop and Product Detail experiences
+- dedicated product-card and transparent bottle artwork
+- cart and checkout flow
+- user registration, login and profile management
+- order workflow
+- admin product, user and order management
+- JWT authentication
+- MongoDB / Mongoose data layer
+- Vite production build
+- automated GitHub Actions QA
 
-The active application contains only the current Burnsville catalogue and approved product artwork.
+## Stack
 
-## Runtime data flow
+**Frontend:** React, Redux, React Router, Vite  
+**Backend:** Node.js, Express, Mongoose  
+**Database:** MongoDB  
+**Deployment:** Vercel  
+**CI:** GitHub Actions, Node 24
 
-`MongoDB Product → Express API → React UI → Cart → Checkout → Order`
+## Architecture
 
-MongoDB stores product data and asset paths. Runtime WebP assets live under:
+`MongoDB → Express API → React UI → Cart → Checkout → Order`
+
+Product data and asset paths are stored in MongoDB. Approved runtime artwork is served from:
 
 - `frontend/public/images/products/cards/`
 - `frontend/public/images/products/bottles/`
 
-## Commerce status
+The current catalogue source is:
 
-The checkout/order flow is retained for the project, but payment-provider choices are integration scaffolding only. Live gateway processing and merchant credentials are not implemented and must not be presented as production payment capability.
+`backend/data/burnsville-final-catalogue-intake.json`
 
-## Setup
+## Local setup
 
 Use Node 24.x.
 
@@ -46,7 +57,7 @@ npm run data:bootstrap
 npm run dev
 ```
 
-`npm run data:bootstrap` initializes an empty database with the approved 16-product Burnsville catalogue. It refuses to mix the current catalogue into a database containing unrelated products.
+`npm run data:bootstrap` initializes an empty database with the approved 16-product catalogue and refuses to mix unrelated product records into the current dataset.
 
 ## QA
 
@@ -58,18 +69,8 @@ npm run test:catalogue-validator
 npm run build --prefix frontend
 ```
 
-The final closeout commit passed GitHub Actions.
+The GitHub Actions workflow additionally verifies the current catalogue API, integrated API behaviour, heat filters, reviews, functional flows and production static serving.
 
-## Repository state
+## Commerce scope
 
-`main` is the authoritative final modernized branch.
-
-The former pre-modernization `main` state is preserved at:
-
-`archive/old-main-before-modernised-2026-09-22`
-
-Historical branches remain for recovery and provenance only.
-
-## Control
-
-Burnsville is closed. Do not reopen visual, catalogue or architecture work unless a verified defect requires corrective work.
+Checkout and order workflows are implemented. Payment-provider selections are integration scaffolding only; live merchant credentials and production gateway processing are not included in this portfolio build.
