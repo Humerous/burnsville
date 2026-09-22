@@ -1,7 +1,7 @@
 {
   "name": "burnsville-mern-app",
   "version": "1.0.0",
-  "description": "burnsville-mern-app",
+  "description": "Modern MERN eCommerce portfolio project for the Burnsville hot sauce catalogue.",
   "main": "server.js",
   "type": "module",
   "engines": {
@@ -37,5 +37,10 @@
   "devDependencies": {
     "concurrently": "5.3.0",
     "nodemon": "2.0.5"
+  },
+  "homepage": "https://burnsville-current.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Humerous/burnsville.git"
   }
 }

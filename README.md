@@ -71,6 +71,12 @@ npm run build --prefix frontend
 
 The GitHub Actions workflow additionally verifies the current catalogue API, integrated API behaviour, heat filters, reviews, functional flows and production static serving.
 
+## Documentation
+
+- [Architecture](docs/ARCHITECTURE.md)
+- [Product catalogue](docs/PRODUCT-CATALOGUE.md)
+- [Visual guide](docs/VISUAL-GUIDE.md)
+
 ## Commerce scope
 
 Checkout and order workflows are implemented. Payment-provider selections are integration scaffolding only; live merchant credentials and production gateway processing are not included in this portfolio build.
