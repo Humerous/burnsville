@@ -265,7 +265,7 @@ const ProductScreen = ({ history, match }) => {
                   </p>
 
                   <div className='burnsville-product-detail__description'>
-                    <h2>Product details</h2>
+                    <h2>About {product.name}</h2>
                     <p>{product.description}</p>
                   </div>
 
@@ -274,7 +274,6 @@ const ProductScreen = ({ history, match }) => {
                     aria-labelledby='burnsville-product-profile-title'
                   >
                     <div className='burnsville-product-profile__heading'>
-                      <p>Burnsville profile</p>
                       <h2 id='burnsville-product-profile-title'>Sauce profile</h2>
                     </div>
 
