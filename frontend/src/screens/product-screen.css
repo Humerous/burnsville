@@ -175,9 +175,9 @@
 
 .burnsville-product-detail__price {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
-  font-size: 2rem;
-  letter-spacing: 0.04em;
-  margin: 0 0 30px;
+  font-size: 1.7rem;
+  letter-spacing: 0.03em;
+  margin: 0 0 28px;
 }
 
 .burnsville-product-detail__description {
@@ -186,7 +186,17 @@
   padding: 24px 0;
 }
 
-.burnsville-product-detail__description h2,
+.burnsville-product-detail__description h2 {
+  color: rgba(17, 17, 17, 0.72);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  margin: 0 0 10px;
+  padding: 0;
+  text-transform: uppercase;
+}
+
 .burnsville-product-detail__review-form-panel h2 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
   font-size: 1.18rem;
