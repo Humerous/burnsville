@@ -2,6 +2,8 @@
 
 **Turn up the heat. Keep the flavour.**
 
+[![Burnsville showcase](docs/assets/burnsville-showcase.svg)](https://burnsville-current.vercel.app/)
+
 [![Burnsville QA](https://github.com/Humerous/burnsville/actions/workflows/qa.yml/badge.svg)](https://github.com/Humerous/burnsville/actions/workflows/qa.yml)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -9,7 +11,7 @@ A modern MERN eCommerce portfolio application built around a curated 16-product 
 
 **Live:** [burnsville-current.vercel.app](https://burnsville-current.vercel.app/)  
 **Stack:** React · Redux · Vite · Node.js · Express · MongoDB · Mongoose · Vercel  
-**Status:** Complete · Live
+**Status:** Complete · Live · Maintenance
 
 ## What it does
 
@@ -44,8 +46,8 @@ Product identity, heat level, copy, pricing, stock and runtime asset paths are d
 
 Each product has two verified WebP assets:
 
-- a transparent bottle image for bottle-led product presentation
-- a full product card for Home and Shop discovery
+- a transparent bottle image retained for catalogue, order, admin and fallback use
+- a full product card used across Home, Shop and Product Detail presentation
 
 Asset integrity is pinned by filename, dimensions and SHA-256 hash in:
 
@@ -87,6 +89,10 @@ Primary API surfaces:
 
 The final repository is maintained on `main` and protected by the Burnsville QA workflow.
 
+Production release:
+
+`68b8c44a` — `Merge approved Burnsville product presentation system`
+
 The release has passed:
 
 - locked 16-product catalogue validation
@@ -125,6 +131,8 @@ frontend/
   public/
   src/
 qa/
+docs/
+  assets/
 .github/workflows/qa.yml
 ```
 
