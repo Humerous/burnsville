@@ -1,4 +1,3 @@
-import fs from 'fs';
 import path from 'path';
 import express from 'express';
 import dotenv from 'dotenv';
@@ -30,100 +29,6 @@ const requireDB = async (req, res, next) => {
     next(error);
   }
 };
-
-const isPreviewWithoutDatabase =
-  process.env.VERCEL_ENV === 'preview' &&
-  !process.env.MONGO_URI &&
-  !process.env.MONGODB_URI;
-
-if (isPreviewWithoutDatabase) {
-  const catalogue = JSON.parse(
-    fs.readFileSync(
-      path.join(process.cwd(), 'backend', 'data', 'catalogue.json'),
-      'utf8',
-    ),
-  );
-
-  const previewProducts = catalogue.products.map((product) => ({
-    ...product,
-    _id: `preview-${product.identifier}`,
-    reviews: Array.isArray(product.reviews) ? product.reviews : [],
-    rating: Number(product.rating) || 0,
-    numReviews: Number(product.numReviews) || 0,
-  }));
-
-  const heatRanges = {
-    mild: [1, 3],
-    medium: [4, 6],
-    hot: [7, 8],
-    'very-hot': [9, 9],
-    extreme: [10, 10],
-  };
-
-  app.get('/api/products', (req, res) => {
-    const pageSize = 10;
-    const page = Number(req.query.pageNumber) || 1;
-    const keyword = req.query.keyword
-      ? String(req.query.keyword).trim().toLowerCase()
-      : '';
-    const requestedHeat = req.query.heat
-      ? String(req.query.heat).trim().toLowerCase()
-      : '';
-    const heatRange = requestedHeat ? heatRanges[requestedHeat] : null;
-
-    if (requestedHeat && !heatRange) {
-      return res.status(400).json({ message: 'Invalid heat filter' });
-    }
-
-    const filteredProducts = previewProducts.filter((product) => {
-      const matchesKeyword =
-        !keyword || product.name.toLowerCase().includes(keyword);
-      const heat = Number(product.heatLevel);
-      const matchesHeat =
-        !heatRange || (heat >= heatRange[0] && heat <= heatRange[1]);
-
-      return matchesKeyword && matchesHeat;
-    });
-
-    const start = pageSize * (page - 1);
-
-    return res.json({
-      products: filteredProducts.slice(start, start + pageSize),
-      page,
-      pages: Math.ceil(filteredProducts.length / pageSize),
-    });
-  });
-
-  app.get('/api/products/top', (req, res) => {
-    const products = [...previewProducts]
-      .sort((a, b) => {
-        if (b.rating !== a.rating) {
-          return b.rating - a.rating;
-        }
-
-        return b.numReviews - a.numReviews;
-      })
-      .slice(0, 3);
-
-    res.json(products);
-  });
-
-  app.get('/api/products/:id', (req, res, next) => {
-    if (!req.params.id.startsWith('preview-')) {
-      return next();
-    }
-
-    const product = previewProducts.find(
-      (item) => item._id === req.params.id,
-    );
-
-    if (!product) {
-      return res.status(404).json({ message: 'Product not found' });
-    }
-
-    return res.json(product);
-  });
-}
 
 app.use('/api/products', requireDB, productRoutes);
 app.use('/api/users', requireDB, userRoutes);
