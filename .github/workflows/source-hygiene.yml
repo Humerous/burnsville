@@ -1,0 +1,67 @@
+name: Source Hygiene Sweep
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  sweep:
+    if: github.event.head_commit.message == 'chore: run source hygiene sweep'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Remove tutorial-era source comments
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          patterns = ("*.js", "*.jsx")
+
+          for base in (Path("backend"), Path("frontend/src")):
+              for pattern in patterns:
+                  for path in base.rglob(pattern):
+                      text = path.read_text(encoding="utf-8")
+                      text = re.sub(r"^[ \t]*//[ \t]*<----[^\n]*\n?", "", text, flags=re.MULTILINE)
+                      text = re.sub(r"\n{3,}", "\n\n", text)
+                      text = re.sub(r"[ \t]+\n", "\n", text)
+                      path.write_text(text, encoding="utf-8")
+
+          order = Path("frontend/src/screens/OrderScreen.jsx")
+          text = order.read_text(encoding="utf-8")
+          text = text.replace("This Preview keeps the order unpaid", "This portfolio build keeps the order unpaid")
+          text = text.replace("This Preview keeps the\n            order unpaid", "This portfolio build keeps the\n            order unpaid")
+          order.write_text(text, encoding="utf-8")
+
+          Path(".github/workflows/source-hygiene.yml").unlink()
+          PY
+
+      - name: Verify hygiene
+        run: |
+          if git grep -n '<----' -- backend frontend/src; then
+            echo "Tutorial-era comments remain."
+            exit 1
+          fi
+          if git grep -n 'This Preview keeps' -- frontend/src; then
+            echo "Stale preview wording remains."
+            exit 1
+          fi
+          git diff --check
+
+      - name: Commit source hygiene
+        run: |
+          git config user.name "David Miller"
+          git config user.email "chameleonunicodestudios@gmail.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "chore: complete source hygiene sweep"
+          git push origin main
