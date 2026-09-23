@@ -20,7 +20,7 @@ jobs:
       - name: Clean source comments
         run: |
           find backend frontend/src -type f \( -name '*.js' -o -name '*.jsx' \) -print0 | xargs -0 perl -0pi -e 's/\?[ \t]*\/\/[ \t]*<----[^\n]*\n[ \t]*/? /g; s/^[ \t]*\/\/[ \t]*<----[^\n]*\n?//mg; s/\n{3,}/\n\n/g; s/[ \t]+\n/\n/g'
-          perl -0pi -e 's/This Preview keeps the\\s+order unpaid/This portfolio build keeps the order unpaid/g' frontend/src/screens/OrderScreen.jsx
+          perl -0pi -e 's/This Preview keeps the\s+order unpaid/This portfolio build keeps the order unpaid/g' frontend/src/screens/OrderScreen.jsx
           rm .github/workflows/source-hygiene.yml
 
       - name: Verify source hygiene
