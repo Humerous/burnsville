@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import Loader from '../Loader';
 import Message from '../Message';
 import { addToCart } from '../../actions/cartActions';
+import { getProductTheme } from '../../utils/productThemes';
 import './home-product-showcase.css';
 
 const formatPrice = (price) => `R${Number(price || 0).toFixed(2)}`;
@@ -45,18 +46,21 @@ const HomeProductCard = ({ product, featured, quickAddStatus, onQuickAdd }) => {
   const isInStock = !Number.isFinite(stockCount) || stockCount > 0;
   const isAdding = quickAddStatus === 'adding';
   const hasError = quickAddStatus === 'error';
+  const productTheme = getProductTheme(product);
 
   return (
     <article
       className={`home-product-card${featured ? ' home-product-card--featured' : ''}`}
     >
       <Link
-        className='home-product-card__image-link'
+        className={`home-product-card__image-link product-background ${
+          productTheme?.theme || ''
+        }`}
         to={`/product/${product._id}`}
         aria-label={`View ${product.name}`}
       >
         <img
-          className='home-product-card__image'
+          className='home-product-card__image product-artwork'
           src={product.cardImage || product.image}
           alt={product.name}
           loading='lazy'

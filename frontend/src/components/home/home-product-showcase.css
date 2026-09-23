@@ -144,19 +144,8 @@
   padding: clamp(8px, 1vw, 14px);
 }
 
-.home-product-card--featured .home-product-card__image-link {
-  background:
-    radial-gradient(circle at 50% 65%, rgba(210, 40, 43, 0.24), transparent 45%),
-    #151515;
-}
-
 .home-product-card__image {
-  height: 80%;
-  max-height: 80%;
-  max-width: 80%;
-  object-fit: contain;
   transition: transform 200ms cubic-bezier(0.25, 0.7, 0.2, 1);
-  width: 80%;
 }
 
 .home-product-card:hover .home-product-card__image {

@@ -222,12 +222,7 @@
 }
 
 .shop-product-card__image {
-  height: 80%;
-  max-height: 80%;
-  max-width: 80%;
-  object-fit: contain;
   transition: transform 200ms cubic-bezier(0.25, 0.7, 0.2, 1);
-  width: 80%;
 }
 
 .shop-product-card:hover .shop-product-card__image {

@@ -57,14 +57,17 @@ const Product = ({ product }) => {
   return (
     <>
       <article
-        className={`shop-product-card product-background ${
-          productTheme?.theme || ''
-        }`}
+        className='shop-product-card'
         aria-labelledby={titleId}
       >
-        <Link className='shop-product-card__media' to={productPath}>
+        <Link
+          className={`shop-product-card__media product-background ${
+            productTheme?.theme || ''
+          }`}
+          to={productPath}
+        >
           <img
-            className='shop-product-card__image'
+            className='shop-product-card__image product-artwork'
             src={product.cardImage}
             alt={product.name}
             loading='lazy'
