@@ -213,7 +213,6 @@ const ProductScreen = ({ history, match }) => {
                     productTheme?.theme || ''
                   }`}
                 >
-                  <div className='burnsville-product-detail__media-accent' />
                   <img src={product.cardImage} alt={product.name} />
                 </div>
 
