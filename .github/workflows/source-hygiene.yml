@@ -10,49 +10,25 @@ permissions:
 
 jobs:
   sweep:
-    if: github.event.head_commit.message == 'chore: run source hygiene sweep'
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 1
 
-      - name: Remove tutorial-era source comments
+      - name: Clean source comments
         run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
+          find backend frontend/src -type f \( -name '*.js' -o -name '*.jsx' \) -print0 | xargs -0 perl -0pi -e 's/^[ \t]*\/\/[ \t]*<----[^\n]*\n?//mg; s/\n{3,}/\n\n/g; s/[ \t]+\n/\n/g'
+          perl -0pi -e 's/This Preview keeps the order unpaid/This portfolio build keeps the order unpaid/g' frontend/src/screens/OrderScreen.jsx
+          rm .github/workflows/source-hygiene.yml
 
-          patterns = ("*.js", "*.jsx")
-
-          for base in (Path("backend"), Path("frontend/src")):
-              for pattern in patterns:
-                  for path in base.rglob(pattern):
-                      text = path.read_text(encoding="utf-8")
-                      text = re.sub(r"^[ \t]*//[ \t]*<----[^\n]*\n?", "", text, flags=re.MULTILINE)
-                      text = re.sub(r"\n{3,}", "\n\n", text)
-                      text = re.sub(r"[ \t]+\n", "\n", text)
-                      path.write_text(text, encoding="utf-8")
-
-          order = Path("frontend/src/screens/OrderScreen.jsx")
-          text = order.read_text(encoding="utf-8")
-          text = text.replace("This Preview keeps the order unpaid", "This portfolio build keeps the order unpaid")
-          text = text.replace("This Preview keeps the\n            order unpaid", "This portfolio build keeps the\n            order unpaid")
-          order.write_text(text, encoding="utf-8")
-
-          Path(".github/workflows/source-hygiene.yml").unlink()
-          PY
-
-      - name: Verify hygiene
+      - name: Verify source hygiene
         run: |
           if git grep -n '<----' -- backend frontend/src; then
-            echo "Tutorial-era comments remain."
             exit 1
           fi
           if git grep -n 'This Preview keeps' -- frontend/src; then
-            echo "Stale preview wording remains."
             exit 1
           fi
           git diff --check
