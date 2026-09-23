@@ -1,4 +1,3 @@
-import fs from 'fs';
 import path from 'path';
 import express from 'express';
 import dotenv from 'dotenv';
@@ -30,38 +29,6 @@ const requireDB = async (req, res, next) => {
     next(error);
   }
 };
-
-const isPreviewWithoutDatabase =
-  process.env.VERCEL_ENV === 'preview' &&
-  !process.env.MONGO_URI &&
-  !process.env.MONGODB_URI;
-
-if (isPreviewWithoutDatabase) {
-  const catalogue = JSON.parse(
-    fs.readFileSync(
-      path.join(process.cwd(), 'backend', 'data', 'catalogue.json'),
-      'utf8',
-    ),
-  );
-
-  app.get('/api/products', (req, res) => {
-    const pageSize = 10;
-    const page = Number(req.query.pageNumber) || 1;
-    const start = pageSize * (page - 1);
-    const products = catalogue.products
-      .slice(start, start + pageSize)
-      .map((product) => ({
-        ...product,
-        _id: `preview-${product.identifier}`,
-      }));
-
-    res.json({
-      products,
-      page,
-      pages: Math.ceil(catalogue.products.length / pageSize),
-    });
-  });
-}
 
 app.use('/api/products', requireDB, productRoutes);
 app.use('/api/users', requireDB, userRoutes);
