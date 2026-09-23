@@ -202,9 +202,7 @@
 
 .shop-product-card__media {
   align-items: center;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.24), transparent 58%),
-    rgba(17, 17, 17, 0.035);
+  background: rgba(17, 17, 17, 0.035);
   display: flex;
   height: 290px;
   justify-content: center;
@@ -224,10 +222,7 @@
 }
 
 .shop-product-card__image {
-  height: 100%;
-  object-fit: contain;
   transition: transform 200ms cubic-bezier(0.25, 0.7, 0.2, 1);
-  width: 100%;
 }
 
 .shop-product-card:hover .shop-product-card__image {

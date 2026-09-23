@@ -32,44 +32,60 @@
 
 .burnsville-newsletter__mark {
   align-items: center;
+  color: var(--newsletter-red-dark);
   display: flex;
   height: 68px;
+  isolation: isolate;
   justify-content: center;
   position: relative;
   width: 72px;
 }
 
-.burnsville-newsletter__mark::before,
-.burnsville-newsletter__mark::after {
-  border: 2px solid var(--newsletter-red-dark);
-  content: '';
-  inset: 9px 4px;
+.burnsville-newsletter__mark-icon {
+  display: block;
+  height: auto;
+  max-width: 64px;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.burnsville-newsletter__mark-icon rect,
+.burnsville-newsletter__mark-icon path {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 2.25;
+  vector-effect: non-scaling-stroke;
+}
+
+.burnsville-newsletter__mark-seal {
+  align-items: center;
+  background: var(--newsletter-cream);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2px var(--newsletter-cream),
+    0 0 0 3px rgba(184, 35, 27, 0.5),
+    0 2px 4px rgba(17, 17, 17, 0.18);
+  display: flex;
+  height: 29px;
+  justify-content: center;
+  left: 50%;
+  overflow: hidden;
   position: absolute;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: 29px;
+  z-index: 2;
 }
 
-.burnsville-newsletter__mark::after {
-  border-width: 0 0 2px 2px;
-  inset: 10px 5px 27px;
-  transform: rotate(-38deg) skewX(13deg);
-}
-
-.burnsville-newsletter__mark span::before,
-.burnsville-newsletter__mark span::after {
-  border-top: 2px solid var(--newsletter-red-dark);
-  content: '';
-  position: absolute;
-  top: 21px;
-  width: 39px;
-}
-
-.burnsville-newsletter__mark span::before {
-  left: 7px;
-  transform: rotate(31deg);
-}
-
-.burnsville-newsletter__mark span::after {
-  right: 7px;
-  transform: rotate(-31deg);
+.burnsville-newsletter__mark-seal img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .burnsville-newsletter__copy p {

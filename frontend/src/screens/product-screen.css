@@ -63,6 +63,9 @@
 }
 
 .burnsville-product-detail__grid {
+  --halo-x: 28%;
+  align-items: stretch;
+  border: 1px solid rgba(17, 17, 17, 0.3);
   display: grid;
   grid-template-columns: minmax(0, 1.06fr) minmax(360px, 0.94fr);
   min-height: 650px;
@@ -70,9 +73,6 @@
 
 .burnsville-product-detail__media {
   align-items: center;
-  background:
-    radial-gradient(circle at 50% 46%, rgba(210, 40, 43, 0.14), transparent 36%),
-    linear-gradient(145deg, #1d1d1b, var(--product-onyx) 72%);
   display: flex;
   justify-content: center;
   min-height: 650px;
@@ -81,33 +81,8 @@
   position: relative;
 }
 
-.burnsville-product-detail__media::before {
-  border: 1px solid rgba(243, 237, 228, 0.2);
-  content: '';
-  inset: 22px;
-  pointer-events: none;
-  position: absolute;
-}
-
-.burnsville-product-detail__media::after {
-  background: repeating-linear-gradient(
-    135deg,
-    rgba(243, 237, 228, 0.05) 0,
-    rgba(243, 237, 228, 0.05) 1px,
-    transparent 1px,
-    transparent 9px
-  );
-  content: '';
-  inset: 0;
-  pointer-events: none;
-  position: absolute;
-}
-
 .burnsville-product-detail__media img {
-  filter: drop-shadow(0 24px 24px rgba(0, 0, 0, 0.4));
-  max-height: 520px;
-  max-width: 100%;
-  object-fit: contain;
+  filter: drop-shadow(0 24px 24px rgba(0, 0, 0, 0.32));
   position: relative;
   transition: transform 300ms cubic-bezier(0.25, 0.7, 0.2, 1);
   z-index: 1;
@@ -117,27 +92,10 @@
   transform: scale(1.018);
 }
 
-.burnsville-product-detail__media-accent {
-  background: linear-gradient(
-    90deg,
-    var(--product-green) 0 28%,
-    transparent 28% 34%,
-    var(--product-orange) 34% 63%,
-    transparent 63% 69%,
-    var(--product-red) 69% 100%
-  );
-  height: 4px;
-  left: 44px;
-  position: absolute;
-  top: 44px;
-  width: 126px;
-  z-index: 2;
-}
-
 .burnsville-product-detail__information {
-  border: 1px solid rgba(17, 17, 17, 0.3);
-  border-left: 0;
-  padding: clamp(38px, 5vw, 72px);
+  background: rgba(255, 253, 248, 0.78);
+  padding: 28px 32px;
+  position: relative;
 }
 
 .burnsville-product-detail__eyebrow,
@@ -177,7 +135,7 @@
   color: var(--product-red-dark);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.82rem;
-  margin: 24px 0 14px;
+  margin: 16px 0 10px;
 }
 
 .burnsville-product-detail__rating .rating,
@@ -200,18 +158,29 @@
 
 .burnsville-product-detail__price {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
-  font-size: 2rem;
-  letter-spacing: 0.04em;
-  margin: 0 0 30px;
+  font-size: 1.7rem;
+  letter-spacing: 0.03em;
+  margin: 0 0 18px;
 }
 
 .burnsville-product-detail__description {
   border-bottom: 1px solid rgba(17, 17, 17, 0.24);
   border-top: 1px solid rgba(17, 17, 17, 0.24);
-  padding: 24px 0;
+  padding: 16px 0;
 }
 
-.burnsville-product-detail__description h2,
+.burnsville-product-detail__description h2 {
+  color: rgba(17, 17, 17, 0.82);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  padding: 0;
+  text-transform: uppercase;
+}
+
 .burnsville-product-detail__review-form-panel h2 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
   font-size: 1.18rem;
@@ -227,16 +196,17 @@
 .burnsville-product-detail__signin-message {
   color: rgba(17, 17, 17, 0.76);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.94rem;
-  line-height: 1.65;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.55;
   margin: 0;
 }
 
 .burnsville-product-detail__purchase {
   display: grid;
-  gap: 20px;
+  gap: 12px;
   grid-template-columns: minmax(0, 1fr) auto;
-  margin-top: 28px;
+  margin-top: 14px;
 }
 
 .burnsville-product-detail__availability {
@@ -271,9 +241,10 @@
 
 .burnsville-product-detail__quantity label,
 .burnsville-product-detail__field label {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
-  font-size: 0.76rem;
-  letter-spacing: 0.08em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   margin: 0;
   text-transform: uppercase;
 }
@@ -308,8 +279,8 @@
   font-size: 0.8rem;
   justify-content: center;
   letter-spacing: 0.09em;
-  min-height: 48px;
-  padding: 12px 24px;
+  min-height: 44px;
+  padding: 10px 22px;
   text-decoration: none;
   text-transform: uppercase;
   transition:
@@ -564,13 +535,7 @@
     padding: 48px;
   }
 
-  .burnsville-product-detail__media img {
-    max-height: 400px;
-  }
-
   .burnsville-product-detail__information {
-    border-left: 1px solid rgba(17, 17, 17, 0.3);
-    border-top: 0;
     padding: 42px 32px;
   }
 
@@ -604,16 +569,6 @@
 
   .burnsville-product-detail__media::before {
     inset: 14px;
-  }
-
-  .burnsville-product-detail__media-accent {
-    left: 28px;
-    top: 28px;
-    width: 92px;
-  }
-
-  .burnsville-product-detail__media img {
-    max-height: 310px;
   }
 
   .burnsville-product-detail__information {

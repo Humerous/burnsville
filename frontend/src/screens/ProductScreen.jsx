@@ -11,6 +11,8 @@ import {
 } from '../actions/productActions';
 import { addToCart } from '../actions/cartActions';
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants';
+import { getProductTheme } from '../utils/productThemes';
+import { getProductDisplayHeat } from '../utils/productHeat';
 import './product-screen.css';
 import './product-experience.css';
 
@@ -27,6 +29,30 @@ const formatPrice = (price) => {
   return Number.isFinite(numericPrice)
     ? priceFormatter.format(numericPrice)
     : 'Price unavailable';
+};
+
+const getHeatBand = (heat) => {
+  if (heat <= 3) {
+    return { key: 'mild', label: 'Mild' };
+  }
+
+  if (heat <= 6) {
+    return { key: 'medium', label: 'Medium' };
+  }
+
+  if (heat <= 8) {
+    return { key: 'hot', label: 'Hot' };
+  }
+
+  if (heat <= 10) {
+    return { key: 'extreme', label: 'Extreme' };
+  }
+
+  if (heat <= 14) {
+    return { key: 'beyond', label: 'Beyond extreme' };
+  }
+
+  return { key: 'caution', label: 'Use with caution' };
 };
 
 const ProductScreen = ({ history, match }) => {
@@ -84,6 +110,7 @@ const ProductScreen = ({ history, match }) => {
     return () => window.cancelAnimationFrame(focusFrame);
   }, [cartNotice]);
 
+  const productTheme = getProductTheme(product);
   const stockCount = product ? Number(product.countInStock) || 0 : 0;
   const cartItem = cartItems.find((item) => item.product === match.params.id);
   const qtyInCart = cartItem ? Number(cartItem.qty) || 0 : 0;
@@ -139,9 +166,12 @@ const ProductScreen = ({ history, match }) => {
     ? [...new Set(product.pairings.filter(Boolean))]
     : [];
   const productRating = product ? Number(product.rating) || 0 : 0;
-  const heatLevel = product && Number(product.heatLevel) >= 1 && Number(product.heatLevel) <= 10 ? Number(product.heatLevel) : null;
+  const heatLevel = getProductDisplayHeat(product);
+  const heatMeterLevel = heatLevel ? Math.min(heatLevel, 10) : null;
+  const heatOverflow = heatLevel && heatLevel > 10 ? Math.min(heatLevel - 10, 10) : 0;
+  const heatBand = heatLevel ? getHeatBand(heatLevel) : null;
   const reviewLabel = `${reviews.length} ${
-    reviews.length === 1 ? 'review' : 'reviews'
+    reviews.length === 1 ? 'REVIEW' : 'REVIEWS'
   }`;
   const stockLabel = stockCount <= 0
     ? 'Out of stock'
@@ -205,10 +235,17 @@ const ProductScreen = ({ history, match }) => {
                 <span aria-current='page'>{product.name}</span>
               </nav>
 
-              <div className='burnsville-product-detail__grid'>
+              <div
+                className={`burnsville-product-detail__grid product-background ${
+                  productTheme?.theme || ''
+                }`}
+              >
                 <div className='burnsville-product-detail__media'>
-                  <div className='burnsville-product-detail__media-accent' />
-                  <img src={product.image} alt={product.name} />
+                  <img
+                    className='product-artwork'
+                    src={product.cardImage}
+                    alt={product.name}
+                  />
                 </div>
 
                 <div className='burnsville-product-detail__information'>
@@ -248,15 +285,62 @@ const ProductScreen = ({ history, match }) => {
                     aria-labelledby='burnsville-product-profile-title'
                   >
                     <div className='burnsville-product-profile__heading'>
-                      <p>Burnsville profile</p>
-                      <h2 id='burnsville-product-profile-title'>Sauce profile</h2>
+                      <h2 id='burnsville-product-profile-title'>Burnsville profile</h2>
                     </div>
 
                     <dl className='burnsville-product-profile__facts'>
-                      {heatLevel && (
+                      {heatLevel && heatBand && (
                         <div className='burnsville-product-profile__fact burnsville-product-profile__fact--heat'>
                           <dt>Heat</dt>
-                          <dd>{heatLevel}/10</dd>
+                          <dd
+                            className={`burnsville-product-profile__heat-value burnsville-product-profile__heat-value--${heatBand.key}`}
+                          >
+                            <div className='burnsville-product-profile__heat-topline'>
+                              <span className='burnsville-product-profile__heat-score'>
+                                {heatLevel}/10
+                              </span>
+                              <span className='burnsville-product-profile__heat-badge'>
+                                {heatBand.label}
+                              </span>
+                            </div>
+
+                            <div
+                              className='burnsville-product-profile__heat-meter-wrap'
+                              role='img'
+                              aria-label={`Heat level ${heatLevel} out of 10, ${heatBand.label}`}
+                            >
+                              <div className='burnsville-product-profile__heat-meter'>
+                                {Array.from({ length: 10 }).map((_, index) => (
+                                  <span
+                                    className={`burnsville-product-profile__heat-meter-step ${
+                                      index < heatMeterLevel ? 'is-active' : ''
+                                    }`}
+                                    key={index}
+                                    aria-hidden='true'
+                                  />
+                                ))}
+                              </div>
+
+                              {heatOverflow > 0 && (
+                                <div className='burnsville-product-profile__heat-overflow'>
+                                  <div className='burnsville-product-profile__heat-overflow-meter'>
+                                    {Array.from({ length: 10 }).map((_, index) => (
+                                      <span
+                                        className={`burnsville-product-profile__heat-overflow-step ${
+                                          index < heatOverflow ? 'is-active' : ''
+                                        }`}
+                                        key={index}
+                                        aria-hidden='true'
+                                      />
+                                    ))}
+                                  </div>
+                                  <span className='burnsville-product-profile__heat-overflow-label'>
+                                    +{heatOverflow} over
+                                  </span>
+                                </div>
+                              )}
+                            </div>
+                          </dd>
                         </div>
                       )}
                       {product.flavourProfile && (

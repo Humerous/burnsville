@@ -1,29 +1,19 @@
 .burnsville-product-profile {
   border-bottom: 1px solid rgba(17, 17, 17, 0.24);
-  padding: 24px 0 2px;
+  padding: 16px 0 0;
 }
 
 .burnsville-product-profile__heading {
-  align-items: end;
-  display: flex;
-  gap: 14px;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.burnsville-product-profile__heading p {
-  color: var(--product-red-dark);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.13em;
-  margin: 0;
-  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .burnsville-product-profile__heading h2 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
-  font-size: 1.18rem;
+  color: var(--product-onyx);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
   letter-spacing: 0.08em;
+  line-height: 1.2;
   margin: 0;
   text-transform: uppercase;
 }
@@ -37,9 +27,9 @@
 .burnsville-product-profile__fact {
   border-top: 1px solid rgba(17, 17, 17, 0.18);
   display: grid;
-  gap: 5px;
-  min-height: 76px;
-  padding: 15px 14px 15px 0;
+  gap: 4px;
+  min-height: 58px;
+  padding: 9px 12px 9px 0;
 }
 
 .burnsville-product-profile__fact:nth-child(even) {
@@ -52,23 +42,144 @@
 .burnsville-product-profile__ingredients summary {
   color: rgba(17, 17, 17, 0.58);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .burnsville-product-profile__fact dd {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
-  font-size: 1.02rem;
-  letter-spacing: 0.04em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
   margin: 0;
   text-transform: uppercase;
 }
 
-.burnsville-product-profile__fact--heat dd {
-  color: var(--product-red-dark);
-  font-size: 1.35rem;
+.burnsville-product-profile__heat-value {
+  --heat-accent: #d84a1e;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.burnsville-product-profile__heat-value--mild {
+  --heat-accent: #6f972e;
+}
+
+.burnsville-product-profile__heat-value--medium {
+  --heat-accent: #d68a16;
+}
+
+.burnsville-product-profile__heat-value--hot {
+  --heat-accent: #d84a1e;
+}
+
+.burnsville-product-profile__heat-value--extreme {
+  --heat-accent: #b8231b;
+}
+
+.burnsville-product-profile__heat-value--beyond {
+  --heat-accent: #a71916;
+}
+
+.burnsville-product-profile__heat-value--caution {
+  --heat-accent: #7f0d0d;
+}
+
+.burnsville-product-profile__heat-topline {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.burnsville-product-profile__heat-score {
+  color: var(--heat-accent);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
+  font-size: 1.375rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.burnsville-product-profile__heat-badge {
+  align-items: center;
+  background: color-mix(in srgb, var(--heat-accent) 10%, white);
+  border: 1px solid color-mix(in srgb, var(--heat-accent) 38%, transparent);
+  color: var(--heat-accent);
+  display: inline-flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  min-height: 28px;
+  padding: 0 9px;
+  text-transform: uppercase;
+}
+
+.burnsville-product-profile__heat-meter-wrap {
+  max-width: 180px;
+  width: 100%;
+}
+
+.burnsville-product-profile__heat-meter {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  width: 100%;
+}
+
+.burnsville-product-profile__heat-meter-step {
+  background: rgba(17, 17, 17, 0.09);
+  height: 7px;
+}
+
+.burnsville-product-profile__heat-meter-step.is-active {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--heat-accent) 70%, white) 0%,
+    var(--heat-accent) 100%
+  );
+  box-shadow: 0 0 8px color-mix(in srgb, var(--heat-accent) 20%, transparent);
+}
+
+.burnsville-product-profile__heat-overflow {
+  margin-top: 5px;
+}
+
+.burnsville-product-profile__heat-overflow-meter {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  width: 100%;
+}
+
+.burnsville-product-profile__heat-overflow-step {
+  background: rgba(127, 13, 13, 0.08);
+  height: 5px;
+}
+
+.burnsville-product-profile__heat-overflow-step.is-active {
+  background: var(--heat-accent);
+  box-shadow:
+    0 0 7px color-mix(in srgb, var(--heat-accent) 34%, transparent),
+    0 0 14px color-mix(in srgb, var(--heat-accent) 18%, transparent);
+}
+
+.burnsville-product-profile__heat-overflow-label {
+  color: var(--heat-accent);
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+  text-align: right;
+  text-transform: uppercase;
 }
 
 /* Inventory is supporting commerce information, not a display headline. */
@@ -109,25 +220,25 @@
   display: inline-flex;
   flex-direction: row;
   gap: 10px;
-  min-height: 44px;
-  padding: 9px 12px;
+  min-height: 40px;
+  padding: 7px 10px;
   width: fit-content;
 }
 
 .burnsville-product-detail__availability > span {
-  color: rgba(17, 17, 17, 0.56);
-  font-size: 0.64rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  color: rgba(17, 17, 17, 0.58);
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
 }
 
 .burnsville-product-detail__availability strong {
   align-items: center;
   display: inline-flex;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .burnsville-product-detail__availability strong::before {
@@ -142,7 +253,7 @@
 
 .burnsville-product-profile__pairings {
   border-top: 1px solid rgba(17, 17, 17, 0.18);
-  padding: 18px 0;
+  padding: 11px 0;
 }
 
 .burnsville-product-profile__pairings ul {
@@ -150,22 +261,23 @@
   flex-wrap: wrap;
   gap: 8px;
   list-style: none;
-  margin: 10px 0 0;
+  margin: 7px 0 0;
   padding: 0;
 }
 
 .burnsville-product-profile__pairings li {
-  border: 1px solid rgba(17, 17, 17, 0.32);
+  border: 1px solid rgba(17, 17, 17, 0.28);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  padding: 7px 9px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 8px 10px;
   text-transform: uppercase;
 }
 
 .burnsville-product-profile__ingredients {
   border-top: 1px solid rgba(17, 17, 17, 0.18);
-  padding: 17px 0 19px;
+  padding: 11px 0 12px;
 }
 
 .burnsville-product-profile__ingredients summary {
@@ -176,16 +288,18 @@
 .burnsville-product-profile__ingredients p {
   color: rgba(17, 17, 17, 0.72);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.86rem;
+  font-size: 1.125rem;
   line-height: 1.55;
   margin: 12px 0 0;
 }
 
 @media (max-width: 520px) {
-  .burnsville-product-profile__heading {
-    align-items: start;
-    flex-direction: column;
-    gap: 6px;
+  .burnsville-product-profile__heat-meter-wrap {
+    max-width: none;
+  }
+
+  .burnsville-product-profile__heat-value {
+    width: 100%;
   }
 
   .burnsville-product-profile__facts {
