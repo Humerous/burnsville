@@ -70,37 +70,12 @@
 
 .burnsville-product-detail__media {
   align-items: center;
-  background:
-    radial-gradient(circle at 50% 46%, rgba(210, 40, 43, 0.14), transparent 36%),
-    linear-gradient(145deg, #1d1d1b, var(--product-onyx) 72%);
   display: flex;
   justify-content: center;
   min-height: 650px;
   overflow: hidden;
   padding: 58px;
   position: relative;
-}
-
-.burnsville-product-detail__media::before {
-  border: 1px solid rgba(243, 237, 228, 0.2);
-  content: '';
-  inset: 22px;
-  pointer-events: none;
-  position: absolute;
-}
-
-.burnsville-product-detail__media::after {
-  background: repeating-linear-gradient(
-    135deg,
-    rgba(243, 237, 228, 0.05) 0,
-    rgba(243, 237, 228, 0.05) 1px,
-    transparent 1px,
-    transparent 9px
-  );
-  content: '';
-  inset: 0;
-  pointer-events: none;
-  position: absolute;
 }
 
 .burnsville-product-detail__media img {

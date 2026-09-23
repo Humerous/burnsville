@@ -11,6 +11,7 @@ import {
 } from '../actions/productActions';
 import { addToCart } from '../actions/cartActions';
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants';
+import { getProductTheme } from '../utils/productThemes';
 import './product-screen.css';
 import './product-experience.css';
 
@@ -84,6 +85,7 @@ const ProductScreen = ({ history, match }) => {
     return () => window.cancelAnimationFrame(focusFrame);
   }, [cartNotice]);
 
+  const productTheme = getProductTheme(product);
   const stockCount = product ? Number(product.countInStock) || 0 : 0;
   const cartItem = cartItems.find((item) => item.product === match.params.id);
   const qtyInCart = cartItem ? Number(cartItem.qty) || 0 : 0;
@@ -206,7 +208,11 @@ const ProductScreen = ({ history, match }) => {
               </nav>
 
               <div className='burnsville-product-detail__grid'>
-                <div className='burnsville-product-detail__media'>
+                <div
+                  className={`burnsville-product-detail__media product-background ${
+                    productTheme?.theme || ''
+                  }`}
+                >
                   <div className='burnsville-product-detail__media-accent' />
                   <img src={product.cardImage} alt={product.name} />
                 </div>
