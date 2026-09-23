@@ -11,9 +11,17 @@ const connectDB = async () => {
     return mongoose.connection;
   }
 
-  const conn = await mongoose.connect(mongoUri, {
-    dbName: process.env.MONGO_DB_NAME || 'burnsville_current',
-  });
+  const hasDatabaseName =
+    /^mongodb(?:\+srv)?:\/\/[^/]+\/[^/?]+/.test(mongoUri);
+
+  const conn = await mongoose.connect(
+    mongoUri,
+    hasDatabaseName
+      ? {}
+      : {
+          dbName: process.env.MONGO_DB_NAME || 'burnsville_current',
+        },
+  );
 
   console.log(
     `MongoDB Connected: ${conn.connection.host} / ${conn.connection.name}`,
