@@ -30,6 +30,22 @@ const formatPrice = (price) => {
     : 'Price unavailable';
 };
 
+const getHeatBand = (heat) => {
+  if (heat <= 3) {
+    return { key: 'mild', label: 'Mild' };
+  }
+
+  if (heat <= 6) {
+    return { key: 'medium', label: 'Medium' };
+  }
+
+  if (heat <= 8) {
+    return { key: 'hot', label: 'Hot' };
+  }
+
+  return { key: 'extreme', label: 'Extreme' };
+};
+
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState('');
@@ -142,6 +158,7 @@ const ProductScreen = ({ history, match }) => {
     : [];
   const productRating = product ? Number(product.rating) || 0 : 0;
   const heatLevel = product && Number(product.heatLevel) >= 1 && Number(product.heatLevel) <= 10 ? Number(product.heatLevel) : null;
+  const heatBand = heatLevel ? getHeatBand(heatLevel) : null;
   const reviewLabel = `${reviews.length} ${
     reviews.length === 1 ? 'review' : 'reviews'
   }`;
@@ -262,10 +279,37 @@ const ProductScreen = ({ history, match }) => {
                     </div>
 
                     <dl className='burnsville-product-profile__facts'>
-                      {heatLevel && (
+                      {heatLevel && heatBand && (
                         <div className='burnsville-product-profile__fact burnsville-product-profile__fact--heat'>
                           <dt>Heat</dt>
-                          <dd>{heatLevel}/10</dd>
+                          <dd
+                            className={`burnsville-product-profile__heat-value burnsville-product-profile__heat-value--${heatBand.key}`}
+                          >
+                            <div className='burnsville-product-profile__heat-topline'>
+                              <span className='burnsville-product-profile__heat-score'>
+                                {heatLevel}/10
+                              </span>
+                              <span className='burnsville-product-profile__heat-badge'>
+                                {heatBand.label}
+                              </span>
+                            </div>
+
+                            <div
+                              className='burnsville-product-profile__heat-meter'
+                              role='img'
+                              aria-label={`Heat level ${heatLevel} out of 10, ${heatBand.label}`}
+                            >
+                              {Array.from({ length: 10 }).map((_, index) => (
+                                <span
+                                  className={`burnsville-product-profile__heat-meter-step ${
+                                    index < heatLevel ? 'is-active' : ''
+                                  }`}
+                                  key={index}
+                                  aria-hidden='true'
+                                />
+                              ))}
+                            </div>
+                          </dd>
                         </div>
                       )}
                       {product.flavourProfile && (

@@ -71,12 +71,81 @@
   text-transform: uppercase;
 }
 
-.burnsville-product-profile__fact--heat dd {
-  color: var(--product-red-dark);
+.burnsville-product-profile__heat-value {
+  --heat-accent: #d84a1e;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.burnsville-product-profile__heat-value--mild {
+  --heat-accent: #6f972e;
+}
+
+.burnsville-product-profile__heat-value--medium {
+  --heat-accent: #d68a16;
+}
+
+.burnsville-product-profile__heat-value--hot {
+  --heat-accent: #d84a1e;
+}
+
+.burnsville-product-profile__heat-value--extreme {
+  --heat-accent: #b8231b;
+}
+
+.burnsville-product-profile__heat-topline {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.burnsville-product-profile__heat-score {
+  color: var(--heat-accent);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
-  font-size: 1.16rem;
+  font-size: 1.2rem;
   font-weight: 900;
   letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.burnsville-product-profile__heat-badge {
+  align-items: center;
+  background: color-mix(in srgb, var(--heat-accent) 10%, white);
+  border: 1px solid color-mix(in srgb, var(--heat-accent) 38%, transparent);
+  color: var(--heat-accent);
+  display: inline-flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  min-height: 22px;
+  padding: 0 8px;
+  text-transform: uppercase;
+}
+
+.burnsville-product-profile__heat-meter {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  max-width: 180px;
+  width: 100%;
+}
+
+.burnsville-product-profile__heat-meter-step {
+  background: rgba(17, 17, 17, 0.09);
+  height: 7px;
+}
+
+.burnsville-product-profile__heat-meter-step.is-active {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--heat-accent) 70%, white) 0%,
+    var(--heat-accent) 100%
+  );
+  box-shadow: 0 0 8px color-mix(in srgb, var(--heat-accent) 20%, transparent);
 }
 
 /* Inventory is supporting commerce information, not a display headline. */
@@ -190,6 +259,14 @@
 }
 
 @media (max-width: 520px) {
+  .burnsville-product-profile__heat-meter {
+    max-width: none;
+  }
+
+  .burnsville-product-profile__heat-value {
+    width: 100%;
+  }
+
   .burnsville-product-profile__heading {
     align-items: start;
     flex-direction: column;
