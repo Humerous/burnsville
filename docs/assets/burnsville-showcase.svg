@@ -1,109 +1,113 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
   <title id="title">Burnsville — Turn up the heat. Keep the flavour.</title>
-  <desc id="desc">Burnsville hot sauce repository showcase for the sixteen-product Core and Limited / Vintage collection.</desc>
+  <desc id="desc">Clean cream and dark Burnsville repository showcase using the same wordmark treatment as the live website.</desc>
 
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#120f0d"/>
-      <stop offset="0.58" stop-color="#1a1512"/>
-      <stop offset="1" stop-color="#271c16"/>
-    </linearGradient>
-    <radialGradient id="emberGlow" cx="0.28" cy="0.48" r="0.62">
-      <stop offset="0" stop-color="#c82029" stop-opacity="0.34"/>
-      <stop offset="0.46" stop-color="#a91d24" stop-opacity="0.13"/>
-      <stop offset="1" stop-color="#a91d24" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="creamPanel" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="cream" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#fffdf8"/>
-      <stop offset="1" stop-color="#f3ede4"/>
+      <stop offset="0.62" stop-color="#f3ede4"/>
+      <stop offset="1" stop-color="#eadfce"/>
     </linearGradient>
-    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
-      <feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#000000" flood-opacity="0.35"/>
+    <linearGradient id="dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#181411"/>
+      <stop offset="0.56" stop-color="#111111"/>
+      <stop offset="1" stop-color="#090807"/>
+    </linearGradient>
+    <linearGradient id="sauce" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#df4b28"/>
+      <stop offset="0.48" stop-color="#b8231b"/>
+      <stop offset="1" stop-color="#74140f"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.55" cy="0.48" r="0.55">
+      <stop offset="0" stop-color="#d2282b" stop-opacity="0.42"/>
+      <stop offset="0.46" stop-color="#c82029" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#c82029" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="190%">
+      <feDropShadow dx="0" dy="28" stdDeviation="32" flood-color="#000000" flood-opacity="0.42"/>
     </filter>
   </defs>
 
-  <rect width="1600" height="900" rx="42" fill="url(#bg)"/>
-  <rect width="1600" height="900" rx="42" fill="url(#emberGlow)"/>
-  <circle cx="1445" cy="145" r="235" fill="#c82029" opacity="0.08"/>
-  <circle cx="1360" cy="790" r="280" fill="#efb556" opacity="0.045"/>
+  <rect width="1600" height="900" rx="42" fill="url(#cream)"/>
+  <path d="M1040 0H1600V900H720Z" fill="url(#dark)"/>
+  <path d="M1072 0H1100L782 900H752Z" fill="#d2282b" opacity="0.78"/>
+  <circle cx="1260" cy="438" r="330" fill="url(#halo)"/>
 
-  <g transform="translate(105 95)">
-    <rect x="0" y="0" width="580" height="710" rx="34" fill="#0d0b0a" stroke="#4d3b31" stroke-width="2" filter="url(#shadow)"/>
+  <!-- Left: website-aligned brand lockup -->
+  <g transform="translate(118 118)">
+    <text x="0" y="62" fill="#b8231b" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="800" letter-spacing="4">CHAMELEON UNICODE STUDIOS</text>
 
-    <text x="42" y="70" fill="#efb556" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">16 PRODUCT COLLECTION</text>
-    <text x="42" y="150" fill="#f3ede4" font-family="Impact, Arial Black, sans-serif" font-size="78" letter-spacing="2">BURNSVILLE</text>
-    <text x="45" y="198" fill="#c82029" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" letter-spacing="5">HOT SAUCE</text>
+    <text x="0" y="220" fill="#111111" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif" font-size="126" font-weight="900" letter-spacing="4">BURNSVILLE</text>
 
-    <g transform="translate(42 250)">
-      <rect x="0" y="0" width="220" height="360" rx="20" fill="url(#creamPanel)" stroke="#8b7767" stroke-width="2"/>
-      <ellipse cx="110" cy="158" rx="90" ry="118" fill="#c93224" opacity="0.14"/>
-      <rect x="68" y="62" width="84" height="196" rx="22" fill="#1a1512"/>
-      <rect x="78" y="95" width="64" height="90" rx="8" fill="#f3ede4"/>
-      <rect x="88" y="46" width="44" height="34" rx="7" fill="#111111"/>
-      <text x="110" y="132" text-anchor="middle" fill="#c82029" font-family="Impact, Arial Black, sans-serif" font-size="18">BURNSVILLE</text>
-      <text x="110" y="158" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" letter-spacing="1.5">RED EMBER</text>
-      <rect x="32" y="292" width="156" height="12" rx="6" fill="#d8cbbd"/>
-      <rect x="32" y="292" width="142" height="12" rx="6" fill="#c82029"/>
-      <text x="32" y="332" fill="#6a594d" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">CORE / 10</text>
+    <g transform="translate(6 250)">
+      <rect x="0" y="18" width="154" height="4" fill="#d2282b"/>
+      <text x="185" y="29" fill="#b8231b" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif" font-size="31" font-weight="900" letter-spacing="8">HOT SAUCE</text>
+      <rect x="426" y="18" width="154" height="4" fill="#d2282b"/>
     </g>
 
-    <g transform="translate(292 250)">
-      <rect x="0" y="0" width="246" height="360" rx="20" fill="#17120f" stroke="#6e5443" stroke-width="2"/>
-      <text x="26" y="44" fill="#efb556" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2.5">LIMITED / VINTAGE</text>
+    <text x="0" y="360" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">TURN UP THE <tspan fill="#b8231b">HEAT.</tspan></text>
+    <text x="0" y="408" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">KEEP THE FLAVOUR.</text>
 
-      <g transform="translate(26 80)">
-        <rect x="0" y="0" width="86" height="86" rx="14" fill="#59276f"/>
-        <text x="43" y="51" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="800">B-42</text>
-        <rect x="108" y="0" width="86" height="86" rx="14" fill="#875522"/>
-        <text x="151" y="51" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800">CASK-13</text>
+    <line x1="0" y1="458" x2="650" y2="458" stroke="#b9aa99" stroke-width="2"/>
 
-        <rect x="0" y="104" width="86" height="86" rx="14" fill="#63802d"/>
-        <text x="43" y="155" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">P-X</text>
-        <rect x="108" y="104" width="86" height="86" rx="14" fill="#2875a6"/>
-        <text x="151" y="155" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="800">POT-7</text>
+    <text x="0" y="515" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800" letter-spacing="2">16 PRODUCT COLLECTION</text>
+    <text x="0" y="557" fill="#6e6156" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">10 CORE <tspan fill="#b8231b">|</tspan> 6 LIMITED / VINTAGE</text>
 
-        <rect x="0" y="208" width="86" height="86" rx="14" fill="#d52868"/>
-        <text x="43" y="259" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800">TMR-200</text>
-        <rect x="108" y="208" width="86" height="86" rx="14" fill="#a6261c"/>
-        <text x="151" y="259" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800">X-666</text>
-      </g>
+    <g transform="translate(0 616)">
+      <rect x="0" y="0" width="132" height="52" rx="13" fill="#111111"/>
+      <text x="66" y="33" text-anchor="middle" fill="#f3ede4" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800">REACT</text>
+
+      <rect x="146" y="0" width="132" height="52" rx="13" fill="#111111"/>
+      <text x="212" y="33" text-anchor="middle" fill="#f3ede4" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800">REDUX</text>
+
+      <rect x="292" y="0" width="132" height="52" rx="13" fill="#111111"/>
+      <text x="358" y="33" text-anchor="middle" fill="#f3ede4" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800">NODE</text>
+
+      <rect x="438" y="0" width="132" height="52" rx="13" fill="#111111"/>
+      <text x="504" y="33" text-anchor="middle" fill="#f3ede4" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800">EXPRESS</text>
+
+      <rect x="584" y="0" width="132" height="52" rx="13" fill="#111111"/>
+      <text x="650" y="33" text-anchor="middle" fill="#f3ede4" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800">MONGODB</text>
     </g>
+  </g>
 
-    <text x="42" y="666" fill="#8f796a" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">10 CORE  ·  6 LIMITED / VINTAGE</text>
+  <!-- Right: product-led visual, deliberately illustrative and self-contained -->
+  <g transform="translate(1160 425) rotate(13)" filter="url(#shadow)">
+    <rect x="-92" y="-318" width="184" height="76" rx="18" fill="#0a0908"/>
+    <rect x="-112" y="-258" width="224" height="500" rx="74" fill="url(#sauce)" stroke="#442017" stroke-width="5"/>
+    <rect x="-116" y="-58" width="232" height="228" rx="24" fill="#111111"/>
+    <rect x="-92" y="-31" width="184" height="174" rx="12" fill="#171310" stroke="#5a4639" stroke-width="2"/>
+
+    <text x="0" y="24" text-anchor="middle" fill="#f3ede4" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif" font-size="36" font-weight="900" letter-spacing="2">BURNSVILLE</text>
+    <g transform="translate(-64 43)">
+      <rect x="0" y="11" width="39" height="3" fill="#d2282b"/>
+      <text x="64" y="18" text-anchor="middle" fill="#d2282b" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif" font-size="12" font-weight="900" letter-spacing="3">HOT SAUCE</text>
+      <rect x="90" y="11" width="39" height="3" fill="#d2282b"/>
+    </g>
+    <text x="0" y="94" text-anchor="middle" fill="#f3ede4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800" letter-spacing="3">RED EMBER</text>
+    <text x="0" y="122" text-anchor="middle" fill="#a99788" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="2">04 · CORE</text>
+  </g>
+
+  <!-- restrained product accents -->
+  <g opacity="0.95">
+    <circle cx="950" cy="756" r="22" fill="#7fa52b"/>
+    <circle cx="1002" cy="756" r="22" fill="#e28a18"/>
+    <circle cx="1054" cy="756" r="22" fill="#278b8d"/>
+    <circle cx="1106" cy="756" r="22" fill="#a52570"/>
+    <circle cx="1158" cy="756" r="22" fill="#59276f"/>
+    <circle cx="1210" cy="756" r="22" fill="#2875a6"/>
+    <circle cx="1262" cy="756" r="22" fill="#d52868"/>
+    <circle cx="1314" cy="756" r="22" fill="#a6261c"/>
   </g>
 
   <g font-family="Arial, Helvetica, sans-serif">
-    <text x="780" y="190" fill="#efb556" font-size="20" font-weight="700" letter-spacing="4">CHAMELEON UNICODE STUDIOS</text>
-    <text x="775" y="285" fill="#f3ede4" font-family="Impact, Arial Black, sans-serif" font-size="104" letter-spacing="1">BURNSVILLE</text>
-    <text x="780" y="348" fill="#c82029" font-size="32" font-weight="800" letter-spacing="4">TURN UP THE HEAT.</text>
-    <text x="780" y="393" fill="#f3ede4" font-size="32" font-weight="800" letter-spacing="4">KEEP THE FLAVOUR.</text>
+    <text x="862" y="817" fill="#f3ede4" font-size="18" font-weight="800" letter-spacing="2">FULL-STACK MERN ECOMMERCE</text>
+    <text x="862" y="851" fill="#a99788" font-size="16">burnsville-current.vercel.app</text>
 
-    <text x="780" y="468" fill="#b9a99a" font-size="25">A full-stack MERN eCommerce portfolio build</text>
-    <text x="780" y="507" fill="#b9a99a" font-size="25">with a curated sixteen-product hot sauce catalogue.</text>
+    <text x="1392" y="812" text-anchor="end" fill="#a99788" font-size="14" font-weight="800" letter-spacing="2">ORIGINAL REPO</text>
+    <text x="1392" y="840" text-anchor="end" fill="#f3ede4" font-size="20" font-weight="800">27 OCT 2020</text>
 
-    <g transform="translate(780 560)">
-      <rect x="0" y="0" width="154" height="52" rx="14" fill="#201a16" stroke="#6a594d"/>
-      <text x="77" y="33" text-anchor="middle" fill="#f3ede4" font-size="17" font-weight="700">REACT + REDUX</text>
-
-      <rect x="170" y="0" width="140" height="52" rx="14" fill="#201a16" stroke="#6a594d"/>
-      <text x="240" y="33" text-anchor="middle" fill="#f3ede4" font-size="17" font-weight="700">NODE + EXPRESS</text>
-
-      <rect x="326" y="0" width="126" height="52" rx="14" fill="#201a16" stroke="#6a594d"/>
-      <text x="389" y="33" text-anchor="middle" fill="#f3ede4" font-size="17" font-weight="700">MONGODB</text>
-
-      <rect x="468" y="0" width="112" height="52" rx="14" fill="#201a16" stroke="#6a594d"/>
-      <text x="524" y="33" text-anchor="middle" fill="#f3ede4" font-size="17" font-weight="700">VERCEL</text>
-    </g>
-
-    <line x1="780" y1="662" x2="1490" y2="662" stroke="#4d3b31" stroke-width="2"/>
-
-    <text x="780" y="710" fill="#8f796a" font-size="17" font-weight="700" letter-spacing="2">ORIGINAL REPOSITORY</text>
-    <text x="780" y="752" fill="#f3ede4" font-size="29" font-weight="800">27 Oct 2020</text>
-
-    <text x="1100" y="710" fill="#8f796a" font-size="17" font-weight="700" letter-spacing="2">FINAL RELEASE</text>
-    <text x="1100" y="752" fill="#f3ede4" font-size="29" font-weight="800">23 Sep 2026</text>
-
-    <text x="780" y="820" fill="#efb556" font-size="19" font-weight="700">burnsville-current.vercel.app</text>
-    <text x="1478" y="820" text-anchor="end" fill="#6f5b4d" font-size="17">2020 → 2026</text>
+    <text x="1530" y="812" text-anchor="end" fill="#a99788" font-size="14" font-weight="800" letter-spacing="2">FINAL RELEASE</text>
+    <text x="1530" y="840" text-anchor="end" fill="#f3ede4" font-size="20" font-weight="800">23 SEP 2026</text>
   </g>
 </svg>
