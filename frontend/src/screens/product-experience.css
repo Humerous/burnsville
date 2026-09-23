@@ -4,11 +4,12 @@
 }
 
 .burnsville-product-profile__heading {
-  align-items: end;
+  align-items: flex-start;
   display: flex;
-  gap: 14px;
-  justify-content: space-between;
-  margin-bottom: 16px;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: flex-start;
+  margin-bottom: 18px;
 }
 
 .burnsville-product-profile__heading p {
@@ -16,17 +17,19 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.11em;
+  line-height: 1.2;
   margin: 0;
   text-transform: uppercase;
 }
 
 .burnsville-product-profile__heading h2 {
-  color: rgba(17, 17, 17, 0.74);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  color: var(--product-onyx);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  line-height: 1;
   margin: 0;
   text-transform: uppercase;
 }
@@ -53,19 +56,19 @@
 .burnsville-product-profile__fact dt,
 .burnsville-product-profile__pairings strong,
 .burnsville-product-profile__ingredients summary {
-  color: rgba(17, 17, 17, 0.58);
+  color: rgba(17, 17, 17, 0.54);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.64rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
 .burnsville-product-profile__fact dd {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.88rem;
-  font-weight: 800;
-  letter-spacing: 0.015em;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   line-height: 1.35;
   margin: 0;
   text-transform: uppercase;
@@ -232,10 +235,11 @@
 }
 
 .burnsville-product-profile__pairings li {
-  border: 1px solid rgba(17, 17, 17, 0.32);
+  border: 1px solid rgba(17, 17, 17, 0.28);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.035em;
   padding: 7px 9px;
   text-transform: uppercase;
 }
