@@ -7,6 +7,22 @@ const HomeHero = () => (
     aria-labelledby='burnsville-home-hero-title'
     className='burnsville-home-hero'
   >
+    <picture aria-hidden='true' className='burnsville-home-hero__media'>
+      <source
+        media='(max-width: 767px)'
+        srcSet='/images/burnsville-hero-mobile.webp'
+      />
+      <img
+        alt=''
+        className='burnsville-home-hero__media-image'
+        decoding='async'
+        fetchPriority='high'
+        height='768'
+        src='/images/burnsville-hero-desktop.webp'
+        width='2048'
+      />
+    </picture>
+
     <div className='burnsville-home-hero__content'>
       <div className='burnsville-home-hero__copy'>
         <p className='burnsville-home-hero__eyebrow'>Burnsville Hot Sauce</p>
@@ -39,20 +55,6 @@ const HomeHero = () => (
           </a>
         </div>
       </div>
-    </div>
-
-    <div aria-hidden='true' className='burnsville-home-hero__visual'>
-      <div className='burnsville-home-hero__visual-orbit' />
-      <div className='burnsville-home-hero__visual-type'>
-        <span className='burnsville-home-hero__visual-brand'>Burnsville</span>
-        <span className='burnsville-home-hero__visual-heat'>Heat</span>
-        <span className='burnsville-home-hero__visual-flavour'>Flavour</span>
-      </div>
-      <span className='burnsville-home-hero__ember burnsville-home-hero__ember--one' />
-      <span className='burnsville-home-hero__ember burnsville-home-hero__ember--two' />
-      <span className='burnsville-home-hero__ember burnsville-home-hero__ember--three' />
-      <span className='burnsville-home-hero__ember burnsville-home-hero__ember--four' />
-      <div className='burnsville-home-hero__visual-ground' />
     </div>
   </section>
 );
