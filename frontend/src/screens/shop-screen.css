@@ -203,8 +203,12 @@
 .shop-product-card__media {
   align-items: center;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.24), transparent 58%),
-    rgba(17, 17, 17, 0.035);
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.07), transparent 38%),
+    radial-gradient(circle at 14% 24%, rgba(62, 127, 58, 0.26), transparent 34%),
+    radial-gradient(circle at 86% 24%, rgba(217, 139, 33, 0.24), transparent 32%),
+    radial-gradient(circle at 86% 84%, rgba(210, 40, 43, 0.22), transparent 34%),
+    radial-gradient(circle at 14% 84%, rgba(141, 50, 220, 0.12), transparent 32%),
+    linear-gradient(145deg, #1a1a17 0%, #0c0d0c 52%, #17130f 100%);
   display: flex;
   height: 290px;
   justify-content: center;
