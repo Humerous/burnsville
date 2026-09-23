@@ -12,6 +12,7 @@ import {
 import { addToCart } from '../actions/cartActions';
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants';
 import { getProductTheme } from '../utils/productThemes';
+import { getProductDisplayHeat } from '../utils/productHeat';
 import './product-screen.css';
 import './product-experience.css';
 
@@ -43,7 +44,15 @@ const getHeatBand = (heat) => {
     return { key: 'hot', label: 'Hot' };
   }
 
-  return { key: 'extreme', label: 'Extreme' };
+  if (heat <= 10) {
+    return { key: 'extreme', label: 'Extreme' };
+  }
+
+  if (heat <= 14) {
+    return { key: 'beyond', label: 'Beyond extreme' };
+  }
+
+  return { key: 'caution', label: 'Use with caution' };
 };
 
 const ProductScreen = ({ history, match }) => {
@@ -157,7 +166,9 @@ const ProductScreen = ({ history, match }) => {
     ? [...new Set(product.pairings.filter(Boolean))]
     : [];
   const productRating = product ? Number(product.rating) || 0 : 0;
-  const heatLevel = product && Number(product.heatLevel) >= 1 && Number(product.heatLevel) <= 10 ? Number(product.heatLevel) : null;
+  const heatLevel = getProductDisplayHeat(product);
+  const heatMeterLevel = heatLevel ? Math.min(heatLevel, 10) : null;
+  const heatOverflow = heatLevel && heatLevel > 10 ? Math.min(heatLevel - 10, 10) : 0;
   const heatBand = heatLevel ? getHeatBand(heatLevel) : null;
   const reviewLabel = `${reviews.length} ${
     reviews.length === 1 ? 'REVIEW' : 'REVIEWS'
@@ -294,19 +305,40 @@ const ProductScreen = ({ history, match }) => {
                             </div>
 
                             <div
-                              className='burnsville-product-profile__heat-meter'
+                              className='burnsville-product-profile__heat-meter-wrap'
                               role='img'
                               aria-label={`Heat level ${heatLevel} out of 10, ${heatBand.label}`}
                             >
-                              {Array.from({ length: 10 }).map((_, index) => (
-                                <span
-                                  className={`burnsville-product-profile__heat-meter-step ${
-                                    index < heatLevel ? 'is-active' : ''
-                                  }`}
-                                  key={index}
-                                  aria-hidden='true'
-                                />
-                              ))}
+                              <div className='burnsville-product-profile__heat-meter'>
+                                {Array.from({ length: 10 }).map((_, index) => (
+                                  <span
+                                    className={`burnsville-product-profile__heat-meter-step ${
+                                      index < heatMeterLevel ? 'is-active' : ''
+                                    }`}
+                                    key={index}
+                                    aria-hidden='true'
+                                  />
+                                ))}
+                              </div>
+
+                              {heatOverflow > 0 && (
+                                <div className='burnsville-product-profile__heat-overflow'>
+                                  <div className='burnsville-product-profile__heat-overflow-meter'>
+                                    {Array.from({ length: 10 }).map((_, index) => (
+                                      <span
+                                        className={`burnsville-product-profile__heat-overflow-step ${
+                                          index < heatOverflow ? 'is-active' : ''
+                                        }`}
+                                        key={index}
+                                        aria-hidden='true'
+                                      />
+                                    ))}
+                                  </div>
+                                  <span className='burnsville-product-profile__heat-overflow-label'>
+                                    +{heatOverflow} over
+                                  </span>
+                                </div>
+                              )}
                             </div>
                           </dd>
                         </div>

@@ -82,6 +82,14 @@
   --heat-accent: #b8231b;
 }
 
+.burnsville-product-profile__heat-value--beyond {
+  --heat-accent: #a71916;
+}
+
+.burnsville-product-profile__heat-value--caution {
+  --heat-accent: #7f0d0d;
+}
+
 .burnsville-product-profile__heat-topline {
   align-items: center;
   display: flex;
@@ -113,11 +121,15 @@
   text-transform: uppercase;
 }
 
+.burnsville-product-profile__heat-meter-wrap {
+  max-width: 180px;
+  width: 100%;
+}
+
 .burnsville-product-profile__heat-meter {
   display: grid;
   gap: 4px;
   grid-template-columns: repeat(10, minmax(0, 1fr));
-  max-width: 180px;
   width: 100%;
 }
 
@@ -133,6 +145,41 @@
     var(--heat-accent) 100%
   );
   box-shadow: 0 0 8px color-mix(in srgb, var(--heat-accent) 20%, transparent);
+}
+
+.burnsville-product-profile__heat-overflow {
+  margin-top: 5px;
+}
+
+.burnsville-product-profile__heat-overflow-meter {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  width: 100%;
+}
+
+.burnsville-product-profile__heat-overflow-step {
+  background: rgba(127, 13, 13, 0.08);
+  height: 5px;
+}
+
+.burnsville-product-profile__heat-overflow-step.is-active {
+  background: var(--heat-accent);
+  box-shadow:
+    0 0 7px color-mix(in srgb, var(--heat-accent) 34%, transparent),
+    0 0 14px color-mix(in srgb, var(--heat-accent) 18%, transparent);
+}
+
+.burnsville-product-profile__heat-overflow-label {
+  color: var(--heat-accent);
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+  text-align: right;
+  text-transform: uppercase;
 }
 
 /* Inventory is supporting commerce information, not a display headline. */
@@ -247,7 +294,7 @@
 }
 
 @media (max-width: 520px) {
-  .burnsville-product-profile__heat-meter {
+  .burnsville-product-profile__heat-meter-wrap {
     max-width: none;
   }
 
