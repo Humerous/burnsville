@@ -63,7 +63,9 @@
 }
 
 .burnsville-product-detail__grid {
+  --halo-x: 28%;
   align-items: stretch;
+  border: 1px solid rgba(17, 17, 17, 0.3);
   display: grid;
   grid-template-columns: minmax(0, 1.06fr) minmax(360px, 0.94fr);
   min-height: 650px;
@@ -91,8 +93,7 @@
 }
 
 .burnsville-product-detail__information {
-  border: 1px solid rgba(17, 17, 17, 0.3);
-  border-left: 0;
+  background: rgba(255, 253, 248, 0.78);
   padding: 28px 32px;
   position: relative;
 }
@@ -535,8 +536,6 @@
   }
 
   .burnsville-product-detail__information {
-    border-left: 1px solid rgba(17, 17, 17, 0.3);
-    border-top: 0;
     padding: 42px 32px;
   }
 

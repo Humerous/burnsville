@@ -87,14 +87,14 @@ button:disabled { cursor: not-allowed; }
 
   background:
     radial-gradient(
-      ellipse at 50% 38%,
+      ellipse at var(--halo-x, 50%) 38%,
       color-mix(in srgb, var(--accent) 22%, transparent) 0%,
       color-mix(in srgb, var(--accent) 11%, transparent) 30%,
       color-mix(in srgb, var(--accent) 4%, transparent) 48%,
       transparent 66%
     ),
     radial-gradient(
-      ellipse at 50% 70%,
+      ellipse at var(--halo-x, 50%) 70%,
       color-mix(in srgb, var(--accent) 7%, transparent) 0%,
       transparent 52%
     ),
