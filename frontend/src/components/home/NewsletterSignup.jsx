@@ -9,7 +9,14 @@ const NewsletterSignup = () => {
     >
       <div className='burnsville-newsletter__inner'>
         <div className='burnsville-newsletter__mark' aria-hidden='true'>
-          <span />
+          <svg
+            className='burnsville-newsletter__mark-icon'
+            viewBox='0 0 64 48'
+            focusable='false'
+          >
+            <rect x='3' y='5' width='58' height='38' />
+            <path d='M4 7l28 21L60 7' />
+          </svg>
         </div>
 
         <div className='burnsville-newsletter__copy'>

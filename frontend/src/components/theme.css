@@ -58,3 +58,86 @@ button:disabled { cursor: not-allowed; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* Global reusable product background system. */
+:root {
+  --green-spark: #7fa52b;
+  --sun-gold: #e28a18;
+  --citrus-flare: #d6b51e;
+  --red-ember: #c93224;
+  --dark-harvest: #6b3b27;
+  --saline-current: #278b8d;
+  --calabrian-glow: #d73b27;
+  --birds-fire: #d84429;
+  --violets-fuse: #a52570;
+  --ghost-black: #292929;
+  --b42-night-orchard: #59276f;
+  --cask-13: #875522;
+  --px-ferment-bloom: #63802d;
+  --pot7-velvet-scorch: #2875a6;
+  --tmr200: #d52868;
+  --x666-final-burn: #a6261c;
+}
+
+.product-background {
+  --accent: #c93224;
+
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 34%,
+      color-mix(in srgb, var(--accent) 38%, transparent) 0%,
+      color-mix(in srgb, var(--accent) 20%, transparent) 28%,
+      color-mix(in srgb, var(--accent) 8%, transparent) 45%,
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse at 50% 68%,
+      color-mix(in srgb, var(--accent) 14%, transparent) 0%,
+      transparent 48%
+    ),
+    linear-gradient(
+      180deg,
+      #fffdf8 0%,
+      #fbf7ed 58%,
+      #f5eddd 100%
+    );
+}
+
+.theme-green-spark { --accent: var(--green-spark); }
+.theme-sun-gold { --accent: var(--sun-gold); }
+.theme-citrus-flare { --accent: var(--citrus-flare); }
+.theme-red-ember { --accent: var(--red-ember); }
+.theme-dark-harvest { --accent: var(--dark-harvest); }
+.theme-saline-current { --accent: var(--saline-current); }
+.theme-calabrian-glow { --accent: var(--calabrian-glow); }
+.theme-birds-fire { --accent: var(--birds-fire); }
+.theme-violets-fuse { --accent: var(--violets-fuse); }
+.theme-ghost-black { --accent: var(--ghost-black); }
+.theme-b42-night-orchard { --accent: var(--b42-night-orchard); }
+.theme-cask-13 { --accent: var(--cask-13); }
+.theme-px-ferment-bloom { --accent: var(--px-ferment-bloom); }
+.theme-pot7-velvet-scorch { --accent: var(--pot7-velvet-scorch); }
+.theme-tmr200 { --accent: var(--tmr200); }
+.theme-x666-final-burn { --accent: var(--x666-final-burn); }
+
+/* Preserve the existing card structure while exposing the global background. */
+.product-background .shop-product-card__media {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.product-background .shop-product-card__image {
+  position: relative;
+  z-index: 1;
+}
+
+.product-background .shop-product-card__body {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}

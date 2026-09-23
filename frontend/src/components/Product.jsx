@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Rating from './Rating';
 import { addToCart } from '../actions/cartActions';
+import { getProductTheme } from '../utils/productThemes';
 
 const priceFormatter = new Intl.NumberFormat('en-ZA', {
   style: 'currency',
@@ -29,6 +30,7 @@ const Product = ({ product }) => {
   const [quickAddStatus, setQuickAddStatus] = useState('idle');
   const productPath = `/product/${product._id}`;
   const titleId = `product-${product._id}-title`;
+  const productTheme = getProductTheme(product);
   const numericRating = Number(product.rating);
   const rating = Number.isFinite(numericRating) ? numericRating : 0;
   const numericReviewCount = Number(product.numReviews);
@@ -54,7 +56,12 @@ const Product = ({ product }) => {
 
   return (
     <>
-      <article className='shop-product-card' aria-labelledby={titleId}>
+      <article
+        className={`shop-product-card product-background ${
+          productTheme?.theme || ''
+        }`}
+        aria-labelledby={titleId}
+      >
         <Link className='shop-product-card__media' to={productPath}>
           <img
             className='shop-product-card__image'
@@ -155,6 +162,7 @@ const Product = ({ product }) => {
 Product.propTypes = {
   product: PropTypes.shape({
     _id: PropTypes.string.isRequired,
+    identifier: PropTypes.string,
     brand: PropTypes.string,
     image: PropTypes.string.isRequired,
     cardImage: PropTypes.string,
