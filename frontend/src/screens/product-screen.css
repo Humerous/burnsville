@@ -82,8 +82,8 @@
 
 .burnsville-product-detail__media img {
   filter: drop-shadow(0 24px 24px rgba(0, 0, 0, 0.4));
-  max-height: var(--product-card-height);
-  max-width: 88%;
+  max-height: 80%;
+  max-width: 80%;
   object-fit: contain;
   position: relative;
   transition: transform 300ms cubic-bezier(0.25, 0.7, 0.2, 1);
