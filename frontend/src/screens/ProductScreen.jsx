@@ -160,7 +160,7 @@ const ProductScreen = ({ history, match }) => {
   const heatLevel = product && Number(product.heatLevel) >= 1 && Number(product.heatLevel) <= 10 ? Number(product.heatLevel) : null;
   const heatBand = heatLevel ? getHeatBand(heatLevel) : null;
   const reviewLabel = `${reviews.length} ${
-    reviews.length === 1 ? 'review' : 'reviews'
+    reviews.length === 1 ? 'REVIEW' : 'REVIEWS'
   }`;
   const stockLabel = stockCount <= 0
     ? 'Out of stock'
@@ -265,7 +265,7 @@ const ProductScreen = ({ history, match }) => {
                   </p>
 
                   <div className='burnsville-product-detail__description'>
-                    <h2>About {product.name}</h2>
+                    <h2>Product details</h2>
                     <p>{product.description}</p>
                   </div>
 
@@ -274,7 +274,7 @@ const ProductScreen = ({ history, match }) => {
                     aria-labelledby='burnsville-product-profile-title'
                   >
                     <div className='burnsville-product-profile__heading'>
-                      <h2 id='burnsville-product-profile-title'>Sauce profile</h2>
+                      <h2 id='burnsville-product-profile-title'>Burnsville profile</h2>
                     </div>
 
                     <dl className='burnsville-product-profile__facts'>

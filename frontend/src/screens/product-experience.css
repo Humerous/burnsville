@@ -9,11 +9,11 @@
 
 .burnsville-product-profile__heading h2 {
   color: var(--product-onyx);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 900;
-  letter-spacing: 0.07em;
-  line-height: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
   margin: 0;
   text-transform: uppercase;
 }
@@ -40,17 +40,17 @@
 .burnsville-product-profile__fact dt,
 .burnsville-product-profile__pairings strong,
 .burnsville-product-profile__ingredients summary {
-  color: rgba(17, 17, 17, 0.54);
+  color: rgba(17, 17, 17, 0.58);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.64rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .burnsville-product-profile__fact dd {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.86rem;
+  font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1.35;
@@ -92,7 +92,7 @@
 .burnsville-product-profile__heat-score {
   color: var(--heat-accent);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.375rem;
   font-weight: 900;
   letter-spacing: 0.02em;
   line-height: 1;
@@ -105,11 +105,11 @@
   color: var(--heat-accent);
   display: inline-flex;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.09em;
-  min-height: 22px;
-  padding: 0 8px;
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  min-height: 28px;
+  padding: 0 9px;
   text-transform: uppercase;
 }
 
@@ -179,19 +179,19 @@
 }
 
 .burnsville-product-detail__availability > span {
-  color: rgba(17, 17, 17, 0.56);
-  font-size: 0.64rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  color: rgba(17, 17, 17, 0.58);
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
 }
 
 .burnsville-product-detail__availability strong {
   align-items: center;
   display: inline-flex;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .burnsville-product-detail__availability strong::before {
@@ -221,10 +221,10 @@
 .burnsville-product-profile__pairings li {
   border: 1px solid rgba(17, 17, 17, 0.28);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.68rem;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.035em;
-  padding: 7px 9px;
+  letter-spacing: 0.02em;
+  padding: 8px 10px;
   text-transform: uppercase;
 }
 
@@ -241,7 +241,7 @@
 .burnsville-product-profile__ingredients p {
   color: rgba(17, 17, 17, 0.72);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.86rem;
+  font-size: 1.125rem;
   line-height: 1.55;
   margin: 12px 0 0;
 }
@@ -253,12 +253,6 @@
 
   .burnsville-product-profile__heat-value {
     width: 100%;
-  }
-
-  .burnsville-product-profile__heading {
-    align-items: start;
-    flex-direction: column;
-    gap: 6px;
   }
 
   .burnsville-product-profile__facts {
