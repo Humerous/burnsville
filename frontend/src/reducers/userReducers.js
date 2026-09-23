@@ -28,7 +28,6 @@ import {
   USER_UPDATE_FAIL,
 } from '../constants/userConstants';
 
-// <---- USER LOGIN REDUCER BELOW ---->
 export const userLoginReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_LOGIN_REQUEST:
@@ -44,7 +43,6 @@ export const userLoginReducer = (state = {}, action) => {
   }
 };
 
-// <---- USER REGISTER REDUCER BELOW ---->
 export const userRegisterReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_REGISTER_REQUEST:
@@ -60,7 +58,6 @@ export const userRegisterReducer = (state = {}, action) => {
   }
 };
 
-// <---- USER DETAILS REDUCER BELOW ---->
 export const userDetailsReducer = (state = { user: {} }, action) => {
   switch (action.type) {
     case USER_DETAILS_REQUEST:
@@ -76,7 +73,6 @@ export const userDetailsReducer = (state = { user: {} }, action) => {
   }
 };
 
-// <---- USER UPDATE PROFILE DETAILS REDUCER BELOW ---->
 export const userUpdateProfileReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_UPDATE_PROFILE_REQUEST:
@@ -92,7 +88,6 @@ export const userUpdateProfileReducer = (state = {}, action) => {
   }
 };
 
-// <---- USER UPDATE LIST REDUCER BELOW ---->
 export const userListReducer = (state = { users: [] }, action) => {
   switch (action.type) {
     case USER_LIST_REQUEST:
@@ -108,7 +103,6 @@ export const userListReducer = (state = { users: [] }, action) => {
   }
 };
 
-// <---- USER DELETE REDUCER BELOW ---->
 export const userDeleteReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_DELETE_REQUEST:
@@ -124,7 +118,6 @@ export const userDeleteReducer = (state = {}, action) => {
   }
 };
 
-// <---- USER UPDATE REDUCER BELOW ---->
 export const userUpdateReducer = (state = { user: {} }, action) => {
   switch (action.type) {
     case USER_UPDATE_REQUEST:

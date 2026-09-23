@@ -6,7 +6,6 @@ import Product from '../models/productModel.js';
 const roundCurrency = (value) =>
   Math.round((Number(value) + Number.EPSILON) * 100) / 100;
 
-// <---- ADD ORDERS ITEMS ---->
 const addOrderItems = asyncHandler(async (req, res) => {
   const { orderItems, shippingAddress, paymentMethod } = req.body;
 
@@ -117,7 +116,6 @@ const addOrderItems = asyncHandler(async (req, res) => {
   res.status(201).json(createdOrder);
 });
 
-// <---- GET ALL ORDER ITEMS ---->
 const getOrderById = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id).populate(
     'user',
@@ -143,7 +141,6 @@ const getOrderById = asyncHandler(async (req, res) => {
   }
 });
 
-// <---- UPDATE ORDER ITEMS BY Ids - if paid ---->
 const updateOrderToPaid = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
 
@@ -196,7 +193,6 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
   res.json(updatedOrder);
 });
 
-// <---- UPDATE ORDER ITEMS BY Ids - if DELIVERED ---->
 const updateOrderToDelivered = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
 
@@ -213,19 +209,16 @@ const updateOrderToDelivered = asyncHandler(async (req, res) => {
   }
 });
 
-// <---- GET MY ORDER ITEMS  ---->
 const getMyOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({ user: req.user._id });
   res.json(orders);
 });
 
-// <---- GET ORDER ITEMS  ---->
 const getOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({}).populate('user', 'id name');
   res.json(orders);
 });
 
-// <---- EXPORT  ---->
 export {
   addOrderItems,
   getOrderById,

@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-// <---- NEW REVIEW SCHEMA- new reviews for mongoDB schema ---->
 const reviewSchema = mongoose.Schema(
   {
     name: { type: String, required: true },
@@ -17,7 +16,6 @@ const reviewSchema = mongoose.Schema(
   },
 );
 
-// <---- NEW PRODUCT SCHEMA- new product for mongoDB schema ---->
 const productSchema = mongoose.Schema(
   {
     user: {
@@ -111,8 +109,6 @@ productSchema.index(
   { unique: true, sparse: true, name: 'unique_product_identifier' },
 );
 
-// <---- NEW PRODUCT MODEL- new product for mongoDB schema ---->
 const Product = mongoose.model('Product', productSchema);
 
-// <---- EXPORT ---->
 export default Product;

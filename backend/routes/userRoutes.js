@@ -1,6 +1,5 @@
 import express from 'express';
 
-// <---- EXPRESS USER ROUTER- imports users ---->
 const router = express.Router();
 import {
   authUser,
@@ -14,7 +13,6 @@ import {
 } from '../controllers/userController.js';
 import { protect, admin } from '../middleware/authMiddleware.js';
 
-// <---- EXPRESS USER ROUTER- routes , protect & admin ---->
 router.route('/').post(registerUser).get(protect, admin, getUsers);
 router.post('/login', authUser);
 router
@@ -27,5 +25,4 @@ router
   .get(protect, admin, getUserById)
   .put(protect, admin, updateUser);
 
-// <---- EXPORT ---->
 export default router;

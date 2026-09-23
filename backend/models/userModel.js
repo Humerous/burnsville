@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 
-// <---- NEW USER SCHEMA- new user for mongoDB schema ---->
 const userSchema = mongoose.Schema(
   {
     name: {
@@ -32,12 +31,10 @@ const userSchema = mongoose.Schema(
   }
 );
 
-// <---- NEW USER SCHEMA- match password - entered correct password ---->
 userSchema.methods.matchPassword = async function (enteredPassword) {
   return bcrypt.compare(enteredPassword, this.password);
 };
 
-// <---- NEW USER SCHEMA- hash changed passwords exactly once ---->
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
     return next();
@@ -52,8 +49,6 @@ userSchema.pre('save', async function (next) {
   }
 });
 
-// <---- NEW USER SCHEMA- model ---->
 const User = mongoose.model('User', userSchema);
 
-// <---- EXPORT ---->
 export default User;

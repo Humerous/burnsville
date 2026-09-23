@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-// <---- NEW ORDER SCHEMA- new order for mongoDB schema ---->
 const orderSchema = mongoose.Schema(
   {
     user: {
@@ -79,8 +78,6 @@ const orderSchema = mongoose.Schema(
   }
 );
 
-// <---- NEW ORDER MODEL- new order for mongoDB schema ---->
 const Order = mongoose.model('Order', orderSchema);
 
-// <---- EXPORT---->
 export default Order;

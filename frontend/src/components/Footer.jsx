@@ -25,7 +25,6 @@ const footerGroups = [
   },
 ];
 
-// <---- FOOTER FUNCTION  ---->
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -66,5 +65,4 @@ const Footer = () => {
   );
 };
 
-// <---- EXPORT ---->
 export default Footer;

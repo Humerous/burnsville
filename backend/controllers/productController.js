@@ -33,7 +33,6 @@ const withAuthoritativeReviewSummary = (product) => {
   };
 };
 
-// <---- GET ROUTES - fetch all products ---->
 const getProducts = asyncHandler(async (req, res) => {
   const pageSize = 10;
   const page = Number(req.query.pageNumber) || 1;
@@ -67,7 +66,6 @@ const getProducts = asyncHandler(async (req, res) => {
     : {};
   const filters = { ...keyword, ...heatFilter };
 
-  // <---- GET ROUTES - count all products ---->
   const count = await Product.countDocuments(filters);
   const productDocuments = await Product.find(filters)
     .limit(pageSize)
@@ -77,7 +75,6 @@ const getProducts = asyncHandler(async (req, res) => {
   res.json({ products, page, pages: Math.ceil(count / pageSize) });
 });
 
-// <---- GET ROUTES - fetch single product by :id ---->
 const getProductById = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
 
@@ -89,7 +86,6 @@ const getProductById = asyncHandler(async (req, res) => {
   }
 });
 
-// <---- DELETE PRODUCTS BY Ids ROUTE - delete product ---->
 const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
 
@@ -102,7 +98,6 @@ const deleteProduct = asyncHandler(async (req, res) => {
   }
 });
 
-// <---- CREATE NEW PRODUCT ROUTE - product ---->
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
     name: 'Sample name',
@@ -115,12 +110,10 @@ const createProduct = asyncHandler(async (req, res) => {
     numReviews: 0,
     description: 'Sample description',
   });
-  // <---- CREATE ROUTES - new product ---->
   const createdProduct = await product.save();
   res.status(201).json(withAuthoritativeReviewSummary(createdProduct));
 });
 
-// <---- UPDATE PRODUCT ROUTES - update product ---->
 const updateProduct = asyncHandler(async (req, res) => {
   const {
     name,
@@ -188,7 +181,6 @@ const updateProduct = asyncHandler(async (req, res) => {
   }
 });
 
-// <---- CREATE PRODUCT REVIEW ROUTE - review product ---->
 const createProductReview = asyncHandler(async (req, res) => {
   const { rating, comment } = req.body;
 
@@ -227,7 +219,6 @@ const createProductReview = asyncHandler(async (req, res) => {
   }
 });
 
-// <---- GET ALL TOPS PRODUCT REVIEW ROUTE - top product review product ---->
 const getTopProducts = asyncHandler(async (req, res) => {
   const productDocuments = await Product.find({});
   const products = productDocuments
@@ -244,7 +235,6 @@ const getTopProducts = asyncHandler(async (req, res) => {
   res.json(products);
 });
 
-// <---- EXPORT  ---->
 export {
   getProducts,
   getProductById,

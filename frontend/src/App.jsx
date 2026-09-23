@@ -168,7 +168,6 @@ const RouteFocus = () => {
   return null;
 };
 
-// <---- APP LINKS - BrowserRouter , Router ,Route ---->
 const App = () => {
   return (
     <Router>
@@ -220,5 +219,4 @@ const App = () => {
     </Router>
   );
 };
-// <---- EXPORT ---->
 export default App;

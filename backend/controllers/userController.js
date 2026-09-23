@@ -47,7 +47,6 @@ const ensureEmailAvailable = async (email, currentUserId, res) => {
   }
 };
 
-// <---- VALIDATE USER - email/password ---->
 const authUser = asyncHandler(async (req, res) => {
   const email = normalizeEmail(req.body.email);
   const { password } = req.body;
@@ -73,7 +72,6 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-// <---- REGISTER USER - email/password ---->
 const registerUser = asyncHandler(async (req, res) => {
   const name = normalizeName(req.body.name);
   const email = normalizeEmail(req.body.email);
@@ -104,7 +102,6 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-// <---- USER PROFILE - email/password ---->
 const getUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id).select('-password');
 
@@ -121,7 +118,6 @@ const getUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-// <---- UPDATE USER PROFILE - details ---->
 const updateUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
 
@@ -159,13 +155,11 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   });
 });
 
-// <---- GET ALL USERS PROFILE - Admin ---->
 const getUsers = asyncHandler(async (req, res) => {
   const users = await User.find({}).select('-password');
   res.json(users);
 });
 
-// <---- DELETE USERS PROFILE - Admin ---->
 const deleteUser = asyncHandler(async (req, res) => {
   if (req.user._id.toString() === req.params.id) {
     res.status(400);
@@ -183,7 +177,6 @@ const deleteUser = asyncHandler(async (req, res) => {
   }
 });
 
-// <---- GET USERS BY Ids PROFILE - Admin ---->
 const getUserById = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id).select('-password');
 
@@ -195,7 +188,6 @@ const getUserById = asyncHandler(async (req, res) => {
   }
 });
 
-// <---- GET USERS BY Ids AND UPDATE PROFILE - Admin ---->
 const updateUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
 
@@ -238,7 +230,6 @@ const updateUser = asyncHandler(async (req, res) => {
   });
 });
 
-// <---- EXPORT ---->
 export {
   authUser,
   registerUser,

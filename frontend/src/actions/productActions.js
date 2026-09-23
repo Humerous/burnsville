@@ -24,7 +24,6 @@ import {
   PRODUCT_TOP_FAIL,
 } from '../constants/productConstants';
 
-// <---- DISPATCH _ LIST OF PRODUCTS ---->
 export const listProducts = (keyword = '', pageNumber = '', heat = '') => async (
   dispatch
 ) => {
@@ -63,7 +62,6 @@ export const listProducts = (keyword = '', pageNumber = '', heat = '') => async 
   }
 };
 
-// <---- DISPATCH _ DETAILS ON LIST OF PRODUCTS ---->
 export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
@@ -85,12 +83,10 @@ export const listProductDetails = (id) => async (dispatch) => {
   }
 };
 
-// <---- DISPATCH _ CLEAR DETAILS OF LIST OF PRODUCTS ---->
 export const clearProductDetails = () => async (dispatch) => {
   dispatch({ type: CLEAR_PRODUCT_DETAILS, payload: {} });
 };
 
-// <---- DISPATCH _ DELETE ON LIST OF PRODUCTS ---->
 export const deleteProduct = (id) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -127,7 +123,6 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
   }
 };
 
-// <---- DISPATCH _ CREATE ON LIST OF PRODUCTS ---->
 export const createProduct = () => async (dispatch, getState) => {
   try {
     dispatch({
@@ -165,7 +160,6 @@ export const createProduct = () => async (dispatch, getState) => {
   }
 };
 
-// <---- DISPATCH _ UPDATE ON LIST OF PRODUCTS ---->
 export const updateProduct = (product) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -208,7 +202,6 @@ export const updateProduct = (product) => async (dispatch, getState) => {
   }
 };
 
-// <---- DISPATCH _ CREATE PRODUCT REVIEW ON PRODUCTS ---->
 export const createProductReview = (productId, review) => async (
   dispatch,
   getState
@@ -247,7 +240,6 @@ export const createProductReview = (productId, review) => async (
   }
 };
 
-// <---- DISPATCH _ LIST TOP PRODUCTS ---->
 export const listTopProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_TOP_REQUEST });

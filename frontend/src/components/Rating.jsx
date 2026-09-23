@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// <---- RATING FUNCTION - value, text  color---->
 const Rating = ({ value, text, color }) => {
   return (
     <div className='rating'>
@@ -80,5 +79,4 @@ Rating.propTypes = {
   color: PropTypes.string,
 };
 
-// <---- EXPORT ---->
 export default Rating;

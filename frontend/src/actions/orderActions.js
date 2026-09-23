@@ -20,7 +20,6 @@ import {
   ORDER_LIST_FAIL,
 } from '../constants/orderConstants';
 
-// <---- ORDER FUNCTION _ createOrder ---->
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -56,7 +55,6 @@ export const createOrder = (order) => async (dispatch, getState) => {
   }
 };
 
-// <---- ORDER FUNCTION _ getOrderDetails ---->
 export const getOrderDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -91,7 +89,6 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
   }
 };
 
-// <---- ORDER FUNCTION _ payOrder ---->
 export const payOrder = (orderId, paymentResult) => async (
   dispatch,
   getState
@@ -137,7 +134,6 @@ export const payOrder = (orderId, paymentResult) => async (
   }
 };
 
-// <---- ORDER FUNCTION _ deliverOrder ---->
 export const deliverOrder = (order) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -179,7 +175,6 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
   }
 };
 
-// <---- ORDER FUNCTION _ listMyOrders ---->
 export const listMyOrders = () => async (dispatch, getState) => {
   try {
     dispatch({
@@ -217,7 +212,6 @@ export const listMyOrders = () => async (dispatch, getState) => {
   }
 };
 
-// <---- ORDER FUNCTION _ listOrders ---->
 export const listOrders = () => async (dispatch, getState) => {
   try {
     dispatch({

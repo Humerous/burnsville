@@ -27,7 +27,6 @@ import {
   PRODUCT_TOP_FAIL,
 } from '../constants/productConstants';
 
-// <---- USER PRODUCT LIST REDUCER BELOW ---->
 export const productListReducer = (
   state = { loading: true, products: [] },
   action
@@ -49,7 +48,6 @@ export const productListReducer = (
   }
 };
 
-// <---- USER PRODUCT DETAILS REDUCER BELOW ---->
 export const producDetailsReducer = (
   state = { loading: true, product: { reviews: [] } },
   action
@@ -68,7 +66,6 @@ export const producDetailsReducer = (
   }
 };
 
-// <---- USER PRODUCT DELETE REDUCER BELOW ---->
 export const productDeleteReducer = (state = {}, action) => {
   switch (action.type) {
     case PRODUCT_DELETE_REQUEST:
@@ -84,7 +81,6 @@ export const productDeleteReducer = (state = {}, action) => {
   }
 };
 
-// <---- USER PRODUCT CREATE REDUCER BELOW ---->
 export const productCreateReducer = (state = {}, action) => {
   switch (action.type) {
     case PRODUCT_CREATE_REQUEST:
@@ -100,7 +96,6 @@ export const productCreateReducer = (state = {}, action) => {
   }
 };
 
-// <---- USER PRODUCT UPDATE REDUCER BELOW ---->
 export const productUpdateReducer = (state = { product: {} }, action) => {
   switch (action.type) {
     case PRODUCT_UPDATE_REQUEST:
@@ -116,7 +111,6 @@ export const productUpdateReducer = (state = { product: {} }, action) => {
   }
 };
 
-// <---- USER PRODUCT REVIEW REDUCER BELOW ---->
 export const productReviewCreateReducer = (state = {}, action) => {
   switch (action.type) {
     case PRODUCT_CREATE_REVIEW_REQUEST:
@@ -132,7 +126,6 @@ export const productReviewCreateReducer = (state = {}, action) => {
   }
 };
 
-// <---- USER PRODUCT TOP RATED REDUCER BELOW ---->
 export const productTopRatedReducer = (state = { products: [] }, action) => {
   switch (action.type) {
     case PRODUCT_TOP_REQUEST:

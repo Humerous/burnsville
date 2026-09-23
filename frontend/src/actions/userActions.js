@@ -38,7 +38,6 @@ import {
 const isUnauthorized = (error) =>
   Boolean(error.response && error.response.status === 401);
 
-// <---- USER LOGIN ACTIONS BELOW ---->
 export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({
@@ -74,7 +73,6 @@ export const login = (email, password) => async (dispatch) => {
   }
 };
 
-// <---- USER LOGOUT ACTIONS BELOW ---->
 export const logout = () => (dispatch) => {
   localStorage.removeItem('userInfo');
   localStorage.removeItem('shippingAddress');
@@ -92,7 +90,6 @@ export const logout = () => (dispatch) => {
   dispatch({ type: USER_LIST_RESET });
 };
 
-// <---- USER REGISTER ACTIONS BELOW ---->
 export const register = (name, email, password) => async (dispatch) => {
   try {
     dispatch({
@@ -133,7 +130,6 @@ export const register = (name, email, password) => async (dispatch) => {
   }
 };
 
-// <---- USER GET USER DETAILS ACTIONS BELOW ---->
 export const getUserDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -171,7 +167,6 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
   }
 };
 
-// <---- USER UPDATE USER DETAILS ACTIONS BELOW ---->
 export const updateUserProfile = (user) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -215,7 +210,6 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
   }
 };
 
-// <---- USER LIST USER DETAILS ACTIONS BELOW ---->
 export const listUsers = () => async (dispatch, getState) => {
   try {
     dispatch({
@@ -253,7 +247,6 @@ export const listUsers = () => async (dispatch, getState) => {
   }
 };
 
-// <---- USER DELETE USER DETAILS ACTIONS BELOW ---->
 export const deleteUser = (id) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -288,7 +281,6 @@ export const deleteUser = (id) => async (dispatch, getState) => {
   }
 };
 
-// <---- USER UPDATE DETAILS ACTIONS BELOW ---->
 export const updateUser = (user) => async (dispatch, getState) => {
   try {
     dispatch({

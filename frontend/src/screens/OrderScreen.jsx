@@ -89,8 +89,7 @@ const OrderScreen = ({ match, history }) => {
           <p>
             PayFast is selected. Merchant credentials, return and cancel
             handling, provider verification and ITN/webhook validation are
-            required before payment can be confirmed. This Preview keeps the
-            order unpaid until activation is complete.
+            required before payment can be confirmed. This portfolio build keeps the order unpaid until activation is complete.
           </p>
         </div>
       );
@@ -103,7 +102,7 @@ const OrderScreen = ({ match, history }) => {
           <p>
             SnapScan is selected for QR/mobile payment. A merchant SnapCode,
             API verification and webhook configuration are required before a
-            payment can be confirmed. This Preview keeps the order unpaid.
+            payment can be confirmed. This portfolio build keeps the order unpaid.
           </p>
         </div>
       );
@@ -116,7 +115,7 @@ const OrderScreen = ({ match, history }) => {
           <p>
             Zapper is selected for QR/mobile payment. Merchant credentials,
             provider verification and webhook handling are required before a
-            payment can be confirmed. This Preview keeps the order unpaid.
+            payment can be confirmed. This portfolio build keeps the order unpaid.
           </p>
         </div>
       );

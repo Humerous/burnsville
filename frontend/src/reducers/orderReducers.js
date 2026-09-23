@@ -25,7 +25,6 @@ import {
   ORDER_DELIVER_RESET,
 } from '../constants/orderConstants';
 
-// <---- USER ORDER CREATE REDUCER BELOW ---->
 export const orderCreateReducer = (state = {}, action) => {
   switch (action.type) {
     case ORDER_CREATE_REQUEST:
@@ -50,7 +49,6 @@ export const orderCreateReducer = (state = {}, action) => {
   }
 };
 
-// <---- USER ORDER DEATAILS REDUCER BELOW ---->
 export const orderDetailsReducer = (
   state = { loading: true, orderItems: [], shippingAddress: {} },
   action
@@ -78,7 +76,6 @@ export const orderDetailsReducer = (
   }
 };
 
-// <---- USER ORDER PAY REDUCER BELOW ---->
 export const orderPayReducer = (state = {}, action) => {
   switch (action.type) {
     case ORDER_PAY_REQUEST:
@@ -102,7 +99,6 @@ export const orderPayReducer = (state = {}, action) => {
   }
 };
 
-// <---- USER ORDER DELIVER REDUCER BELOW ---->
 export const orderDeliverReducer = (state = {}, action) => {
   switch (action.type) {
     case ORDER_DELIVER_REQUEST:
@@ -126,7 +122,6 @@ export const orderDeliverReducer = (state = {}, action) => {
   }
 };
 
-// <---- USER ORDER LIST MY REDUCER BELOW ---->
 export const orderListMyReducer = (state = { orders: [] }, action) => {
   switch (action.type) {
     case ORDER_LIST_MY_REQUEST:
@@ -150,7 +145,6 @@ export const orderListMyReducer = (state = { orders: [] }, action) => {
   }
 };
 
-// <---- USER ORDER LIST REDUCER BELOW ---->
 export const orderListReducer = (state = { orders: [] }, action) => {
   switch (action.type) {
     case ORDER_LIST_REQUEST:

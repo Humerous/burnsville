@@ -1,7 +1,6 @@
 import React from 'react';
 import { Alert } from 'react-bootstrap';
 
-// <---- MESSAGE FUNCTION - variant, children ---->
 const Message = ({ variant, children }) => {
   const role = variant === 'danger' ? 'alert' : 'status';
 
@@ -16,10 +15,8 @@ const Message = ({ variant, children }) => {
   );
 };
 
-// <---- MESSAGE FUNCTION - defaultProps ---->
 Message.defaultProps = {
   variant: 'info',
 };
 
-// <---- EXPORT ---->
 export default Message;

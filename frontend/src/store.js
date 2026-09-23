@@ -29,7 +29,6 @@ import {
   orderDeliverReducer,
 } from './reducers/orderReducers';
 
-// <---- IMPORT REDUCERS - imports products, orders , cart , reviews , users, ---->
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: producDetailsReducer,
@@ -54,28 +53,21 @@ const reducer = combineReducers({
   orderDeliver: orderDeliverReducer,
 });
 
-// <---- CART ITEMS REDUCERS - cart ---->
 const cartItemsFromStorage = localStorage.getItem('cartItems')
-  ? // <----  ITEMS - items in cart - saved to local storage ---->
-    JSON.parse(localStorage.getItem('cartItems'))
+  ? JSON.parse(localStorage.getItem('cartItems'))
   : [];
 
-// <---- USER INFO REDUCERS - cart ---->
 const userInfoFromStorage = localStorage.getItem('userInfo')
-  ? // <----  ITEMS - items in cart - saved to local storage ---->
-    JSON.parse(localStorage.getItem('userInfo'))
+  ? JSON.parse(localStorage.getItem('userInfo'))
   : null;
-// <---- SHIPPING INFO REDUCERS - cart ---->
 const shippingAddressFromStorage = localStorage.getItem('shippingAddress')
-  ? // <----  ITEMS - items in cart - saved to local storage ---->
-    JSON.parse(localStorage.getItem('shippingAddress'))
+  ? JSON.parse(localStorage.getItem('shippingAddress'))
   : {};
 
 const paymentMethodFromStorage = localStorage.getItem('paymentMethod')
   ? JSON.parse(localStorage.getItem('paymentMethod'))
   : undefined;
 
-// <---- USER INFO REDUCERS - initialState ---->
 const initialState = {
   cart: {
     cartItems: cartItemsFromStorage,
@@ -85,15 +77,12 @@ const initialState = {
   userLogin: { userInfo: userInfoFromStorage },
 };
 
-// <---- USER INFO REDUCERS - REDUX THUNK ---->
 const middleware = [thunk];
 
-// <---- USER INFO REDUCERS - REDUX STORE ---->
 const store = createStore(
   reducer,
   initialState,
   composeWithDevTools(applyMiddleware(...middleware))
 );
 
-// <----EXPORT ---->
 export default store;

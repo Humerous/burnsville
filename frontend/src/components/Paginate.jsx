@@ -2,7 +2,6 @@ import React from 'react';
 import { Pagination } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
-// <---- PRODUCT CAROUSEL FUNCTION - pages, page, isAdmin, false keyword ---->
 const Paginate = ({ pages, page, isAdmin = false, keyword = '', heat = '' }) => {
   const heatQuery = heat ? `?heat=${encodeURIComponent(heat)}` : '';
 
@@ -28,5 +27,4 @@ const Paginate = ({ pages, page, isAdmin = false, keyword = '', heat = '' }) => 
   );
 };
 
-// <---- EXPORT ---->
 export default Paginate;
