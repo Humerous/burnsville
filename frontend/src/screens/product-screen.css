@@ -113,6 +113,15 @@
   border: 1px solid rgba(17, 17, 17, 0.3);
   border-left: 0;
   padding: clamp(38px, 5vw, 72px);
+  position: relative;
+}
+
+.burnsville-product-detail__information::before {
+  background: var(--accent, var(--product-red-dark));
+  content: '';
+  inset: 0 auto 0 0;
+  position: absolute;
+  width: 3px;
 }
 
 .burnsville-product-detail__eyebrow,
@@ -557,6 +566,12 @@
     border-left: 1px solid rgba(17, 17, 17, 0.3);
     border-top: 0;
     padding: 42px 32px;
+  }
+
+  .burnsville-product-detail__information::before {
+    height: 3px;
+    inset: 0 0 auto;
+    width: auto;
   }
 
   .burnsville-product-detail__reviews-inner {

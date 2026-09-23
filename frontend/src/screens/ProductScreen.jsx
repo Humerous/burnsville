@@ -207,7 +207,11 @@ const ProductScreen = ({ history, match }) => {
                 <span aria-current='page'>{product.name}</span>
               </nav>
 
-              <div className='burnsville-product-detail__grid'>
+              <div
+                className={`burnsville-product-detail__grid ${
+                  productTheme?.theme || ''
+                }`}
+              >
                 <div
                   className={`burnsville-product-detail__media product-background ${
                     productTheme?.theme || ''
