@@ -208,7 +208,7 @@ const ProductScreen = ({ history, match }) => {
               <div className='burnsville-product-detail__grid'>
                 <div className='burnsville-product-detail__media'>
                   <div className='burnsville-product-detail__media-accent' />
-                  <img src={product.image} alt={product.name} />
+                  <img src={product.cardImage} alt={product.name} />
                 </div>
 
                 <div className='burnsville-product-detail__information'>
