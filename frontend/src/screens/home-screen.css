@@ -15,7 +15,7 @@
 }
 
 .burnsville-home-framework > .burnsville-home-hero {
-  margin-top: -1rem;
+  margin-top: calc(-1rem - 64px);
 }
 
 /* Use the heat guide as the dark navigation bridge between brand impact and product shopping. */

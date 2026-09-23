@@ -13,7 +13,7 @@
   grid-template-columns: minmax(0, 54%) minmax(0, 46%);
   margin-left: calc(50% - 50vw);
   margin-top: -1rem;
-  min-height: clamp(420px, 32vw, 500px);
+  min-height: calc(clamp(420px, 32vw, 500px) + 64px);
   overflow: hidden;
   position: relative;
   width: 100vw;
@@ -40,7 +40,8 @@
   color: var(--hero-cream);
   display: flex;
   grid-column: 1 / 2;
-  padding: clamp(54px, 5.2vw, 82px) 48px clamp(56px, 5.5vw, 88px)
+  padding: calc(clamp(54px, 5.2vw, 82px) + 64px) 48px
+    clamp(56px, 5.5vw, 88px)
     max(56px, calc((100vw - 1440px) / 2 + 56px));
   position: relative;
   z-index: 2;
@@ -211,14 +212,14 @@
 @media (max-width: 767px) {
   .burnsville-home-hero {
     grid-template-columns: minmax(0, 1fr);
-    min-height: clamp(650px, 92vh, 820px);
+    min-height: calc(clamp(650px, 92vh, 820px) + 64px);
   }
 
   .burnsville-home-hero__content {
     align-items: flex-start;
     grid-column: 1;
     min-height: 0;
-    padding: 54px 32px 58px;
+    padding: 118px 32px 58px;
   }
 
   .burnsville-home-hero__copy {
@@ -236,12 +237,12 @@
 
 @media (max-width: 560px) {
   .burnsville-home-hero {
-    min-height: clamp(640px, 88vh, 760px);
+    min-height: calc(clamp(640px, 88vh, 760px) + 64px);
   }
 
   .burnsville-home-hero__content {
     min-height: 0;
-    padding: 42px 24px 48px;
+    padding: 106px 24px 48px;
   }
 
   .burnsville-home-hero__eyebrow {

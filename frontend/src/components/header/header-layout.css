@@ -4,6 +4,10 @@
   color: #f4eee5;
 }
 
+.burnsville-header--home {
+  background: rgba(8, 8, 8, 0.68);
+}
+
 .burnsville-header__bar {
   grid-template-columns: auto minmax(0, 1fr) auto;
   max-width: 1060px;

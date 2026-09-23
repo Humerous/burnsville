@@ -165,7 +165,11 @@ const Header = () => {
   };
 
   return (
-    <header className='burnsville-header'>
+    <header
+      className={`burnsville-header${
+        location.pathname === '/' ? ' burnsville-header--home' : ''
+      }`}
+    >
       <div className='burnsville-header__bar'>
         <button
           aria-controls='burnsville-shop-drawer'
