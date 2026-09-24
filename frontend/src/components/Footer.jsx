@@ -32,7 +32,7 @@ const Footer = () => {
     <footer className='burnsville-footer'>
       <div className='burnsville-footer__inner'>
         <div className='burnsville-footer__brand'>
-          <Link to="/" aria-label="Burnsville home"><img className="burnsville-footer__seal" src="/brand-mark.png" width="96" height="96" alt="Burnsville Hot Sauce, Cape Town" /></Link>
+          <Link to="/" aria-label="Burnsville home"><img className="burnsville-footer__seal" src="/brand-mark.svg" width="96" height="96" alt="Burnsville Hot Sauce, Cape Town" /></Link>
           <p>Heat. Flavour. Character.</p>
         </div>
 
