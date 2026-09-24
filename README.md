@@ -2,8 +2,6 @@
 
 **Turn up the heat. Keep the flavour.**
 
-[![Burnsville showcase](docs/assets/burnsville-showcase.svg)](https://burnsville-current.vercel.app/)
-
 [![Burnsville QA](https://github.com/Humerous/burnsville/actions/workflows/qa.yml/badge.svg)](https://github.com/Humerous/burnsville/actions/workflows/qa.yml)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -53,6 +51,14 @@ Asset integrity is pinned by filename, dimensions and SHA-256 hash in:
 
 - `backend/data/bottle-assets.json`
 - `backend/data/card-assets.json`
+
+## Brand assets
+
+The canonical Burnsville secondary crest is:
+
+`frontend/public/brand-mark.svg`
+
+The crest uses the approved **ESTD 2024** identity and is shared by the site footer, newsletter mark and favicon.
 
 ## Architecture
 
@@ -131,8 +137,6 @@ frontend/
   public/
   src/
 qa/
-docs/
-  assets/
 .github/workflows/qa.yml
 ```
 

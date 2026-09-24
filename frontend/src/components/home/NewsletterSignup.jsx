@@ -1,5 +1,4 @@
 import React from 'react';
-import burnsvilleNewsletterSeal from '../../assets/brand/burnsville-newsletter-seal.webp';
 import './newsletter-signup.css';
 
 const NewsletterSignup = () => {
@@ -20,7 +19,7 @@ const NewsletterSignup = () => {
           </svg>
 
           <span className='burnsville-newsletter__mark-seal'>
-            <img src={burnsvilleNewsletterSeal} alt='' />
+            <img src='/brand-mark.svg' alt='' />
           </span>
         </div>
 
