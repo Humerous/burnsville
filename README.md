@@ -2,6 +2,8 @@
 
 **Turn up the heat. Keep the flavour.**
 
+[![Burnsville showcase](docs/assets/burnsville-showcase.svg)](https://burnsville-current.vercel.app/)
+
 [![Burnsville QA](https://github.com/Humerous/burnsville/actions/workflows/qa.yml/badge.svg)](https://github.com/Humerous/burnsville/actions/workflows/qa.yml)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -137,6 +139,8 @@ frontend/
   public/
   src/
 qa/
+docs/
+  assets/
 .github/workflows/qa.yml
 ```
 
