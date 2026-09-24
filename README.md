@@ -58,9 +58,9 @@ Asset integrity is pinned by filename, dimensions and SHA-256 hash in:
 
 The canonical Burnsville secondary crest is:
 
-`frontend/public/brand-mark.svg`
+`frontend/public/brand-mark.png`
 
-The crest uses the approved **ESTD 2024** identity and is shared by the site footer, newsletter mark and favicon.
+The site uses the original **EST. 2020** Burnsville crest from the project repository. The footer, newsletter treatment and favicon all use this original identity.
 
 ## Architecture
 
