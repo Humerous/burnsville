@@ -12,9 +12,11 @@ import './loading-states.css';
 import './navigation.css';
 import './components/theme.css';
 
+const rootElement = document.getElementById('root');
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  rootElement
 );
