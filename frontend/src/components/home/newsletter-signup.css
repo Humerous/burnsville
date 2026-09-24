@@ -88,6 +88,21 @@
   width: 100%;
 }
 
+.burnsville-newsletter__copy,
+.burnsville-newsletter__availability {
+  min-width: 0;
+}
+
+.burnsville-newsletter__availability {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  grid-column: 3;
+  line-height: 1.45;
+  overflow-wrap: normal;
+  width: 100%;
+}
+
 .burnsville-newsletter__copy p {
   color: var(--newsletter-red-dark);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
@@ -184,7 +199,8 @@
 
 @media (max-width: 900px) {
   .burnsville-newsletter__inner {
-    grid-template-columns: 64px minmax(220px, 0.7fr) minmax(320px, 1fr);
+    gap: 20px;
+    grid-template-columns: 64px minmax(0, 1fr) minmax(260px, 340px);
     padding-inline: 30px;
   }
 
@@ -217,9 +233,35 @@
   .burnsville-newsletter__form {
     grid-column: 1 / -1;
   }
+
+  .burnsville-newsletter__availability {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 0;
+    padding: 16px 18px;
+  }
 }
 
 @media (max-width: 430px) {
+  .burnsville-newsletter__inner {
+    gap: 14px;
+    grid-template-columns: 48px minmax(0, 1fr);
+    padding: 26px 16px 30px;
+  }
+
+  .burnsville-newsletter__mark {
+    transform: scale(0.72);
+    transform-origin: left top;
+  }
+
+  .burnsville-newsletter__copy h2 {
+    font-size: 1.72rem;
+  }
+
+  .burnsville-newsletter__availability {
+    padding: 15px 16px;
+  }
+
   .burnsville-newsletter__controls {
     grid-template-columns: 1fr;
   }
